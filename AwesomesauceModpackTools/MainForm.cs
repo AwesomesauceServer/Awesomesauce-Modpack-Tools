@@ -1,0 +1,251 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using Newtonsoft.Json;
+using static AwesomesauceModpackTools.Utilities;
+
+namespace AwesomesauceModpackTools {
+
+    public partial class MainForm : Form {
+
+        private string WorkingSaveFile = null;
+        private ListViewItem CurrentlySelectedItem = null;
+
+        public MainForm() {
+            InitializeComponent();
+            Icon = Properties.Resources.AwesomesauceIcon;
+            Text = $"{Text} v{Version.Parse(Application.ProductVersion).ToString(3)}";
+        }
+
+        private void MainForm_Load(object sender, EventArgs e) {
+
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
+            if (MessageBox.Show("Really exit?\r\n\r\nMake sure you saved!", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) {
+                e.Cancel = true;
+            }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e) {
+            AddModForm addModForm = new AddModForm();
+
+            DialogResult addModForm_Result = addModForm.ShowDialog();
+            if (addModForm_Result == DialogResult.OK) {
+                ModListView.Items.Add(new ListViewItem(new string[] { addModForm.NewMod.Name, addModForm.NewMod.File })).Tag = addModForm.NewMod;
+            } else if (addModForm_Result == DialogResult.Abort) {
+                MessageBox.Show($"There was an error adding the mod to the list.\r\n\r\n{addModForm.AbortError}", "Error Adding Mod", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            addModForm.Dispose();
+            BackupModList();
+        }
+
+        private void AddRequirementButton_Click(object sender, EventArgs e) {
+            RequiresForm addRequirementForm = new RequiresForm();
+            addRequirementForm.ModListView.Items.AddRange((from ListViewItem item in ModListView.Items select (ListViewItem)item.Clone()).ToArray());
+            addRequirementForm.ModListView.Items.RemoveAt(CurrentlySelectedItem.Index);
+
+            Mod currentlySelectedItemMod = (Mod)CurrentlySelectedItem.Tag;
+            foreach (RequiredMod required in currentlySelectedItemMod.Requires) {
+                foreach (ListViewItem item in addRequirementForm.ModListView.Items) {
+                    Mod itemMod = (Mod)item.Tag;
+                    if (itemMod.ID == required.ID) { item.Checked = true; }
+                }
+            }
+
+            DialogResult addRequirementForm_Result = addRequirementForm.ShowDialog();
+            if (addRequirementForm_Result == DialogResult.OK) {
+                currentlySelectedItemMod.Requires.Clear();
+
+                foreach (Mod mod in addRequirementForm.CheckedMods) {
+                    RequiredMod requiredMod = new RequiredMod() {
+                        ID = mod.ID,
+                        Name = mod.Name
+                    };
+                    currentlySelectedItemMod.Requires.Add(requiredMod);
+                }
+            }
+
+            addRequirementForm.Dispose();
+            BackupModList();
+            ModListView_SelectedIndexChanged(sender, new EventArgs());
+        }
+
+        private void AddNoteButton_Click(object sender, EventArgs e) {
+            NotesForm notesForm = new NotesForm();
+            Mod currentlySelectedItemMod = (Mod)CurrentlySelectedItem.Tag;
+            notesForm.NotesTextBox.Text = currentlySelectedItemMod.Notes;
+
+            DialogResult notesForm_Result = notesForm.ShowDialog();
+            notesForm.NotesTextBox.DeselectAll();
+            if (notesForm_Result == DialogResult.OK) {
+                if (notesForm.NewNotes.Trim() == "") {
+                    currentlySelectedItemMod.Notes = null;
+                } else {
+                    currentlySelectedItemMod.Notes = notesForm.NewNotes;
+                }
+            }
+
+            notesForm.Dispose();
+            BackupModList();
+            ModListView_SelectedIndexChanged(sender, new EventArgs());
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e) {
+            if (CurrentlySelectedItem != null) {
+                if (MessageBox.Show($"Really remove the mod {CurrentlySelectedItem.Text}?", "Confirm Remove", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
+                    ModListView.Items.Remove(CurrentlySelectedItem);
+                    ModListView_SelectedIndexChanged(sender, new EventArgs());
+                }
+            }
+        }
+
+        private void ModListView_SelectedIndexChanged(object sender, EventArgs e) {
+            if (ModListView.SelectedItems.Count == 1) {
+                IsItemSelected(true, ModListView.SelectedItems[0]);
+            } else {
+                IsItemSelected(false);
+            }
+        }
+
+        private void KeepSortedCheckBox_CheckedChanged(object sender, EventArgs e) {
+            if (KeepSortedCheckBox.Checked == true) {
+                SortLinkLabel.Visible = false;
+                ModListView.Sorting = SortOrder.Ascending;
+                ModListView.Sort();
+            } else {
+                SortLinkLabel.Visible = true;
+                ModListView.Sorting = SortOrder.None;
+            }
+        }
+
+        private void SortLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            if (MessageBox.Show("Sort mod list?", "Confirm Sort", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
+                ModListView.Sorting = SortOrder.Ascending;
+                ModListView.Sort();
+                ModListView.Sorting = SortOrder.None;
+            }
+        }
+
+        private void LinkLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            try { Process.Start(LinkTextBox.Text); } catch { }
+        }
+
+        private void LoadToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (ModListView.Items.Count != 0) {
+                DialogResult overwrite = MessageBox.Show("The mod list is not empty, are you sure you want to overwrite the current list?", "Confirm Overwrite", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (overwrite == DialogResult.No) { return; }
+            }
+
+            if (LoadModListDialog.ShowDialog() == DialogResult.OK) {
+                ModListView.Items.Clear();
+                LoadModList(LoadModListDialog.FileName);
+            }
+        }
+
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (WorkingSaveFile == null) {
+                SaveAsToolStripMenuItem_Click(sender, new EventArgs());
+            } else {
+                SaveModList(WorkingSaveFile);
+            }
+        }
+
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (SaveModListDialog.ShowDialog() == DialogResult.OK) {
+                SaveModList(SaveModListDialog.FileName);
+            }
+        }
+
+        private void LoadModList(string file) {
+            try {
+                List<Mod> loadedMods = JsonConvert.DeserializeObject<List<Mod>>(File.ReadAllText(file, Encoding.UTF8));
+
+                foreach (Mod mod in loadedMods) {
+                    ModListView.Items.Add(new ListViewItem(new string[] { mod.Name, mod.File })).Tag = mod;
+                }
+
+                WorkingSaveFile = file;
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error loading the mod list.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveModList(string file, bool automatic = false) {
+            try {
+                List<Mod> modList = new List<Mod>();
+                foreach (ListViewItem item in ModListView.Items) { modList.Add((Mod)item.Tag); }
+
+                JsonSerializerSettings jsonSettings = new JsonSerializerSettings() {
+                    Formatting = Formatting.Indented
+                };
+
+                if (automatic == false) {
+                    WorkingSaveFile = file;
+                    File.WriteAllText(file, JsonConvert.SerializeObject(modList, jsonSettings), Encoding.UTF8);
+                } else {
+                    // If the backup file is over 20 MB, trim it starting with line 1, newest entries (very bottom lines) are kept.
+                    if (File.Exists(file)) {
+                        long length = new FileInfo(file).Length;
+                        long size = (20 * 1024 * 1024);
+
+                        if (length > size) {
+                            using (MemoryStream memoryStream = new MemoryStream((int)size)) {
+                                using (FileStream fileStream = new FileStream(file, FileMode.Open, FileAccess.ReadWrite)) {
+                                    fileStream.Seek(-size, SeekOrigin.End);
+                                    fileStream.CopyTo(memoryStream);
+                                    fileStream.SetLength(size);
+                                    fileStream.Position = 0;
+                                    fileStream.Write(memoryStream.GetBuffer(), 0, (int)size);
+                                }
+                            }
+                        }
+                    }
+
+                    string shortLine = "========================================";
+                    string longLine = "========================================================================";
+                    string working = $"== {DateTime.UtcNow.ToString("o")} {shortLine}\r\n{JsonConvert.SerializeObject(modList, jsonSettings)}\r\n{longLine}\r\n";
+                    File.AppendAllText(file, working, Encoding.UTF8);
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error saving the mod list.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Saving Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BackupModList() {
+            SaveModList($"{EXEDirectory}\\working.json.backup", true);
+        }
+
+        private void IsItemSelected(bool selected, ListViewItem item = null) {
+            CurrentlySelectedItem = item;
+
+            AddRequirementButton.Enabled = selected;
+            AddNoteButton.Enabled = selected;
+            RemoveButton.Enabled = selected;
+            LinkLinkLabel.Enabled = selected;
+
+            if (item == null) {
+                SizeTextBox.Clear();
+                UpdatedTextBox.Clear();
+                LinkTextBox.Clear();
+                MD5TextBox.Clear();
+                RequiresTextBox.Clear();
+                NotesTextBox.Clear();
+            } else {
+                Mod selectedMod = (Mod)CurrentlySelectedItem.Tag;
+                SizeTextBox.Text = selectedMod.Size;
+                UpdatedTextBox.Text = selectedMod.Date.ToLocalTime().ToString();
+                LinkTextBox.Text = selectedMod.Link;
+                MD5TextBox.Text = selectedMod.MD5;
+                RequiresTextBox.Text = selectedMod.RequiresToString();
+                NotesTextBox.Text = selectedMod.Notes;
+            }
+        }
+
+    }
+}
