@@ -1,0 +1,4 @@
+language: csharp
+solution: "./AwesomesauceModpackTools.sln"
+script:
+  - xbuild /p:Configuration=Release "./AwesomesauceModpackTools.sln"
