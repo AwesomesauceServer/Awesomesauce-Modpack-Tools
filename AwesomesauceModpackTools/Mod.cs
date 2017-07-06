@@ -104,12 +104,6 @@ namespace AwesomesauceModpackTools {
         public HtmlDocument HTML_Files { get; set; }
 
         /// <summary>
-        /// If at any time getting or setting data resulted in a error, the exception.
-        /// </summary>
-        [JsonIgnore]
-        public Exception Error { get; set; } = null;
-
-        /// <summary>
         /// Format the <see cref="Requires" /> list into a sting.
         /// </summary>
         /// <returns><see cref="Requires" /> as a single line, comma seperated string.</returns>

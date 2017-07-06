@@ -6,14 +6,14 @@ namespace AwesomesauceModpackTools {
 
     public static class CurseForge {
 
-        public static Mod ParseForInfo(Mod mod) {
+        public static (Mod Mod, Exception Exception) ParseForInfo(Mod mod) {
             try {
                 HtmlWeb htmlWeb = new HtmlWeb();
                 mod.HTML_Link = htmlWeb.Load(mod.Link);
 
                 if (htmlWeb.StatusCode == System.Net.HttpStatusCode.OK) {
                     HtmlNode node = mod.HTML_Link.DocumentNode;
-
+                    
                     Mod thisMod = new Mod() {
                         Link = mod.Link,
                         Name = node.SelectSingleNode("//span[@class='overflow-tip']").InnerText.Trim(),
@@ -32,18 +32,16 @@ namespace AwesomesauceModpackTools {
                     thisMod.Link_Download = $"{thisMod.Link}/download";
                     thisMod.Link_Files = GetParentURL(thisMod.Link);
 
-                    return thisMod;
+                    return (thisMod, null);
                 } else {
-                    Mod thisMod = new Mod() { Error = new HtmlWebException($"HTTP returned status ({(int)htmlWeb.StatusCode}) {htmlWeb.StatusCode}.") };
-                    return thisMod;
+                    return (null, new HtmlWebException($"HTTP returned status ({(int)htmlWeb.StatusCode}) {htmlWeb.StatusCode}."));
                 }
             } catch (Exception ex) {
-                Mod thisMod = new Mod() { Error = ex };
-                return thisMod;
+                return (null, ex);
             }
         }
 
-        public static Mod ParseForUpdate(Mod mod) {
+        public static (Mod Mod, Exception Exception) ParseForUpdate(Mod mod) {
             try {
                 HtmlWeb htmlWeb = new HtmlWeb();
                 mod.HTML_Files = htmlWeb.Load(mod.Link_Files);
@@ -61,14 +59,12 @@ namespace AwesomesauceModpackTools {
                     thisMod.Link_Download = $"{thisMod.Link}/download";
                     thisMod.Link_Files = $"{thisMod.Link}/files";
 
-                    return thisMod;
+                    return (thisMod, null);
                 } else {
-                    Mod thisMod = new Mod() { Error = new HtmlWebException($"HTTP returned status ({(int)htmlWeb.StatusCode}) {htmlWeb.StatusCode}.") };
-                    return thisMod;
+                    return (null, new HtmlWebException($"HTTP returned status ({(int)htmlWeb.StatusCode}) {htmlWeb.StatusCode}."));
                 }
             } catch (Exception ex) {
-                Mod thisMod = new Mod() { Error = ex };
-                return thisMod;
+                return (null, ex);
             }
         }
 

@@ -56,10 +56,12 @@ namespace AwesomesauceModpackTools {
 
             try {
                 NewMod.Link = url;
-                NewMod = CurseForge.ParseForInfo(NewMod);
+                (Mod Mod, Exception Exception) parseResult = CurseForge.ParseForInfo(NewMod);
+                NewMod = parseResult.Mod;
 
+                if (parseResult.Exception != null) { throw parseResult.Exception; }
                 if (NewMod == null) { throw new ArgumentNullException("NewMod"); }
-                if (NewMod.Error != null) { throw NewMod.Error; }
+                
                 DialogResult = DialogResult.OK;
             } catch (Exception ex) {
                 AbortError = ex.Message;
