@@ -16,17 +16,17 @@ The JSON file will be used to download and update the mod.
 |Property|Meaning|
 |---|---|
 |name|Name of the mod|
-|id|[Random GUID assigned to the mod when it's created](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mod.cs#L24)|
+|id|[Random GUID assigned to the mod when it's created](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/Mod.cs#L24)|
 |file|File name of the mod|
-|side|[Side that the mod is required](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Enums.cs#L6)|
+|side|[Side that the mod is required](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/Enums.cs#L6)|
 |date|Date and time of when the mod was uploaded to CurseForge|
 |size|Size of the mod (pretty formatted)|
-|requires|[Mod(s) required for the mod to work](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/RequiredMod.cs#L5)|
+|requires|[Mod(s) required for the mod to work](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/RequiredMod.cs#L5)|
 |link|Link to the mod web page|
 |linkDownload|Download to the mod file|
 |linkFiles|Project file list for the mod updates|
 |md5|MD5 of the mod file|
-|updateMode|[How the update should be handled](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Enums.cs#L16)|
+|updateMode|[How the update should be handled](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/Enums.cs#L16)|
 
 ##### Example
 ```json
