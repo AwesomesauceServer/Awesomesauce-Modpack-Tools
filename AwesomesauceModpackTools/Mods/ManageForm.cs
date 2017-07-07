@@ -10,15 +10,14 @@ using static AwesomesauceModpackTools.Utilities;
 
 namespace AwesomesauceModpackTools.Mods {
 
-    public partial class MainForm : Form {
+    public partial class ManageForm : Form {
 
         private string WorkingSaveFile = null;
         private ListViewItem CurrentlySelectedItem = null;
 
-        public MainForm() {
+        public ManageForm() {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
-            Text = $"{Text} v{Version.Parse(Application.ProductVersion).ToString(3)}";
         }
 
         private void MainForm_Load(object sender, EventArgs e) {

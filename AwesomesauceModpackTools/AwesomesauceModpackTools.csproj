@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mods\AddModForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +109,11 @@
       <DependentUpon>RequiresForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mods\Enums.cs" />
-    <Compile Include="Mods\MainForm.cs">
+    <Compile Include="Mods\ManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mods\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Mods\ManageForm.Designer.cs">
+      <DependentUpon>ManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mods\Mod.cs" />
     <Compile Include="Program.cs" />
@@ -117,6 +123,9 @@
     <Compile Include="Mods\StatusConverter.cs" />
     <Compile Include="Mods\CurseForge.cs" />
     <Compile Include="Mods\Utilities.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mods\AddModForm.resx">
       <DependentUpon>AddModForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,8 +135,8 @@
     <EmbeddedResource Include="Mods\RequiresForm.resx">
       <DependentUpon>RequiresForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mods\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Mods\ManageForm.resx">
+      <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

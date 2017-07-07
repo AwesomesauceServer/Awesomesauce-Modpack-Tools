@@ -1,5 +1,5 @@
 ﻿namespace AwesomesauceModpackTools.Mods {
-    partial class MainForm {
+    partial class ManageForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -352,7 +352,7 @@
             this.KeepSortedCheckBox.UseVisualStyleBackColor = true;
             this.KeepSortedCheckBox.CheckedChanged += new System.EventHandler(this.KeepSortedCheckBox_CheckedChanged);
             // 
-            // MainForm
+            // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -383,9 +383,9 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(778, 615);
-            this.Name = "MainForm";
+            this.Name = "ManageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Awesomesauce Modpack Tools";
+            this.Text = "Manage Mods";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.FileMenuStrip.ResumeLayout(false);
