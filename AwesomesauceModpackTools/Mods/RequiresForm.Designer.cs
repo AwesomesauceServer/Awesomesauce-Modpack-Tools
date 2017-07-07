@@ -1,4 +1,4 @@
-﻿namespace AwesomesauceModpackTools {
+﻿namespace AwesomesauceModpackTools.Mods {
     partial class RequiresForm {
         /// <summary>
         /// Required designer variable.

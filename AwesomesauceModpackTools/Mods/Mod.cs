@@ -4,7 +4,7 @@ using HtmlAgilityPack;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace AwesomesauceModpackTools {
+namespace AwesomesauceModpackTools.Mods {
 
     /// <summary>
     /// A single Minecraft mod.

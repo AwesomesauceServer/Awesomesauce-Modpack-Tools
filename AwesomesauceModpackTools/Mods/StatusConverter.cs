@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace AwesomesauceModpackTools {
+namespace AwesomesauceModpackTools.Mods {
 
     public class StatusConverter : JsonConverter {
 

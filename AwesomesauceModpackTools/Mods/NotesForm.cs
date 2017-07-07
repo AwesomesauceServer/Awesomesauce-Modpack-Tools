@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace AwesomesauceModpackTools {
+namespace AwesomesauceModpackTools.Mods {
 
     public partial class NotesForm : Form {
 

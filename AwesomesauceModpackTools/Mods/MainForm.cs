@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using static AwesomesauceModpackTools.Utilities;
 
-namespace AwesomesauceModpackTools {
+namespace AwesomesauceModpackTools.Mods {
 
     public partial class MainForm : Form {
 

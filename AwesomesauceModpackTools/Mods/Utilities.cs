@@ -29,7 +29,7 @@ namespace AwesomesauceModpackTools {
         /// <param name="modID"><see cref="Mod.ID" /> to find.</param>
         /// <param name="modList">List of mods to search.</param>
         /// <returns><see cref="Mod" />; if nothing was found then null.</returns>
-        public static Mod FindModByID(string modID, List<Mod> modList) {
+        public static Mods.Mod FindModByID(string modID, List<Mods.Mod> modList) {
             if (modList.Exists(mod => mod.ID == modID)) {
                 return modList.Find(mod => mod.ID == modID);
             } else {

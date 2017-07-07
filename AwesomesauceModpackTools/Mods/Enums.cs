@@ -1,4 +1,4 @@
-﻿namespace AwesomesauceModpackTools {
+﻿namespace AwesomesauceModpackTools.Mods {
 
     /// <summary>
     /// Side that the mod is required.

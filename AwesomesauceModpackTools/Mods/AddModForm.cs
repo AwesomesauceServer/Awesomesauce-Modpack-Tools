@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using static AwesomesauceModpackTools.Utilities;
 
-namespace AwesomesauceModpackTools {
+namespace AwesomesauceModpackTools.Mods {
 
     public partial class AddModForm : Form {
 
