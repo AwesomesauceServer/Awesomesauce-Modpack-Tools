@@ -386,8 +386,8 @@
             this.Name = "ManageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Mods";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageForm_FormClosing);
+            this.Load += new System.EventHandler(this.ManageForm_Load);
             this.FileMenuStrip.ResumeLayout(false);
             this.FileMenuStrip.PerformLayout();
             this.ResumeLayout(false);
