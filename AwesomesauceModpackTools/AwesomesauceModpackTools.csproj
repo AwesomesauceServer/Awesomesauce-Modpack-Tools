@@ -90,29 +90,29 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mods\AddModForm.cs">
+    <Compile Include="Mods\ModList\AddModForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mods\AddModForm.Designer.cs">
+    <Compile Include="Mods\ModList\AddModForm.Designer.cs">
       <DependentUpon>AddModForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mods\NotesForm.cs">
+    <Compile Include="Mods\ModList\NotesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mods\NotesForm.Designer.cs">
+    <Compile Include="Mods\ModList\NotesForm.Designer.cs">
       <DependentUpon>NotesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mods\RequiresForm.cs">
+    <Compile Include="Mods\ModList\RequiresForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mods\RequiresForm.Designer.cs">
+    <Compile Include="Mods\ModList\RequiresForm.Designer.cs">
       <DependentUpon>RequiresForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mods\Enums.cs" />
-    <Compile Include="Mods\ManageForm.cs">
+    <Compile Include="Mods\ModList\ManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mods\ManageForm.Designer.cs">
+    <Compile Include="Mods\ModList\ManageForm.Designer.cs">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mods\Mod.cs" />
@@ -126,16 +126,16 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mods\AddModForm.resx">
+    <EmbeddedResource Include="Mods\ModList\AddModForm.resx">
       <DependentUpon>AddModForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mods\NotesForm.resx">
+    <EmbeddedResource Include="Mods\ModList\NotesForm.resx">
       <DependentUpon>NotesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mods\RequiresForm.resx">
+    <EmbeddedResource Include="Mods\ModList\RequiresForm.resx">
       <DependentUpon>RequiresForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mods\ManageForm.resx">
+    <EmbeddedResource Include="Mods\ModList\ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -165,5 +165,6 @@
   <ItemGroup>
     <None Include="art\AwesomesauceIcon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

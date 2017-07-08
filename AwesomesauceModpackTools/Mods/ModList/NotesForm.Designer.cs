@@ -1,4 +1,4 @@
-﻿namespace AwesomesauceModpackTools.Mods {
+﻿namespace AwesomesauceModpackTools.Mods.ModList {
     partial class NotesForm {
         /// <summary>
         /// Required designer variable.

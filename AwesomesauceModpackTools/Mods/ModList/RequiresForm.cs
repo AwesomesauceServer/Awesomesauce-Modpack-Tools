@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace AwesomesauceModpackTools.Mods {
+namespace AwesomesauceModpackTools.Mods.ModList {
 
     public partial class RequiresForm : Form {
 
