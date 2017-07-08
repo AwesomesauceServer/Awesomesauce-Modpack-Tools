@@ -57,7 +57,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
             try {
                 NewMod.Link = url;
-                (Mod Mod, Exception Exception) parseResult = CurseForge.ParseForInfo(NewMod);
+                (Mod Mod, Exception Exception) parseResult = Providers.CurseForge.ParseForInfo(NewMod);
                 NewMod = parseResult.Mod;
 
                 if (parseResult.Exception != null) { throw parseResult.Exception; }

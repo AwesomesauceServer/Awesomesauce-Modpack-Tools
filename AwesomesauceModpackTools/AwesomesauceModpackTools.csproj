@@ -119,7 +119,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mods\RequiredMod.cs" />
-    <Compile Include="Mods\CurseForge.cs" />
+    <Compile Include="Mods\Providers\CurseForge.cs" />
     <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

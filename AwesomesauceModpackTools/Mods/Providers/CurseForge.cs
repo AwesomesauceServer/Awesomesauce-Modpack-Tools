@@ -2,7 +2,7 @@
 using HtmlAgilityPack;
 using static AwesomesauceModpackTools.Utilities;
 
-namespace AwesomesauceModpackTools.Mods {
+namespace AwesomesauceModpackTools.Mods.Providers {
 
     public static class CurseForge {
 
