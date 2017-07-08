@@ -15,5 +15,11 @@ namespace AwesomesauceModpackTools {
 
         }
 
+        private void ManageModsButton_Click(object sender, EventArgs e) {
+            Mods.ManageForm manageForm = new Mods.ManageForm();
+            manageForm.Show();
+
+        }
+
     }
 }

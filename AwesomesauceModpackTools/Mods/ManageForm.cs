@@ -28,6 +28,7 @@ namespace AwesomesauceModpackTools.Mods {
             if (MessageBox.Show("Really exit?\r\n\r\nMake sure you saved!", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) {
                 e.Cancel = true;
             }
+            Dispose();
         }
 
         private void AddButton_Click(object sender, EventArgs e) {
@@ -35,7 +36,12 @@ namespace AwesomesauceModpackTools.Mods {
 
             DialogResult addModForm_Result = addModForm.ShowDialog();
             if (addModForm_Result == DialogResult.OK) {
-                ModListView.Items.Add(new ListViewItem(new string[] { addModForm.NewMod.Name, addModForm.NewMod.File })).Tag = addModForm.NewMod;
+                IEnumerable<ListViewItem> queryResult = ModListView.Items.Cast<ListViewItem>().Where(i => i.Text.ToLower() == addModForm.NewMod.Name.ToLower());
+                if (queryResult.Any() == false) {
+                    ModListView.Items.Add(new ListViewItem(new string[] { addModForm.NewMod.Name, addModForm.NewMod.File })).Tag = addModForm.NewMod;
+                } else {
+                    MessageBox.Show($"The mod {addModForm.NewMod.Name} already exists in the mod list.\r\n\r\nIt is a bad idea to have duplicates in the list.\r\nIf you want to override this add it manually to the JSON.", "Mod Already Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             } else if (addModForm_Result == DialogResult.Abort) {
                 MessageBox.Show($"There was an error adding the mod to the list.\r\n\r\n{addModForm.AbortError}", "Error Adding Mod", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

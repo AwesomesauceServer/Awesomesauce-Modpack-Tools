@@ -23,13 +23,25 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.ManageModsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // ManageModsButton
+            // 
+            this.ManageModsButton.Location = new System.Drawing.Point(12, 12);
+            this.ManageModsButton.Name = "ManageModsButton";
+            this.ManageModsButton.Size = new System.Drawing.Size(116, 23);
+            this.ManageModsButton.TabIndex = 0;
+            this.ManageModsButton.Text = "Manage Mods";
+            this.ManageModsButton.UseVisualStyleBackColor = true;
+            this.ManageModsButton.Click += new System.EventHandler(this.ManageModsButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 303);
+            this.Controls.Add(this.ManageModsButton);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -41,5 +53,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button ManageModsButton;
     }
 }
