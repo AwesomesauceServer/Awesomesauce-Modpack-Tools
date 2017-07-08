@@ -42,12 +42,11 @@ namespace AwesomesauceModpackTools.Mods.ModList {
                     ModListView.Items.Add(new ListViewItem(new string[] { addModForm.NewMod.Name, addModForm.NewMod.File })).Tag = addModForm.NewMod;
 
                     if (addModForm.AddWithRequirement == true) {
-                        IEnumerable<ListViewItem> addResult = ModListView.Items.Cast<ListViewItem>().Where(i => i.Text.ToLower() == addModForm.NewMod.Name.ToLower());
-                        if (addResult.Any() == true) {
-                            ModListView.TopItem = addResult.FirstOrDefault();
-                            addResult.FirstOrDefault().Selected = true;
+                        if (queryResult.Any() == true) {
+                            ModListView.TopItem = queryResult.FirstOrDefault();
+                            queryResult.FirstOrDefault().Selected = true;
 
-                            RequirementButton_Click(null, new EventArgs());
+                            RequiresButton_Click(null, new EventArgs());
                         }
                     }
                 } else {
@@ -62,35 +61,33 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         }
 
         private void EditButton_Click(object sender, EventArgs e) {
-            EditModForm editModForm = new EditModForm() { EditedMod = (Mod)CurrentlySelectedItem.Tag };
+            EditModForm editModForm = new EditModForm() { EditingMod = (Mod)CurrentlySelectedItem.Tag };
 
             DialogResult editModForm_Result = editModForm.ShowDialog();
-            if (editModForm_Result == DialogResult.OK) {
-
-            }
+            if (editModForm_Result == DialogResult.OK) { }
 
             editModForm.Dispose();
             BackupModList();
             ModListView_SelectedIndexChanged(sender, new EventArgs());
         }
 
-        private void RequirementButton_Click(object sender, EventArgs e) {
-            RequiresForm addRequiresForm = new RequiresForm();
-            addRequiresForm.ListItems.AddRange((from ListViewItem item in ModListView.Items select (ListViewItem)item.Clone()).ToArray());
-            addRequiresForm.SelectedMod = (Mod)CurrentlySelectedItem.Tag;
+        private void RequiresButton_Click(object sender, EventArgs e) {
+            RequiresForm requiresForm = new RequiresForm();
+            requiresForm.ListItems.AddRange((from ListViewItem item in ModListView.Items select (ListViewItem)item.Clone()).ToArray());
+            requiresForm.SelectedMod = (Mod)CurrentlySelectedItem.Tag;
 
-            DialogResult addRequirementForm_Result = addRequiresForm.ShowDialog();
-            if (addRequirementForm_Result == DialogResult.OK) {
+            DialogResult requiresForm_Result = requiresForm.ShowDialog();
+            if (requiresForm_Result == DialogResult.OK) {
                 Mod currentlySelectedItemMod = (Mod)CurrentlySelectedItem.Tag;
                 currentlySelectedItemMod.Requires.Clear();
 
-                foreach (Mod mod in addRequiresForm.CheckedMods) {
+                foreach (Mod mod in requiresForm.CheckedMods) {
                     RequiredMod requiredMod = new RequiredMod() { ID = mod.ID, Name = mod.Name };
                     currentlySelectedItemMod.Requires.Add(requiredMod);
                 }
             }
 
-            addRequiresForm.Dispose();
+            requiresForm.Dispose();
             BackupModList();
             ModListView_SelectedIndexChanged(sender, new EventArgs());
         }
@@ -226,7 +223,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         private void IsItemSelected(bool selected, ListViewItem item = null) {
             CurrentlySelectedItem = item;
 
-            RequirementButton.Enabled = selected;
+            RequiresButton.Enabled = selected;
             EditButton.Enabled = selected;
             RemoveButton.Enabled = selected;
             LinkLinkLabel.Enabled = selected;

@@ -34,7 +34,7 @@
             this.SizeTextBox = new System.Windows.Forms.TextBox();
             this.SizeLabel = new System.Windows.Forms.Label();
             this.RemoveButton = new System.Windows.Forms.Button();
-            this.RequirementButton = new System.Windows.Forms.Button();
+            this.RequiresButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.FileMenuStrip = new System.Windows.Forms.MenuStrip();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -171,16 +171,16 @@
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
-            // RequirementButton
+            // RequiresButton
             // 
-            this.RequirementButton.Enabled = false;
-            this.RequirementButton.Location = new System.Drawing.Point(363, 496);
-            this.RequirementButton.Name = "RequirementButton";
-            this.RequirementButton.Size = new System.Drawing.Size(115, 23);
-            this.RequirementButton.TabIndex = 11;
-            this.RequirementButton.Text = "Requirements...";
-            this.RequirementButton.UseVisualStyleBackColor = true;
-            this.RequirementButton.Click += new System.EventHandler(this.RequirementButton_Click);
+            this.RequiresButton.Enabled = false;
+            this.RequiresButton.Location = new System.Drawing.Point(363, 496);
+            this.RequiresButton.Name = "RequiresButton";
+            this.RequiresButton.Size = new System.Drawing.Size(115, 23);
+            this.RequiresButton.TabIndex = 11;
+            this.RequiresButton.Text = "Requires";
+            this.RequiresButton.UseVisualStyleBackColor = true;
+            this.RequiresButton.Click += new System.EventHandler(this.RequiresButton_Click);
             // 
             // AddButton
             // 
@@ -389,7 +389,7 @@
             this.Controls.Add(this.LinkLinkLabel);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.NotesTextBox);
-            this.Controls.Add(this.RequirementButton);
+            this.Controls.Add(this.RequiresButton);
             this.Controls.Add(this.NotesLabel);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.MD5TextBox);
@@ -425,7 +425,7 @@
         private System.Windows.Forms.ColumnHeader NameColumn;
         private System.Windows.Forms.ColumnHeader FileColumn;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button RequirementButton;
+        private System.Windows.Forms.Button RequiresButton;
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.MenuStrip FileMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
