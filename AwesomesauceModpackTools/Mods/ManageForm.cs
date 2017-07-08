@@ -27,6 +27,7 @@ namespace AwesomesauceModpackTools.Mods {
         private void ManageForm_FormClosing(object sender, FormClosingEventArgs e) {
             if (MessageBox.Show("Really exit?\r\n\r\nMake sure you saved!", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) {
                 e.Cancel = true;
+                return;
             }
             Dispose();
         }
