@@ -52,12 +52,14 @@
             this.LoadModListDialog = new System.Windows.Forms.OpenFileDialog();
             this.SortLinkLabel = new System.Windows.Forms.LinkLabel();
             this.KeepSortedCheckBox = new System.Windows.Forms.CheckBox();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.FileMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainStatusStrip
             // 
-            this.MainStatusStrip.Location = new System.Drawing.Point(0, 554);
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 561);
             this.MainStatusStrip.Name = "MainStatusStrip";
             this.MainStatusStrip.Size = new System.Drawing.Size(762, 22);
             this.MainStatusStrip.TabIndex = 0;
@@ -74,7 +76,7 @@
             this.ModListView.Location = new System.Drawing.Point(4, 26);
             this.ModListView.MultiSelect = false;
             this.ModListView.Name = "ModListView";
-            this.ModListView.Size = new System.Drawing.Size(353, 524);
+            this.ModListView.Size = new System.Drawing.Size(353, 501);
             this.ModListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.ModListView.TabIndex = 1;
             this.ModListView.UseCompatibleStateImageBehavior = false;
@@ -352,11 +354,33 @@
             this.KeepSortedCheckBox.UseVisualStyleBackColor = true;
             this.KeepSortedCheckBox.CheckedChanged += new System.EventHandler(this.KeepSortedCheckBox_CheckedChanged);
             // 
+            // SearchLabel
+            // 
+            this.SearchLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchLabel.Location = new System.Drawing.Point(3, 538);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(43, 13);
+            this.SearchLabel.TabIndex = 24;
+            this.SearchLabel.Text = "Search:";
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SearchTextBox.Location = new System.Drawing.Point(50, 533);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(307, 22);
+            this.SearchTextBox.TabIndex = 13;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
             // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 576);
+            this.ClientSize = new System.Drawing.Size(762, 583);
+            this.Controls.Add(this.SearchLabel);
+            this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SortLinkLabel);
             this.Controls.Add(this.KeepSortedCheckBox);
             this.Controls.Add(this.AddNoteButton);
@@ -382,7 +406,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(778, 615);
+            this.MinimumSize = new System.Drawing.Size(778, 622);
             this.Name = "ManageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Mods";
@@ -426,6 +450,8 @@
         private System.Windows.Forms.OpenFileDialog LoadModListDialog;
         private System.Windows.Forms.LinkLabel SortLinkLabel;
         private System.Windows.Forms.CheckBox KeepSortedCheckBox;
+        private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.TextBox SearchTextBox;
     }
 }
 

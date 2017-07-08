@@ -177,6 +177,23 @@ namespace AwesomesauceModpackTools.Mods {
             }
         }
 
+        private void SearchTextBox_TextChanged(object sender, EventArgs e) {
+            if (ModListView.SelectedItems.Count == 0) { return; }
+
+            if (SearchTextBox.Text.Trim() == "") {
+                ModListView.SelectedItems.Clear();
+                return;
+            }
+
+            ListViewItem foundItem = ModListView.FindItemWithText(SearchTextBox.Text, true, 0, true);
+            if (foundItem != null) {
+                ModListView.TopItem = foundItem;
+                foundItem.Selected = true;
+            } else {
+                ModListView.SelectedItems.Clear();
+            }
+        }
+
         private void LoadModList(string file) {
             try {
                 List<Mod> loadedMods = JsonConvert.DeserializeObject<List<Mod>>(File.ReadAllText(file, Encoding.UTF8));

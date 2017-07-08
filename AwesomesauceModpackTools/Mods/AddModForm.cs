@@ -84,6 +84,7 @@ namespace AwesomesauceModpackTools.Mods {
             AddProgressPanel.Visible = isProcessing;
             AddTextBox.ReadOnly = isProcessing;
             AddButton.Enabled = !isProcessing;
+            AddWithRequirementButton.Enabled = !isProcessing;
 
             Application.DoEvents();
         }

@@ -122,7 +122,7 @@
     <Compile Include="Mods\RequiredMod.cs" />
     <Compile Include="Mods\StatusConverter.cs" />
     <Compile Include="Mods\CurseForge.cs" />
-    <Compile Include="Mods\Utilities.cs" />
+    <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
