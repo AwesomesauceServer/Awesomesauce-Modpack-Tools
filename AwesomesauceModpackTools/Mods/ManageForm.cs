@@ -39,6 +39,16 @@ namespace AwesomesauceModpackTools.Mods {
                 IEnumerable<ListViewItem> queryResult = ModListView.Items.Cast<ListViewItem>().Where(i => i.Text.ToLower() == addModForm.NewMod.Name.ToLower());
                 if (queryResult.Any() == false) {
                     ModListView.Items.Add(new ListViewItem(new string[] { addModForm.NewMod.Name, addModForm.NewMod.File })).Tag = addModForm.NewMod;
+
+                    if (addModForm.AddWithRequirement == true) {
+                        IEnumerable<ListViewItem> addResult = ModListView.Items.Cast<ListViewItem>().Where(i => i.Text.ToLower() == addModForm.NewMod.Name.ToLower());
+                        if (addResult.Any() == true) {
+                            ModListView.TopItem = addResult.FirstOrDefault();
+                            addResult.FirstOrDefault().Selected = true;
+
+                            AddRequirementButton_Click(null, new EventArgs());
+                        }
+                    }
                 } else {
                     MessageBox.Show($"The mod {addModForm.NewMod.Name} already exists in the mod list.\r\n\r\nIt is a bad idea to have duplicates in the list.\r\nIf you want to override this add it manually to the JSON.", "Mod Already Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

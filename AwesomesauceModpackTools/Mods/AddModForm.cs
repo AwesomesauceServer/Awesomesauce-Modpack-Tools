@@ -8,6 +8,7 @@ namespace AwesomesauceModpackTools.Mods {
 
         public Mod NewMod { get; set; } = new Mod();
         public string AbortError { get; set; } = "";
+        public bool AddWithRequirement { get; set; } = false;
 
         public AddModForm() {
             InitializeComponent();
@@ -67,6 +68,11 @@ namespace AwesomesauceModpackTools.Mods {
                 AbortError = ex.Message;
                 DialogResult = DialogResult.Abort;
             }
+        }
+
+        private void AddWithRequirementButton_Click(object sender, EventArgs e) {
+            AddWithRequirement = true;
+            AddButton_Click(null, new EventArgs());
         }
 
         private void CancelAddButton_Click(object sender, EventArgs e) {

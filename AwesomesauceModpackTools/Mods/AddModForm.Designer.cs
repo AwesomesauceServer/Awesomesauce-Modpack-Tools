@@ -30,6 +30,7 @@
             this.AddTextBox = new System.Windows.Forms.TextBox();
             this.CancelAddButton = new System.Windows.Forms.Button();
             this.ExampleLabel = new System.Windows.Forms.Label();
+            this.AddWithRequirementButton = new System.Windows.Forms.Button();
             this.AddProgressPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,7 +93,7 @@
             this.CancelAddButton.Location = new System.Drawing.Point(379, 40);
             this.CancelAddButton.Name = "CancelAddButton";
             this.CancelAddButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelAddButton.TabIndex = 3;
+            this.CancelAddButton.TabIndex = 4;
             this.CancelAddButton.Text = "Cancel";
             this.CancelAddButton.UseVisualStyleBackColor = true;
             this.CancelAddButton.Click += new System.EventHandler(this.CancelAddButton_Click);
@@ -108,12 +109,23 @@
             this.ExampleLabel.Text = "Example:  https://minecraft.curseforge.com/projects/rftools/files/2442685";
             this.ExampleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // AddWithRequirementButton
+            // 
+            this.AddWithRequirementButton.Location = new System.Drawing.Point(93, 40);
+            this.AddWithRequirementButton.Name = "AddWithRequirementButton";
+            this.AddWithRequirementButton.Size = new System.Drawing.Size(150, 23);
+            this.AddWithRequirementButton.TabIndex = 3;
+            this.AddWithRequirementButton.Text = "Add With Requirements";
+            this.AddWithRequirementButton.UseVisualStyleBackColor = true;
+            this.AddWithRequirementButton.Click += new System.EventHandler(this.AddWithRequirementButton_Click);
+            // 
             // AddModForm
             // 
             this.AcceptButton = this.AddButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 121);
+            this.Controls.Add(this.AddWithRequirementButton);
             this.Controls.Add(this.ExampleLabel);
             this.Controls.Add(this.CancelAddButton);
             this.Controls.Add(this.AddTextBox);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.TextBox AddTextBox;
         private System.Windows.Forms.Button CancelAddButton;
         private System.Windows.Forms.Label ExampleLabel;
+        private System.Windows.Forms.Button AddWithRequirementButton;
     }
 }
