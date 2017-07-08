@@ -118,9 +118,7 @@
     <Compile Include="Mods\Mod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Mods\RequestedMod.cs" />
     <Compile Include="Mods\RequiredMod.cs" />
-    <Compile Include="Mods\StatusConverter.cs" />
     <Compile Include="Mods\CurseForge.cs" />
     <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="MainForm.resx">
