@@ -96,11 +96,11 @@
     <Compile Include="Mods\ModList\AddModForm.Designer.cs">
       <DependentUpon>AddModForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mods\ModList\NotesForm.cs">
+    <Compile Include="Mods\ModList\EditModForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mods\ModList\NotesForm.Designer.cs">
-      <DependentUpon>NotesForm.cs</DependentUpon>
+    <Compile Include="Mods\ModList\EditModForm.Designer.cs">
+      <DependentUpon>EditModForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mods\ModList\RequiresForm.cs">
       <SubType>Form</SubType>
@@ -109,11 +109,11 @@
       <DependentUpon>RequiresForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mods\Enums.cs" />
-    <Compile Include="Mods\ModList\ManageForm.cs">
+    <Compile Include="Mods\ModList\ModListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mods\ModList\ManageForm.Designer.cs">
-      <DependentUpon>ManageForm.cs</DependentUpon>
+    <Compile Include="Mods\ModList\ModListForm.Designer.cs">
+      <DependentUpon>ModListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mods\Mod.cs" />
     <Compile Include="Program.cs" />
@@ -127,14 +127,14 @@
     <EmbeddedResource Include="Mods\ModList\AddModForm.resx">
       <DependentUpon>AddModForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mods\ModList\NotesForm.resx">
-      <DependentUpon>NotesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Mods\ModList\EditModForm.resx">
+      <DependentUpon>EditModForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mods\ModList\RequiresForm.resx">
       <DependentUpon>RequiresForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mods\ModList\ManageForm.resx">
-      <DependentUpon>ManageForm.cs</DependentUpon>
+    <EmbeddedResource Include="Mods\ModList\ModListForm.resx">
+      <DependentUpon>ModListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

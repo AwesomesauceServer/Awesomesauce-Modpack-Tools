@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace AwesomesauceModpackTools.Mods.ModList {
 
-    public partial class NotesForm : Form {
+    public partial class EditModForm : Form {
 
         public string NewNotes { get; set; }
 
-        public NotesForm() {
+        public EditModForm() {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
         }

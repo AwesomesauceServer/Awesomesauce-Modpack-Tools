@@ -10,12 +10,12 @@ using static AwesomesauceModpackTools.Utilities;
 
 namespace AwesomesauceModpackTools.Mods.ModList {
 
-    public partial class ManageForm : Form {
+    public partial class ModListForm : Form {
 
         private string WorkingSaveFile = null;
         private ListViewItem CurrentlySelectedItem = null;
 
-        public ManageForm() {
+        public ModListForm() {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
         }
@@ -93,7 +93,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         }
 
         private void AddNoteButton_Click(object sender, EventArgs e) {
-            NotesForm notesForm = new NotesForm();
+            EditModForm notesForm = new EditModForm();
             Mod currentlySelectedItemMod = (Mod)CurrentlySelectedItem.Tag;
             notesForm.NotesTextBox.Text = currentlySelectedItemMod.Notes;
 

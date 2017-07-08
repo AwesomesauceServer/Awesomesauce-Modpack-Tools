@@ -16,7 +16,7 @@ namespace AwesomesauceModpackTools {
         }
 
         private void ManageModsButton_Click(object sender, EventArgs e) {
-            Mods.ModList.ManageForm manageForm = new Mods.ModList.ManageForm();
+            Mods.ModList.ModListForm manageForm = new Mods.ModList.ModListForm();
             manageForm.Show();
 
         }
