@@ -47,7 +47,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
                             ModListView.TopItem = addResult.FirstOrDefault();
                             addResult.FirstOrDefault().Selected = true;
 
-                            AddRequirementButton_Click(null, new EventArgs());
+                            RequirementButton_Click(null, new EventArgs());
                         }
                     }
                 } else {
@@ -61,53 +61,36 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             BackupModList();
         }
 
-        private void AddRequirementButton_Click(object sender, EventArgs e) {
-            RequiresForm addRequirementForm = new RequiresForm();
-            addRequirementForm.ModListView.Items.AddRange((from ListViewItem item in ModListView.Items select (ListViewItem)item.Clone()).ToArray());
-            addRequirementForm.ModListView.Items.RemoveAt(CurrentlySelectedItem.Index);
+        private void EditButton_Click(object sender, EventArgs e) {
+            EditModForm editModForm = new EditModForm() { EditedMod = (Mod)CurrentlySelectedItem.Tag };
 
-            Mod currentlySelectedItemMod = (Mod)CurrentlySelectedItem.Tag;
-            foreach (RequiredMod required in currentlySelectedItemMod.Requires) {
-                foreach (ListViewItem item in addRequirementForm.ModListView.Items) {
-                    Mod itemMod = (Mod)item.Tag;
-                    if (itemMod.ID == required.ID) { item.Checked = true; }
-                }
+            DialogResult editModForm_Result = editModForm.ShowDialog();
+            if (editModForm_Result == DialogResult.OK) {
+
             }
 
-            DialogResult addRequirementForm_Result = addRequirementForm.ShowDialog();
-            if (addRequirementForm_Result == DialogResult.OK) {
-                currentlySelectedItemMod.Requires.Clear();
-
-                foreach (Mod mod in addRequirementForm.CheckedMods) {
-                    RequiredMod requiredMod = new RequiredMod() {
-                        ID = mod.ID,
-                        Name = mod.Name
-                    };
-                    currentlySelectedItemMod.Requires.Add(requiredMod);
-                }
-            }
-
-            addRequirementForm.Dispose();
+            editModForm.Dispose();
             BackupModList();
             ModListView_SelectedIndexChanged(sender, new EventArgs());
         }
 
-        private void AddNoteButton_Click(object sender, EventArgs e) {
-            EditModForm notesForm = new EditModForm();
-            Mod currentlySelectedItemMod = (Mod)CurrentlySelectedItem.Tag;
-            notesForm.NotesTextBox.Text = currentlySelectedItemMod.Notes;
+        private void RequirementButton_Click(object sender, EventArgs e) {
+            RequiresForm addRequiresForm = new RequiresForm();
+            addRequiresForm.ListItems.AddRange((from ListViewItem item in ModListView.Items select (ListViewItem)item.Clone()).ToArray());
+            addRequiresForm.SelectedMod = (Mod)CurrentlySelectedItem.Tag;
 
-            DialogResult notesForm_Result = notesForm.ShowDialog();
-            notesForm.NotesTextBox.DeselectAll();
-            if (notesForm_Result == DialogResult.OK) {
-                if (notesForm.NewNotes.Trim() == "") {
-                    currentlySelectedItemMod.Notes = null;
-                } else {
-                    currentlySelectedItemMod.Notes = notesForm.NewNotes;
+            DialogResult addRequirementForm_Result = addRequiresForm.ShowDialog();
+            if (addRequirementForm_Result == DialogResult.OK) {
+                Mod currentlySelectedItemMod = (Mod)CurrentlySelectedItem.Tag;
+                currentlySelectedItemMod.Requires.Clear();
+
+                foreach (Mod mod in addRequiresForm.CheckedMods) {
+                    RequiredMod requiredMod = new RequiredMod() { ID = mod.ID, Name = mod.Name };
+                    currentlySelectedItemMod.Requires.Add(requiredMod);
                 }
             }
 
-            notesForm.Dispose();
+            addRequiresForm.Dispose();
             BackupModList();
             ModListView_SelectedIndexChanged(sender, new EventArgs());
         }
@@ -122,11 +105,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         }
 
         private void ModListView_SelectedIndexChanged(object sender, EventArgs e) {
-            if (ModListView.SelectedItems.Count == 1) {
-                IsItemSelected(true, ModListView.SelectedItems[0]);
-            } else {
-                IsItemSelected(false);
-            }
+            if (ModListView.SelectedItems.Count == 1) { IsItemSelected(true, ModListView.SelectedItems[0]); } else { IsItemSelected(false); }
         }
 
         private void KeepSortedCheckBox_CheckedChanged(object sender, EventArgs e) {
@@ -165,17 +144,11 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e) {
-            if (WorkingSaveFile == null) {
-                SaveAsToolStripMenuItem_Click(sender, new EventArgs());
-            } else {
-                SaveModList(WorkingSaveFile);
-            }
+            if (WorkingSaveFile == null) { SaveAsToolStripMenuItem_Click(sender, new EventArgs()); } else { SaveModList(WorkingSaveFile); }
         }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e) {
-            if (SaveModListDialog.ShowDialog() == DialogResult.OK) {
-                SaveModList(SaveModListDialog.FileName);
-            }
+            if (SaveModListDialog.ShowDialog() == DialogResult.OK) { SaveModList(SaveModListDialog.FileName); }
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e) {
@@ -199,9 +172,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             try {
                 List<Mod> loadedMods = JsonConvert.DeserializeObject<List<Mod>>(File.ReadAllText(file, Encoding.UTF8));
 
-                foreach (Mod mod in loadedMods) {
-                    ModListView.Items.Add(new ListViewItem(new string[] { mod.Name, mod.File })).Tag = mod;
-                }
+                foreach (Mod mod in loadedMods) { ModListView.Items.Add(new ListViewItem(new string[] { mod.Name, mod.File })).Tag = mod; }
 
                 WorkingSaveFile = file;
             } catch (Exception ex) {
@@ -214,9 +185,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
                 List<Mod> modList = new List<Mod>();
                 foreach (ListViewItem item in ModListView.Items) { modList.Add((Mod)item.Tag); }
 
-                JsonSerializerSettings jsonSettings = new JsonSerializerSettings() {
-                    Formatting = Formatting.Indented
-                };
+                JsonSerializerSettings jsonSettings = new JsonSerializerSettings() { Formatting = Formatting.Indented };
 
                 if (automatic == false) {
                     WorkingSaveFile = file;
@@ -257,8 +226,8 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         private void IsItemSelected(bool selected, ListViewItem item = null) {
             CurrentlySelectedItem = item;
 
-            AddRequirementButton.Enabled = selected;
-            AddNoteButton.Enabled = selected;
+            RequirementButton.Enabled = selected;
+            EditButton.Enabled = selected;
             RemoveButton.Enabled = selected;
             LinkLinkLabel.Enabled = selected;
 

@@ -26,6 +26,7 @@
             this.StatusStripMain = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.NotesTextBox = new System.Windows.Forms.TextBox();
+            this.NotesLabel = new System.Windows.Forms.Label();
             this.StatusStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -33,9 +34,9 @@
             // 
             this.StatusStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel});
-            this.StatusStripMain.Location = new System.Drawing.Point(0, 159);
+            this.StatusStripMain.Location = new System.Drawing.Point(0, 323);
             this.StatusStripMain.Name = "StatusStripMain";
-            this.StatusStripMain.Size = new System.Drawing.Size(399, 22);
+            this.StatusStripMain.Size = new System.Drawing.Size(653, 22);
             this.StatusStripMain.SizingGrip = false;
             this.StatusStripMain.TabIndex = 4;
             this.StatusStripMain.Text = "statusStrip1";
@@ -49,8 +50,7 @@
             // 
             // NotesTextBox
             // 
-            this.NotesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NotesTextBox.Location = new System.Drawing.Point(0, 0);
+            this.NotesTextBox.Location = new System.Drawing.Point(59, 124);
             this.NotesTextBox.Multiline = true;
             this.NotesTextBox.Name = "NotesTextBox";
             this.NotesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -58,19 +58,30 @@
             this.NotesTextBox.TabIndex = 5;
             this.NotesTextBox.WordWrap = false;
             // 
-            // NoteForm
+            // NotesLabel
+            // 
+            this.NotesLabel.AutoSize = true;
+            this.NotesLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotesLabel.Location = new System.Drawing.Point(56, 108);
+            this.NotesLabel.Name = "NotesLabel";
+            this.NotesLabel.Size = new System.Drawing.Size(37, 13);
+            this.NotesLabel.TabIndex = 6;
+            this.NotesLabel.Text = "Notes";
+            // 
+            // EditModForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 181);
+            this.ClientSize = new System.Drawing.Size(653, 345);
+            this.Controls.Add(this.NotesLabel);
             this.Controls.Add(this.NotesTextBox);
             this.Controls.Add(this.StatusStripMain);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "NoteForm";
+            this.Name = "EditModForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Set Notes";
+            this.Text = "Edit Mod";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NoteForm_FormClosing);
             this.Load += new System.EventHandler(this.NoteForm_Load);
             this.StatusStripMain.ResumeLayout(false);
@@ -84,6 +95,7 @@
 
         private System.Windows.Forms.StatusStrip StatusStripMain;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
-        public System.Windows.Forms.TextBox NotesTextBox;
+        private System.Windows.Forms.Label NotesLabel;
+        private System.Windows.Forms.TextBox NotesTextBox;
     }
 }

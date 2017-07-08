@@ -6,6 +6,8 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
     public partial class RequiresForm : Form {
 
+        public Mod SelectedMod { get; set; }
+        public List<ListViewItem> ListItems { get; set; } = new List<ListViewItem>();
         public List<Mod> CheckedMods { get; set; } = new List<Mod>();
 
         public RequiresForm() {
@@ -14,6 +16,21 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         }
 
         private void AddRequirementForm_Load(object sender, EventArgs e) {
+            foreach (ListViewItem item in ListItems) {
+                Mod itemMod = (Mod)item.Tag;
+                if (SelectedMod.ID == itemMod.ID) { continue; }
+
+                ListViewItem newItem = new ListViewItem(new string[] { itemMod.Name, itemMod.File }) {
+                    Tag = itemMod
+                };
+
+                foreach (RequiredMod required in SelectedMod.Requires) {
+                    if (required.ID == itemMod.ID) { newItem.Checked = true; }
+                }
+
+                ModListView.Items.Add(newItem);
+            }
+
             SearchTextBox.Focus();
         }
 
@@ -31,16 +48,18 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
         private void ModsListView_ItemChecked(object sender, ItemCheckedEventArgs e) {
             if (ModListView.CheckedItems.Count == 0) {
-                Text = "Add Requirement";
+                Text = $"Edit Requirements for {SelectedMod.Name}";
             } else {
-                Text = $"{ModListView.CheckedItems.Count} requirements selected";
+                Text = $"{ModListView.CheckedItems.Count} requirements selected for {SelectedMod.Name}";
             }
         }
 
         private void UncheckAllButton_Click(object sender, EventArgs e) {
-            foreach (ListViewItem item in ModListView.CheckedItems) {
-                if (item.Checked == true) { item.Checked = false; }
-            }
+            if (MessageBox.Show("Really uncheck all requirements?", "Confirm Uncheck", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
+                foreach (ListViewItem item in ModListView.CheckedItems) {
+                    if (item.Checked == true) { item.Checked = false; }
+                }
+            }  
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e) {

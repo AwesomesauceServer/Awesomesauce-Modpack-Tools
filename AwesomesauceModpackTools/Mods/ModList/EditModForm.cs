@@ -5,7 +5,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
     public partial class EditModForm : Form {
 
-        public string NewNotes { get; set; }
+        public Mod EditedMod { get; set; }
 
         public EditModForm() {
             InitializeComponent();
@@ -17,7 +17,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         }
 
         private void NoteForm_FormClosing(object sender, FormClosingEventArgs e) {
-            NewNotes = NotesTextBox.Text.Trim();
+           
 
             DialogResult = DialogResult.OK;
         }

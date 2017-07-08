@@ -124,7 +124,7 @@
             this.MinimizeBox = false;
             this.Name = "RequiresForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Add Requirement";
+            this.Text = "Edit Requirements";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddRequirementForm_FormClosing);
             this.Load += new System.EventHandler(this.AddRequirementForm_Load);
             this.StatusStripMain.ResumeLayout(false);
@@ -137,11 +137,11 @@
         #endregion
         private System.Windows.Forms.ColumnHeader NameColumn;
         private System.Windows.Forms.ColumnHeader FileColumn;
-        public System.Windows.Forms.ListView ModListView;
         private System.Windows.Forms.StatusStrip StatusStripMain;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.Button UncheckAllButton;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.ListView ModListView;
     }
 }

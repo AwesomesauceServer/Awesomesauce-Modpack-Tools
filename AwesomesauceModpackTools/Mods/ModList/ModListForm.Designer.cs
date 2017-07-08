@@ -34,7 +34,7 @@
             this.SizeTextBox = new System.Windows.Forms.TextBox();
             this.SizeLabel = new System.Windows.Forms.Label();
             this.RemoveButton = new System.Windows.Forms.Button();
-            this.AddRequirementButton = new System.Windows.Forms.Button();
+            this.RequirementButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.FileMenuStrip = new System.Windows.Forms.MenuStrip();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +47,7 @@
             this.LinkLinkLabel = new System.Windows.Forms.LinkLabel();
             this.RequiresLabel = new System.Windows.Forms.Label();
             this.RequiresTextBox = new System.Windows.Forms.TextBox();
-            this.AddNoteButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
             this.SaveModListDialog = new System.Windows.Forms.SaveFileDialog();
             this.LoadModListDialog = new System.Windows.Forms.OpenFileDialog();
             this.SortLinkLabel = new System.Windows.Forms.LinkLabel();
@@ -167,20 +167,20 @@
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(115, 23);
             this.RemoveButton.TabIndex = 20;
-            this.RemoveButton.Text = "&Remove";
+            this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
-            // AddRequirementButton
+            // RequirementButton
             // 
-            this.AddRequirementButton.Enabled = false;
-            this.AddRequirementButton.Location = new System.Drawing.Point(363, 467);
-            this.AddRequirementButton.Name = "AddRequirementButton";
-            this.AddRequirementButton.Size = new System.Drawing.Size(115, 23);
-            this.AddRequirementButton.TabIndex = 11;
-            this.AddRequirementButton.Text = "Set Requirements";
-            this.AddRequirementButton.UseVisualStyleBackColor = true;
-            this.AddRequirementButton.Click += new System.EventHandler(this.AddRequirementButton_Click);
+            this.RequirementButton.Enabled = false;
+            this.RequirementButton.Location = new System.Drawing.Point(363, 496);
+            this.RequirementButton.Name = "RequirementButton";
+            this.RequirementButton.Size = new System.Drawing.Size(115, 23);
+            this.RequirementButton.TabIndex = 11;
+            this.RequirementButton.Text = "Requirements...";
+            this.RequirementButton.UseVisualStyleBackColor = true;
+            this.RequirementButton.Click += new System.EventHandler(this.RequirementButton_Click);
             // 
             // AddButton
             // 
@@ -188,7 +188,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(115, 23);
             this.AddButton.TabIndex = 10;
-            this.AddButton.Text = "&Add";
+            this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -207,9 +207,8 @@
             // LoadToolStripMenuItem
             // 
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
             this.LoadToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
-            this.LoadToolStripMenuItem.Text = "&Load";
+            this.LoadToolStripMenuItem.Text = "Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
@@ -307,16 +306,16 @@
             this.RequiresTextBox.TabIndex = 12;
             this.RequiresTextBox.TabStop = false;
             // 
-            // AddNoteButton
+            // EditButton
             // 
-            this.AddNoteButton.Enabled = false;
-            this.AddNoteButton.Location = new System.Drawing.Point(363, 496);
-            this.AddNoteButton.Name = "AddNoteButton";
-            this.AddNoteButton.Size = new System.Drawing.Size(115, 23);
-            this.AddNoteButton.TabIndex = 12;
-            this.AddNoteButton.Text = "Set Note";
-            this.AddNoteButton.UseVisualStyleBackColor = true;
-            this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
+            this.EditButton.Enabled = false;
+            this.EditButton.Location = new System.Drawing.Point(363, 467);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(115, 23);
+            this.EditButton.TabIndex = 12;
+            this.EditButton.Text = "Edit";
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // SaveModListDialog
             // 
@@ -374,7 +373,7 @@
             this.SearchTextBox.TabIndex = 13;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
-            // ManageForm
+            // ModListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -383,14 +382,14 @@
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SortLinkLabel);
             this.Controls.Add(this.KeepSortedCheckBox);
-            this.Controls.Add(this.AddNoteButton);
+            this.Controls.Add(this.EditButton);
             this.Controls.Add(this.RequiresTextBox);
             this.Controls.Add(this.RequiresLabel);
             this.Controls.Add(this.LinkTextBox);
             this.Controls.Add(this.LinkLinkLabel);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.NotesTextBox);
-            this.Controls.Add(this.AddRequirementButton);
+            this.Controls.Add(this.RequirementButton);
             this.Controls.Add(this.NotesLabel);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.MD5TextBox);
@@ -407,7 +406,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(778, 622);
-            this.Name = "ManageForm";
+            this.Name = "ModListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Mods";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageForm_FormClosing);
@@ -426,7 +425,7 @@
         private System.Windows.Forms.ColumnHeader NameColumn;
         private System.Windows.Forms.ColumnHeader FileColumn;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button AddRequirementButton;
+        private System.Windows.Forms.Button RequirementButton;
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.MenuStrip FileMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
@@ -444,7 +443,7 @@
         private System.Windows.Forms.LinkLabel LinkLinkLabel;
         private System.Windows.Forms.Label RequiresLabel;
         private System.Windows.Forms.TextBox RequiresTextBox;
-        private System.Windows.Forms.Button AddNoteButton;
+        private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.SaveFileDialog SaveModListDialog;
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog LoadModListDialog;
