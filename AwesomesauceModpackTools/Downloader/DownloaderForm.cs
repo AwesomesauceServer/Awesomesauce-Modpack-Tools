@@ -124,10 +124,12 @@ namespace AwesomesauceModpackTools.Downloader {
         }
 
         private void DownloadButton_Click(object sender, EventArgs e) {
-            DownloadMods();
+            if (DownloadBrowserDialog.ShowDialog() == DialogResult.OK) {
+                DownloadMods(DownloadBrowserDialog.SelectedPath);
+            }          
         }
 
-        private async Task DownloadMods() {
+        private async Task DownloadMods(string path) {
             IsDownloading = true;
             LoadFromPanel.Enabled = false;
             DownloadButton.Enabled = false;
@@ -147,7 +149,7 @@ namespace AwesomesauceModpackTools.Downloader {
                     item.BackColor = working;
                     item.EnsureVisible();
 
-                    string downloadPath = $@"C:\Beta\AwesomesauceTools\Downloads\{itemMod.File}";
+                    string downloadPath = $@"{path}\{itemMod.File}";
 
                     WebClient client = new WebClient();
                     client.Headers.Add("user-agent", UserAgent);

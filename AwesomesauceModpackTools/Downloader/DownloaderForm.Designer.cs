@@ -35,6 +35,7 @@
             this.MD5Column = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.DownloadButton = new System.Windows.Forms.Button();
+            this.DownloadBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.LoadFromPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,6 +160,10 @@
             this.DownloadButton.UseVisualStyleBackColor = true;
             this.DownloadButton.Click += new System.EventHandler(this.DownloadButton_Click);
             // 
+            // DownloadBrowserDialog
+            // 
+            this.DownloadBrowserDialog.Description = "Select where to download the mods to";
+            // 
             // DownloaderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,5 +201,6 @@
         private System.Windows.Forms.Button LoadGitHubButton;
         private System.Windows.Forms.StatusStrip MainStatusStrip;
         private System.Windows.Forms.Button DownloadButton;
+        private System.Windows.Forms.FolderBrowserDialog DownloadBrowserDialog;
     }
 }
