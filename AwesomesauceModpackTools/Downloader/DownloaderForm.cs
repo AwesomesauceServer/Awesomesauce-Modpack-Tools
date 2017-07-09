@@ -24,6 +24,11 @@ namespace AwesomesauceModpackTools.Downloader {
         private bool IsCanceling = false;
 
         /// <summary>
+        /// Set to true if anything failed.
+        /// </summary>
+        private bool HasErrors = false;
+
+        /// <summary>
         /// URL of the packs JSON file on GitHub
         /// </summary>
         private const string PacksJSON_URL = "https://raw.githubusercontent.com/AwesomesauceServer/Awesomesauce-Modpack/master/packs.json";
@@ -131,8 +136,10 @@ namespace AwesomesauceModpackTools.Downloader {
             Color done = Color.LightGreen;
             Color error = Color.Tomato;
 
+            int errorCount = 0;
             foreach (ListViewItem item in ModListView.Items) {
                 if (IsCanceling) { break; }
+                if (HasErrors) { if (item.BackColor != error) { continue; } }
 
                 try {
                     Mod itemMod = (Mod)item.Tag;
@@ -150,12 +157,14 @@ namespace AwesomesauceModpackTools.Downloader {
 
                         if (hash == itemMod.MD5) {
                             if (clientE.Error != null) {
+                                errorCount++;
                                 item.BackColor = error;
                                 DeleteFile(downloadPath);
                             } else {
                                 item.BackColor = done;
                             }
                         } else {
+                            errorCount++;
                             item.BackColor = error;
                             DeleteFile(downloadPath);
                         }
@@ -163,12 +172,18 @@ namespace AwesomesauceModpackTools.Downloader {
 
                     await client.DownloadFileTaskAsync(new Uri(itemMod.Link_Download), downloadPath);
                 } catch (Exception ex) {
+                    errorCount++;
                     item.BackColor = error;
                 }
             }
 
-            LoadFromPanel.Enabled = true;
-            DownloadButton.Enabled = true;
+            if (errorCount == 0) {
+                DownloadButton.Text = "Finished";
+            } else {
+                HasErrors = true;
+                DownloadButton.Text = "Retry Failed Mods";
+                DownloadButton.Enabled = true;
+            }
             IsDownloading = false;
         }
 
