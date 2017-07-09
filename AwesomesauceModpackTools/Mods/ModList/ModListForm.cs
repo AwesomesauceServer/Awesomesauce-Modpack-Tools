@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using static AwesomesauceModpackTools.Utilities;
@@ -136,7 +137,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
             if (LoadModListDialog.ShowDialog() == DialogResult.OK) {
                 ModListView.Items.Clear();
-                LoadModList(LoadModListDialog.FileName);
+                Task.Run(() => LoadModList(LoadModListDialog.FileName));
             }
         }
 
@@ -169,12 +170,21 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             try {
                 List<Mod> loadedMods = JsonConvert.DeserializeObject<List<Mod>>(File.ReadAllText(file, Encoding.UTF8));
 
-                foreach (Mod mod in loadedMods) { ModListView.Items.Add(new ListViewItem(new string[] { mod.Name, mod.File })).Tag = mod; }
+                foreach (Mod mod in loadedMods) { AddListViewItem(new ListViewItem(new string[] { mod.Name, mod.File }), mod); }
 
                 WorkingSaveFile = file;
             } catch (Exception ex) {
                 MessageBox.Show($"There was an error loading the mod list.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void AddListViewItem(ListViewItem item, Mod tag) {
+            if (InvokeRequired) {
+                MethodInvoker invoker = () => AddListViewItem(item, tag);
+                Invoke(invoker);
+                return;
+            }
+            ModListView.Items.Add(item).Tag = tag;
         }
 
         private void SaveModList(string file, bool automatic = false) {
