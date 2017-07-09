@@ -15,11 +15,9 @@ namespace AwesomesauceModpackTools {
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
-#if !DEBUG
+#if RELEASE
             LoadGithub();
 #endif
-
-
 
         }
 
@@ -48,10 +46,15 @@ namespace AwesomesauceModpackTools {
             }
         }
 
-
         private void ManageModsButton_Click(object sender, EventArgs e) {
             Mods.ModList.ModListForm manageForm = new Mods.ModList.ModListForm();
             manageForm.Show();
+
+        }
+
+        private void DownloaderButton_Click(object sender, EventArgs e) {
+            Downloader.DownloaderForm downloaderForm = new Downloader.DownloaderForm();
+            downloaderForm.Show();
 
         }
 

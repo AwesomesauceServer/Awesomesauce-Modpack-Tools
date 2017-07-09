@@ -26,14 +26,15 @@
             this.ManageModsButton = new System.Windows.Forms.Button();
             this.GitHubTabControl = new System.Windows.Forms.TabControl();
             this.ModpackTabPage = new System.Windows.Forms.TabPage();
-            this.ToolsTabPage = new System.Windows.Forms.TabPage();
             this.ModpackListView = new System.Windows.Forms.ListView();
             this.ModpackDateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ModpackUpdateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ToolsTabPage = new System.Windows.Forms.TabPage();
             this.ToolsListView = new System.Windows.Forms.ListView();
             this.ToolsDateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ToolsUpdateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.DownloaderButton = new System.Windows.Forms.Button();
             this.GitHubTabControl.SuspendLayout();
             this.ModpackTabPage.SuspendLayout();
             this.ToolsTabPage.SuspendLayout();
@@ -44,7 +45,7 @@
             this.ManageModsButton.Location = new System.Drawing.Point(672, 34);
             this.ManageModsButton.Name = "ManageModsButton";
             this.ManageModsButton.Size = new System.Drawing.Size(116, 23);
-            this.ManageModsButton.TabIndex = 0;
+            this.ManageModsButton.TabIndex = 1;
             this.ManageModsButton.Text = "Manage Mods";
             this.ManageModsButton.UseVisualStyleBackColor = true;
             this.ManageModsButton.Click += new System.EventHandler(this.ManageModsButton_Click);
@@ -60,6 +61,7 @@
             this.GitHubTabControl.SelectedIndex = 0;
             this.GitHubTabControl.Size = new System.Drawing.Size(654, 282);
             this.GitHubTabControl.TabIndex = 1;
+            this.GitHubTabControl.TabStop = false;
             // 
             // ModpackTabPage
             // 
@@ -71,17 +73,6 @@
             this.ModpackTabPage.TabIndex = 0;
             this.ModpackTabPage.Text = "Awesomesauce Modpack";
             this.ModpackTabPage.UseVisualStyleBackColor = true;
-            // 
-            // ToolsTabPage
-            // 
-            this.ToolsTabPage.Controls.Add(this.ToolsListView);
-            this.ToolsTabPage.Location = new System.Drawing.Point(4, 22);
-            this.ToolsTabPage.Name = "ToolsTabPage";
-            this.ToolsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ToolsTabPage.Size = new System.Drawing.Size(646, 251);
-            this.ToolsTabPage.TabIndex = 1;
-            this.ToolsTabPage.Text = "Awesomesauce Modpack Tools";
-            this.ToolsTabPage.UseVisualStyleBackColor = true;
             // 
             // ModpackListView
             // 
@@ -109,6 +100,17 @@
             this.ModpackUpdateColumn.Text = "Update";
             this.ModpackUpdateColumn.Width = 750;
             // 
+            // ToolsTabPage
+            // 
+            this.ToolsTabPage.Controls.Add(this.ToolsListView);
+            this.ToolsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ToolsTabPage.Name = "ToolsTabPage";
+            this.ToolsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ToolsTabPage.Size = new System.Drawing.Size(646, 256);
+            this.ToolsTabPage.TabIndex = 1;
+            this.ToolsTabPage.Text = "Awesomesauce Modpack Tools";
+            this.ToolsTabPage.UseVisualStyleBackColor = true;
+            // 
             // ToolsListView
             // 
             this.ToolsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -120,7 +122,7 @@
             this.ToolsListView.Location = new System.Drawing.Point(3, 3);
             this.ToolsListView.MultiSelect = false;
             this.ToolsListView.Name = "ToolsListView";
-            this.ToolsListView.Size = new System.Drawing.Size(640, 245);
+            this.ToolsListView.Size = new System.Drawing.Size(640, 250);
             this.ToolsListView.TabIndex = 1;
             this.ToolsListView.UseCompatibleStateImageBehavior = false;
             this.ToolsListView.View = System.Windows.Forms.View.Details;
@@ -142,11 +144,22 @@
             this.MainStatusStrip.Size = new System.Drawing.Size(801, 22);
             this.MainStatusStrip.TabIndex = 2;
             // 
+            // DownloaderButton
+            // 
+            this.DownloaderButton.Location = new System.Drawing.Point(672, 63);
+            this.DownloaderButton.Name = "DownloaderButton";
+            this.DownloaderButton.Size = new System.Drawing.Size(116, 23);
+            this.DownloaderButton.TabIndex = 2;
+            this.DownloaderButton.Text = "Downloader";
+            this.DownloaderButton.UseVisualStyleBackColor = true;
+            this.DownloaderButton.Click += new System.EventHandler(this.DownloaderButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 326);
+            this.Controls.Add(this.DownloaderButton);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.GitHubTabControl);
             this.Controls.Add(this.ManageModsButton);
@@ -178,5 +191,6 @@
         private System.Windows.Forms.ColumnHeader ToolsDateColumn;
         private System.Windows.Forms.ColumnHeader ToolsUpdateColumn;
         private System.Windows.Forms.StatusStrip MainStatusStrip;
+        private System.Windows.Forms.Button DownloaderButton;
     }
 }

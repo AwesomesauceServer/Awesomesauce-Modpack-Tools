@@ -1,0 +1,1917 @@
+﻿[
+  {
+    "name": "Advanced Rocketry",
+    "id": "366083a5-16a8-45a2-b8bc-dfed70a8c0b2",
+    "file": "AdvancedRocketry-1.11.2-1.2.2.jar",
+    "side": "Both",
+    "date": "2017-06-13T01:53:20Z",
+    "size": "10.89 MB",
+    "requires": [
+      {
+        "name": "LibVulpes",
+        "id": "abbed1c5-a356-4339-a866-1d6a1ed43364"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/advanced-rocketry/files/2433236",
+    "linkDownload": "https://minecraft.curseforge.com/projects/advanced-rocketry/files/2433236/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/advanced-rocketry/files",
+    "md5": "884331fd4e97fe87eef971f67f8a3b02",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Alternate Terrain Generation",
+    "id": "430b3f1c-cf82-48a4-a0f8-6caa9bdc2792",
+    "file": "atg-1.11.2-2.1.7.jar",
+    "side": "Both",
+    "date": "2017-06-23T23:17:23Z",
+    "size": "169.66 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/alternate-terrain-generation/files/2440405",
+    "linkDownload": "https://minecraft.curseforge.com/projects/alternate-terrain-generation/files/2440405/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/alternate-terrain-generation/files",
+    "md5": "aa2970e3023d5086b31d371a3f0b5b2b",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Angel Ring To Bauble",
+    "id": "ace4fb99-1ca2-4371-a7e3-b81c66db2c1a",
+    "file": "angelRingToBauble-1.11.2-0.2.4.24+6570ea2.jar",
+    "side": "Both",
+    "date": "2017-04-27T00:38:26Z",
+    "size": "4.55 KB",
+    "requires": [
+      {
+        "name": "Baubles",
+        "id": "c0260792-f09b-4a6f-9821-e4529b440080"
+      },
+      {
+        "name": "Extra Utilities",
+        "id": "b26fb495-36dc-4b23-ab78-55c96f639b0a"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/angel-ring-to-bauble/files/2412342",
+    "linkDownload": "https://minecraft.curseforge.com/projects/angel-ring-to-bauble/files/2412342/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/angel-ring-to-bauble/files",
+    "md5": "f965cef6e07f0c32cfdd576c1f6d94a3",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "AppleSkin",
+    "id": "1857296b-2faf-46e5-b3e7-79cc9b953280",
+    "file": "AppleSkin-mc1.11-1.0.7.jar",
+    "side": "Both",
+    "date": "2017-06-28T04:24:46Z",
+    "size": "32.26 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/appleskin/files/2442617",
+    "linkDownload": "https://minecraft.curseforge.com/projects/appleskin/files/2442617/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/appleskin/files",
+    "md5": "7a9ab2c24777290ee9a2f724c7ad1138",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Astral Sorcery",
+    "id": "7088fb1c-8d47-4587-930d-d2454a2ad7ae",
+    "file": "astralsorcery-1.4.5.jar",
+    "side": "Both",
+    "date": "2017-07-04T14:19:15Z",
+    "size": "11.96 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/astral-sorcery/files/2445801",
+    "linkDownload": "https://minecraft.curseforge.com/projects/astral-sorcery/files/2445801/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/astral-sorcery/files",
+    "md5": "48f840af8a7d263dfa9bfda072113bff",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Bad Wither No Cookie - Reloaded",
+    "id": "708d65c0-4fb2-4d37-bcab-a11c17b1f3de",
+    "file": "bwncrldd-1.0.jar",
+    "side": "Both",
+    "date": "2017-02-20T18:03:11Z",
+    "size": "4.35 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/bad-wither-no-cookie-reloaded/files/2384283",
+    "linkDownload": "https://minecraft.curseforge.com/projects/bad-wither-no-cookie-reloaded/files/2384283/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/bad-wither-no-cookie-reloaded/files",
+    "md5": "276b4022d21977702c96d54aaa91c658",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Baublelicious",
+    "id": "38ce0eb8-09c7-482f-afda-35404f8ef827",
+    "file": "baublelicious-1.11-1.3BETA.jar",
+    "side": "Both",
+    "date": "2017-07-05T11:29:36Z",
+    "size": "42.63 KB",
+    "requires": [
+      {
+        "name": "Baubles",
+        "id": "c0260792-f09b-4a6f-9821-e4529b440080"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/baublelicious/files/2446193",
+    "linkDownload": "https://minecraft.curseforge.com/projects/baublelicious/files/2446193/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/baublelicious/files",
+    "md5": "2d19ba0256b84feb789de91d7bec4fdc",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Baubles",
+    "id": "c0260792-f09b-4a6f-9821-e4529b440080",
+    "file": "Baubles-1.11-1.4.5.jar",
+    "side": "Both",
+    "date": "2017-05-25T07:03:35Z",
+    "size": "102.01 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/baubles/files/2424450",
+    "linkDownload": "https://minecraft.curseforge.com/projects/baubles/files/2424450/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/baubles/files",
+    "md5": "af5c2cf11336b5689bc353f59e048e66",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Bed Bugs",
+    "id": "30e9910c-5226-470b-bd7d-425e149c85ea",
+    "file": "BedBugs-1.11.2-1.1.7.jar",
+    "side": "Both",
+    "date": "2017-03-29T14:43:05Z",
+    "size": "16.97 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/bed-bugs/files/2399520",
+    "linkDownload": "https://minecraft.curseforge.com/projects/bed-bugs/files/2399520/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/bed-bugs/files",
+    "md5": "8f7a482312f0287ee00c0c7c6f7ab356",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Better Foliage",
+    "id": "ade1c28e-d117-4eb9-9db3-d57ab5e2158e",
+    "file": "BetterFoliage-MC1.11.2-2.1.6.jar",
+    "side": "Both",
+    "date": "2017-07-06T09:29:30Z",
+    "size": "4.45 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/better-foliage/files/2446631",
+    "linkDownload": "https://minecraft.curseforge.com/projects/better-foliage/files/2446631/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/better-foliage/files",
+    "md5": "0617a0f006f49b564b1cd9bdffa0e28a",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "BiblioCraft",
+    "id": "2268b137-b5e3-44fa-8d52-c12ff0c10490",
+    "file": "BiblioCraft[v2.3.2][MC1.11.2].jar",
+    "side": "Both",
+    "date": "2017-06-08T00:29:41Z",
+    "size": "4.79 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/bibliocraft/files/2430777",
+    "linkDownload": "https://minecraft.curseforge.com/projects/bibliocraft/files/2430777/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/bibliocraft/files",
+    "md5": "eb974b15758ff9fe53b769d8313a01e0",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "BiblioCraft: BiblioWoods Biomes O'Plenty Edition",
+    "id": "b9c444d8-081f-4c94-9092-4935fc74b6c8",
+    "file": "BiblioWoods[BiomesOPlenty][v2.0][MC1.11.2].jar",
+    "side": "Both",
+    "date": "2017-05-29T01:13:17Z",
+    "size": "40.06 KB",
+    "requires": [
+      {
+        "name": "BiblioCraft",
+        "id": "2268b137-b5e3-44fa-8d52-c12ff0c10490"
+      },
+      {
+        "name": "Biomes O' Plenty",
+        "id": "69f53425-1d5d-4f9a-b396-49568cf8d129"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/bibliocraft-bibliowoods-biomes-oplenty-edition/files/2426412",
+    "linkDownload": "https://minecraft.curseforge.com/projects/bibliocraft-bibliowoods-biomes-oplenty-edition/files/2426412/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/bibliocraft-bibliowoods-biomes-oplenty-edition/files",
+    "md5": "a372246080db8290ca6c819029119fba",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Biomes O' Plenty",
+    "id": "69f53425-1d5d-4f9a-b396-49568cf8d129",
+    "file": "BiomesOPlenty-1.11.2-6.2.0.2267-universal.jar",
+    "side": "Both",
+    "date": "2017-06-16T00:45:09Z",
+    "size": "4.54 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/biomes-o-plenty/files/2434833",
+    "linkDownload": "https://minecraft.curseforge.com/projects/biomes-o-plenty/files/2434833/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/biomes-o-plenty/files",
+    "md5": "46e7c9fa29dd8db095d330e0e54e09f3",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Black Hole Storage",
+    "id": "5e4a6152-844f-4ab6-a080-8f53e2e0f5f0",
+    "file": "Black Hole Storage 1.11.2-15r.jar",
+    "side": "Both",
+    "date": "2017-06-06T08:42:00Z",
+    "size": "1.50 MB",
+    "requires": [
+      {
+        "name": "Hammer Core",
+        "id": "e232bc41-98ae-407a-baed-104b145d43be"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/black-hole-storage/files/2430096",
+    "linkDownload": "https://minecraft.curseforge.com/projects/black-hole-storage/files/2430096/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/black-hole-storage/files",
+    "md5": "bc298e9bb449ed572840ea05aa672ba9",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Blocklings",
+    "id": "c613b8f9-600e-42d4-8de7-95c28d100a12",
+    "file": "Blocklings 4.1.11 - 1.11.2.jar",
+    "side": "Both",
+    "date": "2017-06-17T14:01:32Z",
+    "size": "293.63 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/blocklings/files/2435613",
+    "linkDownload": "https://minecraft.curseforge.com/projects/blocklings/files/2435613/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/blocklings/files",
+    "md5": "c84f339754d82c0523c1ab96975c5b51",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Blur",
+    "id": "30afbe96-20c1-46bb-a260-3500cf6293b8",
+    "file": "Blur-1.0.1-9.jar",
+    "side": "Both",
+    "date": "2017-05-30T05:42:31Z",
+    "size": "15.60 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/blur/files/2426967",
+    "linkDownload": "https://minecraft.curseforge.com/projects/blur/files/2426967/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/blur/files",
+    "md5": "9c4b891af06d294bd2167596a736cc82",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Bookshelf",
+    "id": "7ae5b3fe-8704-4162-ac34-afb88aae3fb9",
+    "file": "Bookshelf-1.11.2-2.0.0.388.jar",
+    "side": "Both",
+    "date": "2017-06-13T16:24:14Z",
+    "size": "224.29 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/bookshelf/files/2433494",
+    "linkDownload": "https://minecraft.curseforge.com/projects/bookshelf/files/2433494/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/bookshelf/files",
+    "md5": "7be2ec88b33731b7a4a3caa16158d0ed",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Brandon's Core",
+    "id": "f6a1067a-fa1b-4759-98b8-edcd553ea3fd",
+    "file": "BrandonsCore-1.11.2-2.2.1.115-universal.jar",
+    "side": "Both",
+    "date": "2017-07-07T12:48:24Z",
+    "size": "478.96 KB",
+    "requires": [
+      {
+        "name": "CodeChicken Lib 1.8.+",
+        "id": "6f045455-f9ae-4a31-ab51-c4fb45523123"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/brandons-core/files/2447116",
+    "linkDownload": "https://minecraft.curseforge.com/projects/brandons-core/files/2447116/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/brandons-core/files",
+    "md5": "5b32a05fbc175d1996a12890d0dafea4",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Chameleon",
+    "id": "ea93f242-b522-419d-9bfd-e3ec59c16182",
+    "file": "Chameleon-1.11.2-3.1.0.jar",
+    "side": "Both",
+    "date": "2017-05-13T06:03:24Z",
+    "size": "93.94 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/chameleon/files/2419176",
+    "linkDownload": "https://minecraft.curseforge.com/projects/chameleon/files/2419176/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/chameleon/files",
+    "md5": "ba7d0881699cb539df8ca1069fdb637e",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Chest Transporter",
+    "id": "85ec841a-56fa-4d76-ba98-c74ae8a5e534",
+    "file": "ChestTransporter-1.11.2-2.7.9.jar",
+    "side": "Both",
+    "date": "2017-05-06T09:51:13Z",
+    "size": "130.51 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/chest-transporter/files/2416498",
+    "linkDownload": "https://minecraft.curseforge.com/projects/chest-transporter/files/2416498/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/chest-transporter/files",
+    "md5": "222e875920c2d40ad4219fdd6e31de62",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Chicken Chunks 1.8.+",
+    "id": "968f9143-93b2-4757-b269-f6ccb001881c",
+    "file": "ChickenChunks-1.11.2-2.3.1.68-universal.jar",
+    "side": "Both",
+    "date": "2017-06-29T22:23:24Z",
+    "size": "130.68 KB",
+    "requires": [
+      {
+        "name": "CodeChicken Lib 1.8.+",
+        "id": "6f045455-f9ae-4a31-ab51-c4fb45523123"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/chicken-chunks-1-8/files/2443519",
+    "linkDownload": "https://minecraft.curseforge.com/projects/chicken-chunks-1-8/files/2443519/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/chicken-chunks-1-8/files",
+    "md5": "6f908b59742c3d6633387a14728671fd",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Chisel",
+    "id": "0bf75182-5926-4600-89d1-aed2364d0d0f",
+    "file": "Chisel-MC1.11.2-0.0.11.18.jar",
+    "side": "Both",
+    "date": "2017-06-25T02:47:43Z",
+    "size": "16.25 MB",
+    "requires": [
+      {
+        "name": "ConnectedTexturesMod",
+        "id": "24d32c83-8972-46ff-9680-421d37e3b592"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/chisel/files/2441062",
+    "linkDownload": "https://minecraft.curseforge.com/projects/chisel/files/2441062/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/chisel/files",
+    "md5": "0dabde85caba2201306935d55e76b38d",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Chisels & Bits",
+    "id": "ade06714-c831-4ddc-a9ee-e98e3a4e3dea",
+    "file": "chiselsandbits-13.11.jar",
+    "side": "Both",
+    "date": "2017-06-10T20:03:52Z",
+    "size": "652.35 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/chisels-bits/files/2431883",
+    "linkDownload": "https://minecraft.curseforge.com/projects/chisels-bits/files/2431883/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/chisels-bits/files",
+    "md5": "b9540bf8aa766cf2a4358cda2667e259",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Chunk Animator",
+    "id": "d59e081c-8c31-4b81-973e-f4353cb063bf",
+    "file": "ChunkAnimator-MC1.11-1.2.jar",
+    "side": "Both",
+    "date": "2016-11-30T13:13:30Z",
+    "size": "24.76 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/chunk-animator/files/2350838",
+    "linkDownload": "https://minecraft.curseforge.com/projects/chunk-animator/files/2350838/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/chunk-animator/files",
+    "md5": "efbf8710e418207b0059b95f7b7326d0",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "CodeChicken Lib 1.8.+",
+    "id": "6f045455-f9ae-4a31-ab51-c4fb45523123",
+    "file": "CodeChickenLib-1.11.2-3.0.0.284-universal.jar",
+    "side": "Both",
+    "date": "2017-07-07T23:24:25Z",
+    "size": "622.44 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/codechicken-lib-1-8/files/2447320",
+    "linkDownload": "https://minecraft.curseforge.com/projects/codechicken-lib-1-8/files/2447320/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/codechicken-lib-1-8/files",
+    "md5": "f5b043b4e0573a2cfdb6b514b960b0f0",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "CoFH Core",
+    "id": "7310d3d1-3934-4143-a16d-56d760433842",
+    "file": "CoFHCore-1.11.2-4.2.6.13-universal.jar",
+    "side": "Both",
+    "date": "2017-07-06T18:17:03Z",
+    "size": "925.69 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/cofhcore/files/2446772",
+    "linkDownload": "https://minecraft.curseforge.com/projects/cofhcore/files/2446772/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/cofhcore/files",
+    "md5": "9f7f860e4c4fcf43b1f5ee14a9ad106a",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "CompatLayer",
+    "id": "78988daf-3efc-4230-86b7-bb6296e59fbe",
+    "file": "compatlayer-1.11.2-0.2.9.jar",
+    "side": "Both",
+    "date": "2017-05-23T12:18:56Z",
+    "size": "37.95 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/compatlayer/files/2423624",
+    "linkDownload": "https://minecraft.curseforge.com/projects/compatlayer/files/2423624/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/compatlayer/files",
+    "md5": "aba5071af425db4a39ea8f4000d50631",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "ConnectedTexturesMod",
+    "id": "24d32c83-8972-46ff-9680-421d37e3b592",
+    "file": "CTM-MC1.11.2-0.1.1.6.jar",
+    "side": "Both",
+    "date": "2017-06-21T01:55:29Z",
+    "size": "132.63 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/ctm/files/2438848",
+    "linkDownload": "https://minecraft.curseforge.com/projects/ctm/files/2438848/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/ctm/files",
+    "md5": "22ca4bfef33301e9481de9dec1aceb7a",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Controlling",
+    "id": "ee11d29f-c3b2-4608-b851-387f5f4ff11e",
+    "file": "Controlling-2.0.5.jar",
+    "side": "Both",
+    "date": "2017-06-28T16:48:21Z",
+    "size": "22.05 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/controlling/files/2442756",
+    "linkDownload": "https://minecraft.curseforge.com/projects/controlling/files/2442756/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/controlling/files",
+    "md5": "eb5c17b3ec31c02ab1e1f5c9a58313bb",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Crafting Tweaks",
+    "id": "9d3bedcb-9bec-4811-87d3-fd10c1a36746",
+    "file": "CraftingTweaks_1.11.2-7.1.9.jar",
+    "side": "Both",
+    "date": "2017-05-07T14:58:43Z",
+    "size": "91.31 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/crafting-tweaks/files/2417005",
+    "linkDownload": "https://minecraft.curseforge.com/projects/crafting-tweaks/files/2417005/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/crafting-tweaks/files",
+    "md5": "1476026237dfe68be370b21f8eaa9242",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Dark Utilities",
+    "id": "848b1520-9ac5-4e7c-b305-f033928508c7",
+    "file": "DarkUtilities-1.11.2-1.2.0.147.jar",
+    "side": "Both",
+    "date": "2017-06-21T02:56:25Z",
+    "size": "342.05 KB",
+    "requires": [
+      {
+        "name": "Bookshelf",
+        "id": "7ae5b3fe-8704-4162-ac34-afb88aae3fb9"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/dark-utilities/files/2438869",
+    "linkDownload": "https://minecraft.curseforge.com/projects/dark-utilities/files/2438869/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/dark-utilities/files",
+    "md5": "967b51e5035a9299dd039713e7856c21",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Deep Resonance",
+    "id": "fec0fcde-a2df-42d6-b395-388ca9d01ef5",
+    "file": "deepresonance-1.1x-1.4.8.jar",
+    "side": "Both",
+    "date": "2017-05-10T09:51:09Z",
+    "size": "849.93 KB",
+    "requires": [
+      {
+        "name": "CompatLayer",
+        "id": "78988daf-3efc-4230-86b7-bb6296e59fbe"
+      },
+      {
+        "name": "ElecCore | Rendering Library",
+        "id": "3d8d155b-3337-4db4-9f52-7876dca07c81"
+      },
+      {
+        "name": "McJtyLib",
+        "id": "2e8926ea-ef5e-4091-aa19-05d7d21ae64a"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/deep-resonance/files/2418068",
+    "linkDownload": "https://minecraft.curseforge.com/projects/deep-resonance/files/2418068/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/deep-resonance/files",
+    "md5": "8cdc57488f31d0dfef88e2fabb7a815d",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Dense Ores",
+    "id": "b32246b1-2bd9-4fe5-acfa-642d02433de0",
+    "file": "denseores-1.11-1.0.2.jar",
+    "side": "Both",
+    "date": "2017-05-21T15:56:56Z",
+    "size": "71.20 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/dense-ores/files/2422718",
+    "linkDownload": "https://minecraft.curseforge.com/projects/dense-ores/files/2422718/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/dense-ores/files",
+    "md5": "0627812d0928d037d8b19fb93274b86f",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Draconic Evolution",
+    "id": "400a0836-93f4-4189-887f-077d9a1333d0",
+    "file": "Draconic-Evolution-1.11.2-2.2.1.248-universal.jar",
+    "side": "Both",
+    "date": "2017-07-07T12:48:40Z",
+    "size": "5.26 MB",
+    "requires": [
+      {
+        "name": "Brandon's Core",
+        "id": "f6a1067a-fa1b-4759-98b8-edcd553ea3fd"
+      },
+      {
+        "name": "CodeChicken Lib 1.8.+",
+        "id": "6f045455-f9ae-4a31-ab51-c4fb45523123"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/draconic-evolution/files/2447118",
+    "linkDownload": "https://minecraft.curseforge.com/projects/draconic-evolution/files/2447118/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/draconic-evolution/files",
+    "md5": "86cd2ca699fd3b4095b3ad757f543e9a",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Drawers & Bits",
+    "id": "d5dbe85d-42bc-439d-9e10-3795786733b4",
+    "file": "DrawersBits-1.11.2-0.41.jar",
+    "side": "Both",
+    "date": "2017-03-29T13:10:48Z",
+    "size": "80.93 KB",
+    "requires": [
+      {
+        "name": "Chisels & Bits",
+        "id": "ade06714-c831-4ddc-a9ee-e98e3a4e3dea"
+      },
+      {
+        "name": "Storage Drawers",
+        "id": "4e7c50c3-b478-4e93-8720-1c0c4014db27"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/drawers-bits/files/2399475",
+    "linkDownload": "https://minecraft.curseforge.com/projects/drawers-bits/files/2399475/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/drawers-bits/files",
+    "md5": "4e361eec0ba9288896a78bb5611a519f",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "ElecCore | Rendering Library",
+    "id": "3d8d155b-3337-4db4-9f52-7876dca07c81",
+    "file": "ElecCore-1.11-1.7.425.jar",
+    "side": "Both",
+    "date": "2017-06-17T17:56:14Z",
+    "size": "830.55 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/eleccore-rendering-library/files/2435765",
+    "linkDownload": "https://minecraft.curseforge.com/projects/eleccore-rendering-library/files/2435765/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/eleccore-rendering-library/files",
+    "md5": "2f5b0f385a2bdb68bcf938769073977b",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Ender Compass",
+    "id": "30b55efe-225f-47d5-a8ba-da45c470e653",
+    "file": "EnderCompass-1.11-1.2.5.3.jar",
+    "side": "Both",
+    "date": "2017-04-23T15:37:59Z",
+    "size": "122.15 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/ender-compass/files/2410896",
+    "linkDownload": "https://minecraft.curseforge.com/projects/ender-compass/files/2410896/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/ender-compass/files",
+    "md5": "9c63495584ee94acc79ce61949a14f25",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Ender Storage 1.8.+",
+    "id": "8a6845e8-8eae-4aec-af8a-d2b3174e9418",
+    "file": "EnderStorage-1.11.2-2.3.1.116-universal.jar",
+    "side": "Both",
+    "date": "2017-06-29T22:24:25Z",
+    "size": "208.61 KB",
+    "requires": [
+      {
+        "name": "CodeChicken Lib 1.8.+",
+        "id": "6f045455-f9ae-4a31-ab51-c4fb45523123"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/ender-storage-1-8/files/2443522",
+    "linkDownload": "https://minecraft.curseforge.com/projects/ender-storage-1-8/files/2443522/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/ender-storage-1-8/files",
+    "md5": "4cd619141bfd834ab978cc08f9bc4b37",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Extra Bit Manipulation",
+    "id": "fa101053-01a6-4756-a1b0-b913fcd7254b",
+    "file": "ExtraBitManipulation-1.11.2-3.0.6.jar",
+    "side": "Both",
+    "date": "2017-04-08T07:13:18Z",
+    "size": "2.93 MB",
+    "requires": [
+      {
+        "name": "Chisels & Bits",
+        "id": "ade06714-c831-4ddc-a9ee-e98e3a4e3dea"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/extra-bit-manipulation/files/2404200",
+    "linkDownload": "https://minecraft.curseforge.com/projects/extra-bit-manipulation/files/2404200/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/extra-bit-manipulation/files",
+    "md5": "e56bb79afdbb5d10889f55300c23d7c7",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Extra Utilities",
+    "id": "b26fb495-36dc-4b23-ab78-55c96f639b0a",
+    "file": "extrautils2-1.11.2-1.4.4.jar",
+    "side": "Both",
+    "date": "2017-06-12T05:09:19Z",
+    "size": "2.56 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/extra-utilities/files/2432813",
+    "linkDownload": "https://minecraft.curseforge.com/projects/extra-utilities/files/2432813/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/extra-utilities/files",
+    "md5": "2e1af010cff1e0eb035fed6984b22c4d",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Extreme Reactors",
+    "id": "13e8904a-e94f-42cc-af6e-d915d517271a",
+    "file": "ExtremeReactors-1.11.2-0.4.5.30.jar",
+    "side": "Both",
+    "date": "2017-06-17T18:15:12Z",
+    "size": "1,018.52 KB",
+    "requires": [
+      {
+        "name": "ZeroCore",
+        "id": "d966842a-3caf-4991-a0cc-bf79b38c6d4e"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/extreme-reactors/files/2435778",
+    "linkDownload": "https://minecraft.curseforge.com/projects/extreme-reactors/files/2435778/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/extreme-reactors/files",
+    "md5": "ffa86adffaf15b7969be394f04afcfa4",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Fairy Lights",
+    "id": "02e556ea-4271-4301-b593-ef190a314660",
+    "file": "fairylights-2.1.0-1.11.2.jar",
+    "side": "Both",
+    "date": "2017-03-22T22:40:29Z",
+    "size": "1.09 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/fairy-lights/files/2396289",
+    "linkDownload": "https://minecraft.curseforge.com/projects/fairy-lights/files/2396289/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/fairy-lights/files",
+    "md5": "b9dbaf5414de56c0f7ad849878e469a5",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Fluxed Redstone",
+    "id": "25008303-7f64-4545-ad9b-bff726f7f208",
+    "file": "FluxedRedstone-2.6.1.59.jar",
+    "side": "Both",
+    "date": "2017-05-17T21:49:31Z",
+    "size": "3.54 MB",
+    "requires": [
+      {
+        "name": "Reborn Core",
+        "id": "51cb7645-5a37-4ddb-aec9-7c461642186a"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/fluxed-redstone/files/2421058",
+    "linkDownload": "https://minecraft.curseforge.com/projects/fluxed-redstone/files/2421058/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/fluxed-redstone/files",
+    "md5": "5afa4f4e84a56e7bc7aba9f5d3556f2c",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Furnus",
+    "id": "6d861af5-482c-4eb1-93fb-ed700a227ace",
+    "file": "furnus-1.11.2-1.93.jar",
+    "side": "Both",
+    "date": "2017-04-17T18:21:26Z",
+    "size": "147.26 KB",
+    "requires": [
+      {
+        "name": "LimeLib",
+        "id": "4da1a0c3-076c-4108-9015-ac243d1dc28b"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/furnus/files/2408111",
+    "linkDownload": "https://minecraft.curseforge.com/projects/furnus/files/2408111/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/furnus/files",
+    "md5": "941b4d5b6efb92615810503f99003f37",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "GraveStone Mod",
+    "id": "bf84d747-0941-4a71-9a34-6e5cbb46fbe5",
+    "file": "gravestone-1.7.4.jar",
+    "side": "Both",
+    "date": "2017-06-28T14:43:06Z",
+    "size": "77.31 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/gravestone-mod/files/2442726",
+    "linkDownload": "https://minecraft.curseforge.com/projects/gravestone-mod/files/2442726/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/gravestone-mod/files",
+    "md5": "3dcb535fe403e3ccfb2f028404111fc5",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Guide-API",
+    "id": "8266f48b-8c1a-4203-9993-aa6f889baca0",
+    "file": "Guide-API-1.11.2-2.1.1-52.jar",
+    "side": "Both",
+    "date": "2017-05-06T01:51:42Z",
+    "size": "160.26 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/guide-api/files/2416399",
+    "linkDownload": "https://minecraft.curseforge.com/projects/guide-api/files/2416399/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/guide-api/files",
+    "md5": "a23ff13701c3f4e3ebcdccc1fc1282ac",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Hammer Core",
+    "id": "e232bc41-98ae-407a-baed-104b145d43be",
+    "file": "HammerCore_1.11.2-1.8.9.jar",
+    "side": "Both",
+    "date": "2017-06-20T17:32:44Z",
+    "size": "2.70 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/hammer-core/files/2437588",
+    "linkDownload": "https://minecraft.curseforge.com/projects/hammer-core/files/2437588/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/hammer-core/files",
+    "md5": "6d56ac2a4bca9fa6050acbb521cacc26",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "HelpFixer",
+    "id": "1a4bd347-3a37-40a5-9f59-3f557dbfd28c",
+    "file": "HelpFixer-1.11-1.4+17.jar",
+    "side": "Both",
+    "date": "2016-11-19T01:19:34Z",
+    "size": "7.05 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/helpfixer/files/2346436",
+    "linkDownload": "https://minecraft.curseforge.com/projects/helpfixer/files/2346436/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/helpfixer/files",
+    "md5": "4937b7bc2af1939449ae4d144c56a788",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Hwyla",
+    "id": "1cd8bb03-0643-4f1a-a356-dacf4eb1e304",
+    "file": "Hwyla-1.8.15-B29_1.11.jar",
+    "side": "Both",
+    "date": "2017-06-09T00:00:46Z",
+    "size": "477.69 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/hwyla/files/2431165",
+    "linkDownload": "https://minecraft.curseforge.com/projects/hwyla/files/2431165/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/hwyla/files",
+    "md5": "59e9808c0b3fe61a64d87732d9802cd1",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Immersive Engineering",
+    "id": "964e8faf-c5fc-4163-82c5-125607edc385",
+    "file": "ImmersiveEngineering-0.11-63.jar",
+    "side": "Both",
+    "date": "2017-06-29T23:01:59Z",
+    "size": "5.07 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/immersive-engineering/files/2443553",
+    "linkDownload": "https://minecraft.curseforge.com/projects/immersive-engineering/files/2443553/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/immersive-engineering/files",
+    "md5": "16bd6a0c1fc9501fc97b95bf2917af3b",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Immersive Petroleum",
+    "id": "0760a150-1270-411f-b71b-776707e46bbd",
+    "file": "immersivepetroleum-1.11.2-1.0.7.jar",
+    "side": "Both",
+    "date": "2017-06-25T19:12:36Z",
+    "size": "575.61 KB",
+    "requires": [
+      {
+        "name": "Immersive Engineering",
+        "id": "964e8faf-c5fc-4163-82c5-125607edc385"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/immersive-petroleum/files/2441462",
+    "linkDownload": "https://minecraft.curseforge.com/projects/immersive-petroleum/files/2441462/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/immersive-petroleum/files",
+    "md5": "9e60daa86ca0f23b0583b14e04631981",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Industrial Foregoing",
+    "id": "5d75b3ae-eb98-486e-a9e2-60b15f263e96",
+    "file": "industrialforegoing-1.11.2-0.3-16.jar",
+    "side": "Both",
+    "date": "2017-07-07T09:00:53Z",
+    "size": "609.92 KB",
+    "requires": [
+      {
+        "name": "TESLA",
+        "id": "7a06724a-06e5-4ab6-897a-18bfbcf40218"
+      },
+      {
+        "name": "Tesla Core Lib",
+        "id": "92584987-ff78-4ece-943f-c00f0d7f7b99"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/industrial-foregoing/files/2447075",
+    "linkDownload": "https://minecraft.curseforge.com/projects/industrial-foregoing/files/2447075/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/industrial-foregoing/files",
+    "md5": "62f4a6ddfc4d1b5a892cd335ef1f20c6",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Inventory Tweaks",
+    "id": "2709eb99-e819-4685-b4b3-0caaa1f6ae1b",
+    "file": "InventoryTweaks-1.63+dev.92.jar",
+    "side": "Both",
+    "date": "2017-06-09T12:03:47Z",
+    "size": "233.50 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/inventory-tweaks/files/2431307",
+    "linkDownload": "https://minecraft.curseforge.com/projects/inventory-tweaks/files/2431307/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/inventory-tweaks/files",
+    "md5": "b8d25fb77ad6876ebb7f2a616556944b",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Iron Chests",
+    "id": "36e6b8a7-f644-476b-b194-4c2b0fb7232c",
+    "file": "ironchest-1.11.2-7.0.25.815.jar",
+    "side": "Both",
+    "date": "2017-06-24T23:30:51Z",
+    "size": "958.90 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/iron-chests/files/2440988",
+    "linkDownload": "https://minecraft.curseforge.com/projects/iron-chests/files/2440988/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/iron-chests/files",
+    "md5": "e90e0ffc67f9488e9ec514076757f082",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "JourneyMap",
+    "id": "905e98c1-41aa-44df-baa8-765f2b23781e",
+    "file": "journeymap-1.11.2-5.4.7.jar",
+    "side": "Both",
+    "date": "2017-06-16T22:15:49Z",
+    "size": "1.66 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/journeymap/files/2435310",
+    "linkDownload": "https://minecraft.curseforge.com/projects/journeymap/files/2435310/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/journeymap/files",
+    "md5": "1c3380502eb7b9a495581b2402d144df",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Just Another Crafting Bench",
+    "id": "37bc08b8-6781-4267-b9bd-c0edead90c03",
+    "file": "JACB-1.11.2-1.0.6.jar",
+    "side": "Both",
+    "date": "2017-03-30T12:28:52Z",
+    "size": "19.03 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/just-another-crafting-bench/files/2400270",
+    "linkDownload": "https://minecraft.curseforge.com/projects/just-another-crafting-bench/files/2400270/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/just-another-crafting-bench/files",
+    "md5": "6e9123bf2670292b720eef54cc50a916",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Just Enough Items (JEI)",
+    "id": "610c07b6-17cb-4d17-af42-961302a2d55d",
+    "file": "jei_1.11.2-4.5.0.291.jar",
+    "side": "Both",
+    "date": "2017-07-05T06:31:47Z",
+    "size": "526.11 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/just-enough-items-jei/files/2446125",
+    "linkDownload": "https://minecraft.curseforge.com/projects/just-enough-items-jei/files/2446125/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/just-enough-items-jei/files",
+    "md5": "cdbd65c0a4e4839ee75ce26b2797d021",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "KleeSlabs",
+    "id": "e3bede7a-4006-4ab1-a8be-d92e009178ac",
+    "file": "KleeSlabs_1.11.2-4.3.5.jar",
+    "side": "Both",
+    "date": "2017-03-10T21:53:49Z",
+    "size": "24.72 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/kleeslabs/files/2391273",
+    "linkDownload": "https://minecraft.curseforge.com/projects/kleeslabs/files/2391273/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/kleeslabs/files",
+    "md5": "92d40bb563f2ca42377e7aa13e84ec7d",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "LibVulpes",
+    "id": "abbed1c5-a356-4339-a866-1d6a1ed43364",
+    "file": "LibVulpes-1.11.2-0.2.5-universal.jar",
+    "side": "Both",
+    "date": "2017-06-13T01:51:30Z",
+    "size": "486.01 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/libvulpes/files/2433234",
+    "linkDownload": "https://minecraft.curseforge.com/projects/libvulpes/files/2433234/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/libvulpes/files",
+    "md5": "d67a25ac15aa85009f693cb5d5faf89d",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Light Level Overlay Reloaded",
+    "id": "9d5bcb9e-c50f-4bfb-a4bd-19a930e66719",
+    "file": "LLOverlayReloaded-1.1.3-mc1.11.2.jar",
+    "side": "Both",
+    "date": "2016-12-30T18:15:40Z",
+    "size": "16.86 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/light-level-overlay-reloaded/files/2362105",
+    "linkDownload": "https://minecraft.curseforge.com/projects/light-level-overlay-reloaded/files/2362105/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/light-level-overlay-reloaded/files",
+    "md5": "7c6813115902910f19a1f4ed1867fbe4",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "LimeLib",
+    "id": "4da1a0c3-076c-4108-9015-ac243d1dc28b",
+    "file": "limelib-1.11.2-1.5.4.jar",
+    "side": "Both",
+    "date": "2017-04-13T12:19:55Z",
+    "size": "229.43 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/limelib/files/2406435",
+    "linkDownload": "https://minecraft.curseforge.com/projects/limelib/files/2406435/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/limelib/files",
+    "md5": "00e0081e53dd6e42fb58d31429f791f1",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "McJtyLib",
+    "id": "2e8926ea-ef5e-4091-aa19-05d7d21ae64a",
+    "file": "mcjtylib-1.1x-2.4.3.jar",
+    "side": "Both",
+    "date": "2017-07-03T14:48:19Z",
+    "size": "319.39 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/mcjtylib/files/2445376",
+    "linkDownload": "https://minecraft.curseforge.com/projects/mcjtylib/files/2445376/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/mcjtylib/files",
+    "md5": "d74daaf76617e6116654a33df40ea489",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "MCMultiPart",
+    "id": "6d124377-0140-49f4-83d3-34957c02a4a6",
+    "file": "MCMultiPart-2.0.2.jar",
+    "side": "Both",
+    "date": "2017-06-26T13:40:59Z",
+    "size": "157.53 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/mcmultipart/files/2441849",
+    "linkDownload": "https://minecraft.curseforge.com/projects/mcmultipart/files/2441849/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/mcmultipart/files",
+    "md5": "24f21ae2acea2268cf0bc73624110ae5",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Mo' Bends",
+    "id": "239971ab-f5b2-47f8-a32c-fdeae61b3446",
+    "file": "mobends-0.23.5_for_MC-1.11.2.jar",
+    "side": "Both",
+    "date": "2017-06-23T19:28:23Z",
+    "size": "644.97 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/mo-bends/files/2440278",
+    "linkDownload": "https://minecraft.curseforge.com/projects/mo-bends/files/2440278/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/mo-bends/files",
+    "md5": "e60fdf5dc41c61d41ee67bc63a31b2e7",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Mob Grinding Utils",
+    "id": "cfed4403-7062-48f7-b98a-37dd797fe00f",
+    "file": "MobGrindingUtils-0.2.0.jar",
+    "side": "Both",
+    "date": "2017-05-18T21:33:02Z",
+    "size": "845.04 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/mob-grinding-utils/files/2421505",
+    "linkDownload": "https://minecraft.curseforge.com/projects/mob-grinding-utils/files/2421505/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/mob-grinding-utils/files",
+    "md5": "cbef7d081c6d2041b69b2f485456249d",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Morpheus",
+    "id": "088c6486-a598-4047-b9ff-beb2953d6320",
+    "file": "Morpheus-1.11.2-3.2.14.jar",
+    "side": "Both",
+    "date": "2017-05-18T10:29:47Z",
+    "size": "20.34 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/morpheus/files/2421243",
+    "linkDownload": "https://minecraft.curseforge.com/projects/morpheus/files/2421243/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/morpheus/files",
+    "md5": "70a9cf93da82e3cdcf0d978896c32f46",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "MrCrayfish's Furniture Mod",
+    "id": "7493f0bc-607a-471d-80a8-1df3e60303a5",
+    "file": "cfm-4.1.2-mc1.11.2.jar",
+    "side": "Both",
+    "date": "2017-01-31T14:58:15Z",
+    "size": "8.63 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/mrcrayfish-furniture-mod/files/2376262",
+    "linkDownload": "https://minecraft.curseforge.com/projects/mrcrayfish-furniture-mod/files/2376262/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/mrcrayfish-furniture-mod/files",
+    "md5": "5185f178a23661ffc98c4a70bd2a41a3",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Neat",
+    "id": "ae176e40-6919-4b3e-b88a-e06ae3ee997c",
+    "file": "Neat 1.4-13.jar",
+    "side": "Both",
+    "date": "2017-01-02T23:00:22Z",
+    "size": "15.91 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/neat/files/2363507",
+    "linkDownload": "https://minecraft.curseforge.com/projects/neat/files/2363507/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/neat/files",
+    "md5": "027191c0fe3b8b693a13199a95b89be0",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "NetherPortalFix",
+    "id": "2d983b11-2243-47d9-abe0-eaba4e846e69",
+    "file": "NetherPortalFix_1.11-4.3.1.jar",
+    "side": "Both",
+    "date": "2016-11-16T20:23:06Z",
+    "size": "5.93 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/netherportalfix/files/2345495",
+    "linkDownload": "https://minecraft.curseforge.com/projects/netherportalfix/files/2345495/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/netherportalfix/files",
+    "md5": "dca7c50b05944af559c191d1dfffa7ea",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "No Mob Spawning on Trees",
+    "id": "b3394331-2f14-4adc-b13d-88ee9775e1ff",
+    "file": "NoMobSpawningOnTrees-1.2.0-mc1.11.2.jar",
+    "side": "Both",
+    "date": "2016-12-31T03:53:45Z",
+    "size": "39.25 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/no-mob-spawning-on-trees/files/2362274",
+    "linkDownload": "https://minecraft.curseforge.com/projects/no-mob-spawning-on-trees/files/2362274/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/no-mob-spawning-on-trees/files",
+    "md5": "92c27eb8a809c73dc5e9a660aa4746b0",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Not Enough Wands",
+    "id": "62190131-4c99-4db4-8363-45cf1c69230b",
+    "file": "notenoughwands-1.1x-1.5.5.jar",
+    "side": "Both",
+    "date": "2017-05-16T13:35:01Z",
+    "size": "166.91 KB",
+    "requires": [
+      {
+        "name": "CompatLayer",
+        "id": "78988daf-3efc-4230-86b7-bb6296e59fbe"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/not-enough-wands/files/2420435",
+    "linkDownload": "https://minecraft.curseforge.com/projects/not-enough-wands/files/2420435/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/not-enough-wands/files",
+    "md5": "dd0511d8380c816a4a66bf6703142ed0",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "OpenBlocks Elevator",
+    "id": "6125df80-6afd-470e-ba03-5329512e35ee",
+    "file": "ElevatorMod-1.11.2-1.3.2.jar",
+    "side": "Both",
+    "date": "2017-05-31T17:28:23Z",
+    "size": "91.16 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/openblocks-elevator/files/2427584",
+    "linkDownload": "https://minecraft.curseforge.com/projects/openblocks-elevator/files/2427584/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/openblocks-elevator/files",
+    "md5": "0404adb50824a722957c465363554c20",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Packing Tape",
+    "id": "7dd0301a-9971-4cc9-9d60-ceb275e711b2",
+    "file": "PackingTape-1.11.2-0.6.2.jar",
+    "side": "Both",
+    "date": "2017-05-18T20:33:33Z",
+    "size": "50.68 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/packing-tape/files/2421477",
+    "linkDownload": "https://minecraft.curseforge.com/projects/packing-tape/files/2421477/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/packing-tape/files",
+    "md5": "27ccffd61bcfed0e5f518b486d036907",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Pam's Cookables - Pam's Harvestcraft Addon",
+    "id": "250e91f2-2ca8-41f1-b0bf-8a93643797db",
+    "file": "pamscookables-1.11.2_1.0.jar",
+    "side": "Both",
+    "date": "2017-06-03T10:39:06Z",
+    "size": "4.09 KB",
+    "requires": [
+      {
+        "name": "Pam's HarvestCraft",
+        "id": "fc6c2a04-5635-499c-b10d-1249fab4f154"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/pams-cookables/files/2428726",
+    "linkDownload": "https://minecraft.curseforge.com/projects/pams-cookables/files/2428726/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/pams-cookables/files",
+    "md5": "2badf8c7c38b1093d80bde83c857578c",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Pam's Get All the Seeds!",
+    "id": "ec6aaed2-ea39-4df3-80cc-06a39bf67c24",
+    "file": "Pam's Get all the Seeds! 1.11a.jar",
+    "side": "Both",
+    "date": "2016-12-01T19:43:22Z",
+    "size": "2.67 KB",
+    "requires": [
+      {
+        "name": "Pam's HarvestCraft",
+        "id": "fc6c2a04-5635-499c-b10d-1249fab4f154"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/pams-get-all-the-seeds/files/2351278",
+    "linkDownload": "https://minecraft.curseforge.com/projects/pams-get-all-the-seeds/files/2351278/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/pams-get-all-the-seeds/files",
+    "md5": "ebe3e03ab67ed572258f30260e8ce0da",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Pam's HarvestCraft",
+    "id": "fc6c2a04-5635-499c-b10d-1249fab4f154",
+    "file": "Pam's HarvestCraft 1.11.2h.jar",
+    "side": "Both",
+    "date": "2017-04-23T16:50:10Z",
+    "size": "3.07 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/pams-harvestcraft/files/2410937",
+    "linkDownload": "https://minecraft.curseforge.com/projects/pams-harvestcraft/files/2410937/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/pams-harvestcraft/files",
+    "md5": "8323cd0e648f44138ded7f175438b649",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Platforms",
+    "id": "345b53af-c769-4b76-af17-d0737b614f7b",
+    "file": "platforms-1.11.0-1.3.4.jar",
+    "side": "Both",
+    "date": "2017-04-08T18:01:30Z",
+    "size": "371.72 KB",
+    "requires": [
+      {
+        "name": "ShetiPhianCore",
+        "id": "de0ecccc-ff8c-47c8-a3f5-493c0411011c"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/platforms/files/2404433",
+    "linkDownload": "https://minecraft.curseforge.com/projects/platforms/files/2404433/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/platforms/files",
+    "md5": "cfe49aa39687892a69f62ace83a4a1c3",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Quick Leaf Decay",
+    "id": "e85e00a4-1423-4121-9bee-92d9d61d5da0",
+    "file": "QuickLeafDecay-MC1.11.2-1.2.3.jar",
+    "side": "Both",
+    "date": "2017-03-15T21:34:53Z",
+    "size": "6.21 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/quick-leaf-decay/files/2393582",
+    "linkDownload": "https://minecraft.curseforge.com/projects/quick-leaf-decay/files/2393582/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/quick-leaf-decay/files",
+    "md5": "ae0103f96d50cae384fa863ddfa5e9db",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Random Things",
+    "id": "83975d36-9389-4519-9323-2d1e0d0d143f",
+    "file": "RandomThings-MC1.11.2-4.0.jar",
+    "side": "Both",
+    "date": "2017-06-14T12:01:48Z",
+    "size": "1.86 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/random-things/files/2433971",
+    "linkDownload": "https://minecraft.curseforge.com/projects/random-things/files/2433971/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/random-things/files",
+    "md5": "8735b08d0fc078ec44296b2191819015",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "RealBench",
+    "id": "b8e7f94a-cb48-48e4-81d2-419282f92801",
+    "file": "RealBench-1.11.2-1.3.2.jar",
+    "side": "Both",
+    "date": "2017-01-07T15:25:11Z",
+    "size": "16.44 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/realbench/files/2365368",
+    "linkDownload": "https://minecraft.curseforge.com/projects/realbench/files/2365368/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/realbench/files",
+    "md5": "4b3bf339df4e5837c9adb02c60554bce",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "ReAuth",
+    "id": "84d231cf-7aff-46a6-b876-9e907b66f0d9",
+    "file": "ReAuth-3.5.0.jar",
+    "side": "Both",
+    "date": "2017-06-12T09:14:26Z",
+    "size": "23.41 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/reauth/files/2432858",
+    "linkDownload": "https://minecraft.curseforge.com/projects/reauth/files/2432858/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/reauth/files",
+    "md5": "e22e120b2fa3619c593e6726f67663b2",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Reborn Core",
+    "id": "51cb7645-5a37-4ddb-aec9-7c461642186a",
+    "file": "RebornCore-1.11.2-2.16.1.115-universal.jar",
+    "side": "Both",
+    "date": "2017-06-03T07:10:53Z",
+    "size": "1.54 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/reborncore/files/2428672",
+    "linkDownload": "https://minecraft.curseforge.com/projects/reborncore/files/2428672/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/reborncore/files",
+    "md5": "002737df0bd3ef871e7153ae9112beed",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Redstone Arsenal",
+    "id": "6fdb66c3-7d2c-41eb-baa7-64c0e410ebc3",
+    "file": "RedstoneArsenal-1.11.2-2.2.5.8-universal.jar",
+    "side": "Both",
+    "date": "2017-07-06T18:21:45Z",
+    "size": "197.36 KB",
+    "requires": [
+      {
+        "name": "CoFH Core",
+        "id": "7310d3d1-3934-4143-a16d-56d760433842"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/redstone-arsenal/files/2446784",
+    "linkDownload": "https://minecraft.curseforge.com/projects/redstone-arsenal/files/2446784/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/redstone-arsenal/files",
+    "md5": "798eedb663e704c4758a80e3742abe0b",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Redstone Paste",
+    "id": "1ed97296-b1a6-4e72-973a-afd0d8208afe",
+    "file": "redstonepaste-mc1.11.2-1.7.4.jar",
+    "side": "Both",
+    "date": "2017-02-19T03:04:00Z",
+    "size": "88.28 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/redstone-paste/files/2383526",
+    "linkDownload": "https://minecraft.curseforge.com/projects/redstone-paste/files/2383526/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/redstone-paste/files",
+    "md5": "d8b61b39ce6b70a1be729a6028f0dea9",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Refined Storage",
+    "id": "630e5710-cef0-4370-99c9-073501d285d0",
+    "file": "refinedstorage-1.4.18.jar",
+    "side": "Both",
+    "date": "2017-06-24T19:52:34Z",
+    "size": "1.56 MB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/refined-storage/files/2440916",
+    "linkDownload": "https://minecraft.curseforge.com/projects/refined-storage/files/2440916/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/refined-storage/files",
+    "md5": "a6936882c7a24449ab936dbeaaaca923",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "RFTools",
+    "id": "bc34e0a5-7783-4cd9-a80f-e8fc08c74279",
+    "file": "rftools-1.1x-6.10.jar",
+    "side": "Both",
+    "date": "2017-06-28T11:30:19Z",
+    "size": "2.84 MB",
+    "requires": [
+      {
+        "name": "McJtyLib",
+        "id": "2e8926ea-ef5e-4091-aa19-05d7d21ae64a"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/rftools/files/2442685",
+    "linkDownload": "https://minecraft.curseforge.com/projects/rftools/files/2442685/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/rftools/files",
+    "md5": "0862c26bf7bec1329fc29d18379ec266",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "RFTools Control",
+    "id": "cb16567f-94fa-4541-9aad-6cb372f72319",
+    "file": "rftoolsctrl-1.1x-1.6.8.jar",
+    "side": "Both",
+    "date": "2017-05-02T07:06:40Z",
+    "size": "554.19 KB",
+    "requires": [
+      {
+        "name": "CompatLayer",
+        "id": "78988daf-3efc-4230-86b7-bb6296e59fbe"
+      },
+      {
+        "name": "McJtyLib",
+        "id": "2e8926ea-ef5e-4091-aa19-05d7d21ae64a"
+      },
+      {
+        "name": "RFTools",
+        "id": "bc34e0a5-7783-4cd9-a80f-e8fc08c74279"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/rftools-control/files/2414893",
+    "linkDownload": "https://minecraft.curseforge.com/projects/rftools-control/files/2414893/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/rftools-control/files",
+    "md5": "f3130b802a94e0964a8eabbf39d61f8f",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "RFTools Dimensions",
+    "id": "ee04dfda-717f-4177-86b3-fc6aea2f9e4b",
+    "file": "rftoolsdim-1.1x-5.02.jar",
+    "side": "Both",
+    "date": "2017-06-02T17:58:54Z",
+    "size": "1.56 MB",
+    "requires": [
+      {
+        "name": "CompatLayer",
+        "id": "78988daf-3efc-4230-86b7-bb6296e59fbe"
+      },
+      {
+        "name": "McJtyLib",
+        "id": "2e8926ea-ef5e-4091-aa19-05d7d21ae64a"
+      },
+      {
+        "name": "RFTools",
+        "id": "bc34e0a5-7783-4cd9-a80f-e8fc08c74279"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/rftools-dimensions/files/2428401",
+    "linkDownload": "https://minecraft.curseforge.com/projects/rftools-dimensions/files/2428401/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/rftools-dimensions/files",
+    "md5": "ba5731b92c179baecc600877976130ab",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "ServerSync",
+    "id": "409e2a4c-d717-47b9-99af-19a399db46d0",
+    "file": "serversync-2.6.15.jar",
+    "side": "Both",
+    "date": "2017-06-04T05:48:48Z",
+    "size": "576.39 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/serversync/files/2429164",
+    "linkDownload": "https://minecraft.curseforge.com/projects/serversync/files/2429164/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/serversync/files",
+    "md5": "ff0b482773354b479518c30662e4a8be",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "ShetiPhianCore",
+    "id": "de0ecccc-ff8c-47c8-a3f5-493c0411011c",
+    "file": "shetiphiancore-1.11.0-3.4.6.jar",
+    "side": "Both",
+    "date": "2017-06-04T01:18:52Z",
+    "size": "371.04 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/shetiphiancore/files/2429088",
+    "linkDownload": "https://minecraft.curseforge.com/projects/shetiphiancore/files/2429088/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/shetiphiancore/files",
+    "md5": "b1bdff5f25bd428b4eac3699f2d2976d",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Silent Lib",
+    "id": "5a2db71b-7f18-4f40-822c-1e5e8307cc66",
+    "file": "SilentLib-1.11.2-2.2.5-63.jar",
+    "side": "Both",
+    "date": "2017-07-02T00:46:30Z",
+    "size": "203.81 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/silent-lib/files/2444628",
+    "linkDownload": "https://minecraft.curseforge.com/projects/silent-lib/files/2444628/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/silent-lib/files",
+    "md5": "366a1d3b4124be87c9f59630a331fe84",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Silent's Gems",
+    "id": "780d8bfe-0d20-4962-9c33-81f7820f62af",
+    "file": "SilentsGems-1.11.x-2.3.16-186.jar",
+    "side": "Both",
+    "date": "2017-06-20T20:50:31Z",
+    "size": "2.58 MB",
+    "requires": [
+      {
+        "name": "Silent Lib",
+        "id": "5a2db71b-7f18-4f40-822c-1e5e8307cc66"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/silents-gems/files/2437713",
+    "linkDownload": "https://minecraft.curseforge.com/projects/silents-gems/files/2437713/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/silents-gems/files",
+    "md5": "9de2bb58d579d3c5216af6a7d78191a0",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Silent's Gems: Extra Parts",
+    "id": "a83d7f86-0e61-4c65-97ef-803e0b029a8b",
+    "file": "SGExtraParts-1.11.x-1.2.6-21.jar",
+    "side": "Both",
+    "date": "2017-06-18T18:54:14Z",
+    "size": "57.11 KB",
+    "requires": [
+      {
+        "name": "Silent Lib",
+        "id": "5a2db71b-7f18-4f40-822c-1e5e8307cc66"
+      },
+      {
+        "name": "Silent's Gems",
+        "id": "780d8bfe-0d20-4962-9c33-81f7820f62af"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/silents-gems-extra-parts/files/2436463",
+    "linkDownload": "https://minecraft.curseforge.com/projects/silents-gems-extra-parts/files/2436463/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/silents-gems-extra-parts/files",
+    "md5": "62970a9a291baf19a45984d97b248e5e",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Simple Magnet",
+    "id": "397c4907-08a6-4298-9a2b-67b8f1ade748",
+    "file": "simplemagnet-1.11.2-1.2.4.jar",
+    "side": "Both",
+    "date": "2017-06-06T08:30:50Z",
+    "size": "31.15 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/simple-magnet/files/2430092",
+    "linkDownload": "https://minecraft.curseforge.com/projects/simple-magnet/files/2430092/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/simple-magnet/files",
+    "md5": "07f861bfc7b0475e9114bb95316381f4",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "SimpleLeather",
+    "id": "53a621af-a3f6-4f00-81a1-a4f7021bd484",
+    "file": "simpleleather-1.11.2-1.0.jar",
+    "side": "Both",
+    "date": "2016-12-27T18:56:45Z",
+    "size": "44.74 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/simpleleather/files/2360955",
+    "linkDownload": "https://minecraft.curseforge.com/projects/simpleleather/files/2360955/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/simpleleather/files",
+    "md5": "241507c675a3b5036a4d10d1ec5afa04",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Simply Enchanting",
+    "id": "bf61d442-58e0-43f8-a0cf-0824bc74cb9f",
+    "file": "SimplyEnchanting-1.11.2-1.0.1.jar",
+    "side": "Both",
+    "date": "2017-06-19T14:10:21Z",
+    "size": "47.05 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/simply-enchanting/files/2436965",
+    "linkDownload": "https://minecraft.curseforge.com/projects/simply-enchanting/files/2436965/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/simply-enchanting/files",
+    "md5": "a2565c965dd1e31e37eb04f54f74cef0",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Solar Flux Reborn",
+    "id": "2a89753c-f625-46c9-b935-c1ea8bd7ad7b",
+    "file": "SolarFluxReborn_1.11.2-2.21r.jar",
+    "side": "Both",
+    "date": "2017-06-10T11:11:28Z",
+    "size": "196.51 KB",
+    "requires": [
+      {
+        "name": "Hammer Core",
+        "id": "e232bc41-98ae-407a-baed-104b145d43be"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/solar-flux-reborn/files/2431626",
+    "linkDownload": "https://minecraft.curseforge.com/projects/solar-flux-reborn/files/2431626/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/solar-flux-reborn/files",
+    "md5": "8ccd983964e7e112e8e8a6a1b77cf71a",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Steve's Carts Reborn",
+    "id": "de079f01-9bf2-443d-b791-42c866d76ba9",
+    "file": "StevesCarts-1.11.2-2.3.0.22.jar",
+    "side": "Both",
+    "date": "2017-05-23T11:01:18Z",
+    "size": "2.19 MB",
+    "requires": [
+      {
+        "name": "Reborn Core",
+        "id": "51cb7645-5a37-4ddb-aec9-7c461642186a"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/steves-carts-reborn/files/2423611",
+    "linkDownload": "https://minecraft.curseforge.com/projects/steves-carts-reborn/files/2423611/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/steves-carts-reborn/files",
+    "md5": "8397a042d7b16a7309d99a90c96a2f54",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Storage Drawers",
+    "id": "4e7c50c3-b478-4e93-8720-1c0c4014db27",
+    "file": "StorageDrawers-1.11.2-4.2.10.jar",
+    "side": "Both",
+    "date": "2017-07-05T04:03:02Z",
+    "size": "547.39 KB",
+    "requires": [
+      {
+        "name": "Chameleon",
+        "id": "ea93f242-b522-419d-9bfd-e3ec59c16182"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/storage-drawers/files/2446107",
+    "linkDownload": "https://minecraft.curseforge.com/projects/storage-drawers/files/2446107/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/storage-drawers/files",
+    "md5": "808036d23502c689577eb58a37d32032",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Storage Drawers Extras",
+    "id": "a2321ece-ab01-4b78-9325-bb063e8bef5d",
+    "file": "StorageDrawersExtras-1.11.2-2.0.0.jar",
+    "side": "Both",
+    "date": "2017-05-20T04:09:37Z",
+    "size": "393.56 KB",
+    "requires": [
+      {
+        "name": "Chameleon",
+        "id": "ea93f242-b522-419d-9bfd-e3ec59c16182"
+      },
+      {
+        "name": "Storage Drawers",
+        "id": "4e7c50c3-b478-4e93-8720-1c0c4014db27"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/storage-drawers-extras/files/2422067",
+    "linkDownload": "https://minecraft.curseforge.com/projects/storage-drawers-extras/files/2422067/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/storage-drawers-extras/files",
+    "md5": "a16c9446fa0786f35c1c4cd7b1bccd0d",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Tech Reborn",
+    "id": "4203c63d-5be6-4540-a35b-669aefb4e42f",
+    "file": "TechReborn-1.11.2-2.3.3.181-universal.jar",
+    "side": "Both",
+    "date": "2017-07-08T15:35:06Z",
+    "size": "2.21 MB",
+    "requires": [
+      {
+        "name": "Reborn Core",
+        "id": "51cb7645-5a37-4ddb-aec9-7c461642186a"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/techreborn/files/2447610",
+    "linkDownload": "https://minecraft.curseforge.com/projects/techreborn/files/2447610/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/techreborn/files",
+    "md5": "8c9fc2383ea0cc923a908f7343246b66",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "TESLA",
+    "id": "7a06724a-06e5-4ab6-897a-18bfbcf40218",
+    "file": "Tesla-1.11-1.3.0.52.jar",
+    "side": "Both",
+    "date": "2017-04-19T19:23:15Z",
+    "size": "26.79 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/tesla/files/2409036",
+    "linkDownload": "https://minecraft.curseforge.com/projects/tesla/files/2409036/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/tesla/files",
+    "md5": "ab463e5cacff9bdca5bb4489cafddece",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Tesla Core Lib",
+    "id": "92584987-ff78-4ece-943f-c00f0d7f7b99",
+    "file": "tesla-core-lib-1.11.2-0.7.3.jar",
+    "side": "Both",
+    "date": "2017-07-08T09:58:54Z",
+    "size": "208.82 KB",
+    "requires": [
+      {
+        "name": "TESLA",
+        "id": "7a06724a-06e5-4ab6-897a-18bfbcf40218"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/tesla-core-lib/files/2447504",
+    "linkDownload": "https://minecraft.curseforge.com/projects/tesla-core-lib/files/2447504/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/tesla-core-lib/files",
+    "md5": "6fb5dfd8918ca3d1b7f053986385e5be",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Thermal Dynamics",
+    "id": "1affc691-5068-4fe0-9cc4-1b04b8e193e6",
+    "file": "ThermalDynamics-1.11.2-2.2.5.10-universal.jar",
+    "side": "Both",
+    "date": "2017-07-06T18:20:46Z",
+    "size": "684.31 KB",
+    "requires": [
+      {
+        "name": "CodeChicken Lib 1.8.+",
+        "id": "6f045455-f9ae-4a31-ab51-c4fb45523123"
+      },
+      {
+        "name": "CoFH Core",
+        "id": "7310d3d1-3934-4143-a16d-56d760433842"
+      },
+      {
+        "name": "Thermal Foundation",
+        "id": "f08abd82-dfc8-4845-b789-c63bf9c7a1cc"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/thermal-dynamics/files/2446781",
+    "linkDownload": "https://minecraft.curseforge.com/projects/thermal-dynamics/files/2446781/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/thermal-dynamics/files",
+    "md5": "b535880003106753e508778173dc62ec",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Thermal Expansion",
+    "id": "714b08bf-0ccf-4472-86a0-93cdd9c5a24a",
+    "file": "ThermalExpansion-1.11.2-5.2.5.18-universal.jar",
+    "side": "Both",
+    "date": "2017-07-06T18:19:54Z",
+    "size": "1.68 MB",
+    "requires": [
+      {
+        "name": "CodeChicken Lib 1.8.+",
+        "id": "6f045455-f9ae-4a31-ab51-c4fb45523123"
+      },
+      {
+        "name": "CoFH Core",
+        "id": "7310d3d1-3934-4143-a16d-56d760433842"
+      },
+      {
+        "name": "Thermal Foundation",
+        "id": "f08abd82-dfc8-4845-b789-c63bf9c7a1cc"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/thermalexpansion/files/2446778",
+    "linkDownload": "https://minecraft.curseforge.com/projects/thermalexpansion/files/2446778/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/thermalexpansion/files",
+    "md5": "871051e132cd3c8a43e445cc838eb6b5",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Thermal Foundation",
+    "id": "f08abd82-dfc8-4845-b789-c63bf9c7a1cc",
+    "file": "ThermalFoundation-1.11.2-2.2.4.12-universal.jar",
+    "side": "Both",
+    "date": "2017-07-06T18:18:36Z",
+    "size": "1.78 MB",
+    "requires": [
+      {
+        "name": "CoFH Core",
+        "id": "7310d3d1-3934-4143-a16d-56d760433842"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/thermal-foundation/files/2446775",
+    "linkDownload": "https://minecraft.curseforge.com/projects/thermal-foundation/files/2446775/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/thermal-foundation/files",
+    "md5": "576c5b71f30981033534d479dc142e50",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Tiny Progressions",
+    "id": "a6af4e8a-cda1-4511-b536-c9d5e09b8150",
+    "file": "tinyprogressions-1.11.2-2.2.3.jar",
+    "side": "Both",
+    "date": "2017-06-27T20:24:43Z",
+    "size": "372.42 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/tiny-progressions/files/2442476",
+    "linkDownload": "https://minecraft.curseforge.com/projects/tiny-progressions/files/2442476/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/tiny-progressions/files",
+    "md5": "7b01af819f673887a0b88a654df4293c",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Tool Belt",
+    "id": "db1d65b7-efd0-4ffb-bf2c-8121f540f38f",
+    "file": "ToolBelt-1.11.2-1.6.1.jar",
+    "side": "Both",
+    "date": "2017-04-30T11:31:05Z",
+    "size": "87.93 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/tool-belt/files/2413885",
+    "linkDownload": "https://minecraft.curseforge.com/projects/tool-belt/files/2413885/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/tool-belt/files",
+    "md5": "cad94019aabd1041e7ba3bad6dc30dcf",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Tree Chopper",
+    "id": "caa9f4bb-01a8-4c2f-b4e8-29966fea7ec4",
+    "file": "TreeChopper-1.11.2-1.1.2.jar",
+    "side": "Both",
+    "date": "2017-02-25T14:58:21Z",
+    "size": "128.11 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/tree-chopper/files/2386158",
+    "linkDownload": "https://minecraft.curseforge.com/projects/tree-chopper/files/2386158/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/tree-chopper/files",
+    "md5": "c79b291ba948223c60b5316e359fbb30",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Underp Hangables",
+    "id": "44f559b6-08e4-47d4-8f5f-adf353a758d6",
+    "file": "underphangables-1.11.2-1.0.4.jar",
+    "side": "Both",
+    "date": "2016-12-27T22:30:15Z",
+    "size": "5.94 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/underp-hangables/files/2361062",
+    "linkDownload": "https://minecraft.curseforge.com/projects/underp-hangables/files/2361062/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/underp-hangables/files",
+    "md5": "878b2d95bf15794b35ecb5b9c4c33d33",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "UniDict",
+    "id": "3f0f5756-8c97-4dd6-b036-ea2add4bc5dc",
+    "file": "UniDict-1.11.2-1.1.jar",
+    "side": "Both",
+    "date": "2017-06-20T14:42:52Z",
+    "size": "123.15 KB",
+    "requires": [
+      {
+        "name": "WanionLib",
+        "id": "819c7b56-f869-42df-81b9-f787d0d839c0"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/unidict/files/2437531",
+    "linkDownload": "https://minecraft.curseforge.com/projects/unidict/files/2437531/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/unidict/files",
+    "md5": "46c0429443eb1c96d1dd574c192ff1be",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Useful Nullifiers",
+    "id": "c8d48eeb-5add-41af-a02b-ae7233223c2e",
+    "file": "usefulnullifiers-1.3.5.jar",
+    "side": "Both",
+    "date": "2017-06-24T15:07:28Z",
+    "size": "82.06 KB",
+    "requires": [
+      {
+        "name": "CompatLayer",
+        "id": "78988daf-3efc-4230-86b7-bb6296e59fbe"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/useful-nullifiers/files/2440794",
+    "linkDownload": "https://minecraft.curseforge.com/projects/useful-nullifiers/files/2440794/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/useful-nullifiers/files",
+    "md5": "eacae7e43699febf5df9526765cda2fe",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "WanionLib",
+    "id": "819c7b56-f869-42df-81b9-f787d0d839c0",
+    "file": "WanionLib-1.11.2-1.1.jar",
+    "side": "Both",
+    "date": "2017-06-20T14:39:32Z",
+    "size": "59.61 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/wanionlib/files/2437529",
+    "linkDownload": "https://minecraft.curseforge.com/projects/wanionlib/files/2437529/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/wanionlib/files",
+    "md5": "87ef4b14084bbbba8db9ea2c03dce4c1",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Water Strainer",
+    "id": "417c1f39-cb76-4b91-9de6-a5af90803efb",
+    "file": "WaterStrainer-1.11.2-2.0.1.jar",
+    "side": "Both",
+    "date": "2017-06-18T06:03:24Z",
+    "size": "113.79 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/water-strainer/files/2436046",
+    "linkDownload": "https://minecraft.curseforge.com/projects/water-strainer/files/2436046/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/water-strainer/files",
+    "md5": "9527e0783f396d2fe2c12ede4132c8e8",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "Wawla - What Are We Looking At",
+    "id": "4037776f-f921-4a62-b090-20e9c3b3e545",
+    "file": "Wawla-1.11.2-2.4.0.233.jar",
+    "side": "Both",
+    "date": "2017-06-04T17:09:18Z",
+    "size": "74.21 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/wawla-what-are-we-looking-at/files/2429417",
+    "linkDownload": "https://minecraft.curseforge.com/projects/wawla-what-are-we-looking-at/files/2429417/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/wawla-what-are-we-looking-at/files",
+    "md5": "0a7d3adef491a23f9d337cf6a5cbe67f",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "XNet",
+    "id": "b85651d3-2233-4379-a8b9-53ebacb587a8",
+    "file": "xnet-1.3.2.jar",
+    "side": "Both",
+    "date": "2017-05-20T05:28:37Z",
+    "size": "382.25 KB",
+    "requires": [
+      {
+        "name": "CompatLayer",
+        "id": "78988daf-3efc-4230-86b7-bb6296e59fbe"
+      },
+      {
+        "name": "McJtyLib",
+        "id": "2e8926ea-ef5e-4091-aa19-05d7d21ae64a"
+      }
+    ],
+    "link": "https://minecraft.curseforge.com/projects/xnet/files/2422079",
+    "linkDownload": "https://minecraft.curseforge.com/projects/xnet/files/2422079/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/xnet/files",
+    "md5": "188f0f67956381fdab94242870423470",
+    "updateMode": "Automatic"
+  },
+  {
+    "name": "ZeroCore",
+    "id": "d966842a-3caf-4991-a0cc-bf79b38c6d4e",
+    "file": "zerocore-1.11.2-0.1.0.6.jar",
+    "side": "Both",
+    "date": "2017-05-18T20:06:16Z",
+    "size": "140.33 KB",
+    "requires": [],
+    "link": "https://minecraft.curseforge.com/projects/zerocore/files/2421451",
+    "linkDownload": "https://minecraft.curseforge.com/projects/zerocore/files/2421451/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/zerocore/files",
+    "md5": "bb9dc6bfdf91b6f66a0d61ceea6a9b10",
+    "updateMode": "Automatic"
+  }
+]

@@ -27,7 +27,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -84,6 +84,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Downloader\DownloaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Downloader\DownloaderForm.Designer.cs">
+      <DependentUpon>DownloaderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Downloader\Pack.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +128,9 @@
     <Compile Include="Mods\RequiredMod.cs" />
     <Compile Include="Mods\Providers\CurseForge.cs" />
     <Compile Include="Utilities.cs" />
+    <EmbeddedResource Include="Downloader\DownloaderForm.resx">
+      <DependentUpon>DownloaderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

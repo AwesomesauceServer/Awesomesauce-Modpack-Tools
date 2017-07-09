@@ -44,6 +44,20 @@ namespace AwesomesauceModpackTools {
         }
 
         /// <summary>
+        /// Search a list of packs for an exact <see cref="Downloader.Pack.ID" />.
+        /// </summary>
+        /// <param name="packID"><see cref="Downloader.Pack.ID" /> to find.</param>
+        /// <param name="packList">List of packs to search.</param>
+        /// <returns><see cref="Downloader.Pack" />; if nothing was found then null.</returns>
+        public static Downloader.Pack FindPackByID(string packID, List<Downloader.Pack> packList) {
+            if (packList.Exists(pack => pack.ID == packID)) {
+                return packList.Find(pack => pack.ID == packID);
+            } else {
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Unix epoch time string to <see cref="DateTime" />.
         /// </summary>
         /// <param name="unixTime">Unix epoch time string.</param>
