@@ -58,5 +58,11 @@ namespace AwesomesauceModpackTools {
 
         }
 
+        private void UpdaterButton_Click(object sender, EventArgs e) {
+            Updater.UpdaterForm updaterForm = new Updater.UpdaterForm();
+            updaterForm.Show();
+
+        }
+
     }
 }

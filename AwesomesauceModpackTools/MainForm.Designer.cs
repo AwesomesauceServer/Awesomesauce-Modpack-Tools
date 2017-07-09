@@ -35,6 +35,7 @@
             this.ToolsUpdateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.DownloaderButton = new System.Windows.Forms.Button();
+            this.UpdaterButton = new System.Windows.Forms.Button();
             this.GitHubTabControl.SuspendLayout();
             this.ModpackTabPage.SuspendLayout();
             this.ToolsTabPage.SuspendLayout();
@@ -157,11 +158,22 @@
             this.DownloaderButton.UseVisualStyleBackColor = true;
             this.DownloaderButton.Click += new System.EventHandler(this.DownloaderButton_Click);
             // 
+            // UpdaterButton
+            // 
+            this.UpdaterButton.Location = new System.Drawing.Point(672, 92);
+            this.UpdaterButton.Name = "UpdaterButton";
+            this.UpdaterButton.Size = new System.Drawing.Size(116, 23);
+            this.UpdaterButton.TabIndex = 3;
+            this.UpdaterButton.Text = "Updater";
+            this.UpdaterButton.UseVisualStyleBackColor = true;
+            this.UpdaterButton.Click += new System.EventHandler(this.UpdaterButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 326);
+            this.Controls.Add(this.UpdaterButton);
             this.Controls.Add(this.DownloaderButton);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.GitHubTabControl);
@@ -195,5 +207,6 @@
         private System.Windows.Forms.ColumnHeader ToolsUpdateColumn;
         private System.Windows.Forms.StatusStrip MainStatusStrip;
         private System.Windows.Forms.Button DownloaderButton;
+        private System.Windows.Forms.Button UpdaterButton;
     }
 }

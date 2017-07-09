@@ -127,6 +127,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mods\RequiredMod.cs" />
     <Compile Include="Mods\Providers\CurseForge.cs" />
+    <Compile Include="Updater\UpdaterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Updater\UpdaterForm.Designer.cs">
+      <DependentUpon>UpdaterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="Downloader\DownloaderForm.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
@@ -156,6 +162,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Updater\UpdaterForm.resx">
+      <DependentUpon>UpdaterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
