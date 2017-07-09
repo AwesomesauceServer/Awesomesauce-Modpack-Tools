@@ -42,6 +42,7 @@
             // 
             // ManageModsButton
             // 
+            this.ManageModsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ManageModsButton.Location = new System.Drawing.Point(672, 34);
             this.ManageModsButton.Name = "ManageModsButton";
             this.ManageModsButton.Size = new System.Drawing.Size(116, 23);
@@ -52,8 +53,9 @@
             // 
             // GitHubTabControl
             // 
-            this.GitHubTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.GitHubTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GitHubTabControl.Controls.Add(this.ModpackTabPage);
             this.GitHubTabControl.Controls.Add(this.ToolsTabPage);
             this.GitHubTabControl.Location = new System.Drawing.Point(12, 12);
@@ -146,6 +148,7 @@
             // 
             // DownloaderButton
             // 
+            this.DownloaderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DownloaderButton.Location = new System.Drawing.Point(672, 63);
             this.DownloaderButton.Name = "DownloaderButton";
             this.DownloaderButton.Size = new System.Drawing.Size(116, 23);
