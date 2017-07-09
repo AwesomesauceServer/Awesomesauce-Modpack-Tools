@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace AwesomesauceModpackTools.Downloader {
+namespace AwesomesauceModpackTools {
 
     public class Pack {
 

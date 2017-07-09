@@ -36,6 +36,10 @@
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.DownloadButton = new System.Windows.Forms.Button();
             this.DownloadBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.ExampleDownloadingLabel = new System.Windows.Forms.Label();
+            this.ExampleDownloadErrorLabel = new System.Windows.Forms.Label();
+            this.ExampleDownloadedLabel = new System.Windows.Forms.Label();
+            this.ExampleStatusColorsLabel = new System.Windows.Forms.Label();
             this.LoadFromPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,11 +168,65 @@
             // 
             this.DownloadBrowserDialog.Description = "Select where to download the mods to";
             // 
+            // ExampleDownloadingLabel
+            // 
+            this.ExampleDownloadingLabel.BackColor = System.Drawing.Color.LightBlue;
+            this.ExampleDownloadingLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ExampleDownloadingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExampleDownloadingLabel.Location = new System.Drawing.Point(12, 170);
+            this.ExampleDownloadingLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 6);
+            this.ExampleDownloadingLabel.Name = "ExampleDownloadingLabel";
+            this.ExampleDownloadingLabel.Size = new System.Drawing.Size(220, 18);
+            this.ExampleDownloadingLabel.TabIndex = 14;
+            this.ExampleDownloadingLabel.Text = "Downloading";
+            this.ExampleDownloadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ExampleDownloadErrorLabel
+            // 
+            this.ExampleDownloadErrorLabel.BackColor = System.Drawing.Color.Tomato;
+            this.ExampleDownloadErrorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ExampleDownloadErrorLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExampleDownloadErrorLabel.Location = new System.Drawing.Point(12, 218);
+            this.ExampleDownloadErrorLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 6);
+            this.ExampleDownloadErrorLabel.Name = "ExampleDownloadErrorLabel";
+            this.ExampleDownloadErrorLabel.Size = new System.Drawing.Size(220, 18);
+            this.ExampleDownloadErrorLabel.TabIndex = 15;
+            this.ExampleDownloadErrorLabel.Text = "Download Error";
+            this.ExampleDownloadErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ExampleDownloadedLabel
+            // 
+            this.ExampleDownloadedLabel.BackColor = System.Drawing.Color.LightGreen;
+            this.ExampleDownloadedLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ExampleDownloadedLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExampleDownloadedLabel.Location = new System.Drawing.Point(12, 194);
+            this.ExampleDownloadedLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 6);
+            this.ExampleDownloadedLabel.Name = "ExampleDownloadedLabel";
+            this.ExampleDownloadedLabel.Size = new System.Drawing.Size(220, 18);
+            this.ExampleDownloadedLabel.TabIndex = 16;
+            this.ExampleDownloadedLabel.Text = "Downloaded";
+            this.ExampleDownloadedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ExampleStatusColorsLabel
+            // 
+            this.ExampleStatusColorsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExampleStatusColorsLabel.Location = new System.Drawing.Point(12, 146);
+            this.ExampleStatusColorsLabel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.ExampleStatusColorsLabel.Name = "ExampleStatusColorsLabel";
+            this.ExampleStatusColorsLabel.Size = new System.Drawing.Size(220, 18);
+            this.ExampleStatusColorsLabel.TabIndex = 17;
+            this.ExampleStatusColorsLabel.Text = "Status Colors";
+            this.ExampleStatusColorsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // DownloaderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 547);
+            this.Controls.Add(this.ExampleStatusColorsLabel);
+            this.Controls.Add(this.ExampleDownloadingLabel);
+            this.Controls.Add(this.ExampleDownloadErrorLabel);
+            this.Controls.Add(this.ExampleDownloadedLabel);
             this.Controls.Add(this.DownloadButton);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.ModListView);
@@ -202,5 +260,9 @@
         private System.Windows.Forms.StatusStrip MainStatusStrip;
         private System.Windows.Forms.Button DownloadButton;
         private System.Windows.Forms.FolderBrowserDialog DownloadBrowserDialog;
+        private System.Windows.Forms.Label ExampleDownloadingLabel;
+        private System.Windows.Forms.Label ExampleDownloadErrorLabel;
+        private System.Windows.Forms.Label ExampleDownloadedLabel;
+        private System.Windows.Forms.Label ExampleStatusColorsLabel;
     }
 }

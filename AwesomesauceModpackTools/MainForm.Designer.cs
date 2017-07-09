@@ -44,9 +44,10 @@
             // ManageModsButton
             // 
             this.ManageModsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ManageModsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ManageModsButton.Location = new System.Drawing.Point(672, 34);
             this.ManageModsButton.Name = "ManageModsButton";
-            this.ManageModsButton.Size = new System.Drawing.Size(116, 23);
+            this.ManageModsButton.Size = new System.Drawing.Size(116, 28);
             this.ManageModsButton.TabIndex = 1;
             this.ManageModsButton.Text = "Manage Mods";
             this.ManageModsButton.UseVisualStyleBackColor = true;
@@ -150,9 +151,10 @@
             // DownloaderButton
             // 
             this.DownloaderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DownloaderButton.Location = new System.Drawing.Point(672, 63);
+            this.DownloaderButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DownloaderButton.Location = new System.Drawing.Point(672, 68);
             this.DownloaderButton.Name = "DownloaderButton";
-            this.DownloaderButton.Size = new System.Drawing.Size(116, 23);
+            this.DownloaderButton.Size = new System.Drawing.Size(116, 28);
             this.DownloaderButton.TabIndex = 2;
             this.DownloaderButton.Text = "Downloader";
             this.DownloaderButton.UseVisualStyleBackColor = true;
@@ -160,9 +162,10 @@
             // 
             // UpdaterButton
             // 
-            this.UpdaterButton.Location = new System.Drawing.Point(672, 92);
+            this.UpdaterButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdaterButton.Location = new System.Drawing.Point(672, 102);
             this.UpdaterButton.Name = "UpdaterButton";
-            this.UpdaterButton.Size = new System.Drawing.Size(116, 23);
+            this.UpdaterButton.Size = new System.Drawing.Size(116, 28);
             this.UpdaterButton.TabIndex = 3;
             this.UpdaterButton.Text = "Updater";
             this.UpdaterButton.UseVisualStyleBackColor = true;

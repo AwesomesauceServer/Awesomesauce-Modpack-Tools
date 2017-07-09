@@ -182,6 +182,7 @@ namespace AwesomesauceModpackTools.Downloader {
             if (errorCount == 0) {
                 DownloadButton.Text = "Finished";
             } else {
+                errorCount = 0;
                 HasErrors = true;
                 DownloadButton.Text = "Retry Failed Mods";
                 DownloadButton.Enabled = true;

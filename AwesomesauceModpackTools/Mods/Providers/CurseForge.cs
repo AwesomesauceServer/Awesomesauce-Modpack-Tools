@@ -6,6 +6,24 @@ namespace AwesomesauceModpackTools.Mods.Providers {
 
     public static class CurseForge {
 
+        private static string _GameVersion112 = "?filter-game-version=2020709689%3A6580";
+        /// <summary>
+        /// Minecraft game version. 1.12
+        /// </summary>
+        public static string GameVersion112 { get => _GameVersion112; }
+
+        private static string _GameVersion1112 = "?filter-game-version=2020709689%3A6452";
+        /// <summary>
+        /// Minecraft game version. 1.11.2
+        /// </summary>
+        public static string GameVersion1112 { get => _GameVersion1112; }
+
+        private static string _GameVersion1102 = "?filter-game-version=2020709689%3A6170";
+        /// <summary>
+        /// Minecraft game version. 1.10.2
+        /// </summary>
+        public static string GameVersion1102 { get => _GameVersion1102; }
+
         public static (Mod Mod, Exception Exception) ParseForInfo(Mod mod) {
             try {
                 HtmlWeb htmlWeb = new HtmlWeb();
@@ -13,26 +31,23 @@ namespace AwesomesauceModpackTools.Mods.Providers {
 
                 if (htmlWeb.StatusCode == System.Net.HttpStatusCode.OK) {
                     HtmlNode node = mod.HTML_Link.DocumentNode;
-                    
-                    Mod thisMod = new Mod() {
-                        Link = mod.Link,
-                        Name = node.SelectSingleNode("//span[@class='overflow-tip']").InnerText.Trim(),
-                        File = node.SelectSingleNode("//div[@class='details-info']/ul/li[1]/div[@class='info-data overflow-tip']").InnerText.Trim(),
-                        Date = EpochConverter(node.SelectSingleNode("//div[@class='details-info']/ul/li[3]/div[@class='info-data']/abbr[@class='tip standard-date standard-datetime']").Attributes["data-epoch"].Value.Trim()),
-                        Size = node.SelectSingleNode("//div[@class='details-info']/ul/li[4]/div[@class='info-data']").InnerText.Trim(),
-                        MD5 = node.SelectSingleNode("//div[@class='details-info']/ul/li[6]/div[@class='info-data']/span[@class='md5']").InnerText.Trim()
-                    };
 
-                    thisMod.Link = HtmlEntity.DeEntitize(thisMod.Link);
-                    thisMod.Name = HtmlEntity.DeEntitize(thisMod.Name);
-                    thisMod.File = HtmlEntity.DeEntitize(thisMod.File);
-                    thisMod.Size = HtmlEntity.DeEntitize(thisMod.Size);
-                    thisMod.MD5 = HtmlEntity.DeEntitize(thisMod.MD5);
+                    mod.Name = node.SelectSingleNode("//span[@class='overflow-tip']").InnerText.Trim();
+                    mod.File = node.SelectSingleNode("//div[@class='details-info']/ul/li[1]/div[@class='info-data overflow-tip']").InnerText.Trim();
+                    mod.Date = EpochConverter(node.SelectSingleNode("//div[@class='details-info']/ul/li[3]/div[@class='info-data']/abbr[@class='tip standard-date standard-datetime']").Attributes["data-epoch"].Value.Trim());
+                    mod.Size = node.SelectSingleNode("//div[@class='details-info']/ul/li[4]/div[@class='info-data']").InnerText.Trim();
+                    mod.MD5 = node.SelectSingleNode("//div[@class='details-info']/ul/li[6]/div[@class='info-data']/span[@class='md5']").InnerText.Trim();
 
-                    thisMod.Link_Download = $"{thisMod.Link}/download";
-                    thisMod.Link_Files = GetParentURL(thisMod.Link);
+                    mod.Link = HtmlEntity.DeEntitize(mod.Link);
+                    mod.Name = HtmlEntity.DeEntitize(mod.Name);
+                    mod.File = HtmlEntity.DeEntitize(mod.File);
+                    mod.Size = HtmlEntity.DeEntitize(mod.Size);
+                    mod.MD5 = HtmlEntity.DeEntitize(mod.MD5);
 
-                    return (thisMod, null);
+                    mod.Link_Download = $"{mod.Link}/download";
+                    mod.Link_Files = GetParentURL(mod.Link);
+
+                    return (mod, null);
                 } else {
                     return (null, new HtmlWebException($"HTTP returned status ({(int)htmlWeb.StatusCode}) {htmlWeb.StatusCode}."));
                 }
@@ -41,25 +56,24 @@ namespace AwesomesauceModpackTools.Mods.Providers {
             }
         }
 
-        public static (Mod Mod, Exception Exception) ParseForUpdate(Mod mod) {
+        public static (Mod Mod, Exception Exception) ParseForUpdate(Mod mod, string gameVersion) {
             try {
                 HtmlWeb htmlWeb = new HtmlWeb();
-                mod.HTML_Files = htmlWeb.Load(mod.Link_Files);
+                mod.HTML_Files = htmlWeb.Load($"{mod.Link_Files}{gameVersion}");
 
                 if (htmlWeb.StatusCode == System.Net.HttpStatusCode.OK) {
                     HtmlNode node = mod.HTML_Files.DocumentNode;
 
-                    Mod thisMod = new Mod() {
-                        Name = node.SelectSingleNode("//span[@class='overflow-tip']").InnerText.Trim(),
-                        File = node.SelectSingleNode(".//a[@class='overflow-tip']/@href").InnerText.Trim(),
-                        Date = EpochConverter(node.SelectSingleNode(".//abbr/@data-epoch").Attributes["data-epoch"].Value.Trim()),
-                        Size = node.SelectSingleNode(".//td[@class='project-file-size']").InnerText.Trim(),
-                        Link = $"https://minecraft.curseforge.com{node.SelectSingleNode(".//a[@class='overflow-tip']/@href").Attributes["href"].Value.Trim()}"
-                    };
-                    thisMod.Link_Download = $"{thisMod.Link}/download";
-                    thisMod.Link_Files = $"{thisMod.Link}/files";
+                    string modURL = node.SelectSingleNode("(//div/div[@class='project-file-name-container']/a[@class='overflow-tip twitch-link'])[1]").Attributes["href"].Value.Trim();
 
-                    return (thisMod, null);
+                    if (modURL != "") {
+                        mod.Link = $"https://minecraft.curseforge.com{modURL}";
+                        mod = ParseForInfo(mod).Mod;
+
+                        return (mod, null);
+                    } else {
+                        return (mod, null);
+                    }
                 } else {
                     return (null, new HtmlWebException($"HTTP returned status ({(int)htmlWeb.StatusCode}) {htmlWeb.StatusCode}."));
                 }
