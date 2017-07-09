@@ -129,15 +129,32 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             try { Process.Start(LinkTextBox.Text); } catch { }
         }
 
-        private void LoadToolStripMenuItem_Click(object sender, EventArgs e) {
+        private async void LoadToolStripMenuItem_Click(object sender, EventArgs e) {
             if (ModListView.Items.Count != 0) {
                 DialogResult overwrite = MessageBox.Show("The mod list is not empty, are you sure you want to overwrite the current list?", "Confirm Overwrite", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (overwrite == DialogResult.No) { return; }
             }
 
-            if (LoadModListDialog.ShowDialog() == DialogResult.OK) {
-                ModListView.Items.Clear();
-                Task.Run(() => LoadModList(LoadModListDialog.FileName));
+            try {
+                if (LoadModListDialog.ShowDialog() == DialogResult.OK) {
+                    ToggleLoadingLabel(true);
+                    ModListView.BeginUpdate();
+                    ModListView.Items.Clear();
+
+                    ModListView.Sorting = SortOrder.None;
+
+                    await Task.Run(() => LoadModList(LoadModListDialog.FileName));
+
+                    if (KeepSortedCheckBox.Checked == true) {
+                        ModListView.Sorting = SortOrder.Ascending;
+                        ModListView.Sort();
+                    }
+
+                    ModListView.EndUpdate();
+                    ToggleLoadingLabel(false);
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error loading the mod list.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -253,6 +270,35 @@ namespace AwesomesauceModpackTools.Mods.ModList {
                 MD5TextBox.Text = selectedMod.MD5;
                 RequiresTextBox.Text = selectedMod.RequiresToString();
                 NotesTextBox.Text = selectedMod.Notes;
+            }
+        }
+
+        private Label LoadingLabel = null;
+        private void ToggleLoadingLabel(bool showLabel) {
+            if (showLabel == true) {
+                FileMenuStrip.Enabled = false;
+                KeepSortedCheckBox.Enabled = false;
+                SortLinkLabel.Enabled = false;
+
+                if (LoadingLabel != null) {
+                    LoadingLabel.Visible = true;
+                    return;
+                }
+
+                LoadingLabel = new Label();
+                Controls.Add(LoadingLabel);
+                LoadingLabel.AutoSize = false;
+                LoadingLabel.BringToFront();
+                LoadingLabel.Dock = DockStyle.Fill;
+                LoadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                LoadingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                LoadingLabel.Text = "Loading...";
+            } else {
+                LoadingLabel.Visible = false;
+
+                FileMenuStrip.Enabled = true;
+                KeepSortedCheckBox.Enabled = true;
+                SortLinkLabel.Enabled = true;
             }
         }
 
