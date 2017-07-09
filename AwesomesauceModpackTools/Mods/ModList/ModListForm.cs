@@ -293,6 +293,8 @@ namespace AwesomesauceModpackTools.Mods.ModList {
                 LoadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 LoadingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 LoadingLabel.Text = "Loading...";
+
+                Application.DoEvents();
             } else {
                 LoadingLabel.Visible = false;
 

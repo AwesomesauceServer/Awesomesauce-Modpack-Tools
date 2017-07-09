@@ -27,7 +27,7 @@ namespace AwesomesauceModpackTools {
         }
 
         private async Task LoadGithub_Modpack() {
-            Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue("Awesomesauce-Modpack-Tools"));
+            Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName));
             IReadOnlyList<Octokit.GitHubCommit> commits = await github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack");
 
             foreach (Octokit.GitHubCommit commit in commits) {
@@ -37,7 +37,7 @@ namespace AwesomesauceModpackTools {
         }
 
         private async Task LoadGithub_Tools() {
-            Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue("Awesomesauce-Modpack-Tools"));
+            Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName));
             IReadOnlyList<Octokit.GitHubCommit> commits = await github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack-Tools");
 
             foreach (Octokit.GitHubCommit commit in commits) {

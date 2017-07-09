@@ -1,17 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
-using AwesomesauceModpackTools.Mods;
-using System.Net;
+using System.Drawing;
 using System.IO;
+using System.Net;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using AwesomesauceModpackTools.Mods;
+using Newtonsoft.Json;
+using static AwesomesauceModpackTools.Utilities;
 
 namespace AwesomesauceModpackTools.Downloader {
 
     public partial class DownloaderForm : Form {
 
-        private string PacksJSON = "";
+        /// <summary>
+        /// Is there currently running downloads.
+        /// </summary>
+        private bool IsDownloading = false;
+
+        /// <summary>
+        /// Cancel currently running downloads.
+        /// </summary>
+        private bool IsCanceling = false;
+
+        /// <summary>
+        /// URL of the packs JSON file on GitHub
+        /// </summary>
         private const string PacksJSON_URL = "https://raw.githubusercontent.com/AwesomesauceServer/Awesomesauce-Modpack/master/packs.json";
 
         public DownloaderForm() {
@@ -20,23 +34,36 @@ namespace AwesomesauceModpackTools.Downloader {
         }
 
         private void DownloaderForm_Load(object sender, EventArgs e) {
-#if RELEASE
-            WebClient client = new WebClient();
-            PacksJSON = client.DownloadString(PacksJSON_URL);
-#elif DEBUG
-            PacksJSON = File.ReadAllText(@"..\..\datasamples\packs.json");
-#endif
-            List<Pack> packList = JsonConvert.DeserializeObject<List<Pack>>(PacksJSON);
+            try {
+                WebClient client = new WebClient();
+                client.Headers.Add("user-agent", UserAgent);
+                string packsJSON = client.DownloadString(PacksJSON_URL);
 
-            if (packList != null && packList.Count != 0) {
-                foreach (Pack pack in packList) { PacksComboBox.Items.Add(pack); }
-                PacksComboBox.SelectedIndex = 0;
-            } else {
-                LoadFromGitHubLabel.Enabled = false;
-                PacksComboBox.Enabled = false;
-                PacksComboBox.Items.Add("No packs found");
-                PacksComboBox.Text = "No packs found";
-                OrLabel.Enabled = false;
+                List<Pack> packList = JsonConvert.DeserializeObject<List<Pack>>(packsJSON);
+
+                if (packList != null && packList.Count != 0) {
+                    foreach (Pack pack in packList) { PacksComboBox.Items.Add(pack); }
+                    PacksComboBox.SelectedIndex = 0;
+                } else {
+                    LoadFromGitHubLabel.Enabled = false;
+                    PacksComboBox.Enabled = false;
+                    PacksComboBox.Items.Add("No packs found");
+                    PacksComboBox.Text = "No packs found";
+                    OrLabel.Enabled = false;
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error loading the pack list from GitHub.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Pack List", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DownloaderForm_FormClosing(object sender, FormClosingEventArgs e) {
+            if (IsDownloading) {
+                if (MessageBox.Show("Really exit?\r\n\r\nThere are files currently downloading.", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) {
+                    e.Cancel = true;
+                    return;
+                }
+                IsCanceling = true;
+                Dispose();
             }
         }
 
@@ -50,10 +77,10 @@ namespace AwesomesauceModpackTools.Downloader {
                 ToggleLoadingLabel(true);
                 ModListView.BeginUpdate();
                 ModListView.Items.Clear();
-                Application.DoEvents();
 
                 Pack selectedPack = (Pack)PacksComboBox.SelectedItem;
                 WebClient client = new WebClient();
+                client.Headers.Add("user-agent", UserAgent);
                 string modListString = client.DownloadString(selectedPack.ModListURL);
 
                 LoadModList(null, modListString);
@@ -78,7 +105,6 @@ namespace AwesomesauceModpackTools.Downloader {
                     ToggleLoadingLabel(true);
                     ModListView.BeginUpdate();
                     ModListView.Items.Clear();
-                    Application.DoEvents();
 
                     await Task.Run(() => LoadModList(LoadModListDialog.FileName));
 
@@ -93,7 +119,57 @@ namespace AwesomesauceModpackTools.Downloader {
         }
 
         private void DownloadButton_Click(object sender, EventArgs e) {
+            DownloadMods();
+        }
 
+        private async Task DownloadMods() {
+            IsDownloading = true;
+            LoadFromPanel.Enabled = false;
+            DownloadButton.Enabled = false;
+
+            Color working = Color.LightBlue;
+            Color done = Color.LightGreen;
+            Color error = Color.Tomato;
+
+            foreach (ListViewItem item in ModListView.Items) {
+                if (IsCanceling) { break; }
+
+                try {
+                    Mod itemMod = (Mod)item.Tag;
+
+                    item.BackColor = working;
+                    item.EnsureVisible();
+
+                    string downloadPath = $@"C:\Beta\AwesomesauceTools\Downloads\{itemMod.File}";
+
+                    WebClient client = new WebClient();
+                    client.Headers.Add("user-agent", UserAgent);
+
+                    client.DownloadFileCompleted += (clientSender, clientE) => {
+                        string hash = MD5File(downloadPath);
+
+                        if (hash == itemMod.MD5) {
+                            if (clientE.Error != null) {
+                                item.BackColor = error;
+                                DeleteFile(downloadPath);
+                            } else {
+                                item.BackColor = done;
+                            }
+                        } else {
+                            item.BackColor = error;
+                            DeleteFile(downloadPath);
+                        }
+                    };
+
+                    await client.DownloadFileTaskAsync(new Uri(itemMod.Link_Download), downloadPath);
+                } catch (Exception ex) {
+                    item.BackColor = error;
+                }
+            }
+
+            LoadFromPanel.Enabled = true;
+            DownloadButton.Enabled = true;
+            IsDownloading = false;
         }
 
         private void LoadModList(string file, string fromString = null) {
@@ -136,6 +212,8 @@ namespace AwesomesauceModpackTools.Downloader {
                 LoadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 LoadingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 LoadingLabel.Text = "Loading...";
+
+                Application.DoEvents();
             } else {
                 LoadingLabel.Visible = false;
             }

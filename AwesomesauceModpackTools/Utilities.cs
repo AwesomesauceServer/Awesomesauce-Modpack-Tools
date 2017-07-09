@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace AwesomesauceModpackTools {
 
@@ -23,11 +24,18 @@ namespace AwesomesauceModpackTools {
         /// </summary>
         public static string EXEDirectory { get => _EXEDirectory; }
 
-        private static string _UserAgent = $"Awesomesauce-Modpack-Tools/{Version.Parse(System.Windows.Forms.Application.ProductVersion).ToString(3)} ({Environment.OSVersion}; {((Environment.Is64BitOperatingSystem == true) ? "x64" : "x86")}) [https://git.io/vQ6dQ]";
+        private static string _UserAgent = $"{AppName}/{Version.Parse(System.Windows.Forms.Application.ProductVersion).ToString(3)} ({Environment.OSVersion}; {((Environment.Is64BitOperatingSystem == true) ? "x64" : "x86")}) [https://git.io/vQ6dQ]";
         /// <summary>
         /// The programs user-agent.
         /// </summary>
         public static string UserAgent { get => _UserAgent; }
+
+        private static string _AppName = "Awesomesauce-Modpack-Tools";
+        /// <summary>
+        /// The programs name.
+        /// </summary>
+        public static string AppName { get => _AppName; }
+
 
         /// <summary>
         /// Search a list of mods for an exact <see cref="Mod.ID" />.
@@ -111,6 +119,41 @@ namespace AwesomesauceModpackTools {
             try {
                 Uri uri = new Uri(url);
                 return (uri.Host == domain);
+            } catch {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// MD5 hash a local file.
+        /// </summary>
+        /// <param name="file">Path to the file.</param>
+        /// <returns>MD5 hash if successful; empty string if error.</returns>
+        public static string MD5File(string file) {
+            try {
+                using (MD5 md5 = MD5.Create()) {
+                    using (FileStream stream = File.OpenRead(file)) {
+                        return string.Concat(md5.ComputeHash(stream).Select(x => x.ToString("x2")));
+                    }
+                }
+            } catch {
+                return "";
+            }
+        }
+
+        /// <summary>
+        /// Deletes a local file.
+        /// </summary>
+        /// <param name="file">Path to the file.</param>
+        /// <returns>True if deleted; False if anything else.</returns>
+        public static bool DeleteFile(string file) {
+            try {
+                if (File.Exists(file)) { File.Delete(file); }
+                if (!File.Exists(file)) {
+                    return true;
+                } else {
+                    return false;
+                }
             } catch {
                 return false;
             }

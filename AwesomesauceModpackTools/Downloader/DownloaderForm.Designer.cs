@@ -27,12 +27,12 @@
             this.LoadFromGitHubLabel = new System.Windows.Forms.Label();
             this.OrLabel = new System.Windows.Forms.Label();
             this.LoadFromPanel = new System.Windows.Forms.Panel();
+            this.LoadGitHubButton = new System.Windows.Forms.Button();
             this.LoadLocalButton = new System.Windows.Forms.Button();
             this.LoadModListDialog = new System.Windows.Forms.OpenFileDialog();
             this.ModListView = new System.Windows.Forms.ListView();
             this.NameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MD5Column = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LoadGitHubButton = new System.Windows.Forms.Button();
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.DownloadButton = new System.Windows.Forms.Button();
             this.LoadFromPanel.SuspendLayout();
@@ -84,6 +84,16 @@
             this.LoadFromPanel.Size = new System.Drawing.Size(220, 125);
             this.LoadFromPanel.TabIndex = 5;
             // 
+            // LoadGitHubButton
+            // 
+            this.LoadGitHubButton.Location = new System.Drawing.Point(153, 31);
+            this.LoadGitHubButton.Name = "LoadGitHubButton";
+            this.LoadGitHubButton.Size = new System.Drawing.Size(53, 23);
+            this.LoadGitHubButton.TabIndex = 6;
+            this.LoadGitHubButton.Text = "Load";
+            this.LoadGitHubButton.UseVisualStyleBackColor = true;
+            this.LoadGitHubButton.Click += new System.EventHandler(this.LoadGitHubButton_Click);
+            // 
             // LoadLocalButton
             // 
             this.LoadLocalButton.Location = new System.Drawing.Point(39, 89);
@@ -113,7 +123,7 @@
             this.ModListView.Location = new System.Drawing.Point(238, 12);
             this.ModListView.MultiSelect = false;
             this.ModListView.Name = "ModListView";
-            this.ModListView.Size = new System.Drawing.Size(391, 501);
+            this.ModListView.Size = new System.Drawing.Size(425, 501);
             this.ModListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.ModListView.TabIndex = 6;
             this.ModListView.UseCompatibleStateImageBehavior = false;
@@ -122,32 +132,23 @@
             // NameColumn
             // 
             this.NameColumn.Text = "Name";
-            this.NameColumn.Width = 160;
+            this.NameColumn.Width = 170;
             // 
             // MD5Column
             // 
             this.MD5Column.Text = "MD5";
-            this.MD5Column.Width = 200;
-            // 
-            // LoadGitHubButton
-            // 
-            this.LoadGitHubButton.Location = new System.Drawing.Point(153, 31);
-            this.LoadGitHubButton.Name = "LoadGitHubButton";
-            this.LoadGitHubButton.Size = new System.Drawing.Size(53, 23);
-            this.LoadGitHubButton.TabIndex = 6;
-            this.LoadGitHubButton.Text = "Load";
-            this.LoadGitHubButton.UseVisualStyleBackColor = true;
-            this.LoadGitHubButton.Click += new System.EventHandler(this.LoadGitHubButton_Click);
+            this.MD5Column.Width = 225;
             // 
             // MainStatusStrip
             // 
             this.MainStatusStrip.Location = new System.Drawing.Point(0, 525);
             this.MainStatusStrip.Name = "MainStatusStrip";
-            this.MainStatusStrip.Size = new System.Drawing.Size(640, 22);
+            this.MainStatusStrip.Size = new System.Drawing.Size(674, 22);
             this.MainStatusStrip.TabIndex = 7;
             // 
             // DownloadButton
             // 
+            this.DownloadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.DownloadButton.Enabled = false;
             this.DownloadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DownloadButton.Location = new System.Drawing.Point(12, 469);
@@ -162,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 547);
+            this.ClientSize = new System.Drawing.Size(674, 547);
             this.Controls.Add(this.DownloadButton);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.ModListView);
@@ -173,6 +174,7 @@
             this.Name = "DownloaderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Downloader";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DownloaderForm_FormClosing);
             this.Load += new System.EventHandler(this.DownloaderForm_Load);
             this.LoadFromPanel.ResumeLayout(false);
             this.LoadFromPanel.PerformLayout();
