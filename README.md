@@ -1,5 +1,5 @@
 # Awesomesauce Modpack Tools [![Build Status](https://travis-ci.org/AwesomesauceServer/Awesomesauce-Modpack-Tools.svg?branch=master)](https://travis-ci.org/AwesomesauceServer/Awesomesauce-Modpack-Tools)
-Collection of tools to help us manage the Awesomesauce Modpack.
+Collection of tools to help us manage the [Awesomesauce Modpack](https://github.com/AwesomesauceServer/Awesomesauce-Modpack), a semi-private community modpack.
 
 ### Why?
 It's a pain to update and download many mods by hand.
@@ -26,7 +26,7 @@ The JSON file will be used to download and update the mod.
 |linkDownload|Download to the mod file|
 |linkFiles|Project file list for the mod updates|
 |md5|MD5 of the mod file|
-|updateMode|[How the update should be handled](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/Enums.cs#L16)|
+|updateMode|[How the update should be handled](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/Enums.cs#L11)|
 
 ##### Example
 ```json
