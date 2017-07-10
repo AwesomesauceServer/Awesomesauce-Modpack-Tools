@@ -95,6 +95,7 @@ namespace AwesomesauceModpackTools.Updater {
 
             Color working = Color.LightBlue;
             Color available = Color.LightGreen;
+            Color skipped = Color.Honeydew;
             Color notAvailable = Color.LightGray;
             Color error = Color.Tomato;
 
@@ -104,6 +105,11 @@ namespace AwesomesauceModpackTools.Updater {
                 if (HasErrors) { if (item.BackColor != error) { continue; } }
 
                 Mod itemMod = (Mod)item.Tag;
+                if (itemMod.UpdateMode != UpdateMode.Automatic) {
+                    item.BackColor = skipped;
+                    item.EnsureVisible();
+                    continue;
+                }
                 string oldMD5 = itemMod.MD5;
 
                 item.BackColor = working;
@@ -123,7 +129,7 @@ namespace AwesomesauceModpackTools.Updater {
                 }
 
                 try {
-                    itemMod = ParseForUpdate(itemMod, selectedGameVersion).Mod;
+                    await Task.Run(() => { itemMod = ParseForUpdate(itemMod, selectedGameVersion).Mod; });
 
                     if (itemMod.MD5 == oldMD5) {
                         item.BackColor = notAvailable;
@@ -137,7 +143,6 @@ namespace AwesomesauceModpackTools.Updater {
                     item.BackColor = error;
                 }
 
-                Application.DoEvents();
             }
 
             if (errorCount == 0) {
@@ -146,7 +151,7 @@ namespace AwesomesauceModpackTools.Updater {
                 SaveLabel.Text = "Click save to choose where to save the updated mod list.";
                 SavePanel.BackColor = Color.LightGreen;
                 if (SavePanel.Visible == false) { BlinkSave(Color.LightGreen); }
-                SavePanel.Visible = true;       
+                SavePanel.Visible = true;
             } else {
                 errorCount = 0;
                 HasErrors = true;
@@ -156,7 +161,7 @@ namespace AwesomesauceModpackTools.Updater {
                 SaveLabel.Text = "Some mods failed to update, you can still save the complete mod list. Any failed mods will be exactly the same as they were.";
                 SavePanel.BackColor = Color.LightYellow;
                 if (SavePanel.Visible == false) { BlinkSave(Color.LightYellow); }
-                SavePanel.Visible = true;            
+                SavePanel.Visible = true;
             }
 
             SavePanel.Enabled = true;

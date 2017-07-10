@@ -38,7 +38,7 @@
             this.SaveModListDialog = new System.Windows.Forms.SaveFileDialog();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.ExampleUpdateAvailableLabel = new System.Windows.Forms.Label();
-            this.ExampleUpdateErrorLabel = new System.Windows.Forms.Label();
+            this.ExampleSkippedLabel = new System.Windows.Forms.Label();
             this.ExampleNoUpdateLabel = new System.Windows.Forms.Label();
             this.ExampleCheckingLabel = new System.Windows.Forms.Label();
             this.ExampleStatusColorsLabel = new System.Windows.Forms.Label();
@@ -48,13 +48,14 @@
             this.SavePanel = new System.Windows.Forms.Panel();
             this.SaveLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.ExampleUpdateErrorLabel = new System.Windows.Forms.Label();
             this.LoadFromPanel.SuspendLayout();
             this.SavePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainStatusStrip
             // 
-            this.MainStatusStrip.Location = new System.Drawing.Point(0, 527);
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 567);
             this.MainStatusStrip.Name = "MainStatusStrip";
             this.MainStatusStrip.Size = new System.Drawing.Size(891, 22);
             this.MainStatusStrip.TabIndex = 8;
@@ -139,7 +140,7 @@
             this.ModListView.Location = new System.Drawing.Point(238, 12);
             this.ModListView.MultiSelect = false;
             this.ModListView.Name = "ModListView";
-            this.ModListView.Size = new System.Drawing.Size(639, 501);
+            this.ModListView.Size = new System.Drawing.Size(639, 541);
             this.ModListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.ModListView.TabIndex = 10;
             this.ModListView.UseCompatibleStateImageBehavior = false;
@@ -176,7 +177,7 @@
             this.UpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.UpdateButton.Enabled = false;
             this.UpdateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateButton.Location = new System.Drawing.Point(12, 469);
+            this.UpdateButton.Location = new System.Drawing.Point(12, 509);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(220, 44);
             this.UpdateButton.TabIndex = 11;
@@ -197,25 +198,25 @@
             this.ExampleUpdateAvailableLabel.Text = "Update Available";
             this.ExampleUpdateAvailableLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ExampleUpdateErrorLabel
+            // ExampleSkippedLabel
             // 
-            this.ExampleUpdateErrorLabel.BackColor = System.Drawing.Color.Tomato;
-            this.ExampleUpdateErrorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ExampleUpdateErrorLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExampleUpdateErrorLabel.Location = new System.Drawing.Point(12, 242);
-            this.ExampleUpdateErrorLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 6);
-            this.ExampleUpdateErrorLabel.Name = "ExampleUpdateErrorLabel";
-            this.ExampleUpdateErrorLabel.Size = new System.Drawing.Size(220, 18);
-            this.ExampleUpdateErrorLabel.TabIndex = 12;
-            this.ExampleUpdateErrorLabel.Text = "Update Error";
-            this.ExampleUpdateErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ExampleSkippedLabel.BackColor = System.Drawing.Color.Honeydew;
+            this.ExampleSkippedLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ExampleSkippedLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExampleSkippedLabel.Location = new System.Drawing.Point(12, 218);
+            this.ExampleSkippedLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 6);
+            this.ExampleSkippedLabel.Name = "ExampleSkippedLabel";
+            this.ExampleSkippedLabel.Size = new System.Drawing.Size(220, 18);
+            this.ExampleSkippedLabel.TabIndex = 12;
+            this.ExampleSkippedLabel.Text = "Skipped (update mode)";
+            this.ExampleSkippedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ExampleNoUpdateLabel
             // 
             this.ExampleNoUpdateLabel.BackColor = System.Drawing.Color.LightGray;
             this.ExampleNoUpdateLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ExampleNoUpdateLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExampleNoUpdateLabel.Location = new System.Drawing.Point(12, 218);
+            this.ExampleNoUpdateLabel.Location = new System.Drawing.Point(12, 242);
             this.ExampleNoUpdateLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 6);
             this.ExampleNoUpdateLabel.Name = "ExampleNoUpdateLabel";
             this.ExampleNoUpdateLabel.Size = new System.Drawing.Size(220, 18);
@@ -249,13 +250,14 @@
             // 
             // GameVersionsComboBox
             // 
+            this.GameVersionsComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.GameVersionsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GameVersionsComboBox.FormattingEnabled = true;
             this.GameVersionsComboBox.Items.AddRange(new object[] {
             "1.10.2",
             "1.11.2",
             "1.12"});
-            this.GameVersionsComboBox.Location = new System.Drawing.Point(14, 442);
+            this.GameVersionsComboBox.Location = new System.Drawing.Point(14, 482);
             this.GameVersionsComboBox.Name = "GameVersionsComboBox";
             this.GameVersionsComboBox.Size = new System.Drawing.Size(110, 21);
             this.GameVersionsComboBox.TabIndex = 1;
@@ -263,9 +265,10 @@
             // 
             // GameVersionsLabel
             // 
+            this.GameVersionsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.GameVersionsLabel.AutoSize = true;
             this.GameVersionsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GameVersionsLabel.Location = new System.Drawing.Point(9, 385);
+            this.GameVersionsLabel.Location = new System.Drawing.Point(9, 425);
             this.GameVersionsLabel.Name = "GameVersionsLabel";
             this.GameVersionsLabel.Size = new System.Drawing.Size(77, 13);
             this.GameVersionsLabel.TabIndex = 12;
@@ -273,7 +276,8 @@
             // 
             // GameVersionsInfoLabel
             // 
-            this.GameVersionsInfoLabel.Location = new System.Drawing.Point(9, 399);
+            this.GameVersionsInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.GameVersionsInfoLabel.Location = new System.Drawing.Point(9, 439);
             this.GameVersionsInfoLabel.Name = "GameVersionsInfoLabel";
             this.GameVersionsInfoLabel.Size = new System.Drawing.Size(193, 41);
             this.GameVersionsInfoLabel.TabIndex = 13;
@@ -282,11 +286,12 @@
             // 
             // SavePanel
             // 
+            this.SavePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.SavePanel.BackColor = System.Drawing.SystemColors.Window;
             this.SavePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SavePanel.Controls.Add(this.SaveLabel);
             this.SavePanel.Controls.Add(this.SaveButton);
-            this.SavePanel.Location = new System.Drawing.Point(12, 275);
+            this.SavePanel.Location = new System.Drawing.Point(12, 315);
             this.SavePanel.Name = "SavePanel";
             this.SavePanel.Size = new System.Drawing.Size(220, 100);
             this.SavePanel.TabIndex = 14;
@@ -311,11 +316,24 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // ExampleUpdateErrorLabel
+            // 
+            this.ExampleUpdateErrorLabel.BackColor = System.Drawing.Color.Tomato;
+            this.ExampleUpdateErrorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ExampleUpdateErrorLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExampleUpdateErrorLabel.Location = new System.Drawing.Point(12, 266);
+            this.ExampleUpdateErrorLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 6);
+            this.ExampleUpdateErrorLabel.Name = "ExampleUpdateErrorLabel";
+            this.ExampleUpdateErrorLabel.Size = new System.Drawing.Size(220, 18);
+            this.ExampleUpdateErrorLabel.TabIndex = 12;
+            this.ExampleUpdateErrorLabel.Text = "Update Error";
+            this.ExampleUpdateErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UpdaterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 549);
+            this.ClientSize = new System.Drawing.Size(891, 589);
             this.Controls.Add(this.SavePanel);
             this.Controls.Add(this.GameVersionsInfoLabel);
             this.Controls.Add(this.ExampleNoUpdateLabel);
@@ -324,11 +342,13 @@
             this.Controls.Add(this.ExampleStatusColorsLabel);
             this.Controls.Add(this.GameVersionsComboBox);
             this.Controls.Add(this.ExampleUpdateErrorLabel);
+            this.Controls.Add(this.ExampleSkippedLabel);
             this.Controls.Add(this.ExampleUpdateAvailableLabel);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.ModListView);
             this.Controls.Add(this.LoadFromPanel);
             this.Controls.Add(this.MainStatusStrip);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(619, 588);
@@ -362,7 +382,7 @@
         private System.Windows.Forms.ColumnHeader UpdatedFileColumn;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Label ExampleUpdateAvailableLabel;
-        private System.Windows.Forms.Label ExampleUpdateErrorLabel;
+        private System.Windows.Forms.Label ExampleSkippedLabel;
         private System.Windows.Forms.Label ExampleNoUpdateLabel;
         private System.Windows.Forms.Label ExampleCheckingLabel;
         private System.Windows.Forms.Label ExampleStatusColorsLabel;
@@ -372,5 +392,6 @@
         private System.Windows.Forms.Panel SavePanel;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Label SaveLabel;
+        private System.Windows.Forms.Label ExampleUpdateErrorLabel;
     }
 }
