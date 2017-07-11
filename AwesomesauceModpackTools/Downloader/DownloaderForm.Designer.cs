@@ -233,7 +233,7 @@
             this.Controls.Add(this.LoadFromPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(656, 586);
+            this.MinimumSize = new System.Drawing.Size(690, 586);
             this.Name = "DownloaderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Downloader";
