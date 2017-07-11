@@ -187,6 +187,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Awesomesauce Modpack Tools";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.GitHubTabControl.ResumeLayout(false);
             this.ModpackTabPage.ResumeLayout(false);

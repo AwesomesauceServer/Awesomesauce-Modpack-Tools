@@ -21,6 +21,22 @@ namespace AwesomesauceModpackTools {
 
         }
 
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
+            if (Application.OpenForms.Count != 1) {
+                string working = "";
+                foreach (Form form in Application.OpenForms) {
+                    if (form.Text == Text) { continue; }
+                    working += $"{form.Text}\r\n";
+                }
+                working = working.Trim();
+
+                if (MessageBox.Show($"There are tool windows still open, exit anyways?\r\n\r\nThe following tool windows are open\r\n{working}", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) {
+                    e.Cancel = true;
+                    return;
+                }
+            }
+        }
+
         private async Task LoadGithub() {
             LoadGithub_Modpack();
             LoadGithub_Tools();
