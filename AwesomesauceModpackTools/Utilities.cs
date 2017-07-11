@@ -12,6 +12,11 @@ namespace AwesomesauceModpackTools {
     /// </summary>
     public static class Utilities {
 
+        /// <summary>
+        /// URI to download the modpack list info from.
+        /// </summary>
+        public static Uri ModpackList_URI = new Uri("https://raw.githubusercontent.com/AwesomesauceServer/Awesomesauce-Modpack/master/packs.json");
+
         private static string _EXELocation = Process.GetCurrentProcess().MainModule.FileName;
         /// <summary>
         /// Current location (including filename and extension) of the running executable.
@@ -35,6 +40,12 @@ namespace AwesomesauceModpackTools {
         /// The programs name.
         /// </summary>
         public static string AppName { get => _AppName; }
+
+        private static List<Pack> _ModpackList = new List<Pack>();
+        /// <summary>
+        /// Modpack list downloaded from GitHub at startup.
+        /// </summary>
+        public static List<Pack> ModpackList { get => _ModpackList; set => _ModpackList = value; }
 
         /// <summary>
         /// Search a list of mods for an exact <see cref="Mod.ID" />.

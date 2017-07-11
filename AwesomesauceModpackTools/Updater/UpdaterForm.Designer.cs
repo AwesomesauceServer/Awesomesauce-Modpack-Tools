@@ -76,6 +76,7 @@
             // 
             // LoadGitHubButton
             // 
+            this.LoadGitHubButton.Enabled = false;
             this.LoadGitHubButton.Location = new System.Drawing.Point(153, 31);
             this.LoadGitHubButton.Name = "LoadGitHubButton";
             this.LoadGitHubButton.Size = new System.Drawing.Size(53, 23);

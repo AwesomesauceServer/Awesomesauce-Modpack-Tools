@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using static AwesomesauceModpackTools.Utilities;
 
 namespace AwesomesauceModpackTools {
@@ -38,8 +40,21 @@ namespace AwesomesauceModpackTools {
         }
 
         private async Task LoadGithub() {
+            LoadGithub_ModpackList();
             LoadGithub_Modpack();
             LoadGithub_Tools();
+        }
+
+        private void LoadGithub_ModpackList() {
+            try {
+                WebClient client = new WebClient();
+                client.Headers.Add("user-agent", UserAgent);
+                client.DownloadStringCompleted += (clientSender, clientE) => { ModpackList = JsonConvert.DeserializeObject<List<Pack>>(clientE.Result); };
+
+                client.DownloadStringAsync(ModpackList_URI);
+            } catch {
+                ModpackList = null;
+            }
         }
 
         private async Task LoadGithub_Modpack() {

@@ -30,11 +30,6 @@ namespace AwesomesauceModpackTools.Updater {
         /// </summary>
         private bool HasErrors = false;
 
-        /// <summary>
-        /// URL of the packs JSON file on GitHub
-        /// </summary>
-        private const string PacksJSON_URL = "https://raw.githubusercontent.com/AwesomesauceServer/Awesomesauce-Modpack/master/packs.json";
-
         public UpdaterForm() {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
@@ -42,15 +37,11 @@ namespace AwesomesauceModpackTools.Updater {
 
         private void UpdaterForm_Load(object sender, EventArgs e) {
             try {
-                WebClient client = new WebClient();
-                client.Headers.Add("user-agent", UserAgent);
-                string packsJSON = client.DownloadString(PacksJSON_URL);
-
-                List<Pack> packList = JsonConvert.DeserializeObject<List<Pack>>(packsJSON);
-
-                if (packList != null && packList.Count != 0) {
-                    foreach (Pack pack in packList) { PacksComboBox.Items.Add(pack); }
+                if (ModpackList != null && ModpackList.Count != 0) {
+                    foreach (Pack pack in ModpackList) { PacksComboBox.Items.Add(pack); }
                     PacksComboBox.SelectedIndex = 0;
+
+                    LoadGitHubButton.Enabled = true;
                 } else {
                     LoadFromGitHubLabel.Enabled = false;
                     PacksComboBox.Enabled = false;
