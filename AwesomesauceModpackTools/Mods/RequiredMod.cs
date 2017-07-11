@@ -2,6 +2,9 @@
 
 namespace AwesomesauceModpackTools.Mods {
 
+    /// <summary>
+    /// Required mod for a parent mod.
+    /// </summary>
     public class RequiredMod {
 
         /// <summary>

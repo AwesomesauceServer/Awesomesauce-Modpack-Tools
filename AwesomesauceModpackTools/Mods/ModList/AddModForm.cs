@@ -6,8 +6,19 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
     public partial class AddModForm : Form {
 
+        /// <summary>
+        /// New mod to be added.
+        /// </summary>
         public Mod NewMod { get; set; } = new Mod();
+
+        /// <summary>
+        /// Reason for aborting.
+        /// </summary>
         public string AbortError { get; set; } = "";
+
+        /// <summary>
+        /// Show add requirement form after add.
+        /// </summary>
         public bool AddWithRequirement { get; set; } = false;
 
         public AddModForm() {

@@ -6,8 +6,19 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
     public partial class RequiresForm : Form {
 
+        /// <summary>
+        /// Mod that is selected in the ModListForm.
+        /// </summary>
         public Mod SelectedMod { get; set; }
+
+        /// <summary>
+        /// Temporary mod list, cloned from ModListForm.
+        /// </summary>
         public List<ListViewItem> ListItems { get; set; } = new List<ListViewItem>();
+
+        /// <summary>
+        /// Mods that were checked.
+        /// </summary>
         public List<Mod> CheckedMods { get; set; } = new List<Mod>();
 
         public RequiresForm() {

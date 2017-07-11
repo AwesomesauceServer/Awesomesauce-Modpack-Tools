@@ -5,6 +5,9 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
     public partial class EditModForm : Form {
 
+        /// <summary>
+        /// Mod that is being edited.
+        /// </summary>
         public Mod EditingMod { get; set; }
 
         public EditModForm() {

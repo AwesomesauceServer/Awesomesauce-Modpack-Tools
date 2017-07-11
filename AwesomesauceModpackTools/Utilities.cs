@@ -36,7 +36,6 @@ namespace AwesomesauceModpackTools {
         /// </summary>
         public static string AppName { get => _AppName; }
 
-
         /// <summary>
         /// Search a list of mods for an exact <see cref="Mod.ID" />.
         /// </summary>

@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 
 namespace AwesomesauceModpackTools {
 
+    /// <summary>
+    /// Modpack information downloaded from GitHub.
+    /// </summary>
     public class Pack {
 
         /// <summary>
