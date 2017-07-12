@@ -32,7 +32,7 @@ namespace AwesomesauceModpackTools.Mods.Providers {
         /// <returns><see cref="Mod"/> and <see cref="Exception"/>. If there was a exception, <see cref="Mod"/> will be null; if there was no exception, <see cref="Exception"/> will be null.</returns>
         public static (Mod Mod, Exception Exception) ParseForInfo(Mod mod) {
             try {
-                HtmlWeb htmlWeb = new HtmlWeb();
+                HtmlWeb htmlWeb = new HtmlWeb() { UserAgent = UserAgent };
                 mod.HTML_Link = htmlWeb.Load(mod.Link);
 
                 if (htmlWeb.StatusCode == HttpStatusCode.OK) {
@@ -70,7 +70,7 @@ namespace AwesomesauceModpackTools.Mods.Providers {
         /// <returns><see cref="Mod"/> and <see cref="Exception"/>. If there was a exception, <see cref="Mod"/> will be null; if there was no exception, <see cref="Exception"/> will be null.</returns>
         public static (Mod Mod, Exception Exception) ParseForUpdate(Mod mod, string gameVersion) {
             try {
-                HtmlWeb htmlWeb = new HtmlWeb();
+                HtmlWeb htmlWeb = new HtmlWeb() { UserAgent = UserAgent };
                 mod.HTML_Files = htmlWeb.Load($"{mod.Link_Files}{gameVersion}");
 
                 if (htmlWeb.StatusCode == HttpStatusCode.OK) {
