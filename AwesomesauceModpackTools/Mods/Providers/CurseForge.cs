@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using HtmlAgilityPack;
 using static AwesomesauceModpackTools.Utilities;
 
@@ -24,12 +25,17 @@ namespace AwesomesauceModpackTools.Mods.Providers {
         /// </summary>
         public static string GameVersion1102 { get => _GameVersion1102; }
 
+        /// <summary>
+        /// Parse a CurseForge mod page for information.
+        /// </summary>
+        /// <param name="mod">Initialized <see cref="Mod"/> with a set <see cref="Mod.Link"/>.</param>
+        /// <returns><see cref="Mod"/> and <see cref="Exception"/>. If there was a exception, <see cref="Mod"/> will be null; if there was no exception, <see cref="Exception"/> will be null.</returns>
         public static (Mod Mod, Exception Exception) ParseForInfo(Mod mod) {
             try {
                 HtmlWeb htmlWeb = new HtmlWeb();
                 mod.HTML_Link = htmlWeb.Load(mod.Link);
 
-                if (htmlWeb.StatusCode == System.Net.HttpStatusCode.OK) {
+                if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                     HtmlNode node = mod.HTML_Link.DocumentNode;
 
                     mod.Name = node.SelectSingleNode("//span[@class='overflow-tip']").InnerText.Trim();
@@ -56,12 +62,18 @@ namespace AwesomesauceModpackTools.Mods.Providers {
             }
         }
 
+        /// <summary>
+        /// Parse a CurseForge file list page for information.
+        /// </summary>
+        /// <param name="mod">Initialized <see cref="Mod"/> with a set <see cref="Mod.Link"/>.</param>
+        /// <param name="gameVersion">Game version to filter the page by. e.g. <see cref="GameVersion1112"/></param>
+        /// <returns><see cref="Mod"/> and <see cref="Exception"/>. If there was a exception, <see cref="Mod"/> will be null; if there was no exception, <see cref="Exception"/> will be null.</returns>
         public static (Mod Mod, Exception Exception) ParseForUpdate(Mod mod, string gameVersion) {
             try {
                 HtmlWeb htmlWeb = new HtmlWeb();
                 mod.HTML_Files = htmlWeb.Load($"{mod.Link_Files}{gameVersion}");
 
-                if (htmlWeb.StatusCode == System.Net.HttpStatusCode.OK) {
+                if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                     HtmlNode node = mod.HTML_Files.DocumentNode;
 
                     string modURL = node.SelectSingleNode("(//div/div[@class='project-file-name-container']/a[@class='overflow-tip twitch-link'])[1]").Attributes["href"].Value.Trim();
@@ -79,6 +91,26 @@ namespace AwesomesauceModpackTools.Mods.Providers {
                 }
             } catch (Exception ex) {
                 return (null, ex);
+            }
+        }
+
+        /// <summary>
+        /// Get the redirected url of a download.
+        /// </summary>
+        /// <param name="url">Inital URL of the request.</param>
+        /// <returns>Direct link to the file; or null if <see cref="Exception"/>.</returns>
+        public static string GetDirectDownload(string url) {
+            try {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.AllowAutoRedirect = false;
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                string location = response.Headers["Location"];
+                response.Close();
+
+                return location;
+            } catch {
+                return null;
             }
         }
 
