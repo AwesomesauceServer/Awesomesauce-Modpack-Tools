@@ -49,6 +49,7 @@
             this.SaveLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ExampleUpdateErrorLabel = new System.Windows.Forms.Label();
+            this.CopyButton = new System.Windows.Forms.Button();
             this.LoadFromPanel.SuspendLayout();
             this.SavePanel.SuspendLayout();
             this.SuspendLayout();
@@ -297,6 +298,7 @@
             this.SavePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.SavePanel.BackColor = System.Drawing.SystemColors.Window;
             this.SavePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SavePanel.Controls.Add(this.CopyButton);
             this.SavePanel.Controls.Add(this.SaveLabel);
             this.SavePanel.Controls.Add(this.SaveButton);
             this.SavePanel.Location = new System.Drawing.Point(12, 315);
@@ -318,7 +320,7 @@
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Save;
             this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SaveButton.Location = new System.Drawing.Point(68, 65);
+            this.SaveButton.Location = new System.Drawing.Point(131, 67);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(83, 27);
             this.SaveButton.TabIndex = 0;
@@ -339,6 +341,20 @@
             this.ExampleUpdateErrorLabel.TabIndex = 12;
             this.ExampleUpdateErrorLabel.Text = "Update Error";
             this.ExampleUpdateErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CopyButton
+            // 
+            this.CopyButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CopyButton.Image = global::AwesomesauceModpackTools.Properties.Resources.CopyToClipboard;
+            this.CopyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CopyButton.Location = new System.Drawing.Point(4, 67);
+            this.CopyButton.Name = "CopyButton";
+            this.CopyButton.Size = new System.Drawing.Size(125, 27);
+            this.CopyButton.TabIndex = 2;
+            this.CopyButton.Text = "Copy Updated";
+            this.CopyButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CopyButton.UseVisualStyleBackColor = true;
+            this.CopyButton.Click += new System.EventHandler(this.CopyButton_Click);
             // 
             // UpdaterForm
             // 
@@ -404,5 +420,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Label SaveLabel;
         private System.Windows.Forms.Label ExampleUpdateErrorLabel;
+        private System.Windows.Forms.Button CopyButton;
     }
 }

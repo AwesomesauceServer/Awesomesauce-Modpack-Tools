@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AwesomesauceModpackTools.Mods;
 using Newtonsoft.Json;
-using static AwesomesauceModpackTools.Utilities;
 using static AwesomesauceModpackTools.Mods.Providers.CurseForge;
-using System.Text;
+using static AwesomesauceModpackTools.Utilities;
 
 namespace AwesomesauceModpackTools.Updater {
 
@@ -29,6 +29,12 @@ namespace AwesomesauceModpackTools.Updater {
         /// Set to true if anything failed.
         /// </summary>
         private bool HasErrors = false;
+
+        private Color working = Color.LightBlue;
+        private Color available = Color.LightGreen;
+        private Color skipped = Color.Honeydew;
+        private Color notAvailable = Color.LightGray;
+        private Color error = Color.Tomato;
 
         public UpdaterForm() {
             InitializeComponent();
@@ -77,18 +83,81 @@ namespace AwesomesauceModpackTools.Updater {
             if (SaveModListDialog.ShowDialog() == DialogResult.OK) { SaveModList(SaveModListDialog.FileName); }
         }
 
+        private void CopyButton_Click(object sender, EventArgs e) {
+            try {
+                string working = "";
+                foreach (ListViewItem item in ModListView.Items) {
+                    if (item.BackColor == available) {
+                        Mod itemMod = (Mod)item.Tag;
+                        working += $"{itemMod.Name}, ";
+                    }
+                }
+                working = working.Trim();
+                if (working.EndsWith(",")) { working = working.Remove(working.Length - 1); }
+
+                Clipboard.SetText(working);
+
+                CopyButton.Text = "Copied";
+            } catch { }
+        }
+
+        private void LoadGitHubButton_Click(object sender, EventArgs e) {
+            if (ModListView.Items.Count != 0) {
+                DialogResult overwrite = MessageBox.Show("The download list is not empty, are you sure you want to overwrite the current list?", "Confirm Overwrite", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (overwrite == DialogResult.No) { return; }
+            }
+
+            try {
+                ToggleLoadingLabel(true);
+                ModListView.BeginUpdate();
+                ModListView.Items.Clear();
+
+                Pack selectedPack = (Pack)PacksComboBox.SelectedItem;
+                WebClient client = new WebClient();
+                client.Headers.Add("user-agent", UserAgent);
+                string modListString = client.DownloadString(selectedPack.ModListURL);
+
+                LoadModList(null, modListString);
+
+                ModListView.EndUpdate();
+                ToggleLoadingLabel(false);
+
+                if (GameVersionsComboBox.SelectedItem != null) { if (ModListView.Items.Count != 0) { UpdateButton.Enabled = true; } else { UpdateButton.Enabled = false; } }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error loading the mod list from GitHub.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void LoadLocalButton_Click(object sender, EventArgs e) {
+            if (ModListView.Items.Count != 0) {
+                DialogResult overwrite = MessageBox.Show("The download list is not empty, are you sure you want to overwrite the current list?", "Confirm Overwrite", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (overwrite == DialogResult.No) { return; }
+            }
+
+            try {
+                if (LoadModListDialog.ShowDialog() == DialogResult.OK) {
+                    ToggleLoadingLabel(true);
+                    ModListView.BeginUpdate();
+                    ModListView.Items.Clear();
+
+                    await Task.Run(() => LoadModList(LoadModListDialog.FileName));
+
+                    ModListView.EndUpdate();
+                    ToggleLoadingLabel(false);
+
+                    if (GameVersionsComboBox.SelectedItem != null) { if (ModListView.Items.Count != 0) { UpdateButton.Enabled = true; } else { UpdateButton.Enabled = false; } }
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error loading the mod list.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private async Task UpdateMods() {
             IsUpdating = true;
             LoadFromPanel.Enabled = false;
             GameVersionsComboBox.Enabled = false;
             UpdateButton.Enabled = false;
             SavePanel.Enabled = false;
-
-            Color working = Color.LightBlue;
-            Color available = Color.LightGreen;
-            Color skipped = Color.Honeydew;
-            Color notAvailable = Color.LightGray;
-            Color error = Color.Tomato;
 
             int errorCount = 0;
             int updateAvailableCount = 0;
@@ -145,7 +214,7 @@ namespace AwesomesauceModpackTools.Updater {
                     SaveLabel.Text = "All the mods are up to date!";
                     SaveButton.Visible = false;
                 } else {
-                    SaveLabel.Text = "Click save to choose where to save the updated mod list.";
+                    SaveLabel.Text = "Click save to choose where to save the updated mod list. Click copy to copy a comma seperated list of what was updated to the clipboard.";
                     SavePanel.BackColor = Color.LightGreen;
                     if (SavePanel.Visible == false) { BlinkSave(Color.LightGreen); }
                 }
@@ -175,57 +244,6 @@ namespace AwesomesauceModpackTools.Updater {
                 } else if (color == Color.LightYellow) {
                     SavePanel.BackColor = SavePanel.BackColor == Color.LightYellow ? Color.PaleGoldenrod : Color.LightYellow;
                 }
-            }
-        }
-
-        private void LoadGitHubButton_Click(object sender, EventArgs e) {
-            if (ModListView.Items.Count != 0) {
-                DialogResult overwrite = MessageBox.Show("The download list is not empty, are you sure you want to overwrite the current list?", "Confirm Overwrite", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                if (overwrite == DialogResult.No) { return; }
-            }
-
-            try {
-                ToggleLoadingLabel(true);
-                ModListView.BeginUpdate();
-                ModListView.Items.Clear();
-
-                Pack selectedPack = (Pack)PacksComboBox.SelectedItem;
-                WebClient client = new WebClient();
-                client.Headers.Add("user-agent", UserAgent);
-                string modListString = client.DownloadString(selectedPack.ModListURL);
-
-                LoadModList(null, modListString);
-
-                ModListView.EndUpdate();
-                ToggleLoadingLabel(false);
-
-                if (GameVersionsComboBox.SelectedItem != null) { if (ModListView.Items.Count != 0) { UpdateButton.Enabled = true; } else { UpdateButton.Enabled = false; } }
-            } catch (Exception ex) {
-                MessageBox.Show($"There was an error loading the mod list from GitHub.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private async void LoadLocalButton_Click(object sender, EventArgs e) {
-            if (ModListView.Items.Count != 0) {
-                DialogResult overwrite = MessageBox.Show("The download list is not empty, are you sure you want to overwrite the current list?", "Confirm Overwrite", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                if (overwrite == DialogResult.No) { return; }
-            }
-
-            try {
-                if (LoadModListDialog.ShowDialog() == DialogResult.OK) {
-                    ToggleLoadingLabel(true);
-                    ModListView.BeginUpdate();
-                    ModListView.Items.Clear();
-
-                    await Task.Run(() => LoadModList(LoadModListDialog.FileName));
-
-                    ModListView.EndUpdate();
-                    ToggleLoadingLabel(false);
-
-                    if (GameVersionsComboBox.SelectedItem != null) { if (ModListView.Items.Count != 0) { UpdateButton.Enabled = true; } else { UpdateButton.Enabled = false; } }
-                }
-            } catch (Exception ex) {
-                MessageBox.Show($"There was an error loading the mod list.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

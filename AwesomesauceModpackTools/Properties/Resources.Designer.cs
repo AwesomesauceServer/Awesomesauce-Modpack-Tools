@@ -103,6 +103,16 @@ namespace AwesomesauceModpackTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CopyToClipboard {
+            get {
+                object obj = ResourceManager.GetObject("CopyToClipboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DependencyGraph {
             get {
                 object obj = ResourceManager.GetObject("DependencyGraph", resourceCulture);
