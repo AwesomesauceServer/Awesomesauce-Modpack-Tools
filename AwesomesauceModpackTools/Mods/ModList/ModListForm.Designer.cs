@@ -54,10 +54,11 @@
             this.LoadModListDialog = new System.Windows.Forms.OpenFileDialog();
             this.SortLinkLabel = new System.Windows.Forms.LinkLabel();
             this.KeepSortedCheckBox = new System.Windows.Forms.CheckBox();
-            this.SearchLabel = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.ExportAsHTMLDialog = new System.Windows.Forms.SaveFileDialog();
+            this.SearchPictureBox = new System.Windows.Forms.PictureBox();
             this.FileMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MainStatusStrip
@@ -254,7 +255,7 @@
             // 
             this.ExportAsHTMLToolStripMenuItem.Image = global::AwesomesauceModpackTools.Properties.Resources.HTMLFile;
             this.ExportAsHTMLToolStripMenuItem.Name = "ExportAsHTMLToolStripMenuItem";
-            this.ExportAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ExportAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.ExportAsHTMLToolStripMenuItem.Text = "HTML";
             this.ExportAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.ExportAsHTMLToolStripMenuItem_Click);
             // 
@@ -388,23 +389,12 @@
             this.KeepSortedCheckBox.UseVisualStyleBackColor = true;
             this.KeepSortedCheckBox.CheckedChanged += new System.EventHandler(this.KeepSortedCheckBox_CheckedChanged);
             // 
-            // SearchLabel
-            // 
-            this.SearchLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchLabel.Location = new System.Drawing.Point(3, 538);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(43, 13);
-            this.SearchLabel.TabIndex = 24;
-            this.SearchLabel.Text = "Search:";
-            // 
             // SearchTextBox
             // 
             this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SearchTextBox.Location = new System.Drawing.Point(50, 533);
+            this.SearchTextBox.Location = new System.Drawing.Point(24, 533);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(307, 22);
+            this.SearchTextBox.Size = new System.Drawing.Size(333, 22);
             this.SearchTextBox.TabIndex = 13;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
@@ -414,12 +404,24 @@
             this.ExportAsHTMLDialog.Filter = "HTML Files|*.html|All Files|*.*";
             this.ExportAsHTMLDialog.Title = "Export mod list as HTML";
             // 
+            // SearchPictureBox
+            // 
+            this.SearchPictureBox.ErrorImage = null;
+            this.SearchPictureBox.Image = global::AwesomesauceModpackTools.Properties.Resources.Search;
+            this.SearchPictureBox.InitialImage = null;
+            this.SearchPictureBox.Location = new System.Drawing.Point(5, 536);
+            this.SearchPictureBox.Name = "SearchPictureBox";
+            this.SearchPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.SearchPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.SearchPictureBox.TabIndex = 25;
+            this.SearchPictureBox.TabStop = false;
+            // 
             // ModListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 583);
-            this.Controls.Add(this.SearchLabel);
+            this.Controls.Add(this.SearchPictureBox);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SortLinkLabel);
             this.Controls.Add(this.KeepSortedCheckBox);
@@ -454,6 +456,7 @@
             this.Load += new System.EventHandler(this.ManageForm_Load);
             this.FileMenuStrip.ResumeLayout(false);
             this.FileMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,11 +493,11 @@
         private System.Windows.Forms.OpenFileDialog LoadModListDialog;
         private System.Windows.Forms.LinkLabel SortLinkLabel;
         private System.Windows.Forms.CheckBox KeepSortedCheckBox;
-        private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.ToolStripMenuItem ExportAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExportAsHTMLToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog ExportAsHTMLDialog;
+        private System.Windows.Forms.PictureBox SearchPictureBox;
     }
 }
 

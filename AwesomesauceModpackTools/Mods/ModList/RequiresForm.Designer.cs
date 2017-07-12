@@ -30,8 +30,9 @@
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.UncheckAllButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.SearchLabel = new System.Windows.Forms.Label();
+            this.SearchPictureBox = new System.Windows.Forms.PictureBox();
             this.StatusStripMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ModListView
@@ -101,22 +102,24 @@
             this.SearchTextBox.TabIndex = 1;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
-            // SearchLabel
+            // SearchPictureBox
             // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchLabel.Location = new System.Drawing.Point(153, 390);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(43, 13);
-            this.SearchLabel.TabIndex = 5;
-            this.SearchLabel.Text = "Search:";
+            this.SearchPictureBox.ErrorImage = null;
+            this.SearchPictureBox.Image = global::AwesomesauceModpackTools.Properties.Resources.Search;
+            this.SearchPictureBox.InitialImage = null;
+            this.SearchPictureBox.Location = new System.Drawing.Point(181, 388);
+            this.SearchPictureBox.Name = "SearchPictureBox";
+            this.SearchPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.SearchPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.SearchPictureBox.TabIndex = 4;
+            this.SearchPictureBox.TabStop = false;
             // 
             // RequiresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 434);
-            this.Controls.Add(this.SearchLabel);
+            this.Controls.Add(this.SearchPictureBox);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.UncheckAllButton);
             this.Controls.Add(this.ModListView);
@@ -132,6 +135,7 @@
             this.Load += new System.EventHandler(this.AddRequirementForm_Load);
             this.StatusStripMain.ResumeLayout(false);
             this.StatusStripMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,7 +148,7 @@
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.Button UncheckAllButton;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.ListView ModListView;
+        private System.Windows.Forms.PictureBox SearchPictureBox;
     }
 }
