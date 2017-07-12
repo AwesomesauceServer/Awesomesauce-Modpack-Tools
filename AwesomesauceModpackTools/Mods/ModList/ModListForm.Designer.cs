@@ -42,6 +42,7 @@
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportAsHTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportAsXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MD5Label = new System.Windows.Forms.Label();
             this.MD5TextBox = new System.Windows.Forms.TextBox();
             this.NotesLabel = new System.Windows.Forms.Label();
@@ -55,7 +56,7 @@
             this.SortLinkLabel = new System.Windows.Forms.LinkLabel();
             this.KeepSortedCheckBox = new System.Windows.Forms.CheckBox();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.ExportAsHTMLDialog = new System.Windows.Forms.SaveFileDialog();
+            this.ExportAsDialog = new System.Windows.Forms.SaveFileDialog();
             this.SearchPictureBox = new System.Windows.Forms.PictureBox();
             this.FileMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPictureBox)).BeginInit();
@@ -246,7 +247,8 @@
             // ExportAsToolStripMenuItem
             // 
             this.ExportAsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ExportAsHTMLToolStripMenuItem});
+            this.ExportAsHTMLToolStripMenuItem,
+            this.ExportAsXMLToolStripMenuItem});
             this.ExportAsToolStripMenuItem.Name = "ExportAsToolStripMenuItem";
             this.ExportAsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.ExportAsToolStripMenuItem.Text = "Export As";
@@ -255,9 +257,17 @@
             // 
             this.ExportAsHTMLToolStripMenuItem.Image = global::AwesomesauceModpackTools.Properties.Resources.HTMLFile;
             this.ExportAsHTMLToolStripMenuItem.Name = "ExportAsHTMLToolStripMenuItem";
-            this.ExportAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.ExportAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ExportAsHTMLToolStripMenuItem.Text = "HTML";
             this.ExportAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.ExportAsHTMLToolStripMenuItem_Click);
+            // 
+            // ExportAsXMLToolStripMenuItem
+            // 
+            this.ExportAsXMLToolStripMenuItem.Image = global::AwesomesauceModpackTools.Properties.Resources.XMLFile;
+            this.ExportAsXMLToolStripMenuItem.Name = "ExportAsXMLToolStripMenuItem";
+            this.ExportAsXMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ExportAsXMLToolStripMenuItem.Text = "XML";
+            this.ExportAsXMLToolStripMenuItem.Click += new System.EventHandler(this.ExportAsXMLToolStripMenuItem_Click);
             // 
             // MD5Label
             // 
@@ -398,11 +408,9 @@
             this.SearchTextBox.TabIndex = 13;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
-            // ExportAsHTMLDialog
+            // ExportAsDialog
             // 
-            this.ExportAsHTMLDialog.DefaultExt = "html";
-            this.ExportAsHTMLDialog.Filter = "HTML Files|*.html|All Files|*.*";
-            this.ExportAsHTMLDialog.Title = "Export mod list as HTML";
+            this.ExportAsDialog.Title = "Export mod list";
             // 
             // SearchPictureBox
             // 
@@ -496,8 +504,9 @@
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.ToolStripMenuItem ExportAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExportAsHTMLToolStripMenuItem;
-        private System.Windows.Forms.SaveFileDialog ExportAsHTMLDialog;
+        private System.Windows.Forms.SaveFileDialog ExportAsDialog;
         private System.Windows.Forms.PictureBox SearchPictureBox;
+        private System.Windows.Forms.ToolStripMenuItem ExportAsXMLToolStripMenuItem;
     }
 }
 

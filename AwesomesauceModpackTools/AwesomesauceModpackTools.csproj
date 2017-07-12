@@ -240,5 +240,8 @@
   <ItemGroup>
     <None Include="art\UpdatePackagex.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="art\XMLFile.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

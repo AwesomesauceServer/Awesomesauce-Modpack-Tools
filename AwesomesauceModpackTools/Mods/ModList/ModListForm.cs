@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-using static AwesomesauceModpackTools.Utilities;
 using static AwesomesauceModpackTools.Export;
+using static AwesomesauceModpackTools.Utilities;
 
 namespace AwesomesauceModpackTools.Mods.ModList {
 
@@ -182,23 +182,45 @@ namespace AwesomesauceModpackTools.Mods.ModList {
                 return;
             }
 
+            ExportAsDialog.Title = "Export mod list as HTML";
+            ExportAsDialog.Filter = "HTML Files|*.html|All Files|*.*";
+            ExportAsDialog.DefaultExt = "html";
             try {
-                if (ExportAsHTMLDialog.ShowDialog() == DialogResult.OK) {
+                if (ExportAsDialog.ShowDialog() == DialogResult.OK) {
                     List<Mod> workingModList = new List<Mod>();
                     foreach (ListViewItem item in ModListView.Items) {
                         Mod itemMod = (Mod)item.Tag;
                         workingModList.Add(itemMod);
                     }
 
-                    string html = AsHTML(workingModList);
-                    if (html == null) {
-                        throw new ArgumentNullException("html");
-                    } else {
-                        File.WriteAllText(ExportAsHTMLDialog.FileName, html);
-                    }            
+                    AsHTML(workingModList, ExportAsDialog.FileName);
                 }
             } catch (Exception ex) {
                 MessageBox.Show($"There was an error exporting the mod list to HTML.\r\n\r\n{ex.Message}", "Export As HTML Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ExportAsXMLToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (ModListView.Items.Count == 0) {
+                MessageBox.Show("The mod list is empty, there is nothing to export.", "No Mods", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            ExportAsDialog.Title = "Export mod list as XML";
+            ExportAsDialog.Filter = "XML Files|*.xml|All Files|*.*";
+            ExportAsDialog.DefaultExt = "xml";
+            try {
+                if (ExportAsDialog.ShowDialog() == DialogResult.OK) {
+                    List<Mod> workingModList = new List<Mod>();
+                    foreach (ListViewItem item in ModListView.Items) {
+                        Mod itemMod = (Mod)item.Tag;
+                        workingModList.Add(itemMod);
+                    }
+
+                    AsXML(workingModList, ExportAsDialog.FileName);
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error exporting the mod list to XML.\r\n\r\n{ex.Message}", "Export As XML Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
