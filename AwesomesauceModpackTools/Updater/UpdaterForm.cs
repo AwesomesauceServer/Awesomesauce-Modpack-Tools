@@ -91,6 +91,7 @@ namespace AwesomesauceModpackTools.Updater {
             Color error = Color.Tomato;
 
             int errorCount = 0;
+            int updateAvailableCount = 0;
             foreach (ListViewItem item in ModListView.Items) {
                 if (IsCanceling) { break; }
                 if (HasErrors) { if (item.BackColor != error) { continue; } }
@@ -125,6 +126,7 @@ namespace AwesomesauceModpackTools.Updater {
                     if (itemMod.MD5 == oldMD5) {
                         item.BackColor = notAvailable;
                     } else {
+                        updateAvailableCount++;
                         item.BackColor = available;
                         item.SubItems.Add(new ListViewItem.ListViewSubItem { Text = itemMod.File });
                         item.Tag = itemMod;
@@ -139,9 +141,14 @@ namespace AwesomesauceModpackTools.Updater {
             if (errorCount == 0) {
                 UpdateButton.Text = "Finished";
 
-                SaveLabel.Text = "Click save to choose where to save the updated mod list.";
-                SavePanel.BackColor = Color.LightGreen;
-                if (SavePanel.Visible == false) { BlinkSave(Color.LightGreen); }
+                if (updateAvailableCount == 0) {
+                    SaveLabel.Text = "All the mods are up to date!";
+                    SaveButton.Visible = false;
+                } else {
+                    SaveLabel.Text = "Click save to choose where to save the updated mod list.";
+                    SavePanel.BackColor = Color.LightGreen;
+                    if (SavePanel.Visible == false) { BlinkSave(Color.LightGreen); }
+                }
                 SavePanel.Visible = true;
             } else {
                 errorCount = 0;
