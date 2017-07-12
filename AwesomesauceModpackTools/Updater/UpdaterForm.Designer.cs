@@ -103,12 +103,12 @@
             // 
             this.LoadFromGitHubLabel.AutoSize = true;
             this.LoadFromGitHubLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadFromGitHubLabel.Location = new System.Drawing.Point(29, 6);
+            this.LoadFromGitHubLabel.Location = new System.Drawing.Point(37, 6);
             this.LoadFromGitHubLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LoadFromGitHubLabel.Name = "LoadFromGitHubLabel";
-            this.LoadFromGitHubLabel.Size = new System.Drawing.Size(160, 13);
+            this.LoadFromGitHubLabel.Size = new System.Drawing.Size(144, 13);
             this.LoadFromGitHubLabel.TabIndex = 2;
-            this.LoadFromGitHubLabel.Text = "Load from pack list on GitHub";
+            this.LoadFromGitHubLabel.Text = "Load mod list from GitHub";
             // 
             // PacksComboBox
             // 

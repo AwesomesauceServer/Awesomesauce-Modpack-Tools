@@ -43,12 +43,12 @@ namespace AwesomesauceModpackTools.Downloader {
                 } else {
                     LoadFromGitHubLabel.Enabled = false;
                     PacksComboBox.Enabled = false;
-                    PacksComboBox.Items.Add("No packs found");
-                    PacksComboBox.Text = "No packs found";
+                    PacksComboBox.Items.Add("No mod list found");
+                    PacksComboBox.Text = "No mod list found";
                     OrLabel.Enabled = false;
                 }
             } catch (Exception ex) {
-                MessageBox.Show($"There was an error loading the pack list from GitHub.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Pack List", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"There was an error loading the mod list from GitHub.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
