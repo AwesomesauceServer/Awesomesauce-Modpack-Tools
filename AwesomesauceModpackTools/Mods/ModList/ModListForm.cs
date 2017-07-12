@@ -314,16 +314,20 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             LinkLinkLabel.Enabled = selected;
 
             if (item == null) {
-                SizeTextBox.Clear();
                 UpdatedTextBox.Clear();
+                UpdateModeTextBox.Clear();
+                SizeTextBox.Clear();
+                SideTextBox.Clear();
                 LinkTextBox.Clear();
                 MD5TextBox.Clear();
                 RequiresTextBox.Clear();
                 NotesTextBox.Clear();
             } else {
                 Mod selectedMod = (Mod)CurrentlySelectedItem.Tag;
-                SizeTextBox.Text = selectedMod.Size;
                 UpdatedTextBox.Text = selectedMod.Date.ToLocalTime().ToString();
+                UpdateModeTextBox.Text = selectedMod.UpdateMode.ToString();
+                SizeTextBox.Text = selectedMod.Size;
+                SideTextBox.Text = selectedMod.Side.ToString();
                 LinkTextBox.Text = selectedMod.Link;
                 MD5TextBox.Text = selectedMod.MD5;
                 RequiresTextBox.Text = selectedMod.RequiresToString();

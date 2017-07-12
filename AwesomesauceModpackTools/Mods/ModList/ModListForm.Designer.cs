@@ -58,6 +58,10 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.ExportAsDialog = new System.Windows.Forms.SaveFileDialog();
             this.SearchPictureBox = new System.Windows.Forms.PictureBox();
+            this.SideTextBox = new System.Windows.Forms.TextBox();
+            this.UpdateModeTextBox = new System.Windows.Forms.TextBox();
+            this.SideLabel = new System.Windows.Forms.Label();
+            this.UpdateModeLabel = new System.Windows.Forms.Label();
             this.FileMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -122,9 +126,7 @@
             // 
             // UpdatedTextBox
             // 
-            this.UpdatedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.UpdatedTextBox.Location = new System.Drawing.Point(363, 87);
+            this.UpdatedTextBox.Location = new System.Drawing.Point(363, 42);
             this.UpdatedTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.UpdatedTextBox.Name = "UpdatedTextBox";
             this.UpdatedTextBox.ReadOnly = true;
@@ -136,7 +138,7 @@
             // 
             this.UpdatedLabel.AutoSize = true;
             this.UpdatedLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdatedLabel.Location = new System.Drawing.Point(360, 71);
+            this.UpdatedLabel.Location = new System.Drawing.Point(360, 26);
             this.UpdatedLabel.Name = "UpdatedLabel";
             this.UpdatedLabel.Size = new System.Drawing.Size(52, 13);
             this.UpdatedLabel.TabIndex = 2;
@@ -144,9 +146,7 @@
             // 
             // SizeTextBox
             // 
-            this.SizeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SizeTextBox.Location = new System.Drawing.Point(363, 42);
+            this.SizeTextBox.Location = new System.Drawing.Point(363, 87);
             this.SizeTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.SizeTextBox.Name = "SizeTextBox";
             this.SizeTextBox.ReadOnly = true;
@@ -158,7 +158,7 @@
             // 
             this.SizeLabel.AutoSize = true;
             this.SizeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SizeLabel.Location = new System.Drawing.Point(360, 26);
+            this.SizeLabel.Location = new System.Drawing.Point(360, 71);
             this.SizeLabel.Name = "SizeLabel";
             this.SizeLabel.Size = new System.Drawing.Size(27, 13);
             this.SizeLabel.TabIndex = 0;
@@ -424,6 +424,50 @@
             this.SearchPictureBox.TabIndex = 25;
             this.SearchPictureBox.TabStop = false;
             // 
+            // SideTextBox
+            // 
+            this.SideTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SideTextBox.Location = new System.Drawing.Point(587, 87);
+            this.SideTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.SideTextBox.Name = "SideTextBox";
+            this.SideTextBox.ReadOnly = true;
+            this.SideTextBox.Size = new System.Drawing.Size(166, 22);
+            this.SideTextBox.TabIndex = 1;
+            this.SideTextBox.TabStop = false;
+            // 
+            // UpdateModeTextBox
+            // 
+            this.UpdateModeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateModeTextBox.Location = new System.Drawing.Point(587, 42);
+            this.UpdateModeTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.UpdateModeTextBox.Name = "UpdateModeTextBox";
+            this.UpdateModeTextBox.ReadOnly = true;
+            this.UpdateModeTextBox.Size = new System.Drawing.Size(166, 22);
+            this.UpdateModeTextBox.TabIndex = 1;
+            this.UpdateModeTextBox.TabStop = false;
+            // 
+            // SideLabel
+            // 
+            this.SideLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SideLabel.AutoSize = true;
+            this.SideLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SideLabel.Location = new System.Drawing.Point(584, 71);
+            this.SideLabel.Name = "SideLabel";
+            this.SideLabel.Size = new System.Drawing.Size(29, 13);
+            this.SideLabel.TabIndex = 0;
+            this.SideLabel.Text = "Side";
+            // 
+            // UpdateModeLabel
+            // 
+            this.UpdateModeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateModeLabel.AutoSize = true;
+            this.UpdateModeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateModeLabel.Location = new System.Drawing.Point(584, 26);
+            this.UpdateModeLabel.Name = "UpdateModeLabel";
+            this.UpdateModeLabel.Size = new System.Drawing.Size(78, 13);
+            this.UpdateModeLabel.TabIndex = 0;
+            this.UpdateModeLabel.Text = "Update Mode";
+            // 
             // ModListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,8 +494,12 @@
             this.Controls.Add(this.LinkLabel);
             this.Controls.Add(this.ModListView);
             this.Controls.Add(this.UpdatedTextBox);
+            this.Controls.Add(this.UpdateModeTextBox);
+            this.Controls.Add(this.SideTextBox);
             this.Controls.Add(this.SizeTextBox);
             this.Controls.Add(this.UpdatedLabel);
+            this.Controls.Add(this.UpdateModeLabel);
+            this.Controls.Add(this.SideLabel);
             this.Controls.Add(this.SizeLabel);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -507,6 +555,10 @@
         private System.Windows.Forms.SaveFileDialog ExportAsDialog;
         private System.Windows.Forms.PictureBox SearchPictureBox;
         private System.Windows.Forms.ToolStripMenuItem ExportAsXMLToolStripMenuItem;
+        private System.Windows.Forms.TextBox SideTextBox;
+        private System.Windows.Forms.TextBox UpdateModeTextBox;
+        private System.Windows.Forms.Label SideLabel;
+        private System.Windows.Forms.Label UpdateModeLabel;
     }
 }
 
