@@ -183,6 +183,62 @@
   <ItemGroup>
     <None Include="art\AwesomesauceIcon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="art\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\DependencyGraph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\HTMLFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\List.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\SaveAs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\PartManager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\CheckboxDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\DownloadFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\DownloadLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\UpdatePackagex.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

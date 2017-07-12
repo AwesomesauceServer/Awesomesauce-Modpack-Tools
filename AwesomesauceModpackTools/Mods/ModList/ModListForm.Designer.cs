@@ -166,32 +166,41 @@
             // 
             this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RemoveButton.Enabled = false;
-            this.RemoveButton.Location = new System.Drawing.Point(638, 438);
+            this.RemoveButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Remove;
+            this.RemoveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RemoveButton.Location = new System.Drawing.Point(653, 438);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(115, 23);
+            this.RemoveButton.Size = new System.Drawing.Size(100, 23);
             this.RemoveButton.TabIndex = 20;
             this.RemoveButton.Text = "Remove";
+            this.RemoveButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // RequiresButton
             // 
             this.RequiresButton.Enabled = false;
+            this.RequiresButton.Image = global::AwesomesauceModpackTools.Properties.Resources.DependencyGraph;
+            this.RequiresButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RequiresButton.Location = new System.Drawing.Point(363, 496);
             this.RequiresButton.Name = "RequiresButton";
-            this.RequiresButton.Size = new System.Drawing.Size(115, 23);
+            this.RequiresButton.Size = new System.Drawing.Size(100, 23);
             this.RequiresButton.TabIndex = 11;
             this.RequiresButton.Text = "Requires";
+            this.RequiresButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RequiresButton.UseVisualStyleBackColor = true;
             this.RequiresButton.Click += new System.EventHandler(this.RequiresButton_Click);
             // 
             // AddButton
             // 
+            this.AddButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Add;
+            this.AddButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddButton.Location = new System.Drawing.Point(363, 438);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(115, 23);
+            this.AddButton.Size = new System.Drawing.Size(100, 23);
             this.AddButton.TabIndex = 10;
             this.AddButton.Text = "Add";
+            this.AddButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -210,23 +219,26 @@
             // 
             // LoadToolStripMenuItem
             // 
+            this.LoadToolStripMenuItem.Image = global::AwesomesauceModpackTools.Properties.Resources.Open;
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.LoadToolStripMenuItem.Text = "Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
+            this.SaveToolStripMenuItem.Image = global::AwesomesauceModpackTools.Properties.Resources.Save;
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
             this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.SaveToolStripMenuItem.Text = "&Save";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // SaveAsToolStripMenuItem
             // 
+            this.SaveAsToolStripMenuItem.Image = global::AwesomesauceModpackTools.Properties.Resources.SaveAs;
             this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.SaveAsToolStripMenuItem.Text = "Save As...";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
@@ -240,8 +252,9 @@
             // 
             // ExportAsHTMLToolStripMenuItem
             // 
+            this.ExportAsHTMLToolStripMenuItem.Image = global::AwesomesauceModpackTools.Properties.Resources.HTMLFile;
             this.ExportAsHTMLToolStripMenuItem.Name = "ExportAsHTMLToolStripMenuItem";
-            this.ExportAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.ExportAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ExportAsHTMLToolStripMenuItem.Text = "HTML";
             this.ExportAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.ExportAsHTMLToolStripMenuItem_Click);
             // 
@@ -328,11 +341,14 @@
             // EditButton
             // 
             this.EditButton.Enabled = false;
+            this.EditButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Edit;
+            this.EditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EditButton.Location = new System.Drawing.Point(363, 467);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(115, 23);
+            this.EditButton.Size = new System.Drawing.Size(100, 23);
             this.EditButton.TabIndex = 12;
             this.EditButton.Text = "Edit";
+            this.EditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
@@ -350,7 +366,7 @@
             // SortLinkLabel
             // 
             this.SortLinkLabel.AutoSize = true;
-            this.SortLinkLabel.Location = new System.Drawing.Point(323, 6);
+            this.SortLinkLabel.Location = new System.Drawing.Point(377, 6);
             this.SortLinkLabel.Name = "SortLinkLabel";
             this.SortLinkLabel.Size = new System.Drawing.Size(53, 13);
             this.SortLinkLabel.TabIndex = 21;
@@ -364,7 +380,7 @@
             this.KeepSortedCheckBox.AutoSize = true;
             this.KeepSortedCheckBox.Checked = true;
             this.KeepSortedCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.KeepSortedCheckBox.Location = new System.Drawing.Point(236, 5);
+            this.KeepSortedCheckBox.Location = new System.Drawing.Point(290, 5);
             this.KeepSortedCheckBox.Name = "KeepSortedCheckBox";
             this.KeepSortedCheckBox.Size = new System.Drawing.Size(93, 17);
             this.KeepSortedCheckBox.TabIndex = 22;

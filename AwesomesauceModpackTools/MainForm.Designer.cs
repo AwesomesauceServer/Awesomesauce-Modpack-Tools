@@ -45,11 +45,14 @@
             // 
             this.ManageModsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ManageModsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageModsButton.Image = global::AwesomesauceModpackTools.Properties.Resources.PartManager;
+            this.ManageModsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ManageModsButton.Location = new System.Drawing.Point(672, 34);
             this.ManageModsButton.Name = "ManageModsButton";
             this.ManageModsButton.Size = new System.Drawing.Size(116, 28);
             this.ManageModsButton.TabIndex = 1;
             this.ManageModsButton.Text = "Manage Mods";
+            this.ManageModsButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ManageModsButton.UseVisualStyleBackColor = true;
             this.ManageModsButton.Click += new System.EventHandler(this.ManageModsButton_Click);
             // 
@@ -152,11 +155,14 @@
             // 
             this.DownloaderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DownloaderButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DownloaderButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Download;
+            this.DownloaderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DownloaderButton.Location = new System.Drawing.Point(672, 68);
             this.DownloaderButton.Name = "DownloaderButton";
             this.DownloaderButton.Size = new System.Drawing.Size(116, 28);
             this.DownloaderButton.TabIndex = 2;
             this.DownloaderButton.Text = "Downloader";
+            this.DownloaderButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DownloaderButton.UseVisualStyleBackColor = true;
             this.DownloaderButton.Click += new System.EventHandler(this.DownloaderButton_Click);
             // 
@@ -164,11 +170,14 @@
             // 
             this.UpdaterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UpdaterButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdaterButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Update;
+            this.UpdaterButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.UpdaterButton.Location = new System.Drawing.Point(672, 102);
             this.UpdaterButton.Name = "UpdaterButton";
             this.UpdaterButton.Size = new System.Drawing.Size(116, 28);
             this.UpdaterButton.TabIndex = 3;
             this.UpdaterButton.Text = "Updater";
+            this.UpdaterButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.UpdaterButton.UseVisualStyleBackColor = true;
             this.UpdaterButton.Click += new System.EventHandler(this.UpdaterButton_Click);
             // 

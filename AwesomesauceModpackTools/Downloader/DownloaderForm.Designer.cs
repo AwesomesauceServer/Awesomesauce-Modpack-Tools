@@ -92,22 +92,25 @@
             // LoadGitHubButton
             // 
             this.LoadGitHubButton.Enabled = false;
+            this.LoadGitHubButton.Image = global::AwesomesauceModpackTools.Properties.Resources.DownloadFile;
             this.LoadGitHubButton.Location = new System.Drawing.Point(153, 31);
             this.LoadGitHubButton.Name = "LoadGitHubButton";
             this.LoadGitHubButton.Size = new System.Drawing.Size(53, 23);
             this.LoadGitHubButton.TabIndex = 6;
-            this.LoadGitHubButton.Text = "Load";
             this.LoadGitHubButton.UseVisualStyleBackColor = true;
             this.LoadGitHubButton.Click += new System.EventHandler(this.LoadGitHubButton_Click);
             // 
             // LoadLocalButton
             // 
+            this.LoadLocalButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Open;
+            this.LoadLocalButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LoadLocalButton.Location = new System.Drawing.Point(39, 89);
             this.LoadLocalButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LoadLocalButton.Name = "LoadLocalButton";
             this.LoadLocalButton.Size = new System.Drawing.Size(140, 23);
             this.LoadLocalButton.TabIndex = 5;
             this.LoadLocalButton.Text = "Load from local file";
+            this.LoadLocalButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LoadLocalButton.UseVisualStyleBackColor = true;
             this.LoadLocalButton.Click += new System.EventHandler(this.LoadLocalButton_Click);
             // 
@@ -157,11 +160,14 @@
             this.DownloadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.DownloadButton.Enabled = false;
             this.DownloadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DownloadButton.Image = global::AwesomesauceModpackTools.Properties.Resources.DownloadLarge;
+            this.DownloadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DownloadButton.Location = new System.Drawing.Point(12, 469);
             this.DownloadButton.Name = "DownloadButton";
             this.DownloadButton.Size = new System.Drawing.Size(220, 44);
             this.DownloadButton.TabIndex = 8;
             this.DownloadButton.Text = "Download";
+            this.DownloadButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DownloadButton.UseVisualStyleBackColor = true;
             this.DownloadButton.Click += new System.EventHandler(this.DownloadButton_Click);
             // 

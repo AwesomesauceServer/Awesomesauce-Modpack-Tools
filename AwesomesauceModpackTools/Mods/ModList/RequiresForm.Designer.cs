@@ -82,11 +82,14 @@
             // 
             // UncheckAllButton
             // 
+            this.UncheckAllButton.Image = global::AwesomesauceModpackTools.Properties.Resources.CheckboxDisable;
+            this.UncheckAllButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.UncheckAllButton.Location = new System.Drawing.Point(2, 384);
             this.UncheckAllButton.Name = "UncheckAllButton";
-            this.UncheckAllButton.Size = new System.Drawing.Size(84, 23);
+            this.UncheckAllButton.Size = new System.Drawing.Size(99, 23);
             this.UncheckAllButton.TabIndex = 3;
             this.UncheckAllButton.Text = "Uncheck All";
+            this.UncheckAllButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.UncheckAllButton.UseVisualStyleBackColor = true;
             this.UncheckAllButton.Click += new System.EventHandler(this.UncheckAllButton_Click);
             // 

@@ -77,22 +77,25 @@
             // LoadGitHubButton
             // 
             this.LoadGitHubButton.Enabled = false;
+            this.LoadGitHubButton.Image = global::AwesomesauceModpackTools.Properties.Resources.DownloadFile;
             this.LoadGitHubButton.Location = new System.Drawing.Point(153, 31);
             this.LoadGitHubButton.Name = "LoadGitHubButton";
             this.LoadGitHubButton.Size = new System.Drawing.Size(53, 23);
             this.LoadGitHubButton.TabIndex = 6;
-            this.LoadGitHubButton.Text = "Load";
             this.LoadGitHubButton.UseVisualStyleBackColor = true;
             this.LoadGitHubButton.Click += new System.EventHandler(this.LoadGitHubButton_Click);
             // 
             // LoadLocalButton
             // 
+            this.LoadLocalButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Open;
+            this.LoadLocalButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LoadLocalButton.Location = new System.Drawing.Point(39, 89);
             this.LoadLocalButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LoadLocalButton.Name = "LoadLocalButton";
             this.LoadLocalButton.Size = new System.Drawing.Size(140, 23);
             this.LoadLocalButton.TabIndex = 5;
             this.LoadLocalButton.Text = "Load from local file";
+            this.LoadLocalButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LoadLocalButton.UseVisualStyleBackColor = true;
             this.LoadLocalButton.Click += new System.EventHandler(this.LoadLocalButton_Click);
             // 
@@ -179,11 +182,14 @@
             this.UpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.UpdateButton.Enabled = false;
             this.UpdateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateButton.Image = global::AwesomesauceModpackTools.Properties.Resources.UpdatePackage;
+            this.UpdateButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.UpdateButton.Location = new System.Drawing.Point(12, 509);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(220, 44);
             this.UpdateButton.TabIndex = 11;
             this.UpdateButton.Text = "Update";
+            this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
@@ -310,11 +316,14 @@
             // SaveButton
             // 
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveButton.Location = new System.Drawing.Point(52, 65);
+            this.SaveButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Save;
+            this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SaveButton.Location = new System.Drawing.Point(68, 65);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(114, 27);
+            this.SaveButton.Size = new System.Drawing.Size(83, 27);
             this.SaveButton.TabIndex = 0;
             this.SaveButton.Text = "Save";
+            this.SaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 

@@ -70,11 +70,14 @@
             // AddButton
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Add;
+            this.AddButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddButton.Location = new System.Drawing.Point(12, 40);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
             this.AddButton.TabIndex = 2;
             this.AddButton.Text = "Add";
+            this.AddButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -90,11 +93,14 @@
             // CancelAddButton
             // 
             this.CancelAddButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CancelAddButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Cancel;
+            this.CancelAddButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CancelAddButton.Location = new System.Drawing.Point(379, 40);
             this.CancelAddButton.Name = "CancelAddButton";
             this.CancelAddButton.Size = new System.Drawing.Size(75, 23);
             this.CancelAddButton.TabIndex = 4;
             this.CancelAddButton.Text = "Cancel";
+            this.CancelAddButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CancelAddButton.UseVisualStyleBackColor = true;
             this.CancelAddButton.Click += new System.EventHandler(this.CancelAddButton_Click);
             // 
@@ -111,11 +117,14 @@
             // 
             // AddWithRequirementButton
             // 
+            this.AddWithRequirementButton.Image = global::AwesomesauceModpackTools.Properties.Resources.DependencyGraph;
+            this.AddWithRequirementButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddWithRequirementButton.Location = new System.Drawing.Point(93, 40);
             this.AddWithRequirementButton.Name = "AddWithRequirementButton";
-            this.AddWithRequirementButton.Size = new System.Drawing.Size(150, 23);
+            this.AddWithRequirementButton.Size = new System.Drawing.Size(166, 23);
             this.AddWithRequirementButton.TabIndex = 3;
             this.AddWithRequirementButton.Text = "Add With Requirements";
+            this.AddWithRequirementButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AddWithRequirementButton.UseVisualStyleBackColor = true;
             this.AddWithRequirementButton.Click += new System.EventHandler(this.AddWithRequirementButton_Click);
             // 
