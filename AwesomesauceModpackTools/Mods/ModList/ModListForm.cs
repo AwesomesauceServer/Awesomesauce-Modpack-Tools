@@ -8,12 +8,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using static AwesomesauceModpackTools.Utilities;
+using static AwesomesauceModpackTools.Export;
 
 namespace AwesomesauceModpackTools.Mods.ModList {
 
     public partial class ModListForm : Form {
 
+        /// <summary>
+        /// Most recent loaded or saved file.
+        /// </summary>
         private string WorkingSaveFile = null;
+
+        /// <summary>
+        /// Currently selected list view item.
+        /// </summary>
         private ListViewItem CurrentlySelectedItem = null;
 
         public ModListForm() {
@@ -26,9 +34,11 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         }
 
         private void ManageForm_FormClosing(object sender, FormClosingEventArgs e) {
-            if (MessageBox.Show("Really exit?\r\n\r\nMake sure you saved!", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) {
-                e.Cancel = true;
-                return;
+            if (ModListView.Items.Count != 0) {
+                if (MessageBox.Show("Really exit?\r\n\r\nMake sure you saved!", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) {
+                    e.Cancel = true;
+                    return;
+                }
             }
             Dispose();
         }
@@ -164,6 +174,32 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e) {
             if (SaveModListDialog.ShowDialog() == DialogResult.OK) { SaveModList(SaveModListDialog.FileName); }
+        }
+
+        private void ExportAsHTMLToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (ModListView.Items.Count == 0) {
+                MessageBox.Show("The mod list is empty, there is nothing to export.", "No Mods", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try {
+                if (ExportAsHTMLDialog.ShowDialog() == DialogResult.OK) {
+                    List<Mod> workingModList = new List<Mod>();
+                    foreach (ListViewItem item in ModListView.Items) {
+                        Mod itemMod = (Mod)item.Tag;
+                        workingModList.Add(itemMod);
+                    }
+
+                    string html = AsHTML(workingModList);
+                    if (html == null) {
+                        throw new ArgumentNullException("html");
+                    } else {
+                        File.WriteAllText(ExportAsHTMLDialog.FileName, html);
+                    }            
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error exporting the mod list to HTML.\r\n\r\n{ex.Message}", "Export As HTML Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e) {

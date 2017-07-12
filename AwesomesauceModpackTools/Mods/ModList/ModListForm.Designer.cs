@@ -40,6 +40,8 @@
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportAsHTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MD5Label = new System.Windows.Forms.Label();
             this.MD5TextBox = new System.Windows.Forms.TextBox();
             this.NotesLabel = new System.Windows.Forms.Label();
@@ -54,6 +56,7 @@
             this.KeepSortedCheckBox = new System.Windows.Forms.CheckBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.ExportAsHTMLDialog = new System.Windows.Forms.SaveFileDialog();
             this.FileMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,7 +201,8 @@
             this.FileMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LoadToolStripMenuItem,
             this.SaveToolStripMenuItem,
-            this.SaveAsToolStripMenuItem});
+            this.SaveAsToolStripMenuItem,
+            this.ExportAsToolStripMenuItem});
             this.FileMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.FileMenuStrip.Name = "FileMenuStrip";
             this.FileMenuStrip.Size = new System.Drawing.Size(762, 24);
@@ -225,6 +229,21 @@
             this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.SaveAsToolStripMenuItem.Text = "Save As...";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
+            // 
+            // ExportAsToolStripMenuItem
+            // 
+            this.ExportAsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ExportAsHTMLToolStripMenuItem});
+            this.ExportAsToolStripMenuItem.Name = "ExportAsToolStripMenuItem";
+            this.ExportAsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.ExportAsToolStripMenuItem.Text = "Export As";
+            // 
+            // ExportAsHTMLToolStripMenuItem
+            // 
+            this.ExportAsHTMLToolStripMenuItem.Name = "ExportAsHTMLToolStripMenuItem";
+            this.ExportAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.ExportAsHTMLToolStripMenuItem.Text = "HTML";
+            this.ExportAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.ExportAsHTMLToolStripMenuItem_Click);
             // 
             // MD5Label
             // 
@@ -331,7 +350,7 @@
             // SortLinkLabel
             // 
             this.SortLinkLabel.AutoSize = true;
-            this.SortLinkLabel.Location = new System.Drawing.Point(259, 6);
+            this.SortLinkLabel.Location = new System.Drawing.Point(323, 6);
             this.SortLinkLabel.Name = "SortLinkLabel";
             this.SortLinkLabel.Size = new System.Drawing.Size(53, 13);
             this.SortLinkLabel.TabIndex = 21;
@@ -345,7 +364,7 @@
             this.KeepSortedCheckBox.AutoSize = true;
             this.KeepSortedCheckBox.Checked = true;
             this.KeepSortedCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.KeepSortedCheckBox.Location = new System.Drawing.Point(172, 5);
+            this.KeepSortedCheckBox.Location = new System.Drawing.Point(236, 5);
             this.KeepSortedCheckBox.Name = "KeepSortedCheckBox";
             this.KeepSortedCheckBox.Size = new System.Drawing.Size(93, 17);
             this.KeepSortedCheckBox.TabIndex = 22;
@@ -372,6 +391,12 @@
             this.SearchTextBox.Size = new System.Drawing.Size(307, 22);
             this.SearchTextBox.TabIndex = 13;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // ExportAsHTMLDialog
+            // 
+            this.ExportAsHTMLDialog.DefaultExt = "html";
+            this.ExportAsHTMLDialog.Filter = "HTML Files|*.html|All Files|*.*";
+            this.ExportAsHTMLDialog.Title = "Export mod list as HTML";
             // 
             // ModListForm
             // 
@@ -451,6 +476,9 @@
         private System.Windows.Forms.CheckBox KeepSortedCheckBox;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.ToolStripMenuItem ExportAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExportAsHTMLToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog ExportAsHTMLDialog;
     }
 }
 

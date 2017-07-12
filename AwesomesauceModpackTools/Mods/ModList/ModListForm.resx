@@ -127,6 +127,9 @@
     <value>282, 17</value>
   </metadata>
   <metadata name="LoadModListDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>605, 17</value>
+  </metadata>
+  <metadata name="ExportAsHTMLDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>438, 17</value>
   </metadata>
 </root>

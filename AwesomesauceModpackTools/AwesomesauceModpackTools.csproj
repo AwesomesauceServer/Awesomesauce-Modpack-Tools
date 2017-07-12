@@ -90,6 +90,7 @@
     <Compile Include="Downloader\DownloaderForm.Designer.cs">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Export.cs" />
     <Compile Include="Pack.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
