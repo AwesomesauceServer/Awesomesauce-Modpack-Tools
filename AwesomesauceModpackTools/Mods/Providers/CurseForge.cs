@@ -2,6 +2,7 @@
 using System.Net;
 using HtmlAgilityPack;
 using static AwesomesauceModpackTools.Utilities;
+using static AwesomesauceModpackTools.Utilities.Storage;
 
 namespace AwesomesauceModpackTools.Mods.Providers {
 

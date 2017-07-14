@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using AwesomesauceModpackTools.Mods;
 using Newtonsoft.Json;
 using static AwesomesauceModpackTools.Mods.Providers.CurseForge;
-using static AwesomesauceModpackTools.Utilities;
+using static AwesomesauceModpackTools.Utilities.Storage;
 
 namespace AwesomesauceModpackTools.Updater {
 

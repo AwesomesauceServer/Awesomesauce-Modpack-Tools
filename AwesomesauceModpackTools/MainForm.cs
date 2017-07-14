@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using static AwesomesauceModpackTools.Utilities;
+using static AwesomesauceModpackTools.Utilities.Storage;
 
 namespace AwesomesauceModpackTools {
 

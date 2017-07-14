@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using static AwesomesauceModpackTools.Export;
-using static AwesomesauceModpackTools.Utilities;
+using static AwesomesauceModpackTools.Utilities.Storage;
 
 namespace AwesomesauceModpackTools.Mods.ModList {
 
