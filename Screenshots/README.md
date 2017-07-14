@@ -18,7 +18,7 @@
 ![Edit Mod Properties](./v1.0.0/EditMod.png "EditMod")
 
 #### Update Mod List
-![Update Mod List](./v1.0.0/UpdaterMain.png "Updater")
+![Update Mod List](./v1.0.0/Updater.png "Updater")
 
 #### Download Mods
 ![Download Mods](./v1.0.0/Downloader.png "Downloader")
