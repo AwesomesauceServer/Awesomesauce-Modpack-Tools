@@ -18,7 +18,14 @@ namespace AwesomesauceModpackTools {
 
         private void MainForm_Load(object sender, EventArgs e) {
 #if RELEASE
-            LoadGithub();
+            if (HasInternet == true) {
+                LoadGithub();
+            } else{
+                MessageBox.Show("A connection to the internet can not be established.\r\n" +
+                    "This will prevent some features from working.\r\n\r\n" +
+                    "Mod lists from GitHub, the Updater, and the Downloader will have limited functionality or will not work.\r\n\r\n" +
+                    "To fix this check your internet connection and/or your firewall and restart the app.", "Awesomesauce Modpack Tools - No Internet", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
 #endif
 
         }
@@ -58,22 +65,30 @@ namespace AwesomesauceModpackTools {
         }
 
         private async Task LoadGithub_Modpack() {
-            Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName));
-            IReadOnlyList<Octokit.GitHubCommit> commits = await github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack");
+            try {
+                Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName));
+                IReadOnlyList<Octokit.GitHubCommit> commits = await github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack");
 
-            foreach (Octokit.GitHubCommit commit in commits) {
-                string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
-                ModpackListView.Items.Add(new ListViewItem(new string[] { ElapsedTime(commit.Commit.Author.Date.DateTime.ToLocalTime()).Formatted, messageFormat }));
+                foreach (Octokit.GitHubCommit commit in commits) {
+                    string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
+                    ModpackListView.Items.Add(new ListViewItem(new string[] { ElapsedTime(commit.Commit.Author.Date.DateTime.ToLocalTime()).Formatted, messageFormat }));
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error getting information from GitHub.\r\n\r\n{ex.Message}", "Error Loading Awesomesauce-Modpack", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private async Task LoadGithub_Tools() {
-            Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName));
-            IReadOnlyList<Octokit.GitHubCommit> commits = await github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack-Tools");
+            try {
+                Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName));
+                IReadOnlyList<Octokit.GitHubCommit> commits = await github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack-Tools");
 
-            foreach (Octokit.GitHubCommit commit in commits) {
-                string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
-                ToolsListView.Items.Add(new ListViewItem(new string[] { ElapsedTime(commit.Commit.Author.Date.DateTime.ToLocalTime()).Formatted, messageFormat }));
+                foreach (Octokit.GitHubCommit commit in commits) {
+                    string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
+                    ToolsListView.Items.Add(new ListViewItem(new string[] { ElapsedTime(commit.Commit.Author.Date.DateTime.ToLocalTime()).Formatted, messageFormat }));
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error getting information from GitHub.\r\n\r\n{ex.Message}", "Error Loading Awesomesauce-Modpack-Tools", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

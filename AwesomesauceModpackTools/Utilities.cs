@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 
 namespace AwesomesauceModpackTools {
@@ -46,6 +47,12 @@ namespace AwesomesauceModpackTools {
         /// Modpack list downloaded from GitHub at startup.
         /// </summary>
         public static List<Pack> ModpackList { get => _ModpackList; set => _ModpackList = value; }
+
+        private static bool _HasInternet = HasInternetConnection();
+        /// <summary>
+        /// Value of <see cref="HasInternetConnection()"/>.
+        /// </summary>
+        public static bool HasInternet { get => _HasInternet; }
 
         /// <summary>
         /// Search a list of mods for an exact <see cref="Mod.ID" />.
@@ -196,6 +203,18 @@ namespace AwesomesauceModpackTools {
             } else if (intSeconds > 0) {
                 return ($"{intSeconds} {((intSeconds == 1) ? "second" : "seconds")} ago", timeSpan);
             } else { return ($"{ dateTime.ToShortDateString()} {dateTime.ToShortTimeString()} ago", timeSpan); }
+        }
+
+        /// <summary>
+        /// Try to connect to Google.
+        /// </summary>
+        /// <returns>True if has internet connection; False if connection failed or any exceptions.</returns>
+        public static bool HasInternetConnection() {
+            try {
+                using (WebClient client = new WebClient()) { using (Stream stream = client.OpenRead("https://www.google.com")) { return true; } }
+            } catch {
+                return false;
+            }
         }
 
     }
