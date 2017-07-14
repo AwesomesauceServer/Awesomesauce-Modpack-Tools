@@ -241,6 +241,10 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             }
         }
 
+        private void SearchTextBox_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Escape) { SearchTextBox.Clear(); e.SuppressKeyPress = true; }
+        }
+
         private void LoadModList(string file) {
             try {
                 List<Mod> loadedMods = JsonConvert.DeserializeObject<List<Mod>>(File.ReadAllText(file, Encoding.UTF8));

@@ -257,7 +257,7 @@
             // 
             this.ExportAsHTMLToolStripMenuItem.Image = global::AwesomesauceModpackTools.Properties.Resources.HTMLFile;
             this.ExportAsHTMLToolStripMenuItem.Name = "ExportAsHTMLToolStripMenuItem";
-            this.ExportAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ExportAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.ExportAsHTMLToolStripMenuItem.Text = "HTML";
             this.ExportAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.ExportAsHTMLToolStripMenuItem_Click);
             // 
@@ -265,7 +265,7 @@
             // 
             this.ExportAsXMLToolStripMenuItem.Image = global::AwesomesauceModpackTools.Properties.Resources.XMLFile;
             this.ExportAsXMLToolStripMenuItem.Name = "ExportAsXMLToolStripMenuItem";
-            this.ExportAsXMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ExportAsXMLToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.ExportAsXMLToolStripMenuItem.Text = "XML";
             this.ExportAsXMLToolStripMenuItem.Click += new System.EventHandler(this.ExportAsXMLToolStripMenuItem_Click);
             // 
@@ -407,6 +407,7 @@
             this.SearchTextBox.Size = new System.Drawing.Size(333, 22);
             this.SearchTextBox.TabIndex = 13;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             // 
             // ExportAsDialog
             // 

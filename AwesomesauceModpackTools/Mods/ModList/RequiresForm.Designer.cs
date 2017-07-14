@@ -101,6 +101,7 @@
             this.SearchTextBox.Size = new System.Drawing.Size(215, 22);
             this.SearchTextBox.TabIndex = 1;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             // 
             // SearchPictureBox
             // 
