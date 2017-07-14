@@ -1,4 +1,4 @@
-# Awesomesauce Modpack Tools [![Build Status](https://travis-ci.org/AwesomesauceServer/Awesomesauce-Modpack-Tools.svg?branch=master)](https://travis-ci.org/AwesomesauceServer/Awesomesauce-Modpack-Tools)
+# Awesomesauce Modpack Tools [![Build Status](https://travis-ci.org/AwesomesauceServer/Awesomesauce-Modpack-Tools.svg?branch=master)](https://travis-ci.org/AwesomesauceServer/Awesomesauce-Modpack-Tools) [![GitHub release](https://img.shields.io/github/release/AwesomesauceServer/Awesomesauce-Modpack-Tools.svg)](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools)
 Collection of tools to help us manage the [Awesomesauce Modpack](https://github.com/AwesomesauceServer/Awesomesauce-Modpack), a semi-private community modpack.
 
 ### Why?
