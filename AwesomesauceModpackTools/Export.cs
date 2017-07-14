@@ -9,6 +9,11 @@ namespace AwesomesauceModpackTools {
 
     public static class Export {
 
+        /// <summary>
+        /// Export mod list to HTML.
+        /// </summary>
+        /// <param name="modList">Mod list to export.</param>
+        /// <param name="file">Path to save the file.</param>
         public static void AsHTML(List<Mod> modList, string file) {
             string workingHTML = Properties.Resources.Export_HTML_Template;
             workingHTML = workingHTML.Replace("%CSS%", Properties.Resources.Export_HTML_CSS);
@@ -27,6 +32,11 @@ namespace AwesomesauceModpackTools {
             File.WriteAllText(file, workingHTML);
         }
 
+        /// <summary>
+        /// Export mod list to XML.
+        /// </summary>
+        /// <param name="modList">Mod list to export.</param>
+        /// <param name="file">Path to save the file.</param>
         public static void AsXML(List<Mod> modList, string file) {
             XmlDocument xmlDocument = JsonConvert.DeserializeXmlNode("{\"Mod\":" + JsonConvert.SerializeObject(modList) + "}", "Mods");
 
