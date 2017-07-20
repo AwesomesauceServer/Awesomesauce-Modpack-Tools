@@ -96,6 +96,7 @@
             this.ModpackListView.TabIndex = 0;
             this.ModpackListView.UseCompatibleStateImageBehavior = false;
             this.ModpackListView.View = System.Windows.Forms.View.Details;
+            this.ModpackListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ModpackListView_MouseDoubleClick);
             // 
             // ModpackDateColumn
             // 
@@ -133,6 +134,7 @@
             this.ToolsListView.TabIndex = 1;
             this.ToolsListView.UseCompatibleStateImageBehavior = false;
             this.ToolsListView.View = System.Windows.Forms.View.Details;
+            this.ToolsListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ToolsListView_MouseDoubleClick);
             // 
             // ToolsDateColumn
             // 
