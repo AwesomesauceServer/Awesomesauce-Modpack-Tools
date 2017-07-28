@@ -172,11 +172,11 @@ namespace AwesomesauceModpackTools.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to body {
-        ///	background-color: #f9f9f9;
-        ///}
+        ///            background-color: #f9f9f9;
+        ///        }
         ///
-        ///#search {
-        ///	background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAACYktHRAD/h4/MvwAAAAl2cEFnAAABKgAAASkAUBZlMQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMy0wNC0xMFQwNjo1OTowNy0wNzowMI5BiVEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTMtMDQtMTBUMDY6NTk6MDctMDc6MDD/HDHtAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABF0RVh0VGl0bGUAc2VhcmNoLWljb27Cg+x9AAACKklEQVQ4T6WUSavqQBCFK+2sII7gShFXLpUsBB [rest of string was truncated]&quot;;.
+        ///        #search {
+        ///            background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAACYktHRAD/h4/MvwAAAAl2cEFnAAABKgAAASkAUBZlMQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMy0wNC0xMFQwNjo1OTowNy0wNzowMI5BiVEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTMtMDQtMTBUMDY6NTk6MDctMDc6MDD/HDHtAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABF0RVh0VGl0bGUAc2VhcmNoLWljb27Cg+x [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Export_HTML_CSS {
             get {
@@ -186,23 +186,15 @@ namespace AwesomesauceModpackTools.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to function searchMods() {
-        ///	var a, d, e, c, f, g, b;
-        ///	a = document.getElementById(&quot;search&quot;);
-        ///	d = a.value.toUpperCase();
-        ///	e = document.getElementById(&quot;mods&quot;);
-        ///	c = 0;
-        ///	f = e.getElementsByTagName(&quot;tr&quot;);
-        ///	for (b = 0; b &lt; f.length; b++) {
-        ///		g = f[b].getElementsByTagName(&quot;td&quot;)[c];
-        ///		if (g) {
-        ///			if (g.innerHTML.toUpperCase().indexOf(d) &gt; -1) {
-        ///				f[b].style.display = &quot;&quot;
-        ///			} else {
-        ///				f[b].style.display = &quot;none&quot;
-        ///			}
-        ///		}
-        ///	}
-        ///};.
+        ///            var find, table, column, rows, cell, item;
+        ///            find = document.getElementById(&quot;search&quot;).value.toUpperCase();
+        ///            table = document.getElementById(&quot;mods&quot;);
+        ///            column = 0;
+        ///            rows = table.getElementsByTagName(&quot;tr&quot;);
+        ///            for (item = 0; item &lt; rows.length; item++) {
+        ///                cell = rows[item].getElementsByTagName(&quot;td&quot;)[column];
+        ///                if (cell) {
+        ///                    if (cell.innerHTML.toUpperCase().indexOf(find [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Export_HTML_JS {
             get {
@@ -212,28 +204,20 @@ namespace AwesomesauceModpackTools.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html&gt;
-        ///	&lt;head&gt;
-        ///		&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///		&lt;style&gt;
-        ///			%CSS%
-        ///		&lt;/style&gt;
-        ///	&lt;/head&gt;
-        ///	&lt;body&gt;
-        ///		&lt;input id=&quot;search&quot; type=&quot;text&quot; onkeyup=&quot;searchMods()&quot; placeholder=&quot;Search for mods..&quot; title=&quot;Type in the name of a mod&quot; autofocus&gt;
-        ///		&lt;table id=&quot;mods&quot;&gt;
-        ///			&lt;tr&gt;
-        ///				&lt;th&gt;Name&lt;/th&gt;
-        ///				&lt;th&gt;Date&lt;/th&gt;
-        ///				&lt;th&gt;MD5&lt;/th&gt;
-        ///			&lt;/tr&gt;
-        ///			%TABLE%
-        ///		&lt;/table&gt;
-        ///		&lt;script&gt;
-        ///			%JS%
-        ///		&lt;/script&gt;
-        ///	&lt;/body&gt;
-        ///&lt;/html&gt;.
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+        ///    &lt;meta name=&quot;author&quot; content=&quot;Xathz&quot;&gt;
+        ///    &lt;title&gt;Awesomesauce Modpack&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        %CSS%
+        ///    &lt;/style&gt;
+        ///&lt;/head&gt;
+        ///&lt;body onload=&quot;onLoad()&quot;&gt;
+        ///    &lt;input id=&quot;search&quot; type=&quot;text&quot; onkeyup=&quot;searchMods()&quot; placeholder=&quot;Search for mods..&quot; title=&quot;Type in the name of a mod&quot; autofocus=&quot;&quot;&gt;
+        ///    &lt;table id=&quot;mods&quot;&gt;
+        ///       [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Export_HTML_Template {
             get {

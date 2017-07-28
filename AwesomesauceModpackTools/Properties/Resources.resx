@@ -153,95 +153,121 @@
   </data>
   <data name="Export_HTML_CSS" xml:space="preserve">
     <value>body {
-	background-color: #f9f9f9;
-}
+            background-color: #f9f9f9;
+        }
 
-#search {
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAACYktHRAD/h4/MvwAAAAl2cEFnAAABKgAAASkAUBZlMQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMy0wNC0xMFQwNjo1OTowNy0wNzowMI5BiVEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTMtMDQtMTBUMDY6NTk6MDctMDc6MDD/HDHtAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABF0RVh0VGl0bGUAc2VhcmNoLWljb27Cg+x9AAACKklEQVQ4T6WUSavqQBCFK+2sII7gShFXLpUsBBHFf+1KcAQFwaWiolsnnBDn++4p0iHRqPDuByFJd/Wp6qrqVn5+IQP3+52m0ymtVis6Ho885na7KRgMUiKR4O9vmEQHgwGNx2NyOp0khCBFUXgcJo/Hg67XK8ViMcpkMjz+Dl200+nQZrMhh8PBE4gYQgDidrudvzEOm2KxyP9WsCginM1mHKEUS6VSFA6HOWI4G41GPAfx2+1GgUCAVFXVZMwovwY/lUqFPB4PiyFn+XxemzbT6/VovV6z8Ol0olwux+LPCBQFEQKIvhME2WyWbWGHFCD/VghUGVvE1rDlb6TTabbFmuVyqY2aEWgbFALeI5GINvyeUCjEtlgju+IZoRWfkS30CURoxFJUNjMEt9stf38CNjJKIFvNiMBJgTebzcZt843hcMhCELWqPBDxeJwulwtvC/3X7/e1qVfgFD0rC5tMJrUZM8Lr9VI0GmVBRDCfz6nZbHI/Sna7HXW7XZpMJtxSiBIP1lmhH9NqtaqfGKQDTmQREBnSgwfmMqfYYblc1o+2xHShtNttLgSiee4EmMEp3hDBPJzikimVSuRyuTTLJ1GwWCz4pCB3UhiL/X4/Hw50C5zjLSM+n898weCogxdRIzAGxigAdtNqtV6EC4UC+Xy+z6Kf2O/31Gg0TMK4ZBDxf4uCw+FA9XpdF0aaUOg/iQLcHbVaTb/p0Cl/FgXIJ/oYnaCqKv0DC6dltH6Ks84AAAAASUVORK5CYII=');
-	background-position: 10px 10px;
-	background-repeat: no-repeat;
-	width: 20%;
-	font-size: 16px;
-	padding: 12px 20px 12px 40px;
-	border: 1px solid #ddd;
-	margin-bottom: 8px;
-	position: relative;
-	left: 50%;
-	transform: translate(-50%);
-}
+        #search {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAACYktHRAD/h4/MvwAAAAl2cEFnAAABKgAAASkAUBZlMQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMy0wNC0xMFQwNjo1OTowNy0wNzowMI5BiVEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTMtMDQtMTBUMDY6NTk6MDctMDc6MDD/HDHtAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABF0RVh0VGl0bGUAc2VhcmNoLWljb27Cg+x9AAACKklEQVQ4T6WUSavqQBCFK+2sII7gShFXLpUsBBHFf+1KcAQFwaWiolsnnBDn++4p0iHRqPDuByFJd/Wp6qrqVn5+IQP3+52m0ymtVis6Ho885na7KRgMUiKR4O9vmEQHgwGNx2NyOp0khCBFUXgcJo/Hg67XK8ViMcpkMjz+Dl200+nQZrMhh8PBE4gYQgDidrudvzEOm2KxyP9WsCginM1mHKEUS6VSFA6HOWI4G41GPAfx2+1GgUCAVFXVZMwovwY/lUqFPB4PiyFn+XxemzbT6/VovV6z8Ol0olwux+LPCBQFEQKIvhME2WyWbWGHFCD/VghUGVvE1rDlb6TTabbFmuVyqY2aEWgbFALeI5GINvyeUCjEtlgju+IZoRWfkS30CURoxFJUNjMEt9stf38CNjJKIFvNiMBJgTebzcZt843hcMhCELWqPBDxeJwulwtvC/3X7/e1qVfgFD0rC5tMJrUZM8Lr9VI0GmVBRDCfz6nZbHI/Sna7HXW7XZpMJtxSiBIP1lmhH9NqtaqfGKQDTmQREBnSgwfmMqfYYblc1o+2xHShtNttLgSiee4EmMEp3hDBPJzikimVSuRyuTTLJ1GwWCz4pCB3UhiL/X4/Hw50C5zjLSM+n898weCogxdRIzAGxigAdtNqtV6EC4UC+Xy+z6Kf2O/31Gg0TMK4ZBDxf4uCw+FA9XpdF0aaUOg/iQLcHbVaTb/p0Cl/FgXIJ/oYnaCqKv0DC6dltH6Ks84AAAAASUVORK5CYII=');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 20%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 8px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+        }
 
-#mods {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	margin-left: auto;
-	margin-right: auto;
-}
+        #mods {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-#mods td,
-#mods th {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
+            #mods td,
+            #mods th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
 
-#mods tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
+            #mods tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
 
-#mods tr:hover {
-	background-color: #ddd;
-}
+            #mods tr:hover {
+                background-color: #ddd;
+            }
 
-#mods th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: left;
-	background-color: #f3c13c;
-	color: white;
-}</value>
+            #mods th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #f3c13c;
+                color: white;
+            }</value>
   </data>
   <data name="Export_HTML_JS" xml:space="preserve">
     <value>function searchMods() {
-	var a, d, e, c, f, g, b;
-	a = document.getElementById("search");
-	d = a.value.toUpperCase();
-	e = document.getElementById("mods");
-	c = 0;
-	f = e.getElementsByTagName("tr");
-	for (b = 0; b &lt; f.length; b++) {
-		g = f[b].getElementsByTagName("td")[c];
-		if (g) {
-			if (g.innerHTML.toUpperCase().indexOf(d) &gt; -1) {
-				f[b].style.display = ""
-			} else {
-				f[b].style.display = "none"
-			}
-		}
-	}
-};</value>
+            var find, table, column, rows, cell, item;
+            find = document.getElementById("search").value.toUpperCase();
+            table = document.getElementById("mods");
+            column = 0;
+            rows = table.getElementsByTagName("tr");
+            for (item = 0; item &lt; rows.length; item++) {
+                cell = rows[item].getElementsByTagName("td")[column];
+                if (cell) {
+                    if (cell.innerHTML.toUpperCase().indexOf(find) &gt; -1) {
+                        rows[item].style.display = ""
+                    } else {
+                        rows[item].style.display = "none"
+                    }
+                }
+            }
+        };
+
+        function onLoad() {
+            var md5 = location.search.split('md5=')[1];
+            if (md5) {
+                var find, table, column, rows, cell, item;
+                find = md5.toUpperCase();
+                table = document.getElementById("mods");
+                column = 2;
+                rows = table.getElementsByTagName("tr");
+                for (item = 0; item &lt; rows.length; item++) {
+                    cell = rows[item].getElementsByTagName("td")[column];
+                    if (cell) {
+                        if (cell.innerHTML.toUpperCase().indexOf(find) &gt; -1) {
+                            rows[item].style.display = "";
+                        } else {
+                            rows[item].style.display = "none";
+                        }
+                    }
+                }
+            }
+        };</value>
   </data>
   <data name="Export_HTML_Template" xml:space="preserve">
     <value>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-	&lt;head&gt;
-		&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
-		&lt;style&gt;
-			%CSS%
-		&lt;/style&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-		&lt;input id="search" type="text" onkeyup="searchMods()" placeholder="Search for mods.." title="Type in the name of a mod" autofocus&gt;
-		&lt;table id="mods"&gt;
-			&lt;tr&gt;
-				&lt;th&gt;Name&lt;/th&gt;
-				&lt;th&gt;Date&lt;/th&gt;
-				&lt;th&gt;MD5&lt;/th&gt;
-			&lt;/tr&gt;
-			%TABLE%
-		&lt;/table&gt;
-		&lt;script&gt;
-			%JS%
-		&lt;/script&gt;
-	&lt;/body&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="author" content="Xathz"&gt;
+    &lt;title&gt;Awesomesauce Modpack&lt;/title&gt;
+    &lt;style&gt;
+        %CSS%
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body onload="onLoad()"&gt;
+    &lt;input id="search" type="text" onkeyup="searchMods()" placeholder="Search for mods.." title="Type in the name of a mod" autofocus=""&gt;
+    &lt;table id="mods"&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Date&lt;/th&gt;
+                &lt;th&gt;MD5&lt;/th&gt;
+            &lt;/tr&gt;
+%TABLE%
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;script&gt;
+        %JS%
+    &lt;/script&gt;
+
+&lt;/body&gt;
 &lt;/html&gt;</value>
   </data>
   <data name="HTMLFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
