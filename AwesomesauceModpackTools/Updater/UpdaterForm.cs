@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -152,21 +153,34 @@ namespace AwesomesauceModpackTools.Updater {
             }
         }
 
+        private void ModListView_MouseDoubleClick(object sender, MouseEventArgs e) {
+            if (ModListView.SelectedItems.Count == 1) {
+                Mod selectedMod = (Mod)ModListView.SelectedItems[0].Tag;
+                try { Process.Start(selectedMod.Link); } catch { }
+            }
+        }
+
         private async Task UpdateMods() {
             IsUpdating = true;
             LoadFromPanel.Enabled = false;
             GameVersionsComboBox.Enabled = false;
             UpdateButton.Enabled = false;
             SavePanel.Enabled = false;
+            StatusLabel.Text = "Updating mods...";
 
+            int modCount = ModListView.Items.Count;
+            int skippedCount = 0;
             int errorCount = 0;
             int updateAvailableCount = 0;
             foreach (ListViewItem item in ModListView.Items) {
                 if (IsCanceling) { break; }
                 if (HasErrors) { if (item.BackColor != error) { continue; } }
 
+                StatusLabel.Text = $@"{modCount} Mods, {updateAvailableCount} Updates Available, {skippedCount} Skipped, {errorCount} Errors";
+
                 Mod itemMod = (Mod)item.Tag;
                 if (itemMod.UpdateMode != UpdateMode.Automatic) {
+                    skippedCount++;
                     item.BackColor = skipped;
                     item.EnsureVisible();
                     continue;
@@ -184,8 +198,11 @@ namespace AwesomesauceModpackTools.Updater {
                     case "1.11.2":
                         selectedGameVersion = GameVersion1112;
                         break;
-                    case "1.2":
+                    case "1.12":
                         selectedGameVersion = GameVersion112;
+                        break;
+                    case "1.12.2":
+                        selectedGameVersion = GameVersion1122;
                         break;
                 }
 

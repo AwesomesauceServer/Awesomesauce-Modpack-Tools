@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.LoadFromPanel = new System.Windows.Forms.Panel();
             this.LoadGitHubButton = new System.Windows.Forms.Button();
             this.LoadLocalButton = new System.Windows.Forms.Button();
@@ -46,20 +47,28 @@
             this.GameVersionsLabel = new System.Windows.Forms.Label();
             this.GameVersionsInfoLabel = new System.Windows.Forms.Label();
             this.SavePanel = new System.Windows.Forms.Panel();
+            this.CopyButton = new System.Windows.Forms.Button();
             this.SaveLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ExampleUpdateErrorLabel = new System.Windows.Forms.Label();
-            this.CopyButton = new System.Windows.Forms.Button();
+            this.MainStatusStrip.SuspendLayout();
             this.LoadFromPanel.SuspendLayout();
             this.SavePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainStatusStrip
             // 
+            this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel});
             this.MainStatusStrip.Location = new System.Drawing.Point(0, 567);
             this.MainStatusStrip.Name = "MainStatusStrip";
             this.MainStatusStrip.Size = new System.Drawing.Size(891, 22);
             this.MainStatusStrip.TabIndex = 8;
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // LoadFromPanel
             // 
@@ -151,6 +160,7 @@
             this.ModListView.TabIndex = 10;
             this.ModListView.UseCompatibleStateImageBehavior = false;
             this.ModListView.View = System.Windows.Forms.View.Details;
+            this.ModListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ModListView_MouseDoubleClick);
             // 
             // NameColumn
             // 
@@ -265,7 +275,8 @@
             this.GameVersionsComboBox.Items.AddRange(new object[] {
             "1.10.2",
             "1.11.2",
-            "1.12"});
+            "1.12",
+            "1.12.2"});
             this.GameVersionsComboBox.Location = new System.Drawing.Point(14, 482);
             this.GameVersionsComboBox.Name = "GameVersionsComboBox";
             this.GameVersionsComboBox.Size = new System.Drawing.Size(110, 21);
@@ -307,6 +318,20 @@
             this.SavePanel.TabIndex = 14;
             this.SavePanel.Visible = false;
             // 
+            // CopyButton
+            // 
+            this.CopyButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CopyButton.Image = global::AwesomesauceModpackTools.Properties.Resources.CopyToClipboard;
+            this.CopyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CopyButton.Location = new System.Drawing.Point(4, 67);
+            this.CopyButton.Name = "CopyButton";
+            this.CopyButton.Size = new System.Drawing.Size(125, 27);
+            this.CopyButton.TabIndex = 2;
+            this.CopyButton.Text = "Copy Updated";
+            this.CopyButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CopyButton.UseVisualStyleBackColor = true;
+            this.CopyButton.Click += new System.EventHandler(this.CopyButton_Click);
+            // 
             // SaveLabel
             // 
             this.SaveLabel.BackColor = System.Drawing.Color.Transparent;
@@ -342,20 +367,6 @@
             this.ExampleUpdateErrorLabel.Text = "Update Error";
             this.ExampleUpdateErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CopyButton
-            // 
-            this.CopyButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CopyButton.Image = global::AwesomesauceModpackTools.Properties.Resources.CopyToClipboard;
-            this.CopyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CopyButton.Location = new System.Drawing.Point(4, 67);
-            this.CopyButton.Name = "CopyButton";
-            this.CopyButton.Size = new System.Drawing.Size(125, 27);
-            this.CopyButton.TabIndex = 2;
-            this.CopyButton.Text = "Copy Updated";
-            this.CopyButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CopyButton.UseVisualStyleBackColor = true;
-            this.CopyButton.Click += new System.EventHandler(this.CopyButton_Click);
-            // 
             // UpdaterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +395,8 @@
             this.Text = "Updater";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdaterForm_FormClosing);
             this.Load += new System.EventHandler(this.UpdaterForm_Load);
+            this.MainStatusStrip.ResumeLayout(false);
+            this.MainStatusStrip.PerformLayout();
             this.LoadFromPanel.ResumeLayout(false);
             this.LoadFromPanel.PerformLayout();
             this.SavePanel.ResumeLayout(false);
@@ -421,5 +434,6 @@
         private System.Windows.Forms.Label SaveLabel;
         private System.Windows.Forms.Label ExampleUpdateErrorLabel;
         private System.Windows.Forms.Button CopyButton;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
     }
 }

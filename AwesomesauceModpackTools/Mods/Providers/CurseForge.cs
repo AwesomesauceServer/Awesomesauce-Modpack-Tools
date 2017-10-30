@@ -8,6 +8,12 @@ namespace AwesomesauceModpackTools.Mods.Providers {
 
     public static class CurseForge {
 
+        private static string _GameVersion1122 = "?filter-game-version=2020709689%3A6756";
+        /// <summary>
+        /// Minecraft game version. 1.12.2
+        /// </summary>
+        public static string GameVersion1122 { get => _GameVersion1122; }
+
         private static string _GameVersion112 = "?filter-game-version=2020709689%3A6580";
         /// <summary>
         /// Minecraft game version. 1.12
