@@ -371,4 +371,5 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         }
 
     }
+
 }

@@ -24,4 +24,5 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
         }
 
     }
+
 }
