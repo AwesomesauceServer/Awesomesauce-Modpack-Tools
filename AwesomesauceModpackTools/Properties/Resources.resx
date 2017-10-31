@@ -127,8 +127,30 @@
   <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\art\Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ChangelogCompiler_HTML_Default" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+        &lt;style&gt;
+            body { background-color: #f0f0f0; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+            h3 { text-align: center; }
+            p { text-align: center; }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h3&gt;Title line&lt;/h3&gt;
+        &lt;p&gt;This is a test paragraph&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
   <data name="CheckboxDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\art\CheckboxDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Code" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\art\Code.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CopyToClipboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\art\CopyToClipboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

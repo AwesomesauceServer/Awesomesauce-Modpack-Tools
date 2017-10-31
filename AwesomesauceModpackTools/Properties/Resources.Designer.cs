@@ -91,11 +91,43 @@ namespace AwesomesauceModpackTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///    &lt;head&gt;
+        ///    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+        ///        &lt;style&gt;
+        ///            body { background-color: #f0f0f0; font-family: &quot;Trebuchet MS&quot;, Arial, Helvetica, sans-serif; }
+        ///            h3 { text-align: center; }
+        ///            p { text-align: center; }
+        ///        &lt;/style&gt;
+        ///    &lt;/head&gt;
+        ///    &lt;body&gt;
+        ///        &lt;h3&gt;Ti [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ChangelogCompiler_HTML_Default {
+            get {
+                return ResourceManager.GetString("ChangelogCompiler_HTML_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap CheckboxDisable {
             get {
                 object obj = ResourceManager.GetObject("CheckboxDisable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Code {
+            get {
+                object obj = ResourceManager.GetObject("Code", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -4,33 +4,9 @@ using HtmlAgilityPack;
 using static AwesomesauceModpackTools.Utilities;
 using static AwesomesauceModpackTools.Utilities.Storage;
 
-namespace AwesomesauceModpackTools.Mods.Providers {
+namespace AwesomesauceModpackTools.Mods {
 
-    public static class CurseForge {
-
-        private static string _GameVersion1122 = "?filter-game-version=2020709689%3A6756";
-        /// <summary>
-        /// Minecraft game version. 1.12.2
-        /// </summary>
-        public static string GameVersion1122 { get => _GameVersion1122; }
-
-        private static string _GameVersion112 = "?filter-game-version=2020709689%3A6580";
-        /// <summary>
-        /// Minecraft game version. 1.12
-        /// </summary>
-        public static string GameVersion112 { get => _GameVersion112; }
-
-        private static string _GameVersion1112 = "?filter-game-version=2020709689%3A6452";
-        /// <summary>
-        /// Minecraft game version. 1.11.2
-        /// </summary>
-        public static string GameVersion1112 { get => _GameVersion1112; }
-
-        private static string _GameVersion1102 = "?filter-game-version=2020709689%3A6170";
-        /// <summary>
-        /// Minecraft game version. 1.10.2
-        /// </summary>
-        public static string GameVersion1102 { get => _GameVersion1102; }
+    public static class Parsing {
 
         /// <summary>
         /// Parse a CurseForge mod page for information.

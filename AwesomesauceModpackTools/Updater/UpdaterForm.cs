@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AwesomesauceModpackTools.Mods;
 using Newtonsoft.Json;
-using static AwesomesauceModpackTools.Mods.Providers.CurseForge;
+using static AwesomesauceModpackTools.Mods.Parsing;
 using static AwesomesauceModpackTools.Utilities.Storage;
 
 namespace AwesomesauceModpackTools.Updater {
@@ -40,6 +41,8 @@ namespace AwesomesauceModpackTools.Updater {
         public UpdaterForm() {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
+
+            GameVersionsComboBox.Items.AddRange(MinecraftVersions.GameVersions.Keys.ToArray());
         }
 
         private void UpdaterForm_Load(object sender, EventArgs e) {
@@ -190,24 +193,8 @@ namespace AwesomesauceModpackTools.Updater {
                 item.BackColor = working;
                 item.EnsureVisible();
 
-                string selectedGameVersion = null;
-                switch (GameVersionsComboBox.SelectedItem) {
-                    case "1.10.2":
-                        selectedGameVersion = GameVersion1102;
-                        break;
-                    case "1.11.2":
-                        selectedGameVersion = GameVersion1112;
-                        break;
-                    case "1.12":
-                        selectedGameVersion = GameVersion112;
-                        break;
-                    case "1.12.2":
-                        selectedGameVersion = GameVersion1122;
-                        break;
-                }
-
                 try {
-                    await Task.Run(() => { itemMod = ParseForUpdate(itemMod, selectedGameVersion).Mod; });
+                    await Task.Run(() => { itemMod = ParseForUpdate(itemMod, MinecraftVersions.GameVersions[(string)GameVersionsComboBox.SelectedItem]).Mod; });
 
                     if (itemMod.MD5 == oldMD5) {
                         item.BackColor = notAvailable;

@@ -36,6 +36,7 @@
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.DownloaderButton = new System.Windows.Forms.Button();
             this.UpdaterButton = new System.Windows.Forms.Button();
+            this.ChangelogCompilerButton = new System.Windows.Forms.Button();
             this.GitHubTabControl.SuspendLayout();
             this.ModpackTabPage.SuspendLayout();
             this.ToolsTabPage.SuspendLayout();
@@ -183,11 +184,27 @@
             this.UpdaterButton.UseVisualStyleBackColor = true;
             this.UpdaterButton.Click += new System.EventHandler(this.UpdaterButton_Click);
             // 
+            // ChangelogCompilerButton
+            // 
+            this.ChangelogCompilerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChangelogCompilerButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangelogCompilerButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Code;
+            this.ChangelogCompilerButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ChangelogCompilerButton.Location = new System.Drawing.Point(673, 136);
+            this.ChangelogCompilerButton.Name = "ChangelogCompilerButton";
+            this.ChangelogCompilerButton.Size = new System.Drawing.Size(116, 43);
+            this.ChangelogCompilerButton.TabIndex = 4;
+            this.ChangelogCompilerButton.Text = "Changelog Compiler";
+            this.ChangelogCompilerButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ChangelogCompilerButton.UseVisualStyleBackColor = true;
+            this.ChangelogCompilerButton.Click += new System.EventHandler(this.ChangelogCompilerButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 326);
+            this.Controls.Add(this.ChangelogCompilerButton);
             this.Controls.Add(this.UpdaterButton);
             this.Controls.Add(this.DownloaderButton);
             this.Controls.Add(this.MainStatusStrip);
@@ -224,5 +241,6 @@
         private System.Windows.Forms.StatusStrip MainStatusStrip;
         private System.Windows.Forms.Button DownloaderButton;
         private System.Windows.Forms.Button UpdaterButton;
+        private System.Windows.Forms.Button ChangelogCompilerButton;
     }
 }

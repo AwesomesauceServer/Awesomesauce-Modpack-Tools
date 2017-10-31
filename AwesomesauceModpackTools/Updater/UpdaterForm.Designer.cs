@@ -272,11 +272,6 @@
             this.GameVersionsComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.GameVersionsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GameVersionsComboBox.FormattingEnabled = true;
-            this.GameVersionsComboBox.Items.AddRange(new object[] {
-            "1.10.2",
-            "1.11.2",
-            "1.12",
-            "1.12.2"});
             this.GameVersionsComboBox.Location = new System.Drawing.Point(14, 482);
             this.GameVersionsComboBox.Name = "GameVersionsComboBox";
             this.GameVersionsComboBox.Size = new System.Drawing.Size(110, 21);

@@ -10,10 +10,13 @@ namespace AwesomesauceModpackTools {
         /// </summary>
         [STAThread]
         static void Main() {
+            MinecraftVersions.SetupGameVersions();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
 
     }
+
 }

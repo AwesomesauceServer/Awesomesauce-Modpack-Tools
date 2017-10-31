@@ -128,5 +128,10 @@ namespace AwesomesauceModpackTools {
 
         }
 
+        private void ChangelogCompilerButton_Click(object sender, EventArgs e) {
+            ChangelogCompiler.ChangelogCompilerForm changelogCompilerForm = new ChangelogCompiler.ChangelogCompilerForm();
+            changelogCompilerForm.Show();
+        }
+
     }
 }

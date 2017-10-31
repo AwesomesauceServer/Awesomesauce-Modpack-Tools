@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangelogCompiler\ChangelogCompilerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangelogCompiler\ChangelogCompilerForm.Designer.cs">
+      <DependentUpon>ChangelogCompilerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Downloader\DownloaderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,7 @@
       <DependentUpon>DownloaderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Export.cs" />
+    <Compile Include="MinecraftVersions.cs" />
     <Compile Include="Utilities.Storage.cs" />
     <Compile Include="Pack.cs" />
     <Compile Include="MainForm.cs">
@@ -128,7 +135,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mods\RequiredMod.cs" />
-    <Compile Include="Mods\Providers\CurseForge.cs" />
+    <Compile Include="Mods\Parsing.cs" />
     <Compile Include="Updater\UpdaterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +143,9 @@
       <DependentUpon>UpdaterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
+    <EmbeddedResource Include="ChangelogCompiler\ChangelogCompilerForm.resx">
+      <DependentUpon>ChangelogCompilerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Downloader\DownloaderForm.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +256,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="art\CopyToClipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="art\Code.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
