@@ -42,7 +42,7 @@ namespace AwesomesauceModpackTools.Updater {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
 
-            GameVersionsComboBox.Items.AddRange(MinecraftVersions.GameVersions.Keys.ToArray());
+            GameVersionsComboBox.Items.AddRange(Minecraft.GameVersions.Keys.ToArray());
         }
 
         private void UpdaterForm_Load(object sender, EventArgs e) {
@@ -194,7 +194,7 @@ namespace AwesomesauceModpackTools.Updater {
                 item.EnsureVisible();
 
                 try {
-                    await Task.Run(() => { itemMod = ParseForUpdate(itemMod, MinecraftVersions.GameVersions[(string)GameVersionsComboBox.SelectedItem]).Mod; });
+                    await Task.Run(() => { itemMod = ParseForUpdate(itemMod, Minecraft.GameVersions[(string)GameVersionsComboBox.SelectedItem]).Mod; });
 
                     if (itemMod.MD5 == oldMD5) {
                         item.BackColor = notAvailable;

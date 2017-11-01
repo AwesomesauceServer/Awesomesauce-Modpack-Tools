@@ -10,7 +10,7 @@ namespace AwesomesauceModpackTools {
         /// </summary>
         [STAThread]
         static void Main() {
-            MinecraftVersions.SetupGameVersions();
+            Minecraft.SetupGameVersions();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

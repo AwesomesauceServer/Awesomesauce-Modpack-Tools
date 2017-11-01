@@ -2,7 +2,7 @@
 
 namespace AwesomesauceModpackTools {
 
-    public static class MinecraftVersions {
+    public static class Minecraft {
 
         private static Dictionary<string, string> _GameVersions = new Dictionary<string, string>();
         /// <summary>

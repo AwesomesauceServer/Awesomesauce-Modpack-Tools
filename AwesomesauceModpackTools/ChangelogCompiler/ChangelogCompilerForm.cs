@@ -13,7 +13,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
             Icon = Properties.Resources.AwesomesauceIcon;
 
             HTMLWebBrowser.DocumentText = Properties.Resources.ChangelogCompiler_HTML_Default;
-            GameVersionsComboBox.Items.AddRange(MinecraftVersions.GameVersions.Keys.ToArray());
+            GameVersionsComboBox.Items.AddRange(Minecraft.GameVersions.Keys.ToArray());
         }
 
         private void ChangelogCompilerForm_Load(object sender, EventArgs e) {
