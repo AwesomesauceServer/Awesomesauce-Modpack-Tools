@@ -100,6 +100,16 @@ namespace AwesomesauceModpackTools {
         }
 
         /// <summary>
+        /// Removes the query string from a URL.
+        /// </summary>
+        /// <param name="url">The complete URL.</param>
+        /// <returns>www.google.com/search part of https://www.google.com/search?q=example</returns>
+        public static string RemoveURLQueryString(string url) {
+            Uri uri = new Uri(url);
+            return $"{uri.Scheme}{Uri.SchemeDelimiter}{uri.Authority}{uri.AbsolutePath}";
+        }
+
+        /// <summary>
         /// MD5 hash a local file.
         /// </summary>
         /// <param name="file">Path to the file.</param>
