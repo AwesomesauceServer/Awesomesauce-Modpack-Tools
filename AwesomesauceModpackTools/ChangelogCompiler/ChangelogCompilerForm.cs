@@ -105,7 +105,6 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
             }
 
             foreach (KeyValuePair<string, (string link, string html)> changelog in workingChangelogs) {
-                //changelogBuilder.AppendLine($"<h3 class=\"exclude\">{changelog.Key}</h3 class=\"exclude\">");
                 changelogBuilder.AppendLine($"<a href=\"{changelog.Value.link}\"><h3 class=\"exclude\">{changelog.Key}</h3 class=\"exclude\"></a>");
                 changelogBuilder.AppendLine(changelog.Value.html);
             }

@@ -171,6 +171,7 @@ namespace AwesomesauceModpackTools.Updater {
             SavePanel.Enabled = false;
             StatusLabel.Text = "Updating mods...";
 
+            string minecraftVersion = Minecraft.GameVersions[(string)GameVersionsComboBox.SelectedItem];
             int modCount = ModListView.Items.Count;
             int skippedCount = 0;
             int errorCount = 0;
@@ -194,7 +195,7 @@ namespace AwesomesauceModpackTools.Updater {
                 item.EnsureVisible();
 
                 try {
-                    await Task.Run(() => { itemMod = ParseForUpdate(itemMod, Minecraft.GameVersions[(string)GameVersionsComboBox.SelectedItem]).Mod; });
+                    await Task.Run(() => { itemMod = ParseForUpdate(itemMod, minecraftVersion).Mod; });
 
                     if (itemMod.MD5 == oldMD5) {
                         item.BackColor = notAvailable;
