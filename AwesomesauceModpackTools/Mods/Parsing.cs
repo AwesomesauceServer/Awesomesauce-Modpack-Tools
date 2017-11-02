@@ -27,6 +27,10 @@ namespace AwesomesauceModpackTools.Mods {
                     mod.Size = node.SelectSingleNode("//div[@class='details-info']/ul/li[4]/div[@class='info-data']").InnerText.Trim();
                     mod.MD5 = node.SelectSingleNode("//div[@class='details-info']/ul/li[6]/div[@class='info-data']/span[@class='md5']").InnerText.Trim();
 
+                    if (mod.MinecraftVersion.Count != 0) { mod.MinecraftVersion.Clear(); }
+                    HtmlNodeCollection minecraftVersions = node.SelectNodes("//div[@id='content']/section[@class='primary-content']/div[@class='details-panel']/div[@class='details-content']/section[@class='details-versions']/ul[1]/li");
+                    foreach (HtmlNode minectaftVersion in minecraftVersions) { mod.MinecraftVersion.Add(HtmlEntity.DeEntitize(minectaftVersion.InnerText.Trim())); }
+
                     mod.Link = HtmlEntity.DeEntitize(mod.Link);
                     mod.Name = HtmlEntity.DeEntitize(mod.Name);
                     mod.File = HtmlEntity.DeEntitize(mod.File);

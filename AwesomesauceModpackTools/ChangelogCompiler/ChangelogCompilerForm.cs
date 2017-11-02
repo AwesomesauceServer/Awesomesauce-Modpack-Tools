@@ -13,6 +13,16 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
 
     public partial class ChangelogCompilerForm : Form {
 
+        /// <summary>
+        /// Set when calling form programmatically.
+        /// </summary>
+        public string ModURLAuto { get; set; } = "";
+
+        /// <summary>
+        /// Set when calling form programmatically.
+        /// </summary>
+        public string GameVersionsAuto { get; set; } = "";
+
         public ChangelogCompilerForm() {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
@@ -22,10 +32,29 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
         }
 
         private void ChangelogCompilerForm_Load(object sender, EventArgs e) {
-
+            Show();
+            if (Minecraft.GameVersions.Keys.Contains(GameVersionsAuto)) { GameVersionsComboBox.SelectedItem = GameVersionsAuto; }
+            ModURLTextBox.Text = ModURLAuto;
+            if (GameVersionsComboBox.SelectedItem != null && ModURLTextBox.Text.Trim() != "") { CompileButton.PerformClick(); }
         }
 
         private void CompileButton_Click(object sender, EventArgs e) {
+            if (GameVersionsComboBox.SelectedItem == null) {
+                MessageBox.Show("Please pick a Game Version", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                GameVersionsComboBox.Focus();
+                return;
+            }
+            if (ModURLTextBox.Text.Trim() == "") {
+                MessageBox.Show("Please ender a Mod URL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                ModURLTextBox.Focus();
+                return;
+            }
+            if (!IsValidURL(ModURLTextBox.Text, UriKind.Absolute)) {
+                MessageBox.Show("Please ender a valid Mod URL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                ModURLTextBox.Focus();
+                return;
+            }
+
             CompilingProgressBar.Style = ProgressBarStyle.Marquee;
             CompilingProgressBar.Value = 0;
             CompilingProgressBar.Visible = true;
@@ -33,6 +62,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
             GameVersionsComboBox.Enabled = false;
             ModURLTextBox.Enabled = false;
             CompileButton.Enabled = false;
+            Application.DoEvents();
 
             ModURLTextBox.Text = RemoveURLQueryString(ModURLTextBox.Text.Trim());
             if (ModURLTextBox.Text.EndsWith("/")) { ModURLTextBox.Text = ModURLTextBox.Text.Remove(ModURLTextBox.Text.Length - 1, 1); }
@@ -104,25 +134,29 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 CompilingProgressBar.Value = (CompilingProgressBar.Value + 1);
             }
 
-            foreach (KeyValuePair<string, (string link, string html)> changelog in workingChangelogs) {
-                changelogBuilder.AppendLine($"<a href=\"{changelog.Value.link}\"><h3 class=\"exclude\">{changelog.Key}</h3 class=\"exclude\"></a>");
-                changelogBuilder.AppendLine(changelog.Value.html);
+            if (workingURLS.Count != 0) {
+                foreach (KeyValuePair<string, (string link, string html)> changelog in workingChangelogs) {
+                    changelogBuilder.AppendLine($"<a href=\"{changelog.Value.link}\"><h3 class=\"exclude\">{changelog.Key}</h3 class=\"exclude\"></a>");
+                    changelogBuilder.AppendLine(changelog.Value.html);
+                }
+
+                changelogBuilder = changelogBuilder.Replace("<h1>", "");
+                changelogBuilder = changelogBuilder.Replace("</h1>", "");
+                changelogBuilder = changelogBuilder.Replace("<h2>", "");
+                changelogBuilder = changelogBuilder.Replace("</h2>", "");
+                changelogBuilder = changelogBuilder.Replace("<h3>", "");
+                changelogBuilder = changelogBuilder.Replace("</h3>", "");
+                changelogBuilder = changelogBuilder.Replace("<pre>", "");
+                changelogBuilder = changelogBuilder.Replace("</pre>", "");
+                changelogBuilder = changelogBuilder.Replace("<b>", "");
+                changelogBuilder = changelogBuilder.Replace("</b>", "");
+                changelogBuilder = changelogBuilder.Replace("<strong>", "");
+                changelogBuilder = changelogBuilder.Replace("</strong>", "");
+
+                HTMLWebBrowser.DocumentText = Properties.Resources.ChangelogCompiler_HTML_Changelog.Replace("%CHANGELOG%", changelogBuilder.ToString());
+            } else {
+                ShowMessage("No changelogs found", "Or there were no supported game versions.");
             }
-
-            changelogBuilder = changelogBuilder.Replace("<h1>", "");
-            changelogBuilder = changelogBuilder.Replace("</h1>", "");
-            changelogBuilder = changelogBuilder.Replace("<h2>", "");
-            changelogBuilder = changelogBuilder.Replace("</h2>", "");
-            changelogBuilder = changelogBuilder.Replace("<h3>", "");
-            changelogBuilder = changelogBuilder.Replace("</h3>", "");
-            changelogBuilder = changelogBuilder.Replace("<pre>", "");
-            changelogBuilder = changelogBuilder.Replace("</pre>", "");
-            changelogBuilder = changelogBuilder.Replace("<b>", "");
-            changelogBuilder = changelogBuilder.Replace("</b>", "");
-            changelogBuilder = changelogBuilder.Replace("<strong>", "");
-            changelogBuilder = changelogBuilder.Replace("</strong>", "");
-
-            HTMLWebBrowser.DocumentText = Properties.Resources.ChangelogCompiler_HTML_Changelog.Replace("%CHANGELOG%", changelogBuilder.ToString());
 
             CompilingProgressBar.Visible = false;
             GameVersionsComboBox.Enabled = true;

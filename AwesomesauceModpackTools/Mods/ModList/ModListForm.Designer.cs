@@ -62,6 +62,9 @@
             this.UpdateModeTextBox = new System.Windows.Forms.TextBox();
             this.SideLabel = new System.Windows.Forms.Label();
             this.UpdateModeLabel = new System.Windows.Forms.Label();
+            this.MinecraftVersionLabel = new System.Windows.Forms.Label();
+            this.MinecraftVersionTextbox = new System.Windows.Forms.TextBox();
+            this.ChangelogCompilerButton = new System.Windows.Forms.Button();
             this.FileMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -111,7 +114,7 @@
             this.LinkTextBox.Name = "LinkTextBox";
             this.LinkTextBox.ReadOnly = true;
             this.LinkTextBox.Size = new System.Drawing.Size(390, 22);
-            this.LinkTextBox.TabIndex = 5;
+            this.LinkTextBox.TabIndex = 14;
             this.LinkTextBox.TabStop = false;
             // 
             // LinkLabel
@@ -131,7 +134,7 @@
             this.UpdatedTextBox.Name = "UpdatedTextBox";
             this.UpdatedTextBox.ReadOnly = true;
             this.UpdatedTextBox.Size = new System.Drawing.Size(166, 22);
-            this.UpdatedTextBox.TabIndex = 3;
+            this.UpdatedTextBox.TabIndex = 10;
             this.UpdatedTextBox.TabStop = false;
             // 
             // UpdatedLabel
@@ -151,7 +154,7 @@
             this.SizeTextBox.Name = "SizeTextBox";
             this.SizeTextBox.ReadOnly = true;
             this.SizeTextBox.Size = new System.Drawing.Size(166, 22);
-            this.SizeTextBox.TabIndex = 1;
+            this.SizeTextBox.TabIndex = 12;
             this.SizeTextBox.TabStop = false;
             // 
             // SizeLabel
@@ -170,10 +173,10 @@
             this.RemoveButton.Enabled = false;
             this.RemoveButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Remove;
             this.RemoveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RemoveButton.Location = new System.Drawing.Point(653, 438);
+            this.RemoveButton.Location = new System.Drawing.Point(653, 446);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(100, 23);
-            this.RemoveButton.TabIndex = 20;
+            this.RemoveButton.TabIndex = 9;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -184,10 +187,10 @@
             this.RequiresButton.Enabled = false;
             this.RequiresButton.Image = global::AwesomesauceModpackTools.Properties.Resources.DependencyGraph;
             this.RequiresButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RequiresButton.Location = new System.Drawing.Point(363, 496);
+            this.RequiresButton.Location = new System.Drawing.Point(363, 504);
             this.RequiresButton.Name = "RequiresButton";
             this.RequiresButton.Size = new System.Drawing.Size(100, 23);
-            this.RequiresButton.TabIndex = 11;
+            this.RequiresButton.TabIndex = 7;
             this.RequiresButton.Text = "Requires";
             this.RequiresButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RequiresButton.UseVisualStyleBackColor = true;
@@ -197,10 +200,10 @@
             // 
             this.AddButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Add;
             this.AddButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddButton.Location = new System.Drawing.Point(363, 438);
+            this.AddButton.Location = new System.Drawing.Point(363, 446);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(100, 23);
-            this.AddButton.TabIndex = 10;
+            this.AddButton.TabIndex = 5;
             this.AddButton.Text = "Add";
             this.AddButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AddButton.UseVisualStyleBackColor = true;
@@ -288,14 +291,14 @@
             this.MD5TextBox.Name = "MD5TextBox";
             this.MD5TextBox.ReadOnly = true;
             this.MD5TextBox.Size = new System.Drawing.Size(219, 22);
-            this.MD5TextBox.TabIndex = 7;
+            this.MD5TextBox.TabIndex = 15;
             this.MD5TextBox.TabStop = false;
             // 
             // NotesLabel
             // 
             this.NotesLabel.AutoSize = true;
             this.NotesLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotesLabel.Location = new System.Drawing.Point(360, 251);
+            this.NotesLabel.Location = new System.Drawing.Point(360, 296);
             this.NotesLabel.Name = "NotesLabel";
             this.NotesLabel.Size = new System.Drawing.Size(37, 13);
             this.NotesLabel.TabIndex = 8;
@@ -305,13 +308,13 @@
             // 
             this.NotesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NotesTextBox.Location = new System.Drawing.Point(363, 267);
+            this.NotesTextBox.Location = new System.Drawing.Point(363, 312);
             this.NotesTextBox.Multiline = true;
             this.NotesTextBox.Name = "NotesTextBox";
             this.NotesTextBox.ReadOnly = true;
             this.NotesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.NotesTextBox.Size = new System.Drawing.Size(390, 165);
-            this.NotesTextBox.TabIndex = 9;
+            this.NotesTextBox.Size = new System.Drawing.Size(390, 128);
+            this.NotesTextBox.TabIndex = 18;
             this.NotesTextBox.TabStop = false;
             // 
             // LinkLinkLabel
@@ -322,7 +325,7 @@
             this.LinkLinkLabel.Location = new System.Drawing.Point(383, 116);
             this.LinkLinkLabel.Name = "LinkLinkLabel";
             this.LinkLinkLabel.Size = new System.Drawing.Size(89, 13);
-            this.LinkLinkLabel.TabIndex = 5;
+            this.LinkLinkLabel.TabIndex = 14;
             this.LinkLinkLabel.TabStop = true;
             this.LinkLinkLabel.Text = "open in browser";
             this.LinkLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLinkLabel_LinkClicked);
@@ -331,7 +334,7 @@
             // 
             this.RequiresLabel.AutoSize = true;
             this.RequiresLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RequiresLabel.Location = new System.Drawing.Point(360, 206);
+            this.RequiresLabel.Location = new System.Drawing.Point(360, 251);
             this.RequiresLabel.Name = "RequiresLabel";
             this.RequiresLabel.Size = new System.Drawing.Size(51, 13);
             this.RequiresLabel.TabIndex = 11;
@@ -341,12 +344,12 @@
             // 
             this.RequiresTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RequiresTextBox.Location = new System.Drawing.Point(363, 222);
+            this.RequiresTextBox.Location = new System.Drawing.Point(363, 267);
             this.RequiresTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.RequiresTextBox.Name = "RequiresTextBox";
             this.RequiresTextBox.ReadOnly = true;
             this.RequiresTextBox.Size = new System.Drawing.Size(390, 22);
-            this.RequiresTextBox.TabIndex = 12;
+            this.RequiresTextBox.TabIndex = 17;
             this.RequiresTextBox.TabStop = false;
             // 
             // EditButton
@@ -354,10 +357,10 @@
             this.EditButton.Enabled = false;
             this.EditButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Edit;
             this.EditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditButton.Location = new System.Drawing.Point(363, 467);
+            this.EditButton.Location = new System.Drawing.Point(363, 475);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(100, 23);
-            this.EditButton.TabIndex = 12;
+            this.EditButton.TabIndex = 6;
             this.EditButton.Text = "Edit";
             this.EditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EditButton.UseVisualStyleBackColor = true;
@@ -405,7 +408,7 @@
             this.SearchTextBox.Location = new System.Drawing.Point(24, 533);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(333, 22);
-            this.SearchTextBox.TabIndex = 13;
+            this.SearchTextBox.TabIndex = 2;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             // 
@@ -415,6 +418,7 @@
             // 
             // SearchPictureBox
             // 
+            this.SearchPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.SearchPictureBox.ErrorImage = null;
             this.SearchPictureBox.Image = global::AwesomesauceModpackTools.Properties.Resources.Search;
             this.SearchPictureBox.InitialImage = null;
@@ -433,7 +437,7 @@
             this.SideTextBox.Name = "SideTextBox";
             this.SideTextBox.ReadOnly = true;
             this.SideTextBox.Size = new System.Drawing.Size(166, 22);
-            this.SideTextBox.TabIndex = 1;
+            this.SideTextBox.TabIndex = 13;
             this.SideTextBox.TabStop = false;
             // 
             // UpdateModeTextBox
@@ -444,7 +448,7 @@
             this.UpdateModeTextBox.Name = "UpdateModeTextBox";
             this.UpdateModeTextBox.ReadOnly = true;
             this.UpdateModeTextBox.Size = new System.Drawing.Size(166, 22);
-            this.UpdateModeTextBox.TabIndex = 1;
+            this.UpdateModeTextBox.TabIndex = 11;
             this.UpdateModeTextBox.TabStop = false;
             // 
             // SideLabel
@@ -469,16 +473,55 @@
             this.UpdateModeLabel.TabIndex = 0;
             this.UpdateModeLabel.Text = "Update Mode";
             // 
+            // MinecraftVersionLabel
+            // 
+            this.MinecraftVersionLabel.AutoSize = true;
+            this.MinecraftVersionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinecraftVersionLabel.Location = new System.Drawing.Point(360, 206);
+            this.MinecraftVersionLabel.Name = "MinecraftVersionLabel";
+            this.MinecraftVersionLabel.Size = new System.Drawing.Size(165, 13);
+            this.MinecraftVersionLabel.TabIndex = 11;
+            this.MinecraftVersionLabel.Text = "Supported Minecraft Version(s)";
+            // 
+            // MinecraftVersionTextbox
+            // 
+            this.MinecraftVersionTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinecraftVersionTextbox.Location = new System.Drawing.Point(363, 222);
+            this.MinecraftVersionTextbox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.MinecraftVersionTextbox.Name = "MinecraftVersionTextbox";
+            this.MinecraftVersionTextbox.ReadOnly = true;
+            this.MinecraftVersionTextbox.Size = new System.Drawing.Size(390, 22);
+            this.MinecraftVersionTextbox.TabIndex = 16;
+            this.MinecraftVersionTextbox.TabStop = false;
+            // 
+            // ChangelogCompilerButton
+            // 
+            this.ChangelogCompilerButton.Enabled = false;
+            this.ChangelogCompilerButton.Image = global::AwesomesauceModpackTools.Properties.Resources.Code;
+            this.ChangelogCompilerButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ChangelogCompilerButton.Location = new System.Drawing.Point(469, 475);
+            this.ChangelogCompilerButton.Name = "ChangelogCompilerButton";
+            this.ChangelogCompilerButton.Size = new System.Drawing.Size(100, 52);
+            this.ChangelogCompilerButton.TabIndex = 8;
+            this.ChangelogCompilerButton.Text = "View\r\nChangelog";
+            this.ChangelogCompilerButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ChangelogCompilerButton.UseVisualStyleBackColor = true;
+            this.ChangelogCompilerButton.Click += new System.EventHandler(this.ChangelogCompilerButton_Click);
+            // 
             // ModListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 583);
+            this.Controls.Add(this.ChangelogCompilerButton);
             this.Controls.Add(this.SearchPictureBox);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SortLinkLabel);
             this.Controls.Add(this.KeepSortedCheckBox);
             this.Controls.Add(this.EditButton);
+            this.Controls.Add(this.MinecraftVersionTextbox);
+            this.Controls.Add(this.MinecraftVersionLabel);
             this.Controls.Add(this.RequiresTextBox);
             this.Controls.Add(this.RequiresLabel);
             this.Controls.Add(this.LinkTextBox);
@@ -560,6 +603,9 @@
         private System.Windows.Forms.TextBox UpdateModeTextBox;
         private System.Windows.Forms.Label SideLabel;
         private System.Windows.Forms.Label UpdateModeLabel;
+        private System.Windows.Forms.Label MinecraftVersionLabel;
+        private System.Windows.Forms.TextBox MinecraftVersionTextbox;
+        private System.Windows.Forms.Button ChangelogCompilerButton;
     }
 }
 

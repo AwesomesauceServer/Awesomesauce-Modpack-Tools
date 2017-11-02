@@ -103,6 +103,14 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             ModListView_SelectedIndexChanged(sender, new EventArgs());
         }
 
+        private void ChangelogCompilerButton_Click(object sender, EventArgs e) {
+            Mod workingMod = (Mod)CurrentlySelectedItem.Tag;
+            ChangelogCompiler.ChangelogCompilerForm changelogCompilerForm = new ChangelogCompiler.ChangelogCompilerForm();
+            changelogCompilerForm.ModURLAuto = workingMod.Link_Files;
+            if (workingMod.MinecraftVersion.Count != 0) { changelogCompilerForm.GameVersionsAuto = workingMod.MinecraftVersion[0]; }
+            changelogCompilerForm.Show();
+        }
+
         private void RemoveButton_Click(object sender, EventArgs e) {
             if (CurrentlySelectedItem != null) {
                 if (MessageBox.Show($"Really remove the mod {CurrentlySelectedItem.Text}?", "Confirm Remove", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
@@ -314,6 +322,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
             RequiresButton.Enabled = selected;
             EditButton.Enabled = selected;
+            ChangelogCompilerButton.Enabled = selected;
             RemoveButton.Enabled = selected;
             LinkLinkLabel.Enabled = selected;
 
@@ -324,6 +333,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
                 SideTextBox.Clear();
                 LinkTextBox.Clear();
                 MD5TextBox.Clear();
+                MinecraftVersionTextbox.Clear();
                 RequiresTextBox.Clear();
                 NotesTextBox.Clear();
             } else {
@@ -334,6 +344,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
                 SideTextBox.Text = selectedMod.Side.ToString();
                 LinkTextBox.Text = selectedMod.Link;
                 MD5TextBox.Text = selectedMod.MD5;
+                MinecraftVersionTextbox.Text = selectedMod.MinecraftVersionToString();
                 RequiresTextBox.Text = selectedMod.RequiresToString();
                 NotesTextBox.Text = selectedMod.Notes;
             }

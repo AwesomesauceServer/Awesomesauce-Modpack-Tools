@@ -79,16 +79,22 @@ namespace AwesomesauceModpackTools.Mods {
         public string MD5 { get; set; }
 
         /// <summary>
+        /// List of supported minecraft versions.
+        /// </summary>
+        [JsonProperty(PropertyName = "minecraftVersion", Order = 12, NullValueHandling = NullValueHandling.Include)]
+        public List<string> MinecraftVersion { get; set; } = new List<string>();
+
+        /// <summary>
         /// <see cref="AwesomesauceModpackTools.UpdateMode" /> of the mod.
         /// </summary>
-        [JsonProperty(PropertyName = "updateMode", Order = 12)]
+        [JsonProperty(PropertyName = "updateMode", Order = 13)]
         [JsonConverter(typeof(StringEnumConverter))]
         public UpdateMode UpdateMode { get; set; }
 
         /// <summary>
         /// Notes about the mod.
         /// </summary>
-        [JsonProperty(PropertyName = "notes", Order = 13, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty(PropertyName = "notes", Order = 14, NullValueHandling = NullValueHandling.Ignore)]
         public string Notes { get; set; }
 
         /// <summary>
@@ -111,6 +117,20 @@ namespace AwesomesauceModpackTools.Mods {
             string working = "";
             foreach (RequiredMod required in Requires) {
                 working += $"{required.Name}, ";
+            }
+            working = working.Trim();
+            if (working.EndsWith(",")) { working = working.Remove(working.Length - 1); }
+            return working;
+        }
+
+        /// <summary>
+        /// Format the <see cref="MinecraftVersion" /> list into a sting.
+        /// </summary>
+        /// <returns><see cref="MinecraftVersion" /> as a single line, comma seperated string.</returns>
+        public string MinecraftVersionToString() {
+            string working = "";
+            foreach (string version in MinecraftVersion) {
+                working += $"{version}, ";
             }
             working = working.Trim();
             if (working.EndsWith(",")) { working = working.Remove(working.Length - 1); }

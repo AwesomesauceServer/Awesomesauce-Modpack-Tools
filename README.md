@@ -5,7 +5,7 @@ Collection of tools to help us manage the [Awesomesauce Modpack](https://github.
 It's a pain to update and download many mods by hand.
 
 ### How?
-You add a [CurseForge](https://minecraft.curseforge.com) url to a project **file** e.g. ```https://minecraft.curseforge.com/projects/deep-resonance/files/2418068```. It will go to the site and pull information about the mod and format it into a JSON file.
+You add a [CurseForge](https://minecraft.curseforge.com) url to a project **file** e.g. ```https://minecraft.curseforge.com/projects/rftools/files/2491667```. It will go to the site and pull information about the mod and format it into a JSON file.
 
 The JSON file will be used to download and update the mod.
 
@@ -26,35 +26,32 @@ The JSON file will be used to download and update the mod.
 |linkDownload|Download to the mod file|
 |linkFiles|Project file list for the mod updates|
 |md5|MD5 of the mod file|
+|minecraftVersion|List of supported Minecraft versions|
 |updateMode|[How the update should be handled](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/Enums.cs#L11)|
 
 ##### Example
 ```json
-  {
-    "name": "Deep Resonance",
-    "id": "f98b22af-862d-481b-b5f2-0dd36566edb9",
-    "file": "deepresonance-1.1x-1.4.8.jar",
+ {
+    "name": "RFTools",
+    "id": "afb5bf99-40a7-45de-b4fc-e31209051b67",
+    "file": "rftools-1.12-7.12.jar",
     "side": "Both",
-    "date": "2017-05-10T09:51:09Z",
-    "size": "849.93 KB",
+    "date": "2017-10-17T18:13:36Z",
+    "size": "3.17 MB",
     "requires": [
       {
         "name": "McJtyLib",
-        "id": "a1d1b935-b47c-48e7-a8d0-1793bd5f7c48"
-      },
-      {
-        "name": "CompatLayer",
-        "id": "c8b881a0-f7f7-453e-9ec7-f87187ba36d3"
-      },
-      {
-        "name": "ElecCore | Rendering Library",
-        "id": "e78b16d7-871a-480b-80bb-571a80ace3a4"
+        "id": "31f66c0e-b76e-4a16-a0c3-c1498bf84717"
       }
     ],
-    "link": "https://minecraft.curseforge.com/projects/deep-resonance/files/2418068",
-    "linkDownload": "https://minecraft.curseforge.com/projects/deep-resonance/files/2418068/download",
-    "linkFiles": "https://minecraft.curseforge.com/projects/deep-resonance/files",
-    "md5": "8cdc57488f31d0dfef88e2fabb7a815d",
+    "link": "https://minecraft.curseforge.com/projects/rftools/files/2491667",
+    "linkDownload": "https://minecraft.curseforge.com/projects/rftools/files/2491667/download",
+    "linkFiles": "https://minecraft.curseforge.com/projects/rftools/files",
+    "md5": "7678c0f484d0fdc1d910418142735aed",
+    "minecraftVersion": [
+      "1.12.2",
+      "1.12.1"
+    ],
     "updateMode": "Automatic"
   }
 ```
