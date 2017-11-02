@@ -38,7 +38,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
             if (ModURLTextBox.Text.EndsWith("/")) { ModURLTextBox.Text = ModURLTextBox.Text.Remove(ModURLTextBox.Text.Length - 1, 1); }
             if (ModURLTextBox.Text.EndsWith("/files")) { ModURLTextBox.Text = ModURLTextBox.Text.Remove(ModURLTextBox.Text.Length - 6, 6); }
             Dictionary<string, string> workingURLS = new Dictionary<string, string>();
-            Dictionary<string, string> workingChangelogs = new Dictionary<string, string>();
+            Dictionary<string, (string link, string html)> workingChangelogs = new Dictionary<string, (string link, string html)>();
             StringBuilder changelogBuilder = new StringBuilder();
 
             try {
@@ -84,7 +84,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
 
                         string changelog = node.SelectSingleNode("//div[@class='details-content']/section[@class='details-changelog']/div[@class='logbox']").OuterHtml.Trim();
                         changelog = HtmlEntity.DeEntitize(changelog);
-                        workingChangelogs.Add(url.Key, changelog);
+                        workingChangelogs.Add(url.Key, (url.Value, changelog));
                     } else {
                         CompilingProgressBar.Visible = false;
                         ShowMessage("There was a HTTP status error while processing a link", $"Server response was '{htmlWeb.StatusCode.ToString()}'. Can not continue.");
@@ -104,9 +104,10 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 CompilingProgressBar.Value = (CompilingProgressBar.Value + 1);
             }
 
-            foreach (KeyValuePair<string, string> changelog in workingChangelogs) {
-                changelogBuilder.AppendLine($"<h3 class=\"exclude\">{changelog.Key}</h3 class=\"exclude\">");
-                changelogBuilder.AppendLine(changelog.Value);
+            foreach (KeyValuePair<string, (string link, string html)> changelog in workingChangelogs) {
+                //changelogBuilder.AppendLine($"<h3 class=\"exclude\">{changelog.Key}</h3 class=\"exclude\">");
+                changelogBuilder.AppendLine($"<a href=\"{changelog.Value.link}\"><h3 class=\"exclude\">{changelog.Key}</h3 class=\"exclude\"></a>");
+                changelogBuilder.AppendLine(changelog.Value.html);
             }
 
             changelogBuilder = changelogBuilder.Replace("<h1>", "");
