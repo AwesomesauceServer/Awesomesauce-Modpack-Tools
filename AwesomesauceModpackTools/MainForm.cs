@@ -25,11 +25,10 @@ namespace AwesomesauceModpackTools {
             } else{
                 MessageBox.Show("A connection to the internet can not be established.\r\n" +
                     "This will prevent some features from working.\r\n\r\n" +
-                    "Mod lists from GitHub, the Updater, and the Downloader will have limited functionality or will not work.\r\n\r\n" +
-                    "To fix this check your internet connection and/or your firewall and restart the app.", "Awesomesauce Modpack Tools - No Internet", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "Mod lists from GitHub, the Updater, the Downloader, and the Changelog Compiler will have limited functionality or will not work.\r\n\r\n" +
+                    "To fix this check your internet connection and/or your firewall and restart Awesomesauce Modpack Tools.", "Awesomesauce Modpack Tools - No Internet", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }   
 #endif
-
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
