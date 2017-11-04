@@ -145,35 +145,6 @@ namespace AwesomesauceModpackTools {
         }
 
         /// <summary>
-        /// Format the supplied datetime to elapsed time.
-        /// </summary>
-        /// <param name="dateTime">DateTime of to process.</param>
-        /// <returns>String of the formatted timespan, and the actual timespan.</returns>
-        public static (string Formatted, TimeSpan TimeSpan) ElapsedTime(DateTime dateTime) {
-            TimeSpan timeSpan = (DateTime.Now - dateTime);
-            int intYears = (DateTime.Now.Year - dateTime.Year);
-            int intMonths = (DateTime.Now.Month - dateTime.Month);
-            int intDays = (DateTime.Now.Day - dateTime.Day);
-            int intHours = (DateTime.Now.Hour - dateTime.Hour);
-            int intMinutes = (DateTime.Now.Minute - dateTime.Minute);
-            int intSeconds = (DateTime.Now.Second - dateTime.Second);
-
-            if (intYears > 0) {
-                return ($"{intYears} {((intYears == 1) ? "year" : "years")} ago", timeSpan);
-            } else if (intMonths > 0) {
-                return ($"{intMonths} {((intMonths == 1) ? "month" : "months")} ago", timeSpan);
-            } else if (intDays > 0) {
-                return ($"{intDays} {((intDays == 1) ? "day" : "days")} ago", timeSpan);
-            } else if (intHours > 0) {
-                return ($"{intHours} {((intHours == 1) ? "hour" : "hours")} ago", timeSpan);
-            } else if (intMinutes > 0) {
-                return ($"{intMinutes} {((intMinutes == 1) ? "minute" : "minutes")} ago", timeSpan);
-            } else if (intSeconds > 0) {
-                return ($"{intSeconds} {((intSeconds == 1) ? "second" : "seconds")} ago", timeSpan);
-            } else { return ($"{ dateTime.ToShortDateString()} {dateTime.ToShortTimeString()} ago", timeSpan); }
-        }
-
-        /// <summary>
         /// Try to connect to Google.
         /// </summary>
         /// <returns>True if has internet connection; False if connection failed or any exceptions.</returns>

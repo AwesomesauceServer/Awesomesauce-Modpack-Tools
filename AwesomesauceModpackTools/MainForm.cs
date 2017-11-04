@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Humanizer;
 using Newtonsoft.Json;
 using static AwesomesauceModpackTools.Utilities;
 using static AwesomesauceModpackTools.Utilities.Storage;
@@ -85,7 +86,7 @@ namespace AwesomesauceModpackTools {
                 foreach (Octokit.GitHubCommit commit in commits) {
                     string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
 
-                    ListViewItem newItem = new ListViewItem(new string[] { ElapsedTime(commit.Commit.Author.Date.DateTime.ToLocalTime()).Formatted, messageFormat });
+                    ListViewItem newItem = new ListViewItem(new string[] { commit.Commit.Author.Date.DateTime.ToLocalTime().Humanize(), messageFormat });
                     ModpackListView.Items.Add(newItem).Tag = commit.HtmlUrl;
                 }
             } catch (Exception ex) {
@@ -101,7 +102,7 @@ namespace AwesomesauceModpackTools {
                 foreach (Octokit.GitHubCommit commit in commits) {
                     string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
 
-                    ListViewItem newItem = new ListViewItem(new string[] { ElapsedTime(commit.Commit.Author.Date.DateTime.ToLocalTime()).Formatted, messageFormat });
+                    ListViewItem newItem = new ListViewItem(new string[] { commit.Commit.Author.Date.DateTime.ToLocalTime().Humanize(), messageFormat });
                     ToolsListView.Items.Add(newItem).Tag = commit.HtmlUrl;
                 }
             } catch (Exception ex) {
