@@ -53,7 +53,7 @@ namespace AwesomesauceModpackTools.Mods {
         /// Parse a CurseForge file list page for information.
         /// </summary>
         /// <param name="mod">Initialized <see cref="Mod"/> with a set <see cref="Mod.Link"/>.</param>
-        /// <param name="gameVersion">Game version to filter the page by. e.g. <see cref="GameVersion1112"/></param>
+        /// <param name="gameVersion">Game version to filter the page by. e.g. <see cref="Minecraft.GameVersions"/></param>
         /// <returns><see cref="Mod"/> and <see cref="Exception"/>. If there was a exception, <see cref="Mod"/> will be null; if there was no exception, <see cref="Exception"/> will be null.</returns>
         public static (Mod Mod, Exception Exception) ParseForUpdate(Mod mod, string gameVersion) {
             try {

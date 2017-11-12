@@ -24,25 +24,25 @@ namespace AwesomesauceModpackTools {
             /// <summary>
             /// The programs name.
             /// </summary>
-            public static string AppName { get => _AppName; }
+            public static string AppName => _AppName;
 
             private static string _EXELocation = Process.GetCurrentProcess().MainModule.FileName;
             /// <summary>
             /// Current location (including filename and extension) of the running executable.
             /// </summary>
-            public static string EXELocation { get => _EXELocation; }
+            public static string EXELocation => _EXELocation;
 
             private static string _EXEDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
             /// <summary>
             /// Current directory of the running executable.
             /// </summary>
-            public static string EXEDirectory { get => _EXEDirectory; }
+            public static string EXEDirectory => _EXEDirectory;
 
             private static string _UserAgent = $"{AppName}/{Version.Parse(System.Windows.Forms.Application.ProductVersion).ToString(3)} ({Environment.OSVersion}; {((Environment.Is64BitOperatingSystem == true) ? "x64" : "x86")}) [https://git.io/vQ6dQ]";
             /// <summary>
             /// The programs user-agent.
             /// </summary>
-            public static string UserAgent { get => _UserAgent; }
+            public static string UserAgent => _UserAgent;
 
             private static List<Pack> _ModpackList = new List<Pack>();
             /// <summary>
@@ -54,7 +54,7 @@ namespace AwesomesauceModpackTools {
             /// <summary>
             /// Value of <see cref="HasInternetConnection()"/>.
             /// </summary>
-            public static bool HasInternet { get => _HasInternet; }
+            public static bool HasInternet => _HasInternet;
 
         }
 

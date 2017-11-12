@@ -165,7 +165,7 @@ namespace AwesomesauceModpackTools.Downloader {
                     };
 
                     await client.DownloadFileTaskAsync(new Uri(itemMod.Link_Download), downloadPath);
-                } catch (Exception ex) {
+                } catch {
                     errorCount++;
                     item.BackColor = error;
                 }
