@@ -22,13 +22,13 @@ namespace AwesomesauceModpackTools.Mods {
                     HtmlNode node = mod.HTML_Link.DocumentNode;
 
                     mod.Name = node.SelectSingleNode("//span[@class='overflow-tip']").InnerText.Trim();
-                    mod.File = node.SelectSingleNode("//div[@class='details-info']/ul/li[1]/div[@class='info-data overflow-tip']").InnerText.Trim();
-                    mod.Date = EpochConverter(node.SelectSingleNode("//div[@class='details-info']/ul/li[3]/div[@class='info-data']/abbr[@class='tip standard-date standard-datetime']").Attributes["data-epoch"].Value.Trim());
-                    mod.Size = node.SelectSingleNode("//div[@class='details-info']/ul/li[4]/div[@class='info-data']").InnerText.Trim();
-                    mod.MD5 = node.SelectSingleNode("//div[@class='details-info']/ul/li[6]/div[@class='info-data']/span[@class='md5']").InnerText.Trim();
+                    mod.File = node.SelectSingleNode("//div[@class='info-data overflow-tip']").InnerText.Trim();
+                    mod.Date = EpochConverter(node.SelectSingleNode("//abbr[@class='tip standard-date standard-datetime']/@data-epoch").Attributes["data-epoch"].Value.Trim());
+                    mod.Size = node.SelectSingleNode("(//div[@class='info-data'])[3]").InnerText.Trim();
+                    mod.MD5 = node.SelectSingleNode("//span[@class='md5']").InnerText.Trim();
 
                     if (mod.MinecraftVersion.Count != 0) { mod.MinecraftVersion.Clear(); }
-                    HtmlNodeCollection minecraftVersions = node.SelectNodes("//div[@id='content']/section[@class='primary-content']/div[@class='details-panel']/div[@class='details-content']/section[@class='details-versions']/ul[1]/li");
+                    HtmlNodeCollection minecraftVersions = node.SelectNodes("//section[@class='details-versions']/ul[1]/li");
                     foreach (HtmlNode minectaftVersion in minecraftVersions) { mod.MinecraftVersion.Add(HtmlEntity.DeEntitize(minectaftVersion.InnerText.Trim())); }
 
                     mod.Link = HtmlEntity.DeEntitize(mod.Link);
@@ -63,7 +63,7 @@ namespace AwesomesauceModpackTools.Mods {
                 if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                     HtmlNode node = mod.HTML_Files.DocumentNode;
 
-                    string modURL = node.SelectSingleNode("(//div/div[@class='project-file-name-container']/a[@class='overflow-tip twitch-link'])[1]").Attributes["href"].Value.Trim();
+                    string modURL = node.SelectSingleNode("(//a[@class='overflow-tip twitch-link'])[1]/@href").Attributes["href"].Value.Trim();
 
                     if (modURL != "") {
                         mod.Link = $"https://minecraft.curseforge.com{modURL}";

@@ -80,7 +80,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                     HtmlNode node = tempHTML.DocumentNode;
 
-                    HtmlNodeCollection foundURLS = node.SelectNodes("(//div/div[@class='project-file-name-container']/a[@class='overflow-tip twitch-link'])");
+                    HtmlNodeCollection foundURLS = node.SelectNodes("(//a[@class='overflow-tip twitch-link'])/@href");
                     foreach (HtmlNode foundURL in foundURLS) { workingURLS.Add(foundURL.InnerText.Trim(), $"https://minecraft.curseforge.com{foundURL.Attributes["href"].Value.Trim()}"); }
                 } else {
                     CompilingProgressBar.Visible = false;
@@ -112,7 +112,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                     if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                         HtmlNode node = tempHTML.DocumentNode;
 
-                        string changelog = node.SelectSingleNode("//div[@class='details-content']/section[@class='details-changelog']/div[@class='logbox']").OuterHtml.Trim();
+                        string changelog = node.SelectSingleNode("//div[@class='logbox']").OuterHtml.Trim();
                         changelog = HtmlEntity.DeEntitize(changelog);
                         workingChangelogs.Add(url.Key, (url.Value, changelog));
                     } else {
