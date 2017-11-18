@@ -68,7 +68,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         private void UncheckAllButton_Click(object sender, EventArgs e) {
             if (MessageBox.Show("Really uncheck all requirements?", "Confirm Uncheck", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
                 foreach (ListViewItem item in ModListView.CheckedItems) {
-                    if (item.Checked == true) { item.Checked = false; }
+                    if (item.Checked) { item.Checked = false; }
                 }
             }  
         }

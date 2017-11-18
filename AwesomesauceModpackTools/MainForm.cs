@@ -21,7 +21,7 @@ namespace AwesomesauceModpackTools {
 
         private void MainForm_Load(object sender, EventArgs e) {
 #if RELEASE
-            if (HasInternet == true) {
+            if (HasInternet) {
                 LoadGithub();
             } else{
                 MessageBox.Show("A connection to the internet can not be established.\r\n" +
@@ -60,10 +60,10 @@ namespace AwesomesauceModpackTools {
             }
         }
 
-        private async Task LoadGithub() {
+        private void LoadGithub() {
             LoadGithub_ModpackList();
-            LoadGithub_Modpack();
-            LoadGithub_Tools();
+            Task loadGithub_ModpackTask = LoadGithub_Modpack();
+            Task loadGithub_ToolsTask = LoadGithub_Tools();
         }
 
         private void LoadGithub_ModpackList() {

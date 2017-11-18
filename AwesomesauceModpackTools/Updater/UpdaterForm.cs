@@ -80,7 +80,7 @@ namespace AwesomesauceModpackTools.Updater {
         }
 
         private void UpdateButton_Click(object sender, EventArgs e) {
-            UpdateMods();
+            Task updateModsTask = UpdateMods();
         }
 
         private void SaveButton_Click(object sender, EventArgs e) {
@@ -221,7 +221,7 @@ namespace AwesomesauceModpackTools.Updater {
                 } else {
                     SaveLabel.Text = "Click save to choose where to save the updated mod list. Click copy to copy a comma seperated list of what was updated to the clipboard.";
                     SavePanel.BackColor = Color.LightGreen;
-                    if (SavePanel.Visible == false) { BlinkSave(Color.LightGreen); }
+                    if (!SavePanel.Visible) { BlinkSave(Color.LightGreen); }
                 }
                 SavePanel.Visible = true;
             } else {
@@ -232,7 +232,7 @@ namespace AwesomesauceModpackTools.Updater {
 
                 SaveLabel.Text = "Some mods failed to update, you can still save the complete mod list. Any failed mods will be exactly the same as they were.";
                 SavePanel.BackColor = Color.LightYellow;
-                if (SavePanel.Visible == false) { BlinkSave(Color.LightYellow); }
+                if (!SavePanel.Visible) { BlinkSave(Color.LightYellow); }
                 SavePanel.Visible = true;
             }
 
@@ -291,7 +291,7 @@ namespace AwesomesauceModpackTools.Updater {
 
         private Label LoadingLabel = null;
         private void ToggleLoadingLabel(bool showLabel) {
-            if (showLabel == true) {
+            if (showLabel) {
                 if (LoadingLabel != null) {
                     LoadingLabel.Visible = true;
                     return;

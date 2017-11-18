@@ -117,8 +117,8 @@ namespace AwesomesauceModpackTools.Downloader {
 
         private void DownloadButton_Click(object sender, EventArgs e) {
             if (DownloadBrowserDialog.ShowDialog() == DialogResult.OK) {
-                DownloadMods(DownloadBrowserDialog.SelectedPath);
-            }          
+                Task downloadModsTask = DownloadMods(DownloadBrowserDialog.SelectedPath);
+            }
         }
 
         private async Task DownloadMods(string path) {
@@ -208,7 +208,7 @@ namespace AwesomesauceModpackTools.Downloader {
 
         private Label LoadingLabel = null;
         private void ToggleLoadingLabel(bool showLabel) {
-            if (showLabel == true) {
+            if (showLabel) {
                 if (LoadingLabel != null) {
                     LoadingLabel.Visible = true;
                     return;
@@ -219,8 +219,8 @@ namespace AwesomesauceModpackTools.Downloader {
                 LoadingLabel.AutoSize = false;
                 LoadingLabel.BringToFront();
                 LoadingLabel.Dock = DockStyle.Fill;
-                LoadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                LoadingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                LoadingLabel.TextAlign = ContentAlignment.MiddleCenter;
+                LoadingLabel.Font = new Font("Segoe UI Semibold", 32F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
                 LoadingLabel.Text = "Loading...";
 
                 Application.DoEvents();

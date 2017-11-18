@@ -49,11 +49,11 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             DialogResult addModForm_Result = addModForm.ShowDialog();
             if (addModForm_Result == DialogResult.OK) {
                 IEnumerable<ListViewItem> queryResult = ModListView.Items.Cast<ListViewItem>().Where(i => i.Text.ToLower() == addModForm.NewMod.Name.ToLower());
-                if (queryResult.Any() == false) {
+                if (!queryResult.Any()) {
                     ModListView.Items.Add(new ListViewItem(new string[] { addModForm.NewMod.Name, addModForm.NewMod.File })).Tag = addModForm.NewMod;
 
-                    if (addModForm.AddWithRequirement == true) {
-                        if (queryResult.Any() == true) {
+                    if (addModForm.AddWithRequirement) {
+                        if (queryResult.Any()) {
                             ModListView.TopItem = queryResult.FirstOrDefault();
                             queryResult.FirstOrDefault().Selected = true;
 
@@ -105,8 +105,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
         private void ChangelogCompilerButton_Click(object sender, EventArgs e) {
             Mod workingMod = (Mod)CurrentlySelectedItem.Tag;
-            ChangelogCompiler.ChangelogCompilerForm changelogCompilerForm = new ChangelogCompiler.ChangelogCompilerForm();
-            changelogCompilerForm.ModURLAuto = workingMod.Link_Files;
+            ChangelogCompiler.ChangelogCompilerForm changelogCompilerForm = new ChangelogCompiler.ChangelogCompilerForm { ModURLAuto = workingMod.Link_Files };
             if (workingMod.MinecraftVersion.Count != 0) { changelogCompilerForm.GameVersionsAuto = workingMod.MinecraftVersion[0]; }
             changelogCompilerForm.Show();
         }
@@ -125,7 +124,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         }
 
         private void KeepSortedCheckBox_CheckedChanged(object sender, EventArgs e) {
-            if (KeepSortedCheckBox.Checked == true) {
+            if (KeepSortedCheckBox.Checked) {
                 SortLinkLabel.Visible = false;
                 ModListView.Sorting = SortOrder.Ascending;
                 ModListView.Sort();
@@ -163,7 +162,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
                     await Task.Run(() => LoadModList(LoadModListDialog.FileName));
 
-                    if (KeepSortedCheckBox.Checked == true) {
+                    if (KeepSortedCheckBox.Checked) {
                         ModListView.Sorting = SortOrder.Ascending;
                         ModListView.Sort();
                     }
@@ -281,7 +280,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
                 JsonSerializerSettings jsonSettings = new JsonSerializerSettings() { Formatting = Formatting.Indented };
 
-                if (automatic == false) {
+                if (!automatic) {
                     WorkingSaveFile = file;
                     File.WriteAllText(file, JsonConvert.SerializeObject(modList, jsonSettings), Encoding.UTF8);
                 } else {
@@ -352,7 +351,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
         private Label LoadingLabel = null;
         private void ToggleLoadingLabel(bool showLabel) {
-            if (showLabel == true) {
+            if (showLabel) {
                 FileMenuStrip.Enabled = false;
                 KeepSortedCheckBox.Enabled = false;
                 SortLinkLabel.Enabled = false;

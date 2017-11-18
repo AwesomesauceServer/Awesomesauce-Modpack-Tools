@@ -43,7 +43,7 @@ namespace AwesomesauceModpackTools {
             /// </summary>
             public static string EXEDirectory => _EXEDirectory;
 
-            private static string _UserAgent = $"{AppName}/{Version.Parse(System.Windows.Forms.Application.ProductVersion).ToString(3)} ({Environment.OSVersion}; {((Environment.Is64BitOperatingSystem == true) ? "x64" : "x86")}) [https://git.io/vQ6dQ]";
+            private static string _UserAgent = $"{AppName}/{Version.Parse(System.Windows.Forms.Application.ProductVersion).ToString(3)} ({Environment.OSVersion}; {((Environment.Is64BitOperatingSystem) ? "x64" : "x86")}) [https://git.io/vQ6dQ]";
             /// <summary>
             /// The programs user-agent.
             /// </summary>

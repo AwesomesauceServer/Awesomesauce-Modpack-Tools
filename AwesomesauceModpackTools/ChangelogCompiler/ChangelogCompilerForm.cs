@@ -169,7 +169,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
         }
 
         private void HTMLWebBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e) {
-            if (_LinkClickHandled == true) { e.Cancel = true; _LinkClickHandled = false; }
+            if (_LinkClickHandled) { e.Cancel = true; _LinkClickHandled = false; }
         }
 
         private bool _LinkClickHandled = false;
