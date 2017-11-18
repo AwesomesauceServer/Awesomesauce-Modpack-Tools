@@ -84,7 +84,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                     foreach (HtmlNode foundURL in foundURLS) { workingURLS.Add(foundURL.InnerText.Trim(), $"https://minecraft.curseforge.com{foundURL.Attributes["href"].Value.Trim()}"); }
                 } else {
                     CompilingProgressBar.Visible = false;
-                    ShowMessage("There was a HTTP status error while processing the links", $"Server response was '{htmlWeb.StatusCode.ToString()}'. Can not continue.");
+                    ShowMessage("There was a HTTP status error while processing the links", $"Server response was '{htmlWeb.StatusCode.ToString()}'. Can not continue compiling the changelog.");
                     GameVersionsComboBox.Enabled = true;
                     ModURLTextBox.Enabled = true;
                     CompileButton.Enabled = true;
@@ -96,6 +96,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 GameVersionsComboBox.Enabled = true;
                 ModURLTextBox.Enabled = true;
                 CompileButton.Enabled = true;
+                return;
             }
 
             CompilingProgressBar.Style = ProgressBarStyle.Blocks;
@@ -117,7 +118,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                         workingChangelogs.Add(url.Key, (url.Value, changelog));
                     } else {
                         CompilingProgressBar.Visible = false;
-                        ShowMessage("There was a HTTP status error while processing a link", $"Server response was '{htmlWeb.StatusCode.ToString()}'. Can not continue.");
+                        ShowMessage("There was a HTTP status error while processing a link", $"Server response was '{htmlWeb.StatusCode.ToString()}'. Can not continue compiling the changelog.");
                         GameVersionsComboBox.Enabled = true;
                         ModURLTextBox.Enabled = true;
                         CompileButton.Enabled = true;
@@ -129,6 +130,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                     GameVersionsComboBox.Enabled = true;
                     ModURLTextBox.Enabled = true;
                     CompileButton.Enabled = true;
+                    return;
                 }
 
                 CompilingProgressBar.Value = (CompilingProgressBar.Value + 1);
@@ -155,7 +157,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
 
                 HTMLWebBrowser.DocumentText = Properties.Resources.ChangelogCompiler_HTML_Changelog.Replace("%CHANGELOG%", changelogBuilder.ToString());
             } else {
-                ShowMessage("No changelogs found", "Or there were no supported game versions.");
+              ShowMessage("No changelogs found", "Or there were no supported game versions. Double check the Mod URL you entered.");
             }
 
             CompilingProgressBar.Visible = false;
