@@ -156,6 +156,23 @@ namespace AwesomesauceModpackTools {
             }
         }
 
+        /// <summary>
+        /// If there is a Github credential token file in the app directory, process it.
+        /// </summary>
+        /// <returns>Token if has valid file; string.Empty if no file or any exceptions.</returns>
+        public static string SetupGithubCredentials() {
+            try {
+                string tokenFile = $@"{Storage.EXEDirectory}\github.token";
+                if (File.Exists(tokenFile)) {
+                    return File.ReadAllText(tokenFile);
+                } else {
+                    return string.Empty;
+                }
+            } catch {
+             return string.Empty;
+            }
+        }
+
     }
 
 }

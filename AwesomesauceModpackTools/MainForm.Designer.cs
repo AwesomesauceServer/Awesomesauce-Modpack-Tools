@@ -37,9 +37,14 @@
             this.DownloaderButton = new System.Windows.Forms.Button();
             this.UpdaterButton = new System.Windows.Forms.Button();
             this.ChangelogCompilerButton = new System.Windows.Forms.Button();
+            this.ReleasesTabPage = new System.Windows.Forms.TabPage();
+            this.ReleasesListView = new System.Windows.Forms.ListView();
+            this.ReleasesDateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ReleasesReleaseColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GitHubTabControl.SuspendLayout();
             this.ModpackTabPage.SuspendLayout();
             this.ToolsTabPage.SuspendLayout();
+            this.ReleasesTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // ManageModsButton
@@ -62,6 +67,7 @@
             this.GitHubTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GitHubTabControl.Controls.Add(this.ReleasesTabPage);
             this.GitHubTabControl.Controls.Add(this.ModpackTabPage);
             this.GitHubTabControl.Controls.Add(this.ToolsTabPage);
             this.GitHubTabControl.Location = new System.Drawing.Point(12, 12);
@@ -199,6 +205,44 @@
             this.ChangelogCompilerButton.UseVisualStyleBackColor = true;
             this.ChangelogCompilerButton.Click += new System.EventHandler(this.ChangelogCompilerButton_Click);
             // 
+            // ReleasesTabPage
+            // 
+            this.ReleasesTabPage.Controls.Add(this.ReleasesListView);
+            this.ReleasesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ReleasesTabPage.Name = "ReleasesTabPage";
+            this.ReleasesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ReleasesTabPage.Size = new System.Drawing.Size(646, 256);
+            this.ReleasesTabPage.TabIndex = 2;
+            this.ReleasesTabPage.Text = "Awesomesauce Modpack Tools Releases";
+            this.ReleasesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ReleasesListView
+            // 
+            this.ReleasesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ReleasesDateColumn,
+            this.ReleasesReleaseColumn});
+            this.ReleasesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReleasesListView.FullRowSelect = true;
+            this.ReleasesListView.HideSelection = false;
+            this.ReleasesListView.Location = new System.Drawing.Point(3, 3);
+            this.ReleasesListView.MultiSelect = false;
+            this.ReleasesListView.Name = "ReleasesListView";
+            this.ReleasesListView.Size = new System.Drawing.Size(640, 250);
+            this.ReleasesListView.TabIndex = 0;
+            this.ReleasesListView.UseCompatibleStateImageBehavior = false;
+            this.ReleasesListView.View = System.Windows.Forms.View.Details;
+            this.ReleasesListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ReleasesListView_MouseDoubleClick);
+            // 
+            // ReleasesDateColumn
+            // 
+            this.ReleasesDateColumn.Text = "Date";
+            this.ReleasesDateColumn.Width = 120;
+            // 
+            // ReleasesReleaseColumn
+            // 
+            this.ReleasesReleaseColumn.Text = "Release";
+            this.ReleasesReleaseColumn.Width = 750;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +265,7 @@
             this.GitHubTabControl.ResumeLayout(false);
             this.ModpackTabPage.ResumeLayout(false);
             this.ToolsTabPage.ResumeLayout(false);
+            this.ReleasesTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +287,9 @@
         private System.Windows.Forms.Button DownloaderButton;
         private System.Windows.Forms.Button UpdaterButton;
         private System.Windows.Forms.Button ChangelogCompilerButton;
+        private System.Windows.Forms.TabPage ReleasesTabPage;
+        private System.Windows.Forms.ListView ReleasesListView;
+        private System.Windows.Forms.ColumnHeader ReleasesDateColumn;
+        private System.Windows.Forms.ColumnHeader ReleasesReleaseColumn;
     }
 }

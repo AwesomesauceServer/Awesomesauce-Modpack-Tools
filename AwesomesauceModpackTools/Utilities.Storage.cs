@@ -61,6 +61,12 @@ namespace AwesomesauceModpackTools {
             /// </summary>
             public static bool HasInternet => _HasInternet;
 
+            private static string _GithubCredentials = SetupGithubCredentials();
+            /// <summary>
+            /// Value of <see cref="SetupGithubCredentials()"/>.
+            /// </summary>
+            public static string GithubCredentials => _GithubCredentials;
+
         }
 
     }

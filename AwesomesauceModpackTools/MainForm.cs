@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Humanizer;
 using Newtonsoft.Json;
-using static AwesomesauceModpackTools.Utilities;
 using static AwesomesauceModpackTools.Utilities.Storage;
 
 namespace AwesomesauceModpackTools {
 
     public partial class MainForm : Form {
+
+        private Octokit.GitHubClient _Github;
 
         public MainForm() {
             InitializeComponent();
@@ -22,6 +23,9 @@ namespace AwesomesauceModpackTools {
         private void MainForm_Load(object sender, EventArgs e) {
 #if RELEASE
             if (HasInternet) {
+                _Github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName, Version.Parse(Application.ProductVersion).ToString(3)));
+                if (GithubCredentials != "") { _Github.Credentials = new Octokit.Credentials(GithubCredentials); }
+
                 LoadGithub();
             } else{
                 MessageBox.Show("A connection to the internet can not be established.\r\n" +
@@ -48,6 +52,12 @@ namespace AwesomesauceModpackTools {
             }
         }
 
+        private void ReleasesListView_MouseDoubleClick(object sender, MouseEventArgs e) {
+            if (ReleasesListView.SelectedItems.Count == 1) {
+                try { Process.Start((string)ReleasesListView.SelectedItems[0].Tag); } catch { }
+            }
+        }
+
         private void ModpackListView_MouseDoubleClick(object sender, MouseEventArgs e) {
             if (ModpackListView.SelectedItems.Count == 1) {
                 try { Process.Start((string)ModpackListView.SelectedItems[0].Tag); } catch { }
@@ -62,6 +72,7 @@ namespace AwesomesauceModpackTools {
 
         private void LoadGithub() {
             LoadGithub_ModpackList();
+            Task loadGithub_ReleasesTask = LoadGithub_Releases();
             Task loadGithub_ModpackTask = LoadGithub_Modpack();
             Task loadGithub_ToolsTask = LoadGithub_Tools();
         }
@@ -78,10 +89,34 @@ namespace AwesomesauceModpackTools {
             }
         }
 
+        private async Task LoadGithub_Releases() {
+            try {
+                IReadOnlyList<Octokit.Release> releases = await _Github.Repository.Release.GetAll("AwesomesauceServer", "Awesomesauce-Modpack-Tools");
+
+                foreach (Octokit.Release release in releases) {
+                    string bodyFormat = System.Text.RegularExpressions.Regex.Replace(release.Body, @"http[^\s]+", "");
+                    bodyFormat = bodyFormat.Replace(Environment.NewLine, ", ");
+                    bodyFormat = bodyFormat.Replace("(", "").Replace(")", "");
+                    bodyFormat = bodyFormat.Replace("[", "").Replace("]", "");
+                    bodyFormat = bodyFormat.Replace(" ,", ",").Replace(",,", ",");
+                    bodyFormat = bodyFormat.Replace("*", "");
+                    bodyFormat = bodyFormat.Replace("  ", " ");
+                    bodyFormat = bodyFormat.Trim();
+                    if (bodyFormat.EndsWith(",")) { bodyFormat = bodyFormat.Remove(bodyFormat.Length - 1, 1); }
+
+                    string messageFormat = $"{release.Name}: {bodyFormat}";
+
+                    ListViewItem newItem = new ListViewItem(new string[] { release.PublishedAt.Value.ToLocalTime().Humanize(), messageFormat });
+                    ReleasesListView.Items.Add(newItem).Tag = release.HtmlUrl;
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error getting information from GitHub.\r\n\r\n{ex.Message}", "Error Loading Awesomesauce-Modpack-Tools Releases", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private async Task LoadGithub_Modpack() {
             try {
-                Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName));
-                IReadOnlyList<Octokit.GitHubCommit> commits = await github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack");
+                IReadOnlyList<Octokit.GitHubCommit> commits = await _Github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack");
 
                 foreach (Octokit.GitHubCommit commit in commits) {
                     string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
@@ -96,8 +131,7 @@ namespace AwesomesauceModpackTools {
 
         private async Task LoadGithub_Tools() {
             try {
-                Octokit.GitHubClient github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName));
-                IReadOnlyList<Octokit.GitHubCommit> commits = await github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack-Tools");
+                IReadOnlyList<Octokit.GitHubCommit> commits = await _Github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack-Tools");
 
                 foreach (Octokit.GitHubCommit commit in commits) {
                     string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
@@ -113,19 +147,16 @@ namespace AwesomesauceModpackTools {
         private void ManageModsButton_Click(object sender, EventArgs e) {
             Mods.ModList.ModListForm manageForm = new Mods.ModList.ModListForm();
             manageForm.Show();
-
         }
 
         private void DownloaderButton_Click(object sender, EventArgs e) {
             Downloader.DownloaderForm downloaderForm = new Downloader.DownloaderForm();
             downloaderForm.Show();
-
         }
 
         private void UpdaterButton_Click(object sender, EventArgs e) {
             Updater.UpdaterForm updaterForm = new Updater.UpdaterForm();
             updaterForm.Show();
-
         }
 
         private void ChangelogCompilerButton_Click(object sender, EventArgs e) {
