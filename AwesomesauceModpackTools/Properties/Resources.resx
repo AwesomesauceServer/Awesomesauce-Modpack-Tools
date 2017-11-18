@@ -331,6 +331,41 @@
 &lt;/body&gt;
 &lt;/html&gt;</value>
   </data>
+  <data name="Filters_JSON" xml:space="preserve">
+    <value>{
+  "gameVersions": {
+    "1.12.2": "?filter-game-version=2020709689%3A6756",
+    "1.12": "?filter-game-version=2020709689%3A6580",
+    "1.11.2": "?filter-game-version=2020709689%3A6452",
+    "1.10.2": "?filter-game-version=2020709689%3A6170",
+    "1.9.4": "?filter-game-version=2020709689%3A6084",
+    "1.8.9": "?filter-game-version=2020709689%3A5806",
+    "1.7.10": "?filter-game-version=2020709689%3A4449",
+    "1.6.4": "?filter-game-version=2020709689%3A326",
+    "1.5.2": "?filter-game-version=2020709689%3A312",
+    "1.4.7": "?filter-game-version=2020709689%3A272"
+  },
+  "xPaths": {
+    "parsing": {
+      "info": {
+        "name": "//span[@class='overflow-tip']",
+        "file": "//div[@class='info-data overflow-tip']",
+        "date": "//abbr[@class='tip standard-date standard-datetime']/@data-epoch",
+        "size": "(//div[@class='info-data'])[3]",
+        "md5": "//span[@class='md5']",
+        "versions": "//section[@class='details-versions']/ul[1]/li"
+      },
+      "update": {
+        "url": "(//a[@class='overflow-tip twitch-link'])[1]/@href"
+      }
+    },
+    "changelogCompiler": {
+      "url": "(//a[@class='overflow-tip twitch-link'])/@href",
+      "log": "//div[@class='logbox']"
+    }
+  }
+}</value>
+  </data>
   <data name="HTMLFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\art\HTMLFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

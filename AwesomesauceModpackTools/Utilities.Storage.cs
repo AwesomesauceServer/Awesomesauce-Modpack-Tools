@@ -20,6 +20,11 @@ namespace AwesomesauceModpackTools {
             /// </summary>
             public static Uri ModpackList_URI = new Uri("https://raw.githubusercontent.com/AwesomesauceServer/Awesomesauce-Modpack/master/packs.json");
 
+            /// <summary>
+            /// URI to download the current filters from.
+            /// </summary>
+            public static Uri Filters_URI = new Uri("https://raw.githubusercontent.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/master/filters.json");
+
             private static string _AppName = "Awesomesauce-Modpack-Tools";
             /// <summary>
             /// The programs name.

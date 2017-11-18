@@ -100,7 +100,7 @@
       <DependentUpon>DownloaderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Export.cs" />
-    <Compile Include="Minecraft.cs" />
+    <Compile Include="Filters.cs" />
     <Compile Include="Utilities.Storage.cs" />
     <Compile Include="Pack.cs" />
     <Compile Include="MainForm.cs">

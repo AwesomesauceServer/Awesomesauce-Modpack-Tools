@@ -19,7 +19,7 @@ namespace AwesomesauceModpackTools.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -290,6 +290,25 @@ namespace AwesomesauceModpackTools.Properties {
         internal static string Export_HTML_Template {
             get {
                 return ResourceManager.GetString("Export_HTML_Template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;gameVersions&quot;: {
+        ///    &quot;1.12.2&quot;: &quot;?filter-game-version=2020709689%3A6756&quot;,
+        ///    &quot;1.12&quot;: &quot;?filter-game-version=2020709689%3A6580&quot;,
+        ///    &quot;1.11.2&quot;: &quot;?filter-game-version=2020709689%3A6452&quot;,
+        ///    &quot;1.10.2&quot;: &quot;?filter-game-version=2020709689%3A6170&quot;,
+        ///    &quot;1.9.4&quot;: &quot;?filter-game-version=2020709689%3A6084&quot;,
+        ///    &quot;1.8.9&quot;: &quot;?filter-game-version=2020709689%3A5806&quot;,
+        ///    &quot;1.7.10&quot;: &quot;?filter-game-version=2020709689%3A4449&quot;,
+        ///    &quot;1.6.4&quot;: &quot;?filter-game-version=2020709689%3A326&quot;,
+        ///    &quot;1.5.2&quot;: &quot;?filter-game-version=202 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Filters_JSON {
+            get {
+                return ResourceManager.GetString("Filters_JSON", resourceCulture);
             }
         }
         

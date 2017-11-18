@@ -28,12 +28,12 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
             Icon = Properties.Resources.AwesomesauceIcon;
 
             HTMLWebBrowser.DocumentText = Properties.Resources.ChangelogCompiler_HTML_Default;
-            GameVersionsComboBox.Items.AddRange(Minecraft.GameVersions.Keys.ToArray());
+            GameVersionsComboBox.Items.AddRange(Filters.GameVersions.Keys.ToArray());
         }
 
         private void ChangelogCompilerForm_Load(object sender, EventArgs e) {
             Show();
-            if (Minecraft.GameVersions.Keys.Contains(GameVersionsAuto)) { GameVersionsComboBox.SelectedItem = GameVersionsAuto; }
+            if (Filters.GameVersions.Keys.Contains(GameVersionsAuto)) { GameVersionsComboBox.SelectedItem = GameVersionsAuto; }
             ModURLTextBox.Text = ModURLAuto;
             if (GameVersionsComboBox.SelectedItem != null && ModURLTextBox.Text.Trim() != "") { CompileButton.PerformClick(); }
         }
@@ -75,12 +75,12 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 ShowMessage("Compiling...", "Gathering a list of links");
 
                 HtmlWeb htmlWeb = new HtmlWeb() { UserAgent = UserAgent };
-                HtmlAgilityPack.HtmlDocument tempHTML = htmlWeb.Load($"{ModURLTextBox.Text}/files{Minecraft.GameVersions[(string)GameVersionsComboBox.SelectedItem]}");
+                HtmlAgilityPack.HtmlDocument tempHTML = htmlWeb.Load($"{ModURLTextBox.Text}/files{Filters.GameVersions[(string)GameVersionsComboBox.SelectedItem]}");
 
                 if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                     HtmlNode node = tempHTML.DocumentNode;
 
-                    HtmlNodeCollection foundURLS = node.SelectNodes("(//a[@class='overflow-tip twitch-link'])/@href");
+                    HtmlNodeCollection foundURLS = node.SelectNodes(Filters.XPaths.ChangelogCompiler.URL);
                     foreach (HtmlNode foundURL in foundURLS) { workingURLS.Add(foundURL.InnerText.Trim(), $"https://minecraft.curseforge.com{foundURL.Attributes["href"].Value.Trim()}"); }
                 } else {
                     CompilingProgressBar.Visible = false;
@@ -112,7 +112,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                     if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                         HtmlNode node = tempHTML.DocumentNode;
 
-                        string changelog = node.SelectSingleNode("//div[@class='logbox']").OuterHtml.Trim();
+                        string changelog = node.SelectSingleNode(Filters.XPaths.ChangelogCompiler.Log).OuterHtml.Trim();
                         changelog = HtmlEntity.DeEntitize(changelog);
                         workingChangelogs.Add(url.Key, (url.Value, changelog));
                     } else {

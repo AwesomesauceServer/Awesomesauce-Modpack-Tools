@@ -42,7 +42,7 @@ namespace AwesomesauceModpackTools.Updater {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
 
-            GameVersionsComboBox.Items.AddRange(Minecraft.GameVersions.Keys.ToArray());
+            GameVersionsComboBox.Items.AddRange(Filters.GameVersions.Keys.ToArray());
         }
 
         private void UpdaterForm_Load(object sender, EventArgs e) {
@@ -171,7 +171,7 @@ namespace AwesomesauceModpackTools.Updater {
             SavePanel.Enabled = false;
             StatusLabel.Text = "Updating mods...";
 
-            string minecraftVersion = Minecraft.GameVersions[(string)GameVersionsComboBox.SelectedItem];
+            string minecraftVersion = Filters.GameVersions[(string)GameVersionsComboBox.SelectedItem];
             int modCount = ModListView.Items.Count;
             int skippedCount = 0;
             int errorCount = 0;

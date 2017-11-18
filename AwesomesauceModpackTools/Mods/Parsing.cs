@@ -21,14 +21,14 @@ namespace AwesomesauceModpackTools.Mods {
                 if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                     HtmlNode node = mod.HTML_Link.DocumentNode;
 
-                    mod.Name = node.SelectSingleNode("//span[@class='overflow-tip']").InnerText.Trim();
-                    mod.File = node.SelectSingleNode("//div[@class='info-data overflow-tip']").InnerText.Trim();
-                    mod.Date = EpochConverter(node.SelectSingleNode("//abbr[@class='tip standard-date standard-datetime']/@data-epoch").Attributes["data-epoch"].Value.Trim());
-                    mod.Size = node.SelectSingleNode("(//div[@class='info-data'])[3]").InnerText.Trim();
-                    mod.MD5 = node.SelectSingleNode("//span[@class='md5']").InnerText.Trim();
+                    mod.Name = node.SelectSingleNode(Filters.XPaths.Parsing.Info.Name).InnerText.Trim();
+                    mod.File = node.SelectSingleNode(Filters.XPaths.Parsing.Info.File).InnerText.Trim();
+                    mod.Date = EpochConverter(node.SelectSingleNode(Filters.XPaths.Parsing.Info.Date).Attributes["data-epoch"].Value.Trim());
+                    mod.Size = node.SelectSingleNode(Filters.XPaths.Parsing.Info.Size).InnerText.Trim();
+                    mod.MD5 = node.SelectSingleNode(Filters.XPaths.Parsing.Info.MD5).InnerText.Trim();
 
                     if (mod.MinecraftVersion.Count != 0) { mod.MinecraftVersion.Clear(); }
-                    HtmlNodeCollection minecraftVersions = node.SelectNodes("//section[@class='details-versions']/ul[1]/li");
+                    HtmlNodeCollection minecraftVersions = node.SelectNodes(Filters.XPaths.Parsing.Info.Versions);
                     foreach (HtmlNode minectaftVersion in minecraftVersions) { mod.MinecraftVersion.Add(HtmlEntity.DeEntitize(minectaftVersion.InnerText.Trim())); }
 
                     mod.Link = HtmlEntity.DeEntitize(mod.Link);
@@ -63,7 +63,7 @@ namespace AwesomesauceModpackTools.Mods {
                 if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                     HtmlNode node = mod.HTML_Files.DocumentNode;
 
-                    string modURL = node.SelectSingleNode("(//a[@class='overflow-tip twitch-link'])[1]/@href").Attributes["href"].Value.Trim();
+                    string modURL = node.SelectSingleNode(Filters.XPaths.Parsing.Update.URL).Attributes["href"].Value.Trim();
 
                     if (modURL != "") {
                         mod.Link = $"https://minecraft.curseforge.com{modURL}";
