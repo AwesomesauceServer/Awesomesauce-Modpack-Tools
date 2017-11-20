@@ -55,6 +55,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 return;
             }
 
+            if (ViewSourceLinkLabel.Text == "Normal View") { ViewSourceLinkLabel_LinkClicked(sender, null); }
             CompilingProgressBar.Style = ProgressBarStyle.Marquee;
             CompilingProgressBar.Value = 0;
             CompilingProgressBar.Visible = true;
@@ -62,6 +63,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
             GameVersionsComboBox.Enabled = false;
             ModURLTextBox.Enabled = false;
             CompileButton.Enabled = false;
+            ViewSourceLinkLabel.Enabled = false;
             Application.DoEvents();
 
             ModURLTextBox.Text = RemoveURLQueryString(ModURLTextBox.Text.Trim());
@@ -96,6 +98,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 GameVersionsComboBox.Enabled = true;
                 ModURLTextBox.Enabled = true;
                 CompileButton.Enabled = true;
+                ViewSourceLinkLabel.Enabled = true;
                 return;
             }
 
@@ -122,6 +125,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                         GameVersionsComboBox.Enabled = true;
                         ModURLTextBox.Enabled = true;
                         CompileButton.Enabled = true;
+                        ViewSourceLinkLabel.Enabled = true;
                         return;
                     }
                 } catch (Exception ex) {
@@ -130,6 +134,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                     GameVersionsComboBox.Enabled = true;
                     ModURLTextBox.Enabled = true;
                     CompileButton.Enabled = true;
+                    ViewSourceLinkLabel.Enabled = true;
                     return;
                 }
 
@@ -154,20 +159,34 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 changelogBuilder = changelogBuilder.Replace("</b>", "");
                 changelogBuilder = changelogBuilder.Replace("<strong>", "");
                 changelogBuilder = changelogBuilder.Replace("</strong>", "");
+                changelogBuilder = changelogBuilder.Replace("<p>", "");
+                changelogBuilder = changelogBuilder.Replace("</p>", "");
 
                 HTMLWebBrowser.DocumentText = Properties.Resources.ChangelogCompiler_HTML_Changelog.Replace("%CHANGELOG%", changelogBuilder.ToString());
             } else {
-              ShowMessage("No changelogs found", "Or there were no supported game versions. Double check the Mod URL you entered.");
+                ShowMessage("No changelogs found", "Or there were no supported game versions. Double check the Mod URL you entered.");
             }
 
             CompilingProgressBar.Visible = false;
             GameVersionsComboBox.Enabled = true;
             ModURLTextBox.Enabled = true;
             CompileButton.Enabled = true;
+            ViewSourceLinkLabel.Enabled = true;
+        }
+
+        private void ViewSourceLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            if (ViewSourceLinkLabel.Text == "View Source") {
+                ViewSourceLinkLabel.Text = "Normal View";
+                SourceTextBox.BringToFront();
+            } else if (ViewSourceLinkLabel.Text == "Normal View") {
+                ViewSourceLinkLabel.Text = "View Source";
+                SourceTextBox.SendToBack();
+            }
         }
 
         private void HTMLWebBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e) {
             for (int i = 0; i < HTMLWebBrowser.Document.Links.Count; i++) { HTMLWebBrowser.Document.Links[i].Click += new HtmlElementEventHandler(HTMLWebBrowser_LinkClicked); }
+            SourceTextBox.Text = HTMLWebBrowser.DocumentText;
         }
 
         private void HTMLWebBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e) {

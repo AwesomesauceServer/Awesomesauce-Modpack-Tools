@@ -34,6 +34,8 @@
             this.ModURLLabel = new System.Windows.Forms.Label();
             this.ModURLExampleLabel = new System.Windows.Forms.Label();
             this.CompileButton = new System.Windows.Forms.Button();
+            this.ViewSourceLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.SourceTextBox = new System.Windows.Forms.TextBox();
             this.MainStatusStrip.SuspendLayout();
             this.HTMLWebBrowserPanel.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.HTMLWebBrowserPanel.Controls.Add(this.CompilingProgressBar);
             this.HTMLWebBrowserPanel.Controls.Add(this.HTMLWebBrowser);
+            this.HTMLWebBrowserPanel.Controls.Add(this.SourceTextBox);
             this.HTMLWebBrowserPanel.Location = new System.Drawing.Point(-2, -2);
             this.HTMLWebBrowserPanel.Name = "HTMLWebBrowserPanel";
             this.HTMLWebBrowserPanel.Size = new System.Drawing.Size(874, 458);
@@ -88,7 +91,6 @@
             this.HTMLWebBrowser.Size = new System.Drawing.Size(874, 458);
             this.HTMLWebBrowser.TabIndex = 0;
             this.HTMLWebBrowser.TabStop = false;
-            this.HTMLWebBrowser.WebBrowserShortcutsEnabled = false;
             this.HTMLWebBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.HTMLWebBrowser_DocumentCompleted);
             this.HTMLWebBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.HTMLWebBrowser_Navigating);
             // 
@@ -160,12 +162,40 @@
             this.CompileButton.UseVisualStyleBackColor = true;
             this.CompileButton.Click += new System.EventHandler(this.CompileButton_Click);
             // 
+            // ViewSourceLinkLabel
+            // 
+            this.ViewSourceLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ViewSourceLinkLabel.AutoSize = true;
+            this.ViewSourceLinkLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewSourceLinkLabel.Location = new System.Drawing.Point(3, 522);
+            this.ViewSourceLinkLabel.Name = "ViewSourceLinkLabel";
+            this.ViewSourceLinkLabel.Size = new System.Drawing.Size(68, 13);
+            this.ViewSourceLinkLabel.TabIndex = 15;
+            this.ViewSourceLinkLabel.TabStop = true;
+            this.ViewSourceLinkLabel.Tag = "";
+            this.ViewSourceLinkLabel.Text = "View Source";
+            this.ViewSourceLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ViewSourceLinkLabel_LinkClicked);
+            // 
+            // SourceTextBox
+            // 
+            this.SourceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SourceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SourceTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SourceTextBox.Location = new System.Drawing.Point(0, 0);
+            this.SourceTextBox.Multiline = true;
+            this.SourceTextBox.Name = "SourceTextBox";
+            this.SourceTextBox.ReadOnly = true;
+            this.SourceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.SourceTextBox.Size = new System.Drawing.Size(874, 458);
+            this.SourceTextBox.TabIndex = 14;
+            // 
             // ChangelogCompilerForm
             // 
             this.AcceptButton = this.CompileButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 540);
+            this.Controls.Add(this.ViewSourceLinkLabel);
             this.Controls.Add(this.CompileButton);
             this.Controls.Add(this.ModURLLabel);
             this.Controls.Add(this.ModURLTextBox);
@@ -185,6 +215,7 @@
             this.MainStatusStrip.ResumeLayout(false);
             this.MainStatusStrip.PerformLayout();
             this.HTMLWebBrowserPanel.ResumeLayout(false);
+            this.HTMLWebBrowserPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +234,7 @@
         private System.Windows.Forms.Label ModURLExampleLabel;
         private System.Windows.Forms.Button CompileButton;
         private System.Windows.Forms.ProgressBar CompilingProgressBar;
+        private System.Windows.Forms.LinkLabel ViewSourceLinkLabel;
+        private System.Windows.Forms.TextBox SourceTextBox;
     }
 }

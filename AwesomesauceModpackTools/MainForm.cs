@@ -58,23 +58,23 @@ namespace AwesomesauceModpackTools {
             }
         }
 
-        private void ModpackListView_MouseDoubleClick(object sender, MouseEventArgs e) {
-            if (ModpackListView.SelectedItems.Count == 1) {
-                try { Process.Start((string)ModpackListView.SelectedItems[0].Tag); } catch { }
-            }
-        }
-
         private void ToolsListView_MouseDoubleClick(object sender, MouseEventArgs e) {
             if (ToolsListView.SelectedItems.Count == 1) {
                 try { Process.Start((string)ToolsListView.SelectedItems[0].Tag); } catch { }
             }
         }
 
+        private void ModpackListView_MouseDoubleClick(object sender, MouseEventArgs e) {
+            if (ModpackListView.SelectedItems.Count == 1) {
+                try { Process.Start((string)ModpackListView.SelectedItems[0].Tag); } catch { }
+            }
+        }
+
         private void LoadGithub() {
             LoadGithub_ModpackList();
             Task loadGithub_ReleasesTask = LoadGithub_Releases();
-            Task loadGithub_ModpackTask = LoadGithub_Modpack();
             Task loadGithub_ToolsTask = LoadGithub_Tools();
+            Task loadGithub_ModpackTask = LoadGithub_Modpack();
         }
 
         private void LoadGithub_ModpackList() {
@@ -114,21 +114,6 @@ namespace AwesomesauceModpackTools {
             }
         }
 
-        private async Task LoadGithub_Modpack() {
-            try {
-                IReadOnlyList<Octokit.GitHubCommit> commits = await _Github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack");
-
-                foreach (Octokit.GitHubCommit commit in commits) {
-                    string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
-
-                    ListViewItem newItem = new ListViewItem(new string[] { commit.Commit.Author.Date.DateTime.ToLocalTime().Humanize(), messageFormat });
-                    ModpackListView.Items.Add(newItem).Tag = commit.HtmlUrl;
-                }
-            } catch (Exception ex) {
-                MessageBox.Show($"There was an error getting information from GitHub.\r\n\r\n{ex.Message}", "Error Loading Awesomesauce-Modpack", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private async Task LoadGithub_Tools() {
             try {
                 IReadOnlyList<Octokit.GitHubCommit> commits = await _Github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack-Tools");
@@ -141,6 +126,21 @@ namespace AwesomesauceModpackTools {
                 }
             } catch (Exception ex) {
                 MessageBox.Show($"There was an error getting information from GitHub.\r\n\r\n{ex.Message}", "Error Loading Awesomesauce-Modpack-Tools", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task LoadGithub_Modpack() {
+            try {
+                IReadOnlyList<Octokit.GitHubCommit> commits = await _Github.Repository.Commit.GetAll("AwesomesauceServer", "Awesomesauce-Modpack");
+
+                foreach (Octokit.GitHubCommit commit in commits) {
+                    string messageFormat = commit.Commit.Message.Replace("\n\n", ", ");
+
+                    ListViewItem newItem = new ListViewItem(new string[] { commit.Commit.Author.Date.DateTime.ToLocalTime().Humanize(), messageFormat });
+                    ModpackListView.Items.Add(newItem).Tag = commit.HtmlUrl;
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error getting information from GitHub.\r\n\r\n{ex.Message}", "Error Loading Awesomesauce-Modpack", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

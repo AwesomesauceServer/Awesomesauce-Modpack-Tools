@@ -68,8 +68,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GitHubTabControl.Controls.Add(this.ReleasesTabPage);
-            this.GitHubTabControl.Controls.Add(this.ModpackTabPage);
             this.GitHubTabControl.Controls.Add(this.ToolsTabPage);
+            this.GitHubTabControl.Controls.Add(this.ModpackTabPage);
             this.GitHubTabControl.Location = new System.Drawing.Point(12, 12);
             this.GitHubTabControl.Name = "GitHubTabControl";
             this.GitHubTabControl.SelectedIndex = 0;
