@@ -54,17 +54,9 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 ModURLTextBox.Focus();
                 return;
             }
-
-            if (ViewSourceLinkLabel.Text == "Normal View") { ViewSourceLinkLabel_LinkClicked(sender, null); }
-            CompilingProgressBar.Style = ProgressBarStyle.Marquee;
-            CompilingProgressBar.Value = 0;
-            CompilingProgressBar.Visible = true;
+     
             ShowMessage("Compiling...");
-            GameVersionsComboBox.Enabled = false;
-            ModURLTextBox.Enabled = false;
-            CompileButton.Enabled = false;
-            ViewSourceLinkLabel.Enabled = false;
-            Application.DoEvents();
+            IsCompiling(true);
 
             ModURLTextBox.Text = RemoveURLQueryString(ModURLTextBox.Text.Trim());
             if (ModURLTextBox.Text.EndsWith("/")) { ModURLTextBox.Text = ModURLTextBox.Text.Remove(ModURLTextBox.Text.Length - 1, 1); }
@@ -85,20 +77,13 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                     HtmlNodeCollection foundURLS = node.SelectNodes(Filters.XPaths.ChangelogCompiler.URL);
                     foreach (HtmlNode foundURL in foundURLS) { workingURLS.Add(foundURL.InnerText.Trim(), $"https://minecraft.curseforge.com{foundURL.Attributes["href"].Value.Trim()}"); }
                 } else {
-                    CompilingProgressBar.Visible = false;
+                    IsCompiling(false);
                     ShowMessage("There was a HTTP status error while processing the links", $"Server response was '{htmlWeb.StatusCode.ToString()}'. Can not continue compiling the changelog.");
-                    GameVersionsComboBox.Enabled = true;
-                    ModURLTextBox.Enabled = true;
-                    CompileButton.Enabled = true;
                     return;
                 }
             } catch (Exception ex) {
-                CompilingProgressBar.Visible = false;
+                IsCompiling(false);
                 ShowMessage("There was an error while processing the links", ex.Message);
-                GameVersionsComboBox.Enabled = true;
-                ModURLTextBox.Enabled = true;
-                CompileButton.Enabled = true;
-                ViewSourceLinkLabel.Enabled = true;
                 return;
             }
 
@@ -129,12 +114,8 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                         return;
                     }
                 } catch (Exception ex) {
-                    CompilingProgressBar.Visible = false;
-                    ShowMessage("There was an error while processing a link", ex.Message);
-                    GameVersionsComboBox.Enabled = true;
-                    ModURLTextBox.Enabled = true;
-                    CompileButton.Enabled = true;
-                    ViewSourceLinkLabel.Enabled = true;
+                    IsCompiling(false);
+                    ShowMessage("There was an error while processing a link", ex.Message);      
                     return;
                 }
 
@@ -167,11 +148,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 ShowMessage("No changelogs found", "Or there were no supported game versions. Double check the Mod URL you entered.");
             }
 
-            CompilingProgressBar.Visible = false;
-            GameVersionsComboBox.Enabled = true;
-            ModURLTextBox.Enabled = true;
-            CompileButton.Enabled = true;
-            ViewSourceLinkLabel.Enabled = true;
+            IsCompiling(false);
         }
 
         private void ViewSourceLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
@@ -202,6 +179,26 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
             string href = element.GetAttribute("href");
 
             try { Process.Start(href); } catch { }
+        }
+
+        private void IsCompiling(bool isCompiling) {
+            if (isCompiling) {
+                if (ViewSourceLinkLabel.Text == "Normal View") { ViewSourceLinkLabel_LinkClicked(null, null); }
+                CompilingProgressBar.Style = ProgressBarStyle.Marquee;
+                CompilingProgressBar.Value = 0;
+                CompilingProgressBar.Visible = true;
+                GameVersionsComboBox.Enabled = false;
+                ModURLTextBox.Enabled = false;
+                CompileButton.Enabled = false;
+                ViewSourceLinkLabel.Enabled = false;
+            } else if (!isCompiling) {
+                CompilingProgressBar.Visible = false;
+                GameVersionsComboBox.Enabled = true;
+                ModURLTextBox.Enabled = true;
+                CompileButton.Enabled = true;
+                ViewSourceLinkLabel.Enabled = true;
+            }
+            Application.DoEvents();
         }
 
         private void ShowMessage(string title, string message = "") {
