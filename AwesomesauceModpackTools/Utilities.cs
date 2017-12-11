@@ -169,7 +169,7 @@ namespace AwesomesauceModpackTools {
                     return string.Empty;
                 }
             } catch {
-             return string.Empty;
+                return string.Empty;
             }
         }
 
