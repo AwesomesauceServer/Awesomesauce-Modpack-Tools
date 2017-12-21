@@ -44,9 +44,7 @@ namespace AwesomesauceModpackTools {
         [JsonProperty(PropertyName = "repositoryURL", Order = 6)]
         public string RepositoryURL { get; set; }
 
-        public override string ToString() {
-            return Name;
-        }
+        public override string ToString() => Name;
 
     }
 

@@ -312,9 +312,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             }
         }
 
-        private void BackupModList() {
-            SaveModList($"{EXEDirectory}\\working.json.backup", true);
-        }
+        private void BackupModList() => SaveModList($"{EXEDirectory}\\working.json.backup", true);
 
         private void IsItemSelected(bool selected, ListViewItem item = null) {
             CurrentlySelectedItem = item;

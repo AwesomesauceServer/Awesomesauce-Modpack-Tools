@@ -86,9 +86,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             AddButton_Click(null, new EventArgs());
         }
 
-        private void CancelAddButton_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Cancel;
-        }
+        private void CancelAddButton_Click(object sender, EventArgs e) => DialogResult = DialogResult.Cancel;
 
         private void ToggleProcessing(bool isProcessing) {
             ExampleLabel.Visible = !isProcessing;

@@ -70,19 +70,14 @@ namespace AwesomesauceModpackTools {
         /// <param name="url">The complete URL.</param>
         /// <param name="kind">What type of the url is it?</param>
         /// <returns>True if valid; False if anything else.</returns>
-        public static bool IsValidURL(string url, UriKind kind) {
-            return Uri.IsWellFormedUriString(url, kind);
-        }
+        public static bool IsValidURL(string url, UriKind kind) => Uri.IsWellFormedUriString(url, kind);
 
         /// <summary>
         /// Gets the domain (host) part of the url.
         /// </summary>
         /// <param name="url">The complete URL.</param>
         /// <returns>www.google.com part of https://www.google.com/search?q=example</returns>
-        public static string GetDomainFromURL(string url) {
-            Uri uri = new Uri(url);
-            return uri.Host;
-        }
+        public static string GetDomainFromURL(string url) => new Uri(url)?.Host;
 
         /// <summary>
         /// Check if the URL is a match to the domain (host) supplied.
