@@ -24,7 +24,7 @@ namespace AwesomesauceModpackTools {
 #if RELEASE
             if (HasInternet) {
                 _Github = new Octokit.GitHubClient(new Octokit.ProductHeaderValue(AppName, Version.Parse(Application.ProductVersion).ToString(3)));
-                if (GithubCredentials != "") { _Github.Credentials = new Octokit.Credentials(GithubCredentials); }
+                if (GithubCredentials != string.Empty) { _Github.Credentials = new Octokit.Credentials(GithubCredentials); }
 
                 LoadGithub();
             } else{
@@ -38,7 +38,7 @@ namespace AwesomesauceModpackTools {
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
             if (Application.OpenForms.Count != 1) {
-                string working = "";
+                string working = string.Empty;
                 foreach (Form form in Application.OpenForms) {
                     if (form.Text == Text) { continue; }
                     working += $"{form.Text}\r\n";
@@ -94,12 +94,12 @@ namespace AwesomesauceModpackTools {
                 IReadOnlyList<Octokit.Release> releases = await _Github.Repository.Release.GetAll("AwesomesauceServer", "Awesomesauce-Modpack-Tools");
 
                 foreach (Octokit.Release release in releases) {
-                    string bodyFormat = System.Text.RegularExpressions.Regex.Replace(release.Body, @"http[^\s]+", "");
+                    string bodyFormat = System.Text.RegularExpressions.Regex.Replace(release.Body, @"http[^\s]+", string.Empty);
                     bodyFormat = bodyFormat.Replace(Environment.NewLine, ", ");
-                    bodyFormat = bodyFormat.Replace("(", "").Replace(")", "");
-                    bodyFormat = bodyFormat.Replace("[", "").Replace("]", "");
+                    bodyFormat = bodyFormat.Replace("(", string.Empty).Replace(")", string.Empty);
+                    bodyFormat = bodyFormat.Replace("[", string.Empty).Replace("]", string.Empty);
                     bodyFormat = bodyFormat.Replace(" ,", ",").Replace(",,", ",");
-                    bodyFormat = bodyFormat.Replace("*", "");
+                    bodyFormat = bodyFormat.Replace("*", string.Empty);
                     bodyFormat = bodyFormat.Replace("  ", " ");
                     bodyFormat = bodyFormat.Trim();
                     if (bodyFormat.EndsWith(",")) { bodyFormat = bodyFormat.Remove(bodyFormat.Length - 1, 1); }

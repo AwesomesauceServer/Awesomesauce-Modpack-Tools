@@ -14,7 +14,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         /// <summary>
         /// Reason for aborting.
         /// </summary>
-        public string AbortError { get; set; } = "";
+        public string AbortError { get; set; } = string.Empty;
 
         /// <summary>
         /// Show add requirement form after add.
@@ -44,7 +44,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
             string url = AddTextBox.Text.Trim();
 
             // Check if the URL is blank.
-            if (url == "") {
+            if (url == string.Empty) {
                 MessageBox.Show("The link can not be blank!", "Blank Input", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 AddTextBox.Focus();
                 return;

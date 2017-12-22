@@ -117,7 +117,7 @@ namespace AwesomesauceModpackTools {
                     }
                 }
             } catch {
-                return "";
+                return string.Empty;
             }
         }
 

@@ -234,7 +234,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         private void SearchTextBox_TextChanged(object sender, EventArgs e) {
             if (ModListView.Items.Count == 0) { return; }
 
-            if (SearchTextBox.Text.Trim() == "") {
+            if (SearchTextBox.Text.Trim() == string.Empty) {
                 ModListView.SelectedItems.Clear();
                 return;
             }

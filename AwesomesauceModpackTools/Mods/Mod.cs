@@ -114,7 +114,7 @@ namespace AwesomesauceModpackTools.Mods {
         /// </summary>
         /// <returns><see cref="Requires" /> as a single line, comma seperated string.</returns>
         public string RequiresToString() {
-            string working = "";
+            string working = string.Empty;
             foreach (RequiredMod required in Requires) {
                 working += $"{required.Name}, ";
             }
@@ -128,7 +128,7 @@ namespace AwesomesauceModpackTools.Mods {
         /// </summary>
         /// <returns><see cref="MinecraftVersion" /> as a single line, comma seperated string.</returns>
         public string MinecraftVersionToString() {
-            string working = "";
+            string working = string.Empty;
             foreach (string version in MinecraftVersion) {
                 working += $"{version}, ";
             }

@@ -30,7 +30,7 @@ namespace AwesomesauceModpackTools.Mods.ModList {
         private void NoteForm_FormClosing(object sender, FormClosingEventArgs e) {
             EditingMod.Side = (Side)Enum.Parse(typeof(Side), SideComboBox.SelectedValue.ToString());
             EditingMod.UpdateMode = (UpdateMode)Enum.Parse(typeof(UpdateMode), UpdateModeComboBox.SelectedValue.ToString());
-            if (NotesTextBox.Text.Trim() == "") { EditingMod.Notes = null; } else { EditingMod.Notes = NotesTextBox.Text; }
+            if (NotesTextBox.Text.Trim() == string.Empty) { EditingMod.Notes = null; } else { EditingMod.Notes = NotesTextBox.Text; }
 
             DialogResult = DialogResult.OK;
         }

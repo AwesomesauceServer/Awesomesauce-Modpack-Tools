@@ -16,12 +16,12 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
         /// <summary>
         /// Set when calling form programmatically.
         /// </summary>
-        public string ModURLAuto { get; set; } = "";
+        public string ModURLAuto { get; set; } = string.Empty;
 
         /// <summary>
         /// Set when calling form programmatically.
         /// </summary>
-        public string GameVersionsAuto { get; set; } = "";
+        public string GameVersionsAuto { get; set; } = string.Empty;
 
         public ChangelogCompilerForm() {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
             Show();
             if (Filters.GameVersions.Keys.Contains(GameVersionsAuto)) { GameVersionsComboBox.SelectedItem = GameVersionsAuto; }
             ModURLTextBox.Text = ModURLAuto;
-            if (GameVersionsComboBox.SelectedItem != null && ModURLTextBox.Text.Trim() != "") { CompileButton.PerformClick(); }
+            if (GameVersionsComboBox.SelectedItem != null && ModURLTextBox.Text.Trim() != string.Empty) { CompileButton.PerformClick(); }
         }
 
         private void CompileButton_Click(object sender, EventArgs e) {
@@ -44,7 +44,7 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                 GameVersionsComboBox.Focus();
                 return;
             }
-            if (ModURLTextBox.Text.Trim() == "") {
+            if (ModURLTextBox.Text.Trim() == string.Empty) {
                 MessageBox.Show("Please ender a Mod URL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 ModURLTextBox.Focus();
                 return;
@@ -128,20 +128,20 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
                     changelogBuilder.AppendLine(changelog.Value.html);
                 }
 
-                changelogBuilder = changelogBuilder.Replace("<h1>", "");
-                changelogBuilder = changelogBuilder.Replace("</h1>", "");
-                changelogBuilder = changelogBuilder.Replace("<h2>", "");
-                changelogBuilder = changelogBuilder.Replace("</h2>", "");
-                changelogBuilder = changelogBuilder.Replace("<h3>", "");
-                changelogBuilder = changelogBuilder.Replace("</h3>", "");
-                changelogBuilder = changelogBuilder.Replace("<pre>", "");
-                changelogBuilder = changelogBuilder.Replace("</pre>", "");
-                changelogBuilder = changelogBuilder.Replace("<b>", "");
-                changelogBuilder = changelogBuilder.Replace("</b>", "");
-                changelogBuilder = changelogBuilder.Replace("<strong>", "");
-                changelogBuilder = changelogBuilder.Replace("</strong>", "");
-                changelogBuilder = changelogBuilder.Replace("<p>", "");
-                changelogBuilder = changelogBuilder.Replace("</p>", "");
+                changelogBuilder = changelogBuilder.Replace("<h1>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("</h1>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("<h2>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("</h2>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("<h3>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("</h3>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("<pre>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("</pre>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("<b>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("</b>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("<strong>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("</strong>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("<p>", string.Empty);
+                changelogBuilder = changelogBuilder.Replace("</p>", string.Empty);
 
                 HTMLWebBrowser.DocumentText = Properties.Resources.ChangelogCompiler_HTML_Changelog.Replace("%CHANGELOG%", changelogBuilder.ToString());
             } else {

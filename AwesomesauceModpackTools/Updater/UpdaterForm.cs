@@ -89,7 +89,7 @@ namespace AwesomesauceModpackTools.Updater {
 
         private void CopyButton_Click(object sender, EventArgs e) {
             try {
-                string working = "";
+                string working = string.Empty;
                 foreach (ListViewItem item in ModListView.Items) {
                     if (item.BackColor == available) {
                         Mod itemMod = (Mod)item.Tag;
