@@ -110,6 +110,15 @@ namespace AwesomesauceModpackTools {
                 [JsonProperty(PropertyName = "url", Order = 1)]
                 public string URL { get; set; }
 
+                [JsonProperty(PropertyName = "alpha", Order = 2)]
+                public string Alpha { get; set; }
+
+                [JsonProperty(PropertyName = "beta", Order = 3)]
+                public string Beta { get; set; }
+
+                [JsonProperty(PropertyName = "release", Order = 4)]
+                public string Release { get; set; }
+
             }
 
             public class ChangelogCompiler {

@@ -10,4 +10,9 @@
     /// </summary>
     public enum UpdateMode { Automatic, Manual, Never };
 
+    /// <summary>
+    /// Release type (status) of the mod.
+    /// </summary>
+    public enum ReleaseType { Alpha, Beta, Release, MostRecent };
+
 }

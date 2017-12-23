@@ -55,7 +55,7 @@ namespace AwesomesauceModpackTools.Mods {
         /// <param name="mod">Initialized <see cref="Mod"/> with a set <see cref="Mod.Link"/>.</param>
         /// <param name="gameVersion">Game version to filter the page by. e.g. <see cref="Minecraft.GameVersions"/></param>
         /// <returns><see cref="Mod"/> and <see cref="Exception"/>. If there was a exception, <see cref="Mod"/> will be null; if there was no exception, <see cref="Exception"/> will be null.</returns>
-        public static (Mod Mod, Exception Exception) ParseForUpdate(Mod mod, string gameVersion) {
+        public static (Mod Mod, Exception Exception) ParseForUpdate(Mod mod, string gameVersion, ReleaseType releaseType) {
             try {
                 HtmlWeb htmlWeb = new HtmlWeb() { UserAgent = UserAgent };
                 mod.HTML_Files = htmlWeb.Load($"{mod.Link_Files}{gameVersion}");
@@ -63,9 +63,28 @@ namespace AwesomesauceModpackTools.Mods {
                 if (htmlWeb.StatusCode == HttpStatusCode.OK) {
                     HtmlNode node = mod.HTML_Files.DocumentNode;
 
-                    string modURL = node.SelectSingleNode(Filters.XPaths.Parsing.Update.URL).Attributes["href"].Value.Trim();
+                    //string modURL = node.SelectSingleNode(Filters.XPaths.Parsing.Update.URL).Attributes["href"].Value.Trim();
 
-                    if (modURL != "") {
+                    string modURL = string.Empty;
+                    if (releaseType == ReleaseType.Alpha) {
+                        try {
+                            modURL = node.SelectSingleNode(Filters.XPaths.Parsing.Update.Alpha).Attributes["href"].Value.Trim();
+                        } catch { modURL = string.Empty; }
+                    } else if (releaseType == ReleaseType.Beta) {
+                        try {
+                            modURL = node.SelectSingleNode(Filters.XPaths.Parsing.Update.Beta).Attributes["href"].Value.Trim();
+                        } catch { modURL = string.Empty; }
+                    } else if (releaseType == ReleaseType.Release) {
+                        try {
+                            modURL = node.SelectSingleNode(Filters.XPaths.Parsing.Update.Release).Attributes["href"].Value.Trim();
+                        } catch { modURL = string.Empty; }
+                    } else {
+                        try {
+                            modURL = node.SelectSingleNode(Filters.XPaths.Parsing.Update.URL).Attributes["href"].Value.Trim();
+                        } catch { modURL = string.Empty; }
+                    }
+
+                    if (modURL != string.Empty) {
                         mod.Link = $"https://minecraft.curseforge.com{modURL}";
                         mod = ParseForInfo(mod).Mod;
 

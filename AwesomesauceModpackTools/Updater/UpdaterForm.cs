@@ -42,6 +42,8 @@ namespace AwesomesauceModpackTools.Updater {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
 
+            ReleaseTypeComboBox.DataSource = Enum.GetValues(typeof(ReleaseType));
+            ReleaseTypeComboBox.SelectedIndex = 3;
             GameVersionsComboBox.Items.AddRange(Filters.GameVersions.Keys.ToArray());
         }
 
@@ -73,6 +75,10 @@ namespace AwesomesauceModpackTools.Updater {
                 IsCanceling = true;
                 Dispose();
             }
+        }
+
+        private void ReleaseTypeComboBox_SelectedIndexChanged(object sender, EventArgs e) {
+            if (ReleaseTypeComboBox.SelectedItem != null) { if (ModListView.Items.Count != 0) { UpdateButton.Enabled = true; } else { UpdateButton.Enabled = false; } }
         }
 
         private void GameVersionsComboBox_SelectedIndexChanged(object sender, EventArgs e) {
@@ -126,6 +132,7 @@ namespace AwesomesauceModpackTools.Updater {
                 ModListView.EndUpdate();
                 ToggleLoadingLabel(false);
 
+                if (ReleaseTypeComboBox.SelectedItem != null) { if (ModListView.Items.Count != 0) { UpdateButton.Enabled = true; } else { UpdateButton.Enabled = false; } }
                 if (GameVersionsComboBox.SelectedItem != null) { if (ModListView.Items.Count != 0) { UpdateButton.Enabled = true; } else { UpdateButton.Enabled = false; } }
             } catch (Exception ex) {
                 MessageBox.Show($"There was an error loading the mod list from GitHub.\r\n\r\nType: {ex.GetType().Name}\r\n\r\n{ex.Message}", "Error Loading Mod List", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -149,6 +156,7 @@ namespace AwesomesauceModpackTools.Updater {
                     ModListView.EndUpdate();
                     ToggleLoadingLabel(false);
 
+                    if (ReleaseTypeComboBox.SelectedItem != null) { if (ModListView.Items.Count != 0) { UpdateButton.Enabled = true; } else { UpdateButton.Enabled = false; } }
                     if (GameVersionsComboBox.SelectedItem != null) { if (ModListView.Items.Count != 0) { UpdateButton.Enabled = true; } else { UpdateButton.Enabled = false; } }
                 }
             } catch (Exception ex) {
@@ -166,11 +174,14 @@ namespace AwesomesauceModpackTools.Updater {
         private async Task UpdateMods() {
             IsUpdating = true;
             LoadFromPanel.Enabled = false;
+            ReleaseTypeComboBox.Enabled = false;
             GameVersionsComboBox.Enabled = false;
             UpdateButton.Enabled = false;
             SavePanel.Enabled = false;
             StatusLabel.Text = "Updating mods...";
 
+            ReleaseType releaseType = ReleaseType.Release;
+            Enum.TryParse(ReleaseTypeComboBox.SelectedValue.ToString(), out releaseType);
             string minecraftVersion = Filters.GameVersions[(string)GameVersionsComboBox.SelectedItem];
             int modCount = ModListView.Items.Count;
             int skippedCount = 0;
@@ -195,7 +206,7 @@ namespace AwesomesauceModpackTools.Updater {
                 item.EnsureVisible();
 
                 try {
-                    await Task.Run(() => { itemMod = ParseForUpdate(itemMod, minecraftVersion).Mod; });
+                    await Task.Run(() => { itemMod = ParseForUpdate(itemMod, minecraftVersion, releaseType).Mod; });
 
                     if (itemMod.MD5 == oldMD5) {
                         item.BackColor = notAvailable;

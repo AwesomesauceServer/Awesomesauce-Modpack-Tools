@@ -51,6 +51,9 @@
             this.SaveLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ExampleUpdateErrorLabel = new System.Windows.Forms.Label();
+            this.ReleaseTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ReleaseTypeLabel = new System.Windows.Forms.Label();
+            this.ReleaseTypeInfoLabel = new System.Windows.Forms.Label();
             this.MainStatusStrip.SuspendLayout();
             this.LoadFromPanel.SuspendLayout();
             this.SavePanel.SuspendLayout();
@@ -60,7 +63,7 @@
             // 
             this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel});
-            this.MainStatusStrip.Location = new System.Drawing.Point(0, 567);
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 652);
             this.MainStatusStrip.Name = "MainStatusStrip";
             this.MainStatusStrip.Size = new System.Drawing.Size(891, 22);
             this.MainStatusStrip.TabIndex = 8;
@@ -155,7 +158,7 @@
             this.ModListView.Location = new System.Drawing.Point(238, 12);
             this.ModListView.MultiSelect = false;
             this.ModListView.Name = "ModListView";
-            this.ModListView.Size = new System.Drawing.Size(639, 541);
+            this.ModListView.Size = new System.Drawing.Size(639, 626);
             this.ModListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.ModListView.TabIndex = 10;
             this.ModListView.UseCompatibleStateImageBehavior = false;
@@ -195,7 +198,7 @@
             this.UpdateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateButton.Image = global::AwesomesauceModpackTools.Properties.Resources.UpdatePackage;
             this.UpdateButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.UpdateButton.Location = new System.Drawing.Point(12, 509);
+            this.UpdateButton.Location = new System.Drawing.Point(12, 594);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(220, 44);
             this.UpdateButton.TabIndex = 11;
@@ -272,7 +275,7 @@
             this.GameVersionsComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.GameVersionsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GameVersionsComboBox.FormattingEnabled = true;
-            this.GameVersionsComboBox.Location = new System.Drawing.Point(14, 482);
+            this.GameVersionsComboBox.Location = new System.Drawing.Point(14, 567);
             this.GameVersionsComboBox.Name = "GameVersionsComboBox";
             this.GameVersionsComboBox.Size = new System.Drawing.Size(110, 21);
             this.GameVersionsComboBox.TabIndex = 1;
@@ -283,7 +286,7 @@
             this.GameVersionsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.GameVersionsLabel.AutoSize = true;
             this.GameVersionsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GameVersionsLabel.Location = new System.Drawing.Point(9, 425);
+            this.GameVersionsLabel.Location = new System.Drawing.Point(11, 510);
             this.GameVersionsLabel.Name = "GameVersionsLabel";
             this.GameVersionsLabel.Size = new System.Drawing.Size(77, 13);
             this.GameVersionsLabel.TabIndex = 12;
@@ -292,7 +295,8 @@
             // GameVersionsInfoLabel
             // 
             this.GameVersionsInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.GameVersionsInfoLabel.Location = new System.Drawing.Point(9, 439);
+            this.GameVersionsInfoLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.GameVersionsInfoLabel.Location = new System.Drawing.Point(11, 524);
             this.GameVersionsInfoLabel.Name = "GameVersionsInfoLabel";
             this.GameVersionsInfoLabel.Size = new System.Drawing.Size(193, 41);
             this.GameVersionsInfoLabel.TabIndex = 13;
@@ -301,13 +305,12 @@
             // 
             // SavePanel
             // 
-            this.SavePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.SavePanel.BackColor = System.Drawing.SystemColors.Window;
             this.SavePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SavePanel.Controls.Add(this.CopyButton);
             this.SavePanel.Controls.Add(this.SaveLabel);
             this.SavePanel.Controls.Add(this.SaveButton);
-            this.SavePanel.Location = new System.Drawing.Point(12, 315);
+            this.SavePanel.Location = new System.Drawing.Point(12, 293);
             this.SavePanel.Name = "SavePanel";
             this.SavePanel.Size = new System.Drawing.Size(220, 100);
             this.SavePanel.TabIndex = 14;
@@ -362,15 +365,51 @@
             this.ExampleUpdateErrorLabel.Text = "Update Error";
             this.ExampleUpdateErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ReleaseTypeComboBox
+            // 
+            this.ReleaseTypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReleaseTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ReleaseTypeComboBox.FormattingEnabled = true;
+            this.ReleaseTypeComboBox.Location = new System.Drawing.Point(14, 485);
+            this.ReleaseTypeComboBox.Name = "ReleaseTypeComboBox";
+            this.ReleaseTypeComboBox.Size = new System.Drawing.Size(110, 21);
+            this.ReleaseTypeComboBox.TabIndex = 15;
+            this.ReleaseTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.ReleaseTypeComboBox_SelectedIndexChanged);
+            // 
+            // ReleaseTypeLabel
+            // 
+            this.ReleaseTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReleaseTypeLabel.AutoSize = true;
+            this.ReleaseTypeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReleaseTypeLabel.Location = new System.Drawing.Point(11, 402);
+            this.ReleaseTypeLabel.Name = "ReleaseTypeLabel";
+            this.ReleaseTypeLabel.Size = new System.Drawing.Size(73, 13);
+            this.ReleaseTypeLabel.TabIndex = 12;
+            this.ReleaseTypeLabel.Text = "Release Type";
+            // 
+            // ReleaseTypeInfoLabel
+            // 
+            this.ReleaseTypeInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReleaseTypeInfoLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ReleaseTypeInfoLabel.Location = new System.Drawing.Point(11, 415);
+            this.ReleaseTypeInfoLabel.Name = "ReleaseTypeInfoLabel";
+            this.ReleaseTypeInfoLabel.Size = new System.Drawing.Size(193, 69);
+            this.ReleaseTypeInfoLabel.TabIndex = 13;
+            this.ReleaseTypeInfoLabel.Text = "It is highly recommended you use MostRecent. Other types may downgrade the mod, a" +
+    "nd break your world! Please understand this setting before you use it.";
+            // 
             // UpdaterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 589);
+            this.ClientSize = new System.Drawing.Size(891, 674);
+            this.Controls.Add(this.ReleaseTypeComboBox);
             this.Controls.Add(this.SavePanel);
+            this.Controls.Add(this.ReleaseTypeInfoLabel);
             this.Controls.Add(this.GameVersionsInfoLabel);
             this.Controls.Add(this.ExampleNoUpdateLabel);
             this.Controls.Add(this.ExampleCheckingLabel);
+            this.Controls.Add(this.ReleaseTypeLabel);
             this.Controls.Add(this.GameVersionsLabel);
             this.Controls.Add(this.ExampleStatusColorsLabel);
             this.Controls.Add(this.GameVersionsComboBox);
@@ -384,7 +423,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(907, 628);
+            this.MinimumSize = new System.Drawing.Size(907, 713);
             this.Name = "UpdaterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Updater";
@@ -430,5 +469,8 @@
         private System.Windows.Forms.Label ExampleUpdateErrorLabel;
         private System.Windows.Forms.Button CopyButton;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
+        private System.Windows.Forms.ComboBox ReleaseTypeComboBox;
+        private System.Windows.Forms.Label ReleaseTypeLabel;
+        private System.Windows.Forms.Label ReleaseTypeInfoLabel;
     }
 }
