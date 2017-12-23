@@ -357,9 +357,9 @@
       },
       "update": {
         "url": "(//a[@class='overflow-tip twitch-link'])[1]/@href",
-        "alpha": "((//div[contains(@class,'phase')][contains(@title,'Alpha')])[1]/following::a[@class='overflow-tip twitch-link'])[1]/@href",
-        "beta": "((//div[contains(@class,'phase')][contains(@title,'Beta')])[1]/following::a[@class='overflow-tip twitch-link'])[1]/@href",
-        "release": "((//div[contains(@class,'phase')][contains(@title,'Release')])[1]/following::a[@class='overflow-tip twitch-link'])[1]/@href"
+        "alpha": "((//div[contains(@class, 'phase')][contains(@title, 'Alpha')])[1]/following::a[@class='overflow-tip twitch-link'])[1]/@href",
+        "beta": "((//div[contains(@class, 'phase')][contains(@title, 'Beta')])[1]/following::a[@class='overflow-tip twitch-link'])[1]/@href",
+        "release": "((//div[contains(@class, 'phase')][contains(@title, 'Release')])[1]/following::a[@class='overflow-tip twitch-link'])[1]/@href"
       }
     },
     "changelogCompiler": {
