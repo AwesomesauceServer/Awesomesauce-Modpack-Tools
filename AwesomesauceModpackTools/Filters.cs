@@ -100,7 +100,10 @@ namespace AwesomesauceModpackTools {
                 [JsonProperty(PropertyName = "md5", Order = 5)]
                 public string MD5 { get; set; }
 
-                [JsonProperty(PropertyName = "versions", Order = 6)]
+                [JsonProperty(PropertyName = "releaseType", Order = 6)]
+                public string ReleaseType { get; set; }
+
+                [JsonProperty(PropertyName = "versions", Order = 7)]
                 public string Versions { get; set; }
 
             }

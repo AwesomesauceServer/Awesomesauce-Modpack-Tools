@@ -5,7 +5,7 @@ Collection of tools to help us manage the [Awesomesauce Modpack](https://github.
 It's a pain to update and download many mods by hand.
 
 ### How?
-You add a [CurseForge](https://minecraft.curseforge.com) url to a project **file** e.g. ```https://minecraft.curseforge.com/projects/rftools/files/2491667```. It will go to the site and pull information about the mod and format it into a JSON file.
+You add a [CurseForge](https://minecraft.curseforge.com) url to a project **file** e.g. ```https://minecraft.curseforge.com/projects/rftools/files/2511881```. It will go to the site and pull information about the mod and format it into a JSON file.
 
 The JSON file will be used to download and update the mod.
 
@@ -21,36 +21,37 @@ The JSON file will be used to download and update the mod.
 |side|[Side that the mod is required](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/Enums.cs#L6)|
 |date|Date and time of when the mod was uploaded to CurseForge|
 |size|Size of the mod (pretty formatted)|
-|requires|[Mod(s) required for the mod to work](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/RequiredMod.cs#L5)|
+|requires|[Mod(s) required for the mod to work](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/RequiredMod.cs#L8)|
 |link|Link to the mod web page|
 |linkDownload|Download to the mod file|
 |linkFiles|Project file list for the mod updates|
 |md5|MD5 of the mod file|
+|releaseType|[Release type of the mod](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/Enums.cs#L16)|
 |minecraftVersion|List of supported Minecraft versions|
 |updateMode|[How the update should be handled](https://github.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/blob/master/AwesomesauceModpackTools/Mods/Enums.cs#L11)|
 
 ##### Example
 ```json
- {
+  {
     "name": "RFTools",
-    "id": "afb5bf99-40a7-45de-b4fc-e31209051b67",
-    "file": "rftools-1.12-7.12.jar",
+    "id": "6fda9b39-ca6a-440c-87a9-7d16938ac4c7",
+    "file": "rftools-1.1x-7.16.jar",
     "side": "Both",
-    "date": "2017-10-17T18:13:36Z",
-    "size": "3.17 MB",
+    "date": "2017-12-20T06:59:00Z",
+    "size": "3.18 MB",
     "requires": [
       {
         "name": "McJtyLib",
-        "id": "31f66c0e-b76e-4a16-a0c3-c1498bf84717"
+        "id": "c363a00f-29ac-418c-8cb1-d52f8df3ed97"
       }
     ],
-    "link": "https://minecraft.curseforge.com/projects/rftools/files/2491667",
-    "linkDownload": "https://minecraft.curseforge.com/projects/rftools/files/2491667/download",
+    "link": "https://minecraft.curseforge.com/projects/rftools/files/2511881",
+    "linkDownload": "https://minecraft.curseforge.com/projects/rftools/files/2511881/download",
     "linkFiles": "https://minecraft.curseforge.com/projects/rftools/files",
-    "md5": "7678c0f484d0fdc1d910418142735aed",
+    "md5": "64484ee05d03eff975aa684ea31adb5c",
+    "releaseType": "Release",
     "minecraftVersion": [
-      "1.12.2",
-      "1.12.1"
+      "1.11.2"
     ],
     "updateMode": "Automatic"
   }

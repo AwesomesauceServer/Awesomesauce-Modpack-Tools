@@ -353,6 +353,7 @@
         "date": "//abbr[@class='tip standard-date standard-datetime']/@data-epoch",
         "size": "(//div[@class='info-data'])[3]",
         "md5": "//span[@class='md5']",
+        "releaseType": "//div[@class='project-file-release-type']/div[contains(@class, 'phase')]/@title",
         "versions": "//section[@class='details-versions']/ul[1]/li"
       },
       "update": {

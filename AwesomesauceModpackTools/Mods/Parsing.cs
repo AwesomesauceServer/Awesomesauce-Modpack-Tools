@@ -27,6 +27,10 @@ namespace AwesomesauceModpackTools.Mods {
                     mod.Size = node.SelectSingleNode(Filters.XPaths.Parsing.Info.Size).InnerText.Trim();
                     mod.MD5 = node.SelectSingleNode(Filters.XPaths.Parsing.Info.MD5).InnerText.Trim();
 
+                    ReleaseType releaseType = ReleaseType.MostRecent;
+                    Enum.TryParse(node.SelectSingleNode(Filters.XPaths.Parsing.Info.ReleaseType).Attributes["title"].Value.Trim(), out releaseType);
+                    mod.ReleaseType = releaseType;
+
                     if (mod.MinecraftVersion.Count != 0) { mod.MinecraftVersion.Clear(); }
                     HtmlNodeCollection minecraftVersions = node.SelectNodes(Filters.XPaths.Parsing.Info.Versions);
                     foreach (HtmlNode minectaftVersion in minecraftVersions) { mod.MinecraftVersion.Add(HtmlEntity.DeEntitize(minectaftVersion.InnerText.Trim())); }

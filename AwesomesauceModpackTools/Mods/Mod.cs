@@ -79,22 +79,29 @@ namespace AwesomesauceModpackTools.Mods {
         public string MD5 { get; set; }
 
         /// <summary>
+        /// <see cref="ReleaseType" /> (status) of the mod.
+        /// </summary>
+        [JsonProperty(PropertyName = "releaseType", Order = 12)]
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ReleaseType ReleaseType { get; set; }
+
+        /// <summary>
         /// List of supported minecraft versions.
         /// </summary>
-        [JsonProperty(PropertyName = "minecraftVersion", Order = 12, NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty(PropertyName = "minecraftVersion", Order = 13, NullValueHandling = NullValueHandling.Include)]
         public List<string> MinecraftVersion { get; set; } = new List<string>();
 
         /// <summary>
-        /// <see cref="AwesomesauceModpackTools.UpdateMode" /> of the mod.
+        /// <see cref="UpdateMode" /> of the mod.
         /// </summary>
-        [JsonProperty(PropertyName = "updateMode", Order = 13)]
+        [JsonProperty(PropertyName = "updateMode", Order = 14)]
         [JsonConverter(typeof(StringEnumConverter))]
         public UpdateMode UpdateMode { get; set; }
 
         /// <summary>
         /// Notes about the mod.
         /// </summary>
-        [JsonProperty(PropertyName = "notes", Order = 14, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty(PropertyName = "notes", Order = 15, NullValueHandling = NullValueHandling.Ignore)]
         public string Notes { get; set; }
 
         /// <summary>
