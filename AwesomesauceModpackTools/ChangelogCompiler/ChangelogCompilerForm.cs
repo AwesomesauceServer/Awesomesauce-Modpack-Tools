@@ -13,19 +13,15 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
 
     public partial class ChangelogCompilerForm : Form {
 
-        /// <summary>
-        /// Set when calling form programmatically.
-        /// </summary>
-        public string ModURLAuto { get; set; } = string.Empty;
+        private string _ModURL;
+        private string _GameVersion;
 
-        /// <summary>
-        /// Set when calling form programmatically.
-        /// </summary>
-        public string GameVersionsAuto { get; set; } = string.Empty;
-
-        public ChangelogCompilerForm() {
+        public ChangelogCompilerForm(string modURL = "", string gameVersion = "") {
             InitializeComponent();
             Icon = Properties.Resources.AwesomesauceIcon;
+
+            _ModURL = modURL;
+            _GameVersion = gameVersion;
 
             HTMLWebBrowser.DocumentText = Properties.Resources.ChangelogCompiler_HTML_Default;
             GameVersionsComboBox.Items.AddRange(Filters.GameVersions.Keys.ToArray());
@@ -33,8 +29,8 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
 
         private void ChangelogCompilerForm_Load(object sender, EventArgs e) {
             Show();
-            if (Filters.GameVersions.Keys.Contains(GameVersionsAuto)) { GameVersionsComboBox.SelectedItem = GameVersionsAuto; }
-            ModURLTextBox.Text = ModURLAuto;
+            if (Filters.GameVersions.Keys.Contains(_GameVersion)) { GameVersionsComboBox.SelectedItem = _GameVersion; }
+            ModURLTextBox.Text = _ModURL;
             if (GameVersionsComboBox.SelectedItem != null && ModURLTextBox.Text.Trim() != string.Empty) { CompileButton.PerformClick(); }
         }
 
@@ -61,6 +57,8 @@ namespace AwesomesauceModpackTools.ChangelogCompiler {
             ModURLTextBox.Text = RemoveURLQueryString(ModURLTextBox.Text.Trim());
             if (ModURLTextBox.Text.EndsWith("/")) { ModURLTextBox.Text = ModURLTextBox.Text.Remove(ModURLTextBox.Text.Length - 1, 1); }
             if (ModURLTextBox.Text.EndsWith("/files")) { ModURLTextBox.Text = ModURLTextBox.Text.Remove(ModURLTextBox.Text.Length - 6, 6); }
+            if (ModURLTextBox.Text.Contains("/files/")) { ModURLTextBox.Text = ModURLTextBox.Text.Remove(ModURLTextBox.Text.LastIndexOf("/files/"), (ModURLTextBox.Text.Length - ModURLTextBox.Text.LastIndexOf("/files/"))); }
+
             Dictionary<string, string> workingURLS = new Dictionary<string, string>();
             Dictionary<string, (string link, string html)> workingChangelogs = new Dictionary<string, (string link, string html)>();
             StringBuilder changelogBuilder = new StringBuilder();

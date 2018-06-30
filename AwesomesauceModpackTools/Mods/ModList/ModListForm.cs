@@ -105,8 +105,8 @@ namespace AwesomesauceModpackTools.Mods.ModList {
 
         private void ChangelogCompilerButton_Click(object sender, EventArgs e) {
             Mod workingMod = (Mod)CurrentlySelectedItem.Tag;
-            ChangelogCompiler.ChangelogCompilerForm changelogCompilerForm = new ChangelogCompiler.ChangelogCompilerForm { ModURLAuto = workingMod.Link_Files };
-            if (workingMod.MinecraftVersion.Count != 0) { changelogCompilerForm.GameVersionsAuto = workingMod.MinecraftVersion[0]; }
+            string gameVersion = workingMod.MinecraftVersion.Count == 0 ? string.Empty : workingMod.MinecraftVersion[0];
+            ChangelogCompiler.ChangelogCompilerForm changelogCompilerForm = new ChangelogCompiler.ChangelogCompilerForm(workingMod.Link, gameVersion);
             changelogCompilerForm.Show();
         }
 
