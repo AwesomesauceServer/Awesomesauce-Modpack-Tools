@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using HtmlAgilityPack;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -30,7 +31,7 @@ namespace AwesomesauceModpackTools.Mods {
         public string File { get; set; }
 
         /// <summary>
-        /// <see cref="AwesomesauceModpackTools.Side" /> that the mod is required.
+        /// <see cref="Mods.Side" /> that the mod is required.
         /// </summary>
         [JsonProperty(PropertyName = "side", Order = 4)]
         [JsonConverter(typeof(StringEnumConverter))]
@@ -79,7 +80,7 @@ namespace AwesomesauceModpackTools.Mods {
         public string MD5 { get; set; }
 
         /// <summary>
-        /// <see cref="ReleaseType" /> (status) of the mod.
+        /// <see cref="Mods.ReleaseType" /> (status) of the mod.
         /// </summary>
         [JsonProperty(PropertyName = "releaseType", Order = 12)]
         [JsonConverter(typeof(StringEnumConverter))]
@@ -92,7 +93,7 @@ namespace AwesomesauceModpackTools.Mods {
         public List<string> MinecraftVersion { get; set; } = new List<string>();
 
         /// <summary>
-        /// <see cref="UpdateMode" /> of the mod.
+        /// <see cref="Mods.UpdateMode" /> of the mod.
         /// </summary>
         [JsonProperty(PropertyName = "updateMode", Order = 14)]
         [JsonConverter(typeof(StringEnumConverter))]
@@ -120,29 +121,13 @@ namespace AwesomesauceModpackTools.Mods {
         /// Format the <see cref="Requires" /> list into a sting.
         /// </summary>
         /// <returns><see cref="Requires" /> as a single line, comma seperated string.</returns>
-        public string RequiresToString() {
-            string working = string.Empty;
-            foreach (RequiredMod required in Requires) {
-                working += $"{required.Name}, ";
-            }
-            working = working.Trim();
-            if (working.EndsWith(",")) { working = working.Remove(working.Length - 1); }
-            return working;
-        }
+        public string RequiresToString() => string.Join(", ", Requires.Select(r => r.Name).ToArray());
 
         /// <summary>
         /// Format the <see cref="MinecraftVersion" /> list into a sting.
         /// </summary>
         /// <returns><see cref="MinecraftVersion" /> as a single line, comma seperated string.</returns>
-        public string MinecraftVersionToString() {
-            string working = string.Empty;
-            foreach (string version in MinecraftVersion) {
-                working += $"{version}, ";
-            }
-            working = working.Trim();
-            if (working.EndsWith(",")) { working = working.Remove(working.Length - 1); }
-            return working;
-        }
+        public string MinecraftVersionToString() => string.Join(", ", MinecraftVersion);
 
     }
 
