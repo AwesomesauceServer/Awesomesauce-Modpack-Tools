@@ -24,54 +24,46 @@ namespace AwesomesauceModpackTools {
             /// URI to download the current filters from.
             /// </summary>
             public static Uri Filters_URI = new Uri("https://raw.githubusercontent.com/AwesomesauceServer/Awesomesauce-Modpack-Tools/master/filters.json");
-
-            private static string _AppName = "Awesomesauce-Modpack-Tools";
+            
             /// <summary>
             /// The programs name.
             /// </summary>
-            public static string AppName => _AppName;
+            public static string AppName { get; } = "Awesomesauce-Modpack-Tools";
 
-            private static string _EXELocation = Process.GetCurrentProcess().MainModule.FileName;
             /// <summary>
             /// Current location (including filename and extension) of the running executable.
             /// </summary>
-            public static string EXELocation => _EXELocation;
+            public static string EXELocation { get; } = Process.GetCurrentProcess().MainModule.FileName;
 
-            private static string _EXEDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
             /// <summary>
             /// Current directory of the running executable.
             /// </summary>
-            public static string EXEDirectory => _EXEDirectory;
+            public static string EXEDirectory { get; } = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
 
-            private static string _UserAgent = $"{AppName}/{Version.Parse(System.Windows.Forms.Application.ProductVersion).ToString(3)} (compatible; {Environment.OSVersion.ToString().Replace("Microsoft ", string.Empty)}; {((Environment.Is64BitOperatingSystem) ? "x64" : "x86")}; Trident/7.0) (+https://git.io/vQ6dQ)";
             /// <summary>
             /// The programs user-agent.
             /// </summary>
-            public static string UserAgent => _UserAgent;
+            public static string UserAgent { get; } = $"{AppName}/{Version.Parse(System.Windows.Forms.Application.ProductVersion).ToString(3)} (compatible; {Environment.OSVersion.ToString().Replace("Microsoft ", string.Empty)}; {((Environment.Is64BitOperatingSystem) ? "x64" : "x86")}; Trident/7.0) (+https://git.io/vQ6dQ)";
 
-            private static List<Pack> _ModpackList = new List<Pack>();
             /// <summary>
             /// Modpack list downloaded from GitHub at startup.
             /// </summary>
-            public static List<Pack> ModpackList { get => _ModpackList; set => _ModpackList = value; }
+            public static List<Pack> ModpackList { get; set; } = new List<Pack>();
 
-            private static bool _HasInternet = HasInternetConnection();
             /// <summary>
             /// Value of <see cref="HasInternetConnection()"/>.
             /// </summary>
-            public static bool HasInternet => _HasInternet;
+            public static bool HasInternet { get; } = HasInternetConnection();
 
-            private static string _GithubCredentials = SetupGithubCredentials();
             /// <summary>
             /// Value of <see cref="SetupGithubCredentials()"/>.
             /// </summary>
-            public static string GithubCredentials => _GithubCredentials;
+            public static string GithubCredentials { get; } = SetupGithubCredentials();
 
-            private static StatusColors _StatusColors = new StatusColors();
             /// <summary>
             /// Common color for status notifications and controls.
             /// </summary>
-            public static StatusColors StatusColor => _StatusColors;
+            public static StatusColors StatusColor { get; } = new StatusColors();
 
         }
 

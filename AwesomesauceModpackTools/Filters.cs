@@ -13,20 +13,18 @@ namespace AwesomesauceModpackTools {
     /// </summary>
     public static class Filters {
 
-        private static Dictionary<string, string> _GameVersions = new Dictionary<string, string>();
         /// <summary>
         /// Dictionary of all supported Minecraft game versions. The key is the game version, value is CurseForge url filter string.
         /// </summary>
         /// <remarks>
         /// Example: [key = 1.10.2, value = ?filter-game-version=2020709689%3A6170]
         /// </remarks>
-        public static Dictionary<string, string> GameVersions => _GameVersions;
+        public static Dictionary<string, string> GameVersions { get; private set; } = new Dictionary<string, string>();
 
-        private static Filter.XPath _XPaths = new Filter.XPath();
         /// <summary>
         /// XPaths for HTML node selections.
         /// </summary>
-        public static Filter.XPath XPaths => _XPaths;
+        public static Filter.XPath XPaths { get; private set; } = new Filter.XPath();
 
         /// <summary>
         /// Download the most recent filter list from Github, if any errors fallback to embedded list.
@@ -60,8 +58,8 @@ namespace AwesomesauceModpackTools {
                 }
             }
 
-            _GameVersions = tempFilters.GameVersions;
-            _XPaths = tempFilters.XPaths;
+            GameVersions = tempFilters.GameVersions;
+            XPaths = tempFilters.XPaths;
         }
 
         public class Filter {
