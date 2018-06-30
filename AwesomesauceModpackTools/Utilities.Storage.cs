@@ -67,6 +67,12 @@ namespace AwesomesauceModpackTools {
             /// </summary>
             public static string GithubCredentials => _GithubCredentials;
 
+            private static StatusColors _StatusColors = new StatusColors();
+            /// <summary>
+            /// Common color for status notifications and controls.
+            /// </summary>
+            public static StatusColors StatusColor => _StatusColors;
+
         }
 
     }

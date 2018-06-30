@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -166,6 +167,18 @@ namespace AwesomesauceModpackTools {
             } catch {
                 return string.Empty;
             }
+        }
+
+        /// <summary>
+        /// Contains commonly used colors for status notifications and controls.
+        /// </summary>
+        public struct StatusColors {
+            public Color Available => Color.LightGreen;
+            public Color Done => Color.LightGreen;
+            public Color Error => Color.Tomato;
+            public Color NotAvailable => Color.LightGray;
+            public Color Skipped => Color.Honeydew;
+            public Color Working => Color.LightBlue;
         }
 
     }

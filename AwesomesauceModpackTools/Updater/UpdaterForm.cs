@@ -20,23 +20,17 @@ namespace AwesomesauceModpackTools.Updater {
         /// <summary>
         /// Is there currently running updates.
         /// </summary>
-        private bool IsUpdating = false;
+        private bool _IsUpdating = false;
 
         /// <summary>
         /// Cancel currently running downloads.
         /// </summary>
-        private bool IsCanceling = false;
+        private bool _IsCanceling = false;
 
         /// <summary>
         /// Set to true if anything failed.
         /// </summary>
-        private bool HasErrors = false;
-
-        private Color working = Color.LightBlue;
-        private Color available = Color.LightGreen;
-        private Color skipped = Color.Honeydew;
-        private Color notAvailable = Color.LightGray;
-        private Color error = Color.Tomato;
+        private bool _HasErrors = false;
 
         public UpdaterForm() {
             InitializeComponent();
@@ -67,12 +61,12 @@ namespace AwesomesauceModpackTools.Updater {
         }
 
         private void UpdaterForm_FormClosing(object sender, FormClosingEventArgs e) {
-            if (IsUpdating) {
+            if (_IsUpdating) {
                 if (MessageBox.Show("Really exit?\r\n\r\nThere are files currently updating.", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) {
                     e.Cancel = true;
                     return;
                 }
-                IsCanceling = true;
+                _IsCanceling = true;
                 Dispose();
             }
         }
@@ -97,7 +91,7 @@ namespace AwesomesauceModpackTools.Updater {
             try {
                 string working = string.Empty;
                 foreach (ListViewItem item in ModListView.Items) {
-                    if (item.BackColor == available) {
+                    if (item.BackColor == StatusColor.Available) {
                         Mod itemMod = (Mod)item.Tag;
                         working += $"{itemMod.Name}, ";
                     }
@@ -172,7 +166,7 @@ namespace AwesomesauceModpackTools.Updater {
         }
 
         private async Task UpdateMods() {
-            IsUpdating = true;
+            _IsUpdating = true;
             LoadFromPanel.Enabled = false;
             ReleaseTypeComboBox.Enabled = false;
             GameVersionsComboBox.Enabled = false;
@@ -188,37 +182,37 @@ namespace AwesomesauceModpackTools.Updater {
             int errorCount = 0;
             int updateAvailableCount = 0;
             foreach (ListViewItem item in ModListView.Items) {
-                if (IsCanceling) { break; }
-                if (HasErrors) { if (item.BackColor != error) { continue; } }
+                if (_IsCanceling) { break; }
+                if (_HasErrors) { if (item.BackColor != StatusColor.Error) { continue; } }
 
                 StatusLabel.Text = $@"{modCount} Mods, {updateAvailableCount} Updates Available, {skippedCount} Skipped, {errorCount} Errors";
 
                 Mod itemMod = (Mod)item.Tag;
                 if (itemMod.UpdateMode != UpdateMode.Automatic) {
                     skippedCount++;
-                    item.BackColor = skipped;
+                    item.BackColor = StatusColor.Skipped;
                     item.EnsureVisible();
                     continue;
                 }
                 string oldMD5 = itemMod.MD5;
 
-                item.BackColor = working;
+                item.BackColor = StatusColor.Working;
                 item.EnsureVisible();
 
                 try {
                     await Task.Run(() => { itemMod = ParseForUpdate(itemMod, minecraftVersion, releaseType).Mod; });
 
                     if (itemMod.MD5 == oldMD5) {
-                        item.BackColor = notAvailable;
+                        item.BackColor = StatusColor.NotAvailable;
                     } else {
                         updateAvailableCount++;
-                        item.BackColor = available;
+                        item.BackColor = StatusColor.Available;
                         item.SubItems.Add(new ListViewItem.ListViewSubItem { Text = itemMod.File });
                         item.Tag = itemMod;
                     }
                 } catch {
                     errorCount++;
-                    item.BackColor = error;
+                    item.BackColor = StatusColor.Error;
                 }
 
             }
@@ -237,7 +231,7 @@ namespace AwesomesauceModpackTools.Updater {
                 SavePanel.Visible = true;
             } else {
                 errorCount = 0;
-                HasErrors = true;
+                _HasErrors = true;
                 UpdateButton.Text = "Retry Failed Mods";
                 UpdateButton.Enabled = true;
 
@@ -248,7 +242,7 @@ namespace AwesomesauceModpackTools.Updater {
             }
 
             SavePanel.Enabled = true;
-            IsUpdating = false;
+            _IsUpdating = false;
         }
 
         private async void BlinkSave(Color color) {

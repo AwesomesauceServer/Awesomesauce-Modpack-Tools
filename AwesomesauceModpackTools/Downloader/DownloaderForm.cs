@@ -17,17 +17,17 @@ namespace AwesomesauceModpackTools.Downloader {
         /// <summary>
         /// Is there currently running downloads.
         /// </summary>
-        private bool IsDownloading = false;
+        private bool _IsDownloading = false;
 
         /// <summary>
         /// Cancel currently running downloads.
         /// </summary>
-        private bool IsCanceling = false;
+        private bool _IsCanceling = false;
 
         /// <summary>
         /// Set to true if anything failed.
         /// </summary>
-        private bool HasErrors = false;
+        private bool _HasErrors = false;
 
         public DownloaderForm() {
             InitializeComponent();
@@ -54,12 +54,12 @@ namespace AwesomesauceModpackTools.Downloader {
         }
 
         private void DownloaderForm_FormClosing(object sender, FormClosingEventArgs e) {
-            if (IsDownloading) {
+            if (_IsDownloading) {
                 if (MessageBox.Show("Really exit?\r\n\r\nThere are files currently downloading.", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) {
                     e.Cancel = true;
                     return;
                 }
-                IsCanceling = true;
+                _IsCanceling = true;
                 Dispose();
             }
         }
@@ -122,23 +122,19 @@ namespace AwesomesauceModpackTools.Downloader {
         }
 
         private async Task DownloadMods(string path) {
-            IsDownloading = true;
+            _IsDownloading = true;
             LoadFromPanel.Enabled = false;
             DownloadButton.Enabled = false;
 
-            Color working = Color.LightBlue;
-            Color done = Color.LightGreen;
-            Color error = Color.Tomato;
-
             int errorCount = 0;
             foreach (ListViewItem item in ModListView.Items) {
-                if (IsCanceling) { break; }
-                if (HasErrors) { if (item.BackColor != error) { continue; } }
+                if (_IsCanceling) { break; }
+                if (_HasErrors) { if (item.BackColor != StatusColor.Error) { continue; } }
 
                 try {
                     Mod itemMod = (Mod)item.Tag;
 
-                    item.BackColor = working;
+                    item.BackColor = StatusColor.Working;
                     item.EnsureVisible();
 
                     string downloadPath = $@"{path}\{itemMod.File}";
@@ -152,14 +148,14 @@ namespace AwesomesauceModpackTools.Downloader {
                         if (hash == itemMod.MD5) {
                             if (clientE.Error != null) {
                                 errorCount++;
-                                item.BackColor = error;
+                                item.BackColor = StatusColor.Error;
                                 DeleteFile(downloadPath);
                             } else {
-                                item.BackColor = done;
+                                item.BackColor = StatusColor.Done;
                             }
                         } else {
                             errorCount++;
-                            item.BackColor = error;
+                            item.BackColor = StatusColor.Error;
                             DeleteFile(downloadPath);
                         }
                     };
@@ -167,7 +163,7 @@ namespace AwesomesauceModpackTools.Downloader {
                     await client.DownloadFileTaskAsync(new Uri(itemMod.Link_Download), downloadPath);
                 } catch {
                     errorCount++;
-                    item.BackColor = error;
+                    item.BackColor = StatusColor.Error;
                 }
             }
 
@@ -175,11 +171,11 @@ namespace AwesomesauceModpackTools.Downloader {
                 DownloadButton.Text = "Finished";
             } else {
                 errorCount = 0;
-                HasErrors = true;
+                _HasErrors = true;
                 DownloadButton.Text = "Retry Failed Mods";
                 DownloadButton.Enabled = true;
             }
-            IsDownloading = false;
+            _IsDownloading = false;
         }
 
         private void LoadModList(string file, string fromString = null) {
