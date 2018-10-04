@@ -1,5 +1,7 @@
 {
   "gameVersions": {
+    "1.13.1": "?filter-game-version=2020709689%3A7107",
+    "1.13": "?filter-game-version=2020709689%3A7081",
     "1.12.2": "?filter-game-version=2020709689%3A6756",
     "1.12": "?filter-game-version=2020709689%3A6580",
     "1.11.2": "?filter-game-version=2020709689%3A6452",
